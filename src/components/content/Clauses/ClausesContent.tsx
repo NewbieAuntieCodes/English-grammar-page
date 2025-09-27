@@ -31,7 +31,7 @@ type View = 'list' | 'what-is-a-clause' | 'object-clauses' | 'attributive-clause
 
 export const ClausesContent: React.FC<ContentProps> = ({ startLesson }) => {
     const [view, setView] = useState<View>('list');
-    const themeColor = cardDataConfig.find(card => card.id === 'clauses')?.color || '#48dbfb';
+    const themeColor = cardDataConfig.find(card => card.id === 'clauses')?.color || '#0097a7';
     
     if (view === 'what-is-a-clause') {
         return <WhatIsAClauseContent onBack={() => setView('list')} themeColor={themeColor} onComplete={() => setView('object-clauses')} />;

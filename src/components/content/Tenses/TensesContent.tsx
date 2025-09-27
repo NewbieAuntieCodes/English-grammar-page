@@ -55,28 +55,28 @@ export const TensesContent: React.FC<ContentProps> = ({ startLesson }) => {
                 </div>
             </ContentHeader>
             <TenseTimeline>
-                <TenseItem onClick={() => setView('past-tense')}>
+                <TenseItem onClick={() => setView('past-tense')} borderColor={themeColor}>
                     <TenseTitleContainer>
                         <TenseChinese>一般过去时</TenseChinese>
                         <TenseEnglish>Simple Past Tense</TenseEnglish>
                     </TenseTitleContainer>
                     <TenseDescription>表示过去发生的事情</TenseDescription>
                 </TenseItem>
-                <TenseItem onClick={() => setView('present-continuous')}>
+                <TenseItem onClick={() => setView('present-continuous')} borderColor={themeColor}>
                     <TenseTitleContainer>
                         <TenseChinese>现在进行时</TenseChinese>
                         <TenseEnglish>Present Continuous</TenseEnglish>
                     </TenseTitleContainer>
                     <TenseDescription>正在进行的动作</TenseDescription>
                 </TenseItem>
-                <TenseItem onClick={() => setView('past-continuous')}>
+                <TenseItem onClick={() => setView('past-continuous')} borderColor={themeColor}>
                     <TenseTitleContainer>
                         <TenseChinese>过去进行时</TenseChinese>
                         <TenseEnglish>Past Continuous</TenseEnglish>
                     </TenseTitleContainer>
                     <TenseDescription>过去正在进行的动作</TenseDescription>
                 </TenseItem>
-                <TenseItem onClick={() => setView('future-tense')}>
+                <TenseItem onClick={() => setView('future-tense')} borderColor={themeColor}>
                     <TenseTitleContainer>
                         <TenseChinese>将来时</TenseChinese>
                         <TenseEnglish>Future Tense</TenseEnglish>

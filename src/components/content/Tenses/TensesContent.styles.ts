@@ -15,11 +15,11 @@ export const TenseTimeline = styled.div`
     }
 `;
 
-export const TenseItem = styled.div`
+export const TenseItem = styled.div<{ borderColor: string }>`
     background: white;
     border-radius: 12px;
     padding: 25px;
-    border-left: 6px solid #e0c3fc;
+    border-left: 6px solid ${props => props.borderColor};
     transition: all 0.3s ease;
     cursor: pointer;
     box-shadow: 0 4px 15px rgba(0,0,0,0.06);
@@ -27,7 +27,6 @@ export const TenseItem = styled.div`
     &:hover {
         transform: translateY(-5px) translateX(5px);
         box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-        border-left-color: #c792f8;
     }
 `;
 
