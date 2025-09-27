@@ -16,6 +16,8 @@ import {
 } from './TensesContent.styles';
 import { PastTenseContent } from './PastTenseContent';
 import { PresentContinuousContent } from './PresentContinuousContent';
+import { PastContinuousContent } from './PastContinuousContent';
+import { FutureTenseContent } from './FutureTenseContent';
 
 interface ContentProps {
     startLesson: (lessonType: string) => void;
@@ -28,17 +30,20 @@ export const TensesContent: React.FC<ContentProps> = ({ startLesson }) => {
     const themeColor = cardDataConfig.find(card => card.id === 'tenses')?.color || '#f093fb';
 
     if (view === 'past-tense') {
-        // FIX: Added onCompleteAll to navigate to the next lesson.
         return <PastTenseContent onBack={() => setView('list')} themeColor={themeColor} onCompleteAll={() => setView('present-continuous')} />;
     }
 
     if (view === 'present-continuous') {
-        // FIX: Added onCompleteAll to navigate back to the list as it's the last implemented lesson.
-        return <PresentContinuousContent onBack={() => setView('list')} themeColor={themeColor} onCompleteAll={() => setView('list')} />;
+        return <PresentContinuousContent onBack={() => setView('list')} themeColor={themeColor} onCompleteAll={() => setView('past-continuous')} />;
     }
 
-    // Placeholder for other lessons, you can add them here later.
-    // if (view === 'past-continuous') { ... }
+    if (view === 'past-continuous') {
+        return <PastContinuousContent onBack={() => setView('list')} themeColor={themeColor} onCompleteAll={() => setView('future-tense')} />;
+    }
+
+    if (view === 'future-tense') {
+        return <FutureTenseContent onBack={() => setView('list')} themeColor={themeColor} onCompleteAll={() => setView('list')} />;
+    }
 
     return (
         <>
@@ -64,14 +69,14 @@ export const TensesContent: React.FC<ContentProps> = ({ startLesson }) => {
                     </TenseTitleContainer>
                     <TenseDescription>正在进行的动作</TenseDescription>
                 </TenseItem>
-                <TenseItem onClick={() => startLesson('past-continuous')}>
+                <TenseItem onClick={() => setView('past-continuous')}>
                     <TenseTitleContainer>
                         <TenseChinese>过去进行时</TenseChinese>
                         <TenseEnglish>Past Continuous</TenseEnglish>
                     </TenseTitleContainer>
                     <TenseDescription>过去正在进行的动作</TenseDescription>
                 </TenseItem>
-                <TenseItem onClick={() => startLesson('future-tense')}>
+                <TenseItem onClick={() => setView('future-tense')}>
                     <TenseTitleContainer>
                         <TenseChinese>将来时</TenseChinese>
                         <TenseEnglish>Future Tense</TenseEnglish>

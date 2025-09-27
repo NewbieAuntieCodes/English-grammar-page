@@ -5,16 +5,16 @@
 import React, { useState, useEffect } from 'react';
 import { LessonContainer, BackButton, LessonTitle, WhyLearnSection, SectionTitle, FormulaSection, FormulaTitle, FormulaParts, PlusSign, SVOFormulaPart, ExamplesSection, ExampleItem, ExampleHeader, SpeakButton, ExampleEnglish, ExampleChinese } from '../Structures/SVOContent.styles';
 import { SpellingRulesSection, SpellingTable, TableHeader, TableRow, TableCell, StorySelector, StoryButton } from './PastTenseContent.styles';
-import { presentContinuousStories } from '../../../data/presentContinuousStories';
+import { pastContinuousStories } from '../../../data/pastContinuousStories';
 import { StoryPractice } from '../../practice/StoryPractice';
 
-interface PresentContinuousContentProps {
+interface PastContinuousContentProps {
     onBack: () => void;
     themeColor: string;
     onCompleteAll: () => void;
 }
 
-export const PresentContinuousContent: React.FC<PresentContinuousContentProps> = ({ onBack, themeColor, onCompleteAll }) => {
+export const PastContinuousContent: React.FC<PastContinuousContentProps> = ({ onBack, themeColor, onCompleteAll }) => {
     const [voices, setVoices] = useState<SpeechSynthesisVoice[]>([]);
     const [storyIndex, setStoryIndex] = useState(0);
     
@@ -30,7 +30,7 @@ export const PresentContinuousContent: React.FC<PresentContinuousContentProps> =
     }, []);
 
     const handleStoryComplete = () => {
-        if (storyIndex < presentContinuousStories.length - 1) {
+        if (storyIndex < pastContinuousStories.length - 1) {
             setStoryIndex(prev => prev + 1);
         } else {
             onCompleteAll();
@@ -39,8 +39,8 @@ export const PresentContinuousContent: React.FC<PresentContinuousContentProps> =
 
     const handleExplainPart = (part: 'be' | 'verb-ing') => {
         const explanations = {
-            'be': "be 动词: 根据主语的人称和数来变化。\n\n- I am\n- He/She/It is\n- We/You/They are",
-            'verb-ing': "现在分词 (Verb-ing): 在动词原形后加上 -ing。\n\n也叫 'v-ing' 形式。注意一些拼写变化，比如 double a consonant or drop an 'e'。"
+            'be': "be 动词的过去式: was / were。\n\n- I/He/She/It was\n- We/You/They were",
+            'verb-ing': "现在分词 (Verb-ing): 和现在进行时一样，在动词原形后加上 -ing。"
         };
         alert(explanations[part]);
     };
@@ -57,20 +57,20 @@ export const PresentContinuousContent: React.FC<PresentContinuousContentProps> =
         }
     };
     
-    const isLastStory = storyIndex >= presentContinuousStories.length - 1;
+    const isLastStory = storyIndex >= pastContinuousStories.length - 1;
 
     return (
         <LessonContainer>
             <BackButton onClick={onBack} themeColor={themeColor}>← Back to Tenses List</BackButton>
-            <LessonTitle>🏃 现在进行时 (Present Continuous)</LessonTitle>
+            <LessonTitle>⏳ 过去进行时 (Past Continuous)</LessonTitle>
 
             <WhyLearnSection themeColor={themeColor}>
                 <SectionTitle>💡 为什么学这个？</SectionTitle>
-                <p>现在进行时用来描述【现在正在发生】的动作。如果你想说 “我正在吃饭” 或 “天正在下雨”，就必须用这个时态。它让你的描述充满动感！</p>
+                <p>过去进行时用来描述【过去某个特定时间点正在发生】的动作。它经常用来设置故事背景，或描述一个被另一个动作打断的“背景动作”。</p>
             </WhyLearnSection>
 
             <FormulaSection themeColor={themeColor}>
-                <FormulaTitle themeColor={themeColor}>现在进行时结构</FormulaTitle>
+                <FormulaTitle themeColor={themeColor}>过去进行时结构</FormulaTitle>
                 <FormulaParts>
                      <SVOFormulaPart themeColor={themeColor}>
                         <div className="svo-part-english">Subject</div>
@@ -78,8 +78,8 @@ export const PresentContinuousContent: React.FC<PresentContinuousContentProps> =
                     </SVOFormulaPart>
                     <PlusSign themeColor={themeColor}>+</PlusSign>
                     <SVOFormulaPart themeColor={themeColor} onClick={() => handleExplainPart('be')}>
-                        <div className="svo-part-english">am / is / are</div>
-                        <div className="svo-part-chinese">be 动词</div>
+                        <div className="svo-part-english">was / were</div>
+                        <div className="svo-part-chinese">be 动词过去式</div>
                     </SVOFormulaPart>
                     <PlusSign themeColor={themeColor}>+</PlusSign>
                     <SVOFormulaPart themeColor={themeColor} onClick={() => handleExplainPart('verb-ing')}>
@@ -124,29 +124,29 @@ export const PresentContinuousContent: React.FC<PresentContinuousContentProps> =
                 <SectionTitle>📝 例子 (Examples)</SectionTitle>
                 <ExampleItem themeColor={themeColor}>
                     <ExampleHeader>
-                        <ExampleEnglish>He <strong>is reading</strong> a book.</ExampleEnglish>
-                        <SpeakButton onClick={(e) => { e.stopPropagation(); handleSpeak('He is reading a book.'); }}>🔊</SpeakButton>
+                        <ExampleEnglish>I <strong>was watching</strong> TV when you called.</ExampleEnglish>
+                        <SpeakButton onClick={(e) => { e.stopPropagation(); handleSpeak('I was watching TV when you called.'); }}>🔊</SpeakButton>
                     </ExampleHeader>
-                    <ExampleChinese>他正在读一本书。</ExampleChinese>
+                    <ExampleChinese>你打电话的时候，我正在看电视。（一个动作“看电视”被另一个动作“打电话”打断）</ExampleChinese>
                 </ExampleItem>
                 <ExampleItem themeColor={themeColor}>
                     <ExampleHeader>
-                        <ExampleEnglish>They <strong>are playing</strong> football.</ExampleEnglish>
-                        <SpeakButton onClick={(e) => { e.stopPropagation(); handleSpeak('They are playing football.'); }}>🔊</SpeakButton>
+                        <ExampleEnglish>Yesterday at 7 PM, we <strong>were eating</strong> dinner.</ExampleEnglish>
+                        <SpeakButton onClick={(e) => { e.stopPropagation(); handleSpeak('Yesterday at 7 PM, we were eating dinner.'); }}>🔊</SpeakButton>
                     </ExampleHeader>
-                    <ExampleChinese>他们正在踢足球。</ExampleChinese>
+                    <ExampleChinese>昨天晚上7点，我们正在吃晚饭。（过去某个具体时间点正在做的事）</ExampleChinese>
                 </ExampleItem>
                 <ExampleItem themeColor={themeColor}>
                     <ExampleHeader>
-                        <ExampleEnglish>Look! It <strong>is raining</strong>.</ExampleEnglish>
-                        <SpeakButton onClick={(e) => { e.stopPropagation(); handleSpeak('Look! It is raining.'); }}>🔊</SpeakButton>
+                        <ExampleEnglish>While he <strong>was studying</strong>, his sister <strong>was listening</strong> to music.</ExampleEnglish>
+                        <SpeakButton onClick={(e) => { e.stopPropagation(); handleSpeak('While he was studying, his sister was listening to music.'); }}>🔊</SpeakButton>
                     </ExampleHeader>
-                    <ExampleChinese>看！天正在下雨。</ExampleChinese>
+                    <ExampleChinese>当他学习的时候，他的妹妹正在听音乐。（过去同时进行的两个动作）</ExampleChinese>
                 </ExampleItem>
             </ExamplesSection>
             
             <StorySelector>
-                {presentContinuousStories.map((story, index) => (
+                {pastContinuousStories.map((story, index) => (
                     <StoryButton 
                         key={story.title} 
                         isActive={storyIndex === index}
@@ -161,12 +161,12 @@ export const PresentContinuousContent: React.FC<PresentContinuousContentProps> =
             <StoryPractice
                 themeColor={themeColor}
                 onCompleteAll={handleStoryComplete}
-                storyData={presentContinuousStories[storyIndex].storyData}
-                title={`🎯 练习：${presentContinuousStories[storyIndex].title}`}
-                subtitle="选择正确的现在进行时形式"
+                storyData={pastContinuousStories[storyIndex].storyData}
+                title={`🎯 练习：${pastContinuousStories[storyIndex].title}`}
+                subtitle="选择正确的过去进行时形式"
                 completionTitle="🎉 Story Complete!"
                 completionMessage="你已经完成了这个故事！"
-                nextButtonText={isLastStory ? "学习过去进行时 →" : "下一个故事 →"}
+                nextButtonText={isLastStory ? "学习将来时 →" : "下一个故事 →"}
             />
         </LessonContainer>
     );
