@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0
 */
 import React, { useState } from 'react';
-import { LessonContainer, BackButton, LessonTitle, WhyLearnSection, SectionTitle } from '../Structures/SVOContent.styles';
+import { LessonContainer, BackButton, LessonTitle, WhyLearnSection, SectionTitle, ExamplesSection, ExampleItem, ExampleHeader, SpeakButton, ExampleEnglish, ExampleChinese } from '../Structures/SVOContent.styles';
 import { RuleContainer, RuleCard, RuleTitle, RuleExplanation, ExamplePair, Verb, Arrow, SpellingRulesSection, SpellingTable, TableHeader, TableRow, TableCell, StorySelector, StoryButton } from './PastTenseContent.styles';
-import { pastTenseStories, PastTenseStory } from '../../../data/pastTenseStories';
+import { pastTenseStories } from '../../../data/pastTenseStories';
 import { StoryPractice } from '../../practice/StoryPractice';
 
 interface PastTenseContentProps {
@@ -16,7 +16,7 @@ interface PastTenseContentProps {
 
 export const PastTenseContent: React.FC<PastTenseContentProps> = ({ onBack, themeColor, onCompleteAll }) => {
     const [voices, setVoices] = useState<SpeechSynthesisVoice[]>([]);
-    const [selectedStory, setSelectedStory] = useState<PastTenseStory>(pastTenseStories[0]);
+    const [storyIndex, setStoryIndex] = useState(0);
 
     React.useEffect(() => {
         const loadVoices = () => setVoices(window.speechSynthesis.getVoices());
@@ -28,6 +28,28 @@ export const PastTenseContent: React.FC<PastTenseContentProps> = ({ onBack, them
             if ('speechSynthesis' in window) window.speechSynthesis.onvoiceschanged = null;
         };
     }, []);
+
+    const handleStoryComplete = () => {
+        if (storyIndex < pastTenseStories.length - 1) {
+            setStoryIndex(prev => prev + 1);
+        } else {
+            onCompleteAll();
+        }
+    };
+
+    const handleSpeak = (text: string) => {
+        if ('speechSynthesis' in window) {
+            window.speechSynthesis.cancel();
+            const utterance = new SpeechSynthesisUtterance(text);
+            const usVoice = voices.find(voice => voice.lang === 'en-US');
+            utterance.voice = usVoice || voices.find(voice => voice.lang.startsWith('en-')) || null;
+            utterance.rate = 0.9;
+            utterance.pitch = 1.1;
+            window.speechSynthesis.speak(utterance);
+        }
+    };
+
+    const isLastStory = storyIndex >= pastTenseStories.length - 1;
 
     return (
         <LessonContainer>
@@ -94,13 +116,38 @@ export const PastTenseContent: React.FC<PastTenseContentProps> = ({ onBack, them
                     </TableRow>
                 </SpellingTable>
             </SpellingRulesSection>
+
+            <ExamplesSection>
+                <SectionTitle>📝 例子 (Examples)</SectionTitle>
+                <ExampleItem themeColor={themeColor}>
+                    <ExampleHeader>
+                        <ExampleEnglish>I <strong>walked</strong> to school yesterday.</ExampleEnglish>
+                        <SpeakButton onClick={(e) => { e.stopPropagation(); handleSpeak('I walked to school yesterday.'); }}>🔊</SpeakButton>
+                    </ExampleHeader>
+                    <ExampleChinese>我昨天走路去上学。</ExampleChinese>
+                </ExampleItem>
+                <ExampleItem themeColor={themeColor}>
+                    <ExampleHeader>
+                        <ExampleEnglish>She <strong>ate</strong> an apple for lunch.</ExampleEnglish>
+                        <SpeakButton onClick={(e) => { e.stopPropagation(); handleSpeak('She ate an apple for lunch.'); }}>🔊</SpeakButton>
+                    </ExampleHeader>
+                    <ExampleChinese>她午餐吃了一个苹果。</ExampleChinese>
+                </ExampleItem>
+                <ExampleItem themeColor={themeColor}>
+                    <ExampleHeader>
+                        <ExampleEnglish>They <strong>were</strong> happy to see him.</ExampleEnglish>
+                        <SpeakButton onClick={(e) => { e.stopPropagation(); handleSpeak('They were happy to see him.'); }}>🔊</SpeakButton>
+                    </ExampleHeader>
+                    <ExampleChinese>他们看到他很高兴。</ExampleChinese>
+                </ExampleItem>
+            </ExamplesSection>
             
             <StorySelector>
-                {pastTenseStories.map((story) => (
+                {pastTenseStories.map((story, index) => (
                     <StoryButton 
                         key={story.title} 
-                        isActive={selectedStory.title === story.title}
-                        onClick={() => setSelectedStory(story)}
+                        isActive={storyIndex === index}
+                        onClick={() => setStoryIndex(index)}
                         themeColor={themeColor}
                     >
                         {story.title}
@@ -110,13 +157,13 @@ export const PastTenseContent: React.FC<PastTenseContentProps> = ({ onBack, them
 
             <StoryPractice
                 themeColor={themeColor}
-                onCompleteAll={onCompleteAll}
-                storyData={selectedStory.storyData}
-                title="🎯 练习：完成小故事"
+                onCompleteAll={handleStoryComplete}
+                storyData={pastTenseStories[storyIndex].storyData}
+                title={`🎯 练习：${pastTenseStories[storyIndex].title}`}
                 subtitle="选择正确的动词过去式形式"
-                completionTitle="🎉 Great Job!"
-                completionMessage="你已经掌握了一般过去时的基本用法！"
-                nextButtonText="学习现在进行时 →"
+                completionTitle="🎉 Story Complete!"
+                completionMessage="你已经完成了这个故事！"
+                nextButtonText={isLastStory ? "学习现在进行时 →" : "下一个故事 →"}
             />
         </LessonContainer>
     );

@@ -198,6 +198,10 @@ export const ExampleItem = styled.div<{ themeColor: string }>`
     transition: all 0.3s ease;
     overflow: hidden;
 
+    strong {
+      color: ${props => props.themeColor};
+    }
+
     &:hover {
         background: #f1f3f4;
         transform: translateX(5px);

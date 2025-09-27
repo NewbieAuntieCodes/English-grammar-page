@@ -2,10 +2,10 @@
  * @license
  * SPDX-License-Identifier: Apache-2.0
 */
-import React, { useState } from 'react';
-import { LessonContainer, BackButton, LessonTitle, WhyLearnSection, SectionTitle, FormulaSection, FormulaTitle, FormulaParts, PlusSign, SVOFormulaPart } from '../Structures/SVOContent.styles';
+import React, { useState, useEffect } from 'react';
+import { LessonContainer, BackButton, LessonTitle, WhyLearnSection, SectionTitle, FormulaSection, FormulaTitle, FormulaParts, PlusSign, SVOFormulaPart, ExamplesSection, ExampleItem, ExampleHeader, SpeakButton, ExampleEnglish, ExampleChinese } from '../Structures/SVOContent.styles';
 import { SpellingRulesSection, SpellingTable, TableHeader, TableRow, TableCell, StorySelector, StoryButton } from './PastTenseContent.styles';
-import { presentContinuousStories, PresentContinuousStory } from '../../../data/presentContinuousStories';
+import { presentContinuousStories } from '../../../data/presentContinuousStories';
 import { StoryPractice } from '../../practice/StoryPractice';
 
 interface PresentContinuousContentProps {
@@ -15,8 +15,28 @@ interface PresentContinuousContentProps {
 }
 
 export const PresentContinuousContent: React.FC<PresentContinuousContentProps> = ({ onBack, themeColor, onCompleteAll }) => {
-    const [selectedStory, setSelectedStory] = useState<PresentContinuousStory>(presentContinuousStories[0]);
+    const [voices, setVoices] = useState<SpeechSynthesisVoice[]>([]);
+    const [storyIndex, setStoryIndex] = useState(0);
     
+    useEffect(() => {
+        const loadVoices = () => setVoices(window.speechSynthesis.getVoices());
+        if ('speechSynthesis' in window) {
+            loadVoices();
+            window.speechSynthesis.onvoiceschanged = loadVoices;
+        }
+        return () => {
+            if ('speechSynthesis' in window) window.speechSynthesis.onvoiceschanged = null;
+        };
+    }, []);
+
+    const handleStoryComplete = () => {
+        if (storyIndex < presentContinuousStories.length - 1) {
+            setStoryIndex(prev => prev + 1);
+        } else {
+            onCompleteAll();
+        }
+    };
+
     const handleExplainPart = (part: 'be' | 'verb-ing') => {
         const explanations = {
             'be': "be 动词: 根据主语的人称和数来变化。\n\n- I am\n- He/She/It is\n- We/You/They are",
@@ -24,6 +44,20 @@ export const PresentContinuousContent: React.FC<PresentContinuousContentProps> =
         };
         alert(explanations[part]);
     };
+
+    const handleSpeak = (text: string) => {
+        if ('speechSynthesis' in window) {
+            window.speechSynthesis.cancel();
+            const utterance = new SpeechSynthesisUtterance(text);
+            const usVoice = voices.find(voice => voice.lang === 'en-US');
+            utterance.voice = usVoice || voices.find(voice => voice.lang.startsWith('en-')) || null;
+            utterance.rate = 0.9;
+            utterance.pitch = 1.1;
+            window.speechSynthesis.speak(utterance);
+        }
+    };
+    
+    const isLastStory = storyIndex >= presentContinuousStories.length - 1;
 
     return (
         <LessonContainer>
@@ -85,13 +119,38 @@ export const PresentContinuousContent: React.FC<PresentContinuousContentProps> =
                     </TableRow>
                 </SpellingTable>
             </SpellingRulesSection>
+
+            <ExamplesSection>
+                <SectionTitle>📝 例子 (Examples)</SectionTitle>
+                <ExampleItem themeColor={themeColor}>
+                    <ExampleHeader>
+                        <ExampleEnglish>He <strong>is reading</strong> a book.</ExampleEnglish>
+                        <SpeakButton onClick={(e) => { e.stopPropagation(); handleSpeak('He is reading a book.'); }}>🔊</SpeakButton>
+                    </ExampleHeader>
+                    <ExampleChinese>他正在读一本书。</ExampleChinese>
+                </ExampleItem>
+                <ExampleItem themeColor={themeColor}>
+                    <ExampleHeader>
+                        <ExampleEnglish>They <strong>are playing</strong> football.</ExampleEnglish>
+                        <SpeakButton onClick={(e) => { e.stopPropagation(); handleSpeak('They are playing football.'); }}>🔊</SpeakButton>
+                    </ExampleHeader>
+                    <ExampleChinese>他们正在踢足球。</ExampleChinese>
+                </ExampleItem>
+                <ExampleItem themeColor={themeColor}>
+                    <ExampleHeader>
+                        <ExampleEnglish>Look! It <strong>is raining</strong>.</ExampleEnglish>
+                        <SpeakButton onClick={(e) => { e.stopPropagation(); handleSpeak('Look! It is raining.'); }}>🔊</SpeakButton>
+                    </ExampleHeader>
+                    <ExampleChinese>看！天正在下雨。</ExampleChinese>
+                </ExampleItem>
+            </ExamplesSection>
             
             <StorySelector>
-                {presentContinuousStories.map((story) => (
+                {presentContinuousStories.map((story, index) => (
                     <StoryButton 
                         key={story.title} 
-                        isActive={selectedStory.title === story.title}
-                        onClick={() => setSelectedStory(story)}
+                        isActive={storyIndex === index}
+                        onClick={() => setStoryIndex(index)}
                         themeColor={themeColor}
                     >
                         {story.title}
@@ -101,13 +160,13 @@ export const PresentContinuousContent: React.FC<PresentContinuousContentProps> =
 
             <StoryPractice
                 themeColor={themeColor}
-                onCompleteAll={onCompleteAll}
-                storyData={selectedStory.storyData}
-                title="🎯 练习：完成小故事"
+                onCompleteAll={handleStoryComplete}
+                storyData={presentContinuousStories[storyIndex].storyData}
+                title={`🎯 练习：${presentContinuousStories[storyIndex].title}`}
                 subtitle="选择正确的现在进行时形式"
-                completionTitle="🎉 Fantastic!"
-                completionMessage="你已经掌握了现在进行时的用法！"
-                nextButtonText="完成时态学习"
+                completionTitle="🎉 Story Complete!"
+                completionMessage="你已经完成了这个故事！"
+                nextButtonText={isLastStory ? "完成时态学习" : "下一个故事 →"}
             />
         </LessonContainer>
     );

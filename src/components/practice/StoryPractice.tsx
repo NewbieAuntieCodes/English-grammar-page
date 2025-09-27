@@ -2,7 +2,7 @@
  * @license
  * SPDX-License-Identifier: Apache-2.0
 */
-import React, { useState, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
     PracticeSection,
     PracticeHeader,
@@ -18,6 +18,7 @@ import {
     CompletionContainer,
     CompletionTitle,
     CompletionMessage,
+    CorrectSticker,
     NextChapterButton,
 } from './StoryPractice.styles';
 
@@ -55,22 +56,37 @@ export const StoryPractice: React.FC<StoryPracticeProps> = ({
     const [stepIndex, setStepIndex] = useState(0);
     const [completedStory, setCompletedStory] = useState('');
     const [shakingButtonIndex, setShakingButtonIndex] = useState<number | null>(null);
+    const [showCorrectSticker, setShowCorrectSticker] = useState(false);
+
+    // Reset state when the story data changes (i.e., user selects a new story)
+    useEffect(() => {
+        setStepIndex(0);
+        setCompletedStory('');
+    }, [storyData]);
 
     const currentStep = storyData[stepIndex];
     const isCompleted = stepIndex >= storyData.length - 1;
-
+    
     const handleChoice = (choice: Choice, index: number) => {
         if (choice.isCorrect) {
-            const newStoryPart = currentStep.prompt.replace('...', ' ' + choice.text);
-            let updatedStory = (completedStory + ' ' + newStoryPart).trim();
+            setShowCorrectSticker(true);
 
-            // If this is the last interactive step, add the final concluding sentence.
-            if (stepIndex === storyData.length - 2) {
-                updatedStory += ' ' + storyData[storyData.length - 1].prompt;
-            }
+            setTimeout(() => {
+                const newStoryPart = currentStep.prompt.replace('...', ' ' + choice.text);
+                let updatedStory = (completedStory + ' ' + newStoryPart).trim();
 
-            setCompletedStory(updatedStory);
-            setStepIndex(prev => prev + 1);
+                // If this is the last interactive step, add the final concluding sentence.
+                if (stepIndex === storyData.length - 2) {
+                    updatedStory += ' ' + storyData[storyData.length - 1].prompt;
+                }
+
+                setCompletedStory(updatedStory);
+                setStepIndex(prev => prev + 1);
+            }, 300);
+
+            setTimeout(() => {
+                setShowCorrectSticker(false);
+            }, 1500);
         } else {
             setShakingButtonIndex(index);
             setTimeout(() => setShakingButtonIndex(null), 600);
@@ -81,6 +97,7 @@ export const StoryPractice: React.FC<StoryPracticeProps> = ({
 
     return (
         <PracticeSection themeColor={themeColor}>
+            {showCorrectSticker && <CorrectSticker themeColor={themeColor}>✔️ Correct!</CorrectSticker>}
             {isCompleted ? (
                 <CompletionContainer>
                     <CompletionTitle>{completionTitle}</CompletionTitle>

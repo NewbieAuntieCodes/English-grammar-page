@@ -26,8 +26,8 @@ export const pastTenseStories: PastTenseStory[] = [
         storyData: [
             { prompt: "Yesterday was a nice day. First, I...", choices: [{ text: "ate breakfast.", isCorrect: true }, { text: "eat breakfast.", isCorrect: false }] },
             { prompt: "Then, I...", choices: [{ text: "went to the park.", isCorrect: true }, { text: "go to the park.", isCorrect: false }] },
-            { prompt: "At the park, I...", choices: [{ text: "saw many birds.", isCorrect: true }, { text: "see many birds.", isCorrect: false }] },
-            { prompt: "Later, my friend...", choices: [{ text: "called me.", isCorrect: true }, { text: "call me.", isCorrect: false }] },
+            { prompt: "At the park, I...", choices: [{ text: "see many birds.", isCorrect: false }, { text: "saw many birds.", isCorrect: true }] },
+            { prompt: "Later, my friend...", choices: [{ text: "call me.", isCorrect: false }, { text: "called me.", isCorrect: true }] },
             { prompt: "We...", choices: [{ text: "played football together.", isCorrect: true }, { text: "play football together.", isCorrect: false }] },
             { prompt: "It was a wonderful day.", choices: [] }
         ]
@@ -36,11 +36,11 @@ export const pastTenseStories: PastTenseStory[] = [
         title: "故事二：动物园之旅",
         description: "讲述一次去动物园的愉快经历。",
         storyData: [
-            { prompt: "Last weekend, my family and I...", choices: [{ text: "went to the zoo.", isCorrect: true }, { text: "go to the zoo.", isCorrect: false }] },
-            { prompt: "We...", choices: [{ text: "saw many animals.", isCorrect: true }, { text: "see many animals.", isCorrect: false }] },
+            { prompt: "Last weekend, my family and I...", choices: [{ text: "go to the zoo.", isCorrect: false }, { text: "went to the zoo.", isCorrect: true }] },
+            { prompt: "We...", choices: [{ text: "see many animals.", isCorrect: false }, { text: "saw many animals.", isCorrect: true }] },
             { prompt: "The monkeys...", choices: [{ text: "ate bananas.", isCorrect: true }, { text: "eat bananas.", isCorrect: false }] },
             { prompt: "I...", choices: [{ text: "took a lot of photos.", isCorrect: true }, { text: "take a lot of photos.", isCorrect: false }] },
-            { prompt: "We...", choices: [{ text: "had a great time.", isCorrect: true }, { text: "have a great time.", isCorrect: false }] },
+            { prompt: "We...", choices: [{ text: "have a great time.", isCorrect: false }, { text: "had a great time.", isCorrect: true }] },
             { prompt: "It was a fun trip.", choices: [] }
         ]
     },
@@ -50,8 +50,8 @@ export const pastTenseStories: PastTenseStory[] = [
         storyData: [
             { prompt: "For my birthday last month, my friends...", choices: [{ text: "came to my house.", isCorrect: true }, { text: "come to my house.", isCorrect: false }] },
             { prompt: "We...", choices: [{ text: "listened to music.", isCorrect: true }, { text: "listen to music.", isCorrect: false }] },
-            { prompt: "My mom...", choices: [{ text: "made a big cake.", isCorrect: true }, { text: "make a big cake.", isCorrect: false }] },
-            { prompt: "I...", choices: [{ text: "got many presents.", isCorrect: true }, { text: "get many presents.", isCorrect: false }] },
+            { prompt: "My mom...", choices: [{ text: "make a big cake.", isCorrect: false }, { text: "made a big cake.", isCorrect: true }] },
+            { prompt: "I...", choices: [{ text: "get many presents.", isCorrect: false }, { text: "got many presents.", isCorrect: true }] },
             { prompt: "Everyone...", choices: [{ text: "sang 'Happy Birthday'.", isCorrect: true }, { text: "sing 'Happy Birthday'.", isCorrect: false }] },
             { prompt: "I felt very happy.", choices: [] }
         ]
@@ -61,10 +61,10 @@ export const pastTenseStories: PastTenseStory[] = [
         description: "描述一个在家里度过的舒适雨天。",
         storyData: [
             { prompt: "It rained all day yesterday, so I...", choices: [{ text: "stayed at home.", isCorrect: true }, { text: "stay at home.", isCorrect: false }] },
-            { prompt: "I...", choices: [{ text: "read a book.", isCorrect: true }, { text: "readed a book.", isCorrect: false }] },
+            { prompt: "I...", choices: [{ text: "readed a book.", isCorrect: false }, { text: "read a book.", isCorrect: true }] },
             { prompt: "Later, I...", choices: [{ text: "watched a movie.", isCorrect: true }, { text: "watch a movie.", isCorrect: false }] },
             { prompt: "My cat...", choices: [{ text: "slept on the sofa.", isCorrect: true }, { text: "sleep on the sofa.", isCorrect: false }] },
-            { prompt: "In the evening, I...", choices: [{ text: "drank some hot tea.", isCorrect: true }, { text: "drink some hot tea.", isCorrect: false }] },
+            { prompt: "In the evening, I...", choices: [{ text: "drink some hot tea.", isCorrect: false }, { text: "drank some hot tea.", isCorrect: true }] },
             { prompt: "It was a cozy day.", choices: [] }
         ]
     },
@@ -72,11 +72,11 @@ export const pastTenseStories: PastTenseStory[] = [
         title: "故事五：丢失的小猫",
         description: "一个关于发现并帮助一只小猫的暖心故事。",
         storyData: [
-            { prompt: "Yesterday afternoon, I...", choices: [{ text: "heard a small noise.", isCorrect: true }, { text: "hear a small noise.", isCorrect: false }] },
+            { prompt: "Yesterday afternoon, I...", choices: [{ text: "hear a small noise.", isCorrect: false }, { text: "heard a small noise.", isCorrect: true }] },
             { prompt: "I looked outside and...", choices: [{ text: "found a little kitten.", isCorrect: true }, { text: "find a little kitten.", isCorrect: false }] },
             { prompt: "It...", choices: [{ text: "was cold and hungry.", isCorrect: true }, { text: "is cold and hungry.", isCorrect: false }] },
-            { prompt: "So, I...", choices: [{ text: "gave it some milk.", isCorrect: true }, { text: "give it some milk.", isCorrect: false }] },
-            { prompt: "The kitten...", choices: [{ text: "felt warm and safe.", isCorrect: true }, { text: "feel warm and safe.", isCorrect: false }] },
+            { prompt: "So, I...", choices: [{ text: "give it some milk.", isCorrect: false }, { text: "gave it some milk.", isCorrect: true }] },
+            { prompt: "The kitten...", choices: [{ text: "feel warm and safe.", isCorrect: false }, { text: "felt warm and safe.", isCorrect: true }] },
             { prompt: "I decided to keep it.", choices: [] }
         ]
     }

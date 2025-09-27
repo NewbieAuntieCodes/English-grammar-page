@@ -18,6 +18,23 @@ const popIn = keyframes`
     100% { transform: scale(1); opacity: 1; }
 `;
 
+const stickerPopIn = keyframes`
+    0% { transform: translateX(-50%) scale(0) rotate(-180deg); opacity: 0; }
+    60% { transform: translateX(-50%) scale(1.1) rotate(10deg); opacity: 1; }
+    100% { transform: translateX(-50%) scale(1) rotate(5deg); opacity: 1; }
+`;
+
+const stickerFadeOut = keyframes`
+    from {
+        transform: translateX(-50%) scale(1) rotate(5deg);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(-50%) scale(0.5) rotate(-10deg);
+        opacity: 0;
+    }
+`;
+
 const shake = keyframes`
   10%, 90% { transform: translate3d(-1px, 0, 0); }
   20%, 80% { transform: translate3d(2px, 0, 0); }
@@ -175,5 +192,36 @@ export const NextChapterButton = styled.button<{ themeColor: string }>`
 
     &:hover {
         transform: scale(1.05) translateY(-2px);
+    }
+`;
+
+export const CorrectSticker = styled.div<{ themeColor: string }>`
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%) rotate(5deg);
+    z-index: 1000;
+    pointer-events: none; /* Crucial for non-blocking UI */
+
+    background: ${props => props.themeColor};
+    color: white;
+    padding: 15px 30px;
+    border-radius: 12px;
+    font-size: 2em;
+    font-weight: bold;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 0 0 5px rgba(255, 255, 255, 0.3);
+    
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    /* Animation sequence: Pop in, wait, fade out */
+    animation: ${stickerPopIn} 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards,
+               ${stickerFadeOut} 0.5s cubic-bezier(0.55, 0.055, 0.675, 0.19) 1.5s forwards;
+    
+    @media (max-width: 768px) {
+        font-size: 1.5em;
+        padding: 12px 24px;
+        top: 15%;
     }
 `;
