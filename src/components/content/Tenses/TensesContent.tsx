@@ -15,6 +15,7 @@ import {
     TenseDescription
 } from './TensesContent.styles';
 import { PastTenseContent } from './PastTenseContent';
+import { PresentContinuousContent } from './PresentContinuousContent';
 
 interface ContentProps {
     startLesson: (lessonType: string) => void;
@@ -27,11 +28,17 @@ export const TensesContent: React.FC<ContentProps> = ({ startLesson }) => {
     const themeColor = cardDataConfig.find(card => card.id === 'tenses')?.color || '#f093fb';
 
     if (view === 'past-tense') {
-        return <PastTenseContent onBack={() => setView('list')} themeColor={themeColor} />;
+        // FIX: Added onCompleteAll to navigate to the next lesson.
+        return <PastTenseContent onBack={() => setView('list')} themeColor={themeColor} onCompleteAll={() => setView('present-continuous')} />;
+    }
+
+    if (view === 'present-continuous') {
+        // FIX: Added onCompleteAll to navigate back to the list as it's the last implemented lesson.
+        return <PresentContinuousContent onBack={() => setView('list')} themeColor={themeColor} onCompleteAll={() => setView('list')} />;
     }
 
     // Placeholder for other lessons, you can add them here later.
-    // if (view === 'present-continuous') { ... }
+    // if (view === 'past-continuous') { ... }
 
     return (
         <>
@@ -50,7 +57,7 @@ export const TensesContent: React.FC<ContentProps> = ({ startLesson }) => {
                     </TenseTitleContainer>
                     <TenseDescription>表示过去发生的事情</TenseDescription>
                 </TenseItem>
-                <TenseItem onClick={() => startLesson('present-continuous')}>
+                <TenseItem onClick={() => setView('present-continuous')}>
                     <TenseTitleContainer>
                         <TenseChinese>现在进行时</TenseChinese>
                         <TenseEnglish>Present Continuous</TenseEnglish>
