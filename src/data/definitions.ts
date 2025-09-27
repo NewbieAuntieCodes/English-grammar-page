@@ -1,0 +1,17 @@
+/**
+ * @license
+ * SPDX-License-Identifier: Apache-2.0
+*/
+
+// --- Pure Data Definitions ---
+
+// This file contains only serializable data (strings, objects) and is safe to use in any environment.
+// All React components have been moved to `icons.tsx`.
+
+export const cardDataConfig = [
+    { id: 'parts', title: '词性学习', subtitle: 'Parts of Speech', color: '#4ecdc4' },
+    { id: 'components', title: '句子成分', subtitle: 'Sentence Components', color: '#feca57' },
+    { id: 'structures', title: '基础句型结构', subtitle: 'Basic Sentence Structures', color: '#ff6b6b' },
+    { id: 'clauses', title: '从句句型结构', subtitle: 'Clause Sentence Structures', color: '#0097a7' },
+    { id: 'tenses', title: '基础时态学习', subtitle: 'Basic Tenses', color: '#f093fb' },
+];
