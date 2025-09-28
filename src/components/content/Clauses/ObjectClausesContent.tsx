@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
 */
 import React, { useState, useEffect } from 'react';
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 import {
     LessonContainer,
     LessonTitle,
@@ -50,9 +50,10 @@ const practiceData = [
     { words: [{ en: 'I wonder', cn: '我想知道' }, { en: 'if', cn: '是否' }, { en: 'it', cn: '它' }, { en: 'will rain', cn: '会下雨' }], correct: ['I wonder', 'if', 'it', 'will rain'], chinese: '我想知道是否会下雨。' },
     { words: [{ en: 'Tell me', cn: '告诉我' }, { en: 'where', cn: '哪里' }, { en: 'you', cn: '你' }, { en: 'live', cn: '住' }], correct: ['Tell me', 'where', 'you', 'live'], chinese: '告诉我你住在哪里。' },
     { words: [{ en: 'Nobody knows', cn: '没人知道' }, { en: 'why', cn: '为什么' }, { en: 'he', cn: '他' }, { en: 'is angry', cn: '生气' }], correct: ['Nobody knows', 'why', 'he', 'is angry'], chinese: '没人知道他为什么生气。' },
+    { words: [{ en: 'I don\'t know', cn: '我不知道' }, { en: 'who', cn: '谁' }, { en: 'took', cn: '拿了' }, { en: 'my pen', cn: '我的笔' }], correct: ['I don\'t know', 'who', 'took', 'my pen'], chinese: '我不知道谁拿了我的笔。' },
 ];
 
-const examples = [
+const normalExamples = [
     {
         id: 'ex1',
         title: 'I hope...',
@@ -89,14 +90,35 @@ const examples = [
         objectClause: { connector: 'why', subject: 'she', verb: 'is', complement: 'upset' },
         core: '动词 `understand` 的宾语是什么？是 `why she is upset` 这个从句，解释了不明白的内容。'
     },
+];
+
+const specialCaseExamples = [
     {
         id: 'ex5',
-        title: 'He asked...',
+        title: 'He asked who...',
         english: 'He asked who ate the cake.',
         chinese: '他问是谁吃了蛋糕。',
         mainClause: { subject: 'He', verb: 'asked' },
-        objectClause: { connector: 'who', subject: 'who (who既是引导词也是主语)', verb: 'ate the cake' },
+        objectClause: { connector: 'who', subject: 'who (既是引导词也是主语)', verb: 'ate the cake' },
         core: '动词 `asked` 的宾语是 `who ate the cake` 这个从句。在这里引导词 `who` 同时充当从句的主语。'
+    },
+    {
+        id: 'ex6',
+        title: 'I want to know what...',
+        english: 'I want to know what happened.',
+        chinese: '我想知道发生了什么事。',
+        mainClause: { subject: 'I', verb: 'want to know' },
+        objectClause: { connector: 'what', subject: 'what (既是引导词也是主语)', verb: 'happened' },
+        core: '动词 `know` 的宾语是 `what happened` 这个从句。`what` 在这里既是引导词，也是从句 `happened` 的主语。'
+    },
+    {
+        id: 'ex7',
+        title: 'They will find out who...',
+        english: 'They will find out who is responsible.',
+        chinese: '他们会查出谁是负责人。',
+        mainClause: { subject: 'They', verb: 'will find out' },
+        objectClause: { connector: 'who', subject: 'who (既是引导词也是主语)', verb: 'is responsible' },
+        core: '动词 `find out` 的宾语是 `who is responsible` 这个从句。`who` 在这里既是引导词，也是从句的主语。'
     }
 ];
 
@@ -112,9 +134,18 @@ const TipSection = styled(WhyLearnSection)`
     }
 `;
 
+const SpecialCaseSection = styled(WhyLearnSection)`
+    background: linear-gradient(135deg, rgba(224, 231, 255, 1), rgba(239, 246, 255, 0.2));
+    border-left-color: #6366F1;
+    p, h4 {
+        color: #4338CA;
+    }
+`;
+
 export const ObjectClausesContent: React.FC<ObjectClausesContentProps> = ({ onBack, themeColor, onCompleteAll }) => {
     const [voices, setVoices] = useState<SpeechSynthesisVoice[]>([]);
-    const [activeExampleIndex, setActiveExampleIndex] = useState(0);
+    const [activeNormalExampleIndex, setActiveNormalExampleIndex] = useState(0);
+    const [activeSpecialExampleIndex, setActiveSpecialExampleIndex] = useState(0);
 
     useEffect(() => {
         const loadVoices = () => {
@@ -157,7 +188,42 @@ export const ObjectClausesContent: React.FC<ObjectClausesContentProps> = ({ onBa
         }
     };
 
-    const activeExample = examples[activeExampleIndex];
+    const activeNormalExample = normalExamples[activeNormalExampleIndex];
+    const activeSpecialExample = specialCaseExamples[activeSpecialExampleIndex];
+
+    const renderExample = (example: any) => (
+        <AnimatedExampleItem themeColor={themeColor}>
+            <ExampleHeader>
+                <ExampleEnglish>{example.english}</ExampleEnglish>
+                <SpeakButton onClick={(e) => { e.stopPropagation(); handleSpeak(example.english.replace(/[()]/g, '')); }} aria-label="Speak sentence">🔊</SpeakButton>
+            </ExampleHeader>
+            <ExampleChinese>{example.chinese}</ExampleChinese>
+            <ExampleBreakdown show={true} themeColor={themeColor}>
+                <AnalysisGrid>
+                    <AnalysisColumn themeColor={themeColor}>
+                        <h4>主句分析</h4>
+                        <BreakdownPart>- <strong>主语:</strong> {example.mainClause.subject}</BreakdownPart>
+                        <BreakdownPart>- <strong>谓语:</strong> {example.mainClause.verb}</BreakdownPart>
+                        {example.mainClause.indirectObject && (
+                            <BreakdownPart>- <strong>间接宾语:</strong> {example.mainClause.indirectObject}</BreakdownPart>
+                        )}
+                    </AnalysisColumn>
+                    <AnalysisColumn themeColor={themeColor}>
+                        <h4>宾语从句分析</h4>
+                        <BreakdownPart>- <strong>引导词:</strong> {example.objectClause.connector}</BreakdownPart>
+                        <BreakdownPart>- <strong>从句主语:</strong> {example.objectClause.subject}</BreakdownPart>
+                        <BreakdownPart>- <strong>从句谓语:</strong> {example.objectClause.verb}</BreakdownPart>
+                        {example.objectClause.complement && (
+                            <BreakdownPart>- <strong>从句表语:</strong> {example.objectClause.complement}</BreakdownPart>
+                        )}
+                    </AnalysisColumn>
+                </AnalysisGrid>
+                <BreakdownPart style={{ marginTop: '20px', paddingTop: '15px', borderTop: '1px solid #e2e8f0' }}>
+                    <strong>* 核心:</strong> {example.core}
+                </BreakdownPart>
+            </ExampleBreakdown>
+        </AnimatedExampleItem>
+    );
 
     return (
         <LessonContainer>
@@ -204,53 +270,46 @@ export const ObjectClausesContent: React.FC<ObjectClausesContentProps> = ({ onBa
             </TipSection>
 
             <ExamplesSection>
-                <SectionTitle>📝 例子分析</SectionTitle>
+                <SectionTitle>📝 基础例子分析</SectionTitle>
                 <ExampleSwitcher>
-                    {examples.map((ex, index) => (
+                    {normalExamples.map((ex, index) => (
                         <SwitcherButton
                             key={ex.id}
-                            isActive={activeExampleIndex === index}
-                            onClick={() => setActiveExampleIndex(index)}
+                            isActive={activeNormalExampleIndex === index}
+                            onClick={() => setActiveNormalExampleIndex(index)}
                             themeColor={themeColor}
                         >
-                            例 {index + 1}: {ex.title}
+                            {ex.title}
                         </SwitcherButton>
                     ))}
                 </ExampleSwitcher>
-                
-                {activeExample && (
-                    <AnimatedExampleItem themeColor={themeColor}>
-                        <ExampleHeader>
-                            <ExampleEnglish>{activeExample.english}</ExampleEnglish>
-                            <SpeakButton onClick={(e) => { e.stopPropagation(); handleSpeak(activeExample.english.replace(/[()]/g, '')); }} aria-label="Speak sentence">🔊</SpeakButton>
-                        </ExampleHeader>
-                        <ExampleChinese>{activeExample.chinese}</ExampleChinese>
-                        <ExampleBreakdown show={true} themeColor={themeColor}>
-                            <AnalysisGrid>
-                                <AnalysisColumn themeColor={themeColor}>
-                                    <h4>主句分析</h4>
-                                    <BreakdownPart>- <strong>主语:</strong> {activeExample.mainClause.subject}</BreakdownPart>
-                                    <BreakdownPart>- <strong>谓语:</strong> {activeExample.mainClause.verb}</BreakdownPart>
-                                    {activeExample.mainClause.indirectObject && (
-                                        <BreakdownPart>- <strong>间接宾语:</strong> {activeExample.mainClause.indirectObject}</BreakdownPart>
-                                    )}
-                                </AnalysisColumn>
-                                <AnalysisColumn themeColor={themeColor}>
-                                    <h4>宾语从句分析</h4>
-                                    <BreakdownPart>- <strong>引导词:</strong> {activeExample.objectClause.connector}</BreakdownPart>
-                                    <BreakdownPart>- <strong>从句主语:</strong> {activeExample.objectClause.subject}</BreakdownPart>
-                                    <BreakdownPart>- <strong>从句谓语:</strong> {activeExample.objectClause.verb}</BreakdownPart>
-                                    {activeExample.objectClause.complement && (
-                                        <BreakdownPart>- <strong>从句表语:</strong> {activeExample.objectClause.complement}</BreakdownPart>
-                                    )}
-                                </AnalysisColumn>
-                            </AnalysisGrid>
-                            <BreakdownPart style={{ marginTop: '20px', paddingTop: '15px', borderTop: '1px solid #e2e8f0' }}>
-                                <strong>* 核心:</strong> {activeExample.core}
-                            </BreakdownPart>
-                        </ExampleBreakdown>
-                    </AnimatedExampleItem>
-                )}
+                {activeNormalExample && renderExample(activeNormalExample)}
+            </ExamplesSection>
+
+            <SpecialCaseSection themeColor={themeColor}>
+                <SectionTitle>📌 特殊情况：引导词同时作主语</SectionTitle>
+                <p>有时候，引导词如 <strong>who</strong>, <strong>what</strong>, <strong>which</strong> 不仅引导从句，也直接充当从句的【主语】。这时，从句的结构是【引导词(主语) + 谓语...】，引导词后面不再有其他主语。</p>
+                <ExampleEnglish style={{ marginTop: '10px', fontSize: '1.1em', fontWeight: 'normal' }}>
+                    I want to know <strong>who</strong> opened the door.
+                </ExampleEnglish>
+                <p style={{ marginTop: '5px', fontSize: '0.9em', color: '#4338CA' }}>- 在这里，<strong>who</strong> 就是动词 <strong>opened</strong> 的主语。</p>
+            </SpecialCaseSection>
+
+            <ExamplesSection>
+                <SectionTitle>📌 特殊情况例句</SectionTitle>
+                <ExampleSwitcher>
+                    {specialCaseExamples.map((ex, index) => (
+                        <SwitcherButton
+                            key={ex.id}
+                            isActive={activeSpecialExampleIndex === index}
+                            onClick={() => setActiveSpecialExampleIndex(index)}
+                            themeColor={themeColor}
+                        >
+                            {ex.title}
+                        </SwitcherButton>
+                    ))}
+                </ExampleSwitcher>
+                {activeSpecialExample && renderExample(activeSpecialExample)}
             </ExamplesSection>
             
             <SentenceBuilderPractice
