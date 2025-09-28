@@ -25,6 +25,8 @@ import {
     popIn,
 } from '../Structures/SVOContent.styles';
 import { SentenceBuilderPractice } from '../../practice/SentenceBuilderPractice';
+import { FillInTheBlankPractice } from '../../practice/FillInTheBlankPractice';
+import { PracticeModeSwitcher, ModeButton } from '../../practice/SentenceBuilderPractice.styles';
 
 interface AttributiveClausesContentProps {
     onBack: () => void;
@@ -32,7 +34,7 @@ interface AttributiveClausesContentProps {
     onCompleteAll: () => void;
 }
 
-const practiceData = [
+const buildPracticeData = [
     { 
         words: [
             { en: 'The girl', cn: '那个女孩' }, 
@@ -79,6 +81,14 @@ const practiceData = [
         correct: ['I miss the days', 'when', 'we were young'], 
         chinese: '我怀念我们年轻时的那些日子。' 
     },
+];
+
+const fillPracticeData = [
+    { sentenceParts: ["The girl ", " is wearing a red hat is my sister."], choices: [{text: "who", isCorrect: true}, {text: "which", isCorrect: false}, {text: "where", isCorrect: false}], chineseHint: "那个戴着红帽子的女孩是我的妹妹。" },
+    { sentenceParts: ["This is the cake ", " I made."], choices: [{text: "that", isCorrect: true}, {text: "who", isCorrect: false}, {text: "when", isCorrect: false}], chineseHint: "这就是我做的那个蛋糕。" },
+    { sentenceParts: ["This is the park ", " we first met."], choices: [{text: "where", isCorrect: true}, {text: "which", isCorrect: false}, {text: "who", isCorrect: false}], chineseHint: "这是我们初次相遇的公园。" },
+    { sentenceParts: ["I miss the days ", " we were young."], choices: [{text: "when", isCorrect: true}, {text: "where", isCorrect: false}, {text: "that", isCorrect: false}], chineseHint: "我怀念我们年轻时的那些日子。" },
+    { sentenceParts: ["I like the movie ", " we watched last night."], choices: [{text: "which", isCorrect: true}, {text: "who", isCorrect: false}, {text: "when", isCorrect: false}], chineseHint: "我喜欢我们昨晚看的那部电影。" },
 ];
 
 const examples = [
@@ -160,6 +170,7 @@ const ClausePart = styled.span`
 export const AttributiveClausesContent: React.FC<AttributiveClausesContentProps> = ({ onBack, themeColor, onCompleteAll }) => {
     const [voices, setVoices] = useState<SpeechSynthesisVoice[]>([]);
     const [activeExampleIndex, setActiveExampleIndex] = useState(0);
+    const [practiceMode, setPracticeMode] = useState<'build' | 'fill'>('build');
 
     useEffect(() => {
         const loadVoices = () => setVoices(window.speechSynthesis.getVoices());
@@ -244,16 +255,47 @@ export const AttributiveClausesContent: React.FC<AttributiveClausesContentProps>
                 )}
             </ExamplesSection>
             
-            <SentenceBuilderPractice
-                themeColor={themeColor}
-                onCompleteAll={onCompleteAll}
-                practiceData={practiceData}
-                title="🎯 练习：构建定语从句"
-                subtitle="用下面的词块组成句子"
-                completionTitle="🎉 Perfect!"
-                completionMessage="你已经掌握了如何使用定语从句！"
-                nextButtonText="返回从句列表"
-            />
+            <PracticeModeSwitcher>
+                <ModeButton 
+                    isActive={practiceMode === 'build'} 
+                    onClick={() => setPracticeMode('build')}
+                    themeColor={themeColor}
+                >
+                    组句练习
+                </ModeButton>
+                <ModeButton 
+                    isActive={practiceMode === 'fill'} 
+                    onClick={() => setPracticeMode('fill')}
+                    themeColor={themeColor}
+                >
+                    填空练习
+                </ModeButton>
+            </PracticeModeSwitcher>
+            
+            {practiceMode === 'build' ? (
+                <SentenceBuilderPractice
+                    themeColor={themeColor}
+                    onCompleteAll={onCompleteAll}
+                    practiceData={buildPracticeData}
+                    title="🎯 练习：构建定语从句"
+                    subtitle="用下面的词块组成句子"
+                    completionTitle="🎉 Perfect!"
+                    completionMessage="你已经掌握了如何使用定语从句！"
+                    nextButtonText="返回从句列表"
+                />
+            ) : (
+                <FillInTheBlankPractice
+                    themeColor={themeColor}
+                    onCompleteAll={onCompleteAll}
+                    practiceData={fillPracticeData}
+                    title="🎯 练习：定语从句填空"
+                    subtitle="选择正确的引导词"
+                    completionTitle="🎉 Perfect!"
+                    completionMessage="你已经掌握了如何使用定语从句！"
+                    nextButtonText="返回从句列表"
+                />
+            )}
+
 
         </LessonContainer>
     );

@@ -36,6 +36,9 @@ import {
     popIn,
 } from '../Structures/SVOContent.styles';
 import { SentenceBuilderPractice } from '../../practice/SentenceBuilderPractice';
+import { FillInTheBlankPractice } from '../../practice/FillInTheBlankPractice';
+import { PracticeModeSwitcher, ModeButton } from '../../practice/SentenceBuilderPractice.styles';
+
 
 interface ObjectClausesContentProps {
     onBack: () => void;
@@ -43,14 +46,22 @@ interface ObjectClausesContentProps {
     onCompleteAll: () => void;
 }
 
-const practiceData = [
+const buildPracticeData = [
     { words: [{ en: 'I', cn: '我' }, { en: 'think', cn: '认为' }, { en: 'that', cn: '' }, { en: 'he', cn: '他' }, { en: 'is honest', cn: '是诚实的' }], correct: ['I', 'think', 'that', 'he', 'is honest'], chinese: '我认为他是诚实的。' },
     { words: [{ en: 'She', cn: '她' }, { en: 'said', cn: '说' }, { en: 'that', cn: '' }, { en: 'she', cn: '她' }, { en: 'was tired', cn: '累了' }], correct: ['She', 'said', 'that', 'she', 'was tired'], chinese: '她说她累了。' },
     { words: [{ en: 'Do you know', cn: '你知道' }, { en: 'what', cn: '什么' }, { en: 'he', cn: '他' }, { en: 'wants', cn: '想要' }], correct: ['Do you know', 'what', 'he', 'wants'], chinese: '你知道他想要什么吗？' },
     { words: [{ en: 'I wonder', cn: '我想知道' }, { en: 'if', cn: '是否' }, { en: 'it', cn: '它' }, { en: 'will rain', cn: '会下雨' }], correct: ['I wonder', 'if', 'it', 'will rain'], chinese: '我想知道是否会下雨。' },
     { words: [{ en: 'Tell me', cn: '告诉我' }, { en: 'where', cn: '哪里' }, { en: 'you', cn: '你' }, { en: 'live', cn: '住' }], correct: ['Tell me', 'where', 'you', 'live'], chinese: '告诉我你住在哪里。' },
     { words: [{ en: 'Nobody knows', cn: '没人知道' }, { en: 'why', cn: '为什么' }, { en: 'he', cn: '他' }, { en: 'is angry', cn: '生气' }], correct: ['Nobody knows', 'why', 'he', 'is angry'], chinese: '没人知道他为什么生气。' },
-    { words: [{ en: 'I don\'t know', cn: '我不知道' }, { en: 'who', cn: '谁' }, { en: 'took', cn: '拿了' }, { en: 'my pen', cn: '我的笔' }], correct: ['I don\'t know', 'who', 'took', 'my pen'], chinese: '我不知道谁拿了我的笔。' },
+    { words: [{ en: "I don't know", cn: '我不知道' }, { en: 'who', cn: '谁' }, { en: 'took', cn: '拿了' }, { en: 'my pen', cn: '我的笔' }], correct: ["I don't know", 'who', 'took', 'my pen'], chinese: '我不知道谁拿了我的笔。' },
+];
+
+const fillPracticeData = [
+    { sentenceParts: ["I think ", " he is honest."], choices: [{text: "that", isCorrect: true}, {text: "if", isCorrect: false}, {text: "what", isCorrect: false}], chineseHint: "我认为他是诚实的。" },
+    { sentenceParts: ["She said ", " she was tired."], choices: [{text: "that", isCorrect: true}, {text: "who", isCorrect: false}, {text: "why", isCorrect: false}], chineseHint: "她说她累了。" },
+    { sentenceParts: ["Do you know ", " he wants?"], choices: [{text: "what", isCorrect: true}, {text: "who", isCorrect: false}, {text: "if", isCorrect: false}], chineseHint: "你知道他想要什么吗？" },
+    { sentenceParts: ["I wonder ", " it will rain."], choices: [{text: "if", isCorrect: true}, {text: "that", isCorrect: false}, {text: "what", isCorrect: false}], chineseHint: "我想知道是否会下雨。" },
+    { sentenceParts: ["Tell me ", " you live."], choices: [{text: "where", isCorrect: true}, {text: "who", isCorrect: false}, {text: "that", isCorrect: false}], chineseHint: "告诉我你住在哪里。" },
 ];
 
 const normalExamples = [
@@ -83,10 +94,10 @@ const normalExamples = [
     },
     {
         id: 'ex4',
-        title: 'I don\'t understand...',
-        english: 'I don\'t understand why she is upset.',
+        title: "I don't understand...",
+        english: "I don't understand why she is upset.",
         chinese: '我不明白她为什么不高兴。',
-        mainClause: { subject: 'I', verb: 'don\'t understand' },
+        mainClause: { subject: 'I', verb: "don't understand" },
         objectClause: { connector: 'why', subject: 'she', verb: 'is', complement: 'upset' },
         core: '动词 `understand` 的宾语是什么？是 `why she is upset` 这个从句，解释了不明白的内容。'
     },
@@ -146,6 +157,7 @@ export const ObjectClausesContent: React.FC<ObjectClausesContentProps> = ({ onBa
     const [voices, setVoices] = useState<SpeechSynthesisVoice[]>([]);
     const [activeNormalExampleIndex, setActiveNormalExampleIndex] = useState(0);
     const [activeSpecialExampleIndex, setActiveSpecialExampleIndex] = useState(0);
+    const [practiceMode, setPracticeMode] = useState<'build' | 'fill'>('build');
 
     useEffect(() => {
         const loadVoices = () => {
@@ -312,16 +324,46 @@ export const ObjectClausesContent: React.FC<ObjectClausesContentProps> = ({ onBa
                 {activeSpecialExample && renderExample(activeSpecialExample)}
             </ExamplesSection>
             
-            <SentenceBuilderPractice
-                themeColor={themeColor}
-                onCompleteAll={onCompleteAll}
-                practiceData={practiceData}
-                title="🎯 练习：构建宾语从句"
-                subtitle="用下面的词组成句子"
-                completionTitle="🎉 Awesome!"
-                completionMessage="你已经掌握了宾语从句！"
-                nextButtonText="返回从句列表"
-            />
+            <PracticeModeSwitcher>
+                <ModeButton 
+                    isActive={practiceMode === 'build'} 
+                    onClick={() => setPracticeMode('build')}
+                    themeColor={themeColor}
+                >
+                    组句练习
+                </ModeButton>
+                <ModeButton 
+                    isActive={practiceMode === 'fill'} 
+                    onClick={() => setPracticeMode('fill')}
+                    themeColor={themeColor}
+                >
+                    填空练习
+                </ModeButton>
+            </PracticeModeSwitcher>
+
+            {practiceMode === 'build' ? (
+                <SentenceBuilderPractice
+                    themeColor={themeColor}
+                    onCompleteAll={onCompleteAll}
+                    practiceData={buildPracticeData}
+                    title="🎯 练习：构建宾语从句"
+                    subtitle="用下面的词组成句子"
+                    completionTitle="🎉 Awesome!"
+                    completionMessage="你已经掌握了宾语从句！"
+                    nextButtonText="返回从句列表"
+                />
+            ) : (
+                <FillInTheBlankPractice
+                    themeColor={themeColor}
+                    onCompleteAll={onCompleteAll}
+                    practiceData={fillPracticeData}
+                    title="🎯 练习：宾语从句填空"
+                    subtitle="选择正确的引导词"
+                    completionTitle="🎉 Awesome!"
+                    completionMessage="你已经掌握了宾语从句！"
+                    nextButtonText="返回从句列表"
+                />
+            )}
 
         </LessonContainer>
     );

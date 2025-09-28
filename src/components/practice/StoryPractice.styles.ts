@@ -127,6 +127,14 @@ export const ChoiceButton = styled.button<{ themeColor: string; isShaking: boole
         transform: scale(1.05);
     }
 
+    &:disabled {
+        background-color: #f1f3f4;
+        border-color: #dee2e6;
+        color: #adb5bd;
+        cursor: not-allowed;
+        transform: none;
+    }
+
     ${props => props.isShaking && css`
         animation: ${shake} 0.6s ease;
         background-color: #fee2e2;
@@ -224,4 +232,15 @@ export const CorrectSticker = styled.div<{ themeColor: string }>`
         padding: 12px 24px;
         top: 15%;
     }
+`;
+
+export const BlankPlaceholder = styled.span`
+    display: inline-block;
+    background: #e9ecef;
+    color: #adb5bd;
+    padding: 2px 15px;
+    border-radius: 6px;
+    font-style: italic;
+    font-weight: bold;
+    user-select: none;
 `;

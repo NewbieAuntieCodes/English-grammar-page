@@ -25,6 +25,8 @@ import {
     popIn,
 } from '../Structures/SVOContent.styles';
 import { SentenceBuilderPractice } from '../../practice/SentenceBuilderPractice';
+import { FillInTheBlankPractice } from '../../practice/FillInTheBlankPractice';
+import { PracticeModeSwitcher, ModeButton } from '../../practice/SentenceBuilderPractice.styles';
 
 interface AdverbialClausesContentProps {
     onBack: () => void;
@@ -33,12 +35,20 @@ interface AdverbialClausesContentProps {
 }
 
 // Data for practice
-const practiceData = [
+const buildPracticeData = [
     { words: [{ en: 'He', cn: '他' }, { en: 'was late', cn: '迟到了' }, { en: 'because', cn: '因为' }, { en: 'he missed', cn: '他错过了' }, { en: 'the bus', cn: '公交车' }], correct: ['He', 'was late', 'because', 'he missed', 'the bus'], chinese: '他因为错过了公交车而迟到。' },
     { words: [{ en: 'If it rains tomorrow,', cn: '如果明天下雨' }, { en: 'we will', cn: '我们就会' }, { en: 'stay home', cn: '待在家里' }], correct: ['If it rains tomorrow,', 'we will', 'stay home'], chinese: '如果明天下雨，我们就待在家里。' },
     { words: [{ en: 'She will', cn: '她会' }, { en: 'call you', cn: '给你打电话' }, { en: 'when', cn: '当' }, { en: 'she arrives', cn: '她到达时' }], correct: ['She will', 'call you', 'when', 'she arrives'], chinese: '她到达时会给你打电话。' },
     { words: [{ en: 'Although', cn: '虽然' }, { en: 'he was tired,', cn: '他很累' }, { en: 'he kept', cn: '他仍继续' }, { en: 'working', cn: '工作' }], correct: ['Although', 'he was tired,', 'he kept', 'working'], chinese: '虽然他很累，但他仍继续工作。' },
     { words: [{ en: 'You can sit', cn: '你可以坐' }, { en: 'wherever', cn: '任何地方' }, { en: 'you like', cn: '你喜欢' }], correct: ['You can sit', 'wherever', 'you like'], chinese: '你可以坐在任何你喜欢的地方。' },
+];
+
+const fillPracticeData = [
+    { sentenceParts: ["He was late ", " he missed the bus."], choices: [{text: "because", isCorrect: true}, {text: "if", isCorrect: false}, {text: "when", isCorrect: false}], chineseHint: "他因为错过了公交车而迟到。" },
+    { sentenceParts: ["", " it rains tomorrow, we will stay home."], choices: [{text: "If", isCorrect: true}, {text: "When", isCorrect: false}, {text: "Although", isCorrect: false}], chineseHint: "如果明天下雨，我们就待在家里。" },
+    { sentenceParts: ["She will call you ", " she arrives."], choices: [{text: "when", isCorrect: true}, {text: "because", isCorrect: false}, {text: "if", isCorrect: false}], chineseHint: "她到达时会给你打电话。" },
+    { sentenceParts: ["", " he was tired, he kept working."], choices: [{text: "Although", isCorrect: true}, {text: "If", isCorrect: false}, {text: "Because", isCorrect: false}], chineseHint: "虽然他很累，但他仍继续工作。" },
+    { sentenceParts: ["You can sit ", " you like."], choices: [{text: "wherever", isCorrect: true}, {text: "whatever", isCorrect: false}, {text: "whenever", isCorrect: false}], chineseHint: "你可以坐在任何你喜欢的地方。" },
 ];
 
 // Data for examples
@@ -114,6 +124,7 @@ const MainClausePart = styled.span<{ themeColor: string }>`
 export const AdverbialClausesContent: React.FC<AdverbialClausesContentProps> = ({ onBack, themeColor, onCompleteAll }) => {
     const [voices, setVoices] = useState<SpeechSynthesisVoice[]>([]);
     const [activeExampleIndex, setActiveExampleIndex] = useState(0);
+    const [practiceMode, setPracticeMode] = useState<'build' | 'fill'>('build');
 
     useEffect(() => {
         const loadVoices = () => setVoices(window.speechSynthesis.getVoices());
@@ -197,16 +208,46 @@ export const AdverbialClausesContent: React.FC<AdverbialClausesContentProps> = (
                 )}
             </ExamplesSection>
             
-            <SentenceBuilderPractice
-                themeColor={themeColor}
-                onCompleteAll={onCompleteAll}
-                practiceData={practiceData}
-                title="🎯 练习：构建状语从句"
-                subtitle="用下面的词块组成句子"
-                completionTitle="🎉 Excellent!"
-                completionMessage="你已经掌握了如何使用状语从句！"
-                nextButtonText="学习主语从句 →"
-            />
+            <PracticeModeSwitcher>
+                <ModeButton 
+                    isActive={practiceMode === 'build'} 
+                    onClick={() => setPracticeMode('build')}
+                    themeColor={themeColor}
+                >
+                    组句练习
+                </ModeButton>
+                <ModeButton 
+                    isActive={practiceMode === 'fill'} 
+                    onClick={() => setPracticeMode('fill')}
+                    themeColor={themeColor}
+                >
+                    填空练习
+                </ModeButton>
+            </PracticeModeSwitcher>
+
+            {practiceMode === 'build' ? (
+                <SentenceBuilderPractice
+                    themeColor={themeColor}
+                    onCompleteAll={onCompleteAll}
+                    practiceData={buildPracticeData}
+                    title="🎯 练习：构建状语从句"
+                    subtitle="用下面的词块组成句子"
+                    completionTitle="🎉 Excellent!"
+                    completionMessage="你已经掌握了如何使用状语从句！"
+                    nextButtonText="学习主语从句 →"
+                />
+            ) : (
+                <FillInTheBlankPractice
+                    themeColor={themeColor}
+                    onCompleteAll={onCompleteAll}
+                    practiceData={fillPracticeData}
+                    title="🎯 练习：状语从句填空"
+                    subtitle="选择正确的引导词"
+                    completionTitle="🎉 Excellent!"
+                    completionMessage="你已经掌握了如何使用状语从句！"
+                    nextButtonText="学习主语从句 →"
+                />
+            )}
 
         </LessonContainer>
     );

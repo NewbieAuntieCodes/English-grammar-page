@@ -3,13 +3,14 @@
  * SPDX-License-Identifier: Apache-2.0
 */
 import React, { useState, useEffect } from 'react';
+// FIX: Import 'styled' from 'styled-components' to define styled components.
+import styled from 'styled-components';
 import {
     PracticeSection,
     PracticeHeader,
     PracticeTitle,
     PracticeSubtitle,
     StoryPanel,
-    PromptText,
     ChoicesContainer,
     ChoiceButton,
     ProgressContainer,
@@ -21,21 +22,23 @@ import {
     CorrectSticker,
     NextChapterButton,
 } from './StoryPractice.styles';
+import { ChineseHint } from './SentenceBuilderPractice.styles';
 
 interface Choice {
     text: string;
     isCorrect: boolean;
 }
 
-interface StoryStep {
-    prompt: string;
+interface FillPracticeData {
+    sentenceParts: [string, string];
     choices: Choice[];
+    chineseHint: string;
 }
 
-interface StoryPracticeProps {
+interface FillInTheBlankPracticeProps {
     themeColor: string;
     onCompleteAll: () => void;
-    storyData: StoryStep[];
+    practiceData: FillPracticeData[];
     title: string;
     subtitle: string;
     completionTitle: string;
@@ -43,10 +46,27 @@ interface StoryPracticeProps {
     nextButtonText: string;
 }
 
-export const StoryPractice: React.FC<StoryPracticeProps> = ({
+const BlankPlaceholder = styled.span`
+    display: inline-block;
+    background: #e9ecef;
+    color: #adb5bd;
+    padding: 2px 15px;
+    border-radius: 6px;
+    font-style: italic;
+    font-weight: bold;
+    user-select: none;
+`;
+
+const CorrectAnswerSpan = styled(BlankPlaceholder)`
+    background: rgba(46, 204, 113, 0.1);
+    color: #27ae60;
+    font-style: normal;
+`;
+
+export const FillInTheBlankPractice: React.FC<FillInTheBlankPracticeProps> = ({
     themeColor,
     onCompleteAll,
-    storyData,
+    practiceData,
     title,
     subtitle,
     completionTitle,
@@ -54,21 +74,18 @@ export const StoryPractice: React.FC<StoryPracticeProps> = ({
     nextButtonText,
 }) => {
     const [stepIndex, setStepIndex] = useState(0);
-    const [completedStory, setCompletedStory] = useState('');
     const [shakingButtonIndex, setShakingButtonIndex] = useState<number | null>(null);
     const [showCorrectSticker, setShowCorrectSticker] = useState(false);
     const [isAnswered, setIsAnswered] = useState(false);
 
-    // Reset state when the story data changes (i.e., user selects a new story)
     useEffect(() => {
         setStepIndex(0);
-        setCompletedStory('');
         setIsAnswered(false);
-    }, [storyData]);
+    }, [practiceData]);
 
-    const currentStep = storyData[stepIndex];
-    const isCompleted = stepIndex >= storyData.length - 1;
-    
+    const currentStep = practiceData[stepIndex];
+    const isCompleted = stepIndex >= practiceData.length;
+
     const handleChoice = (choice: Choice, index: number) => {
         if (isAnswered) return;
 
@@ -77,17 +94,8 @@ export const StoryPractice: React.FC<StoryPracticeProps> = ({
             setShowCorrectSticker(true);
 
             setTimeout(() => {
-                const newStoryPart = currentStep.prompt.replace('...', ' ' + choice.text);
-                let updatedStory = (completedStory + ' ' + newStoryPart).trim();
-
-                // If this is the last interactive step, add the final concluding sentence.
-                if (stepIndex === storyData.length - 2) {
-                    updatedStory += ' ' + storyData[storyData.length - 1].prompt;
-                }
-
-                setCompletedStory(updatedStory);
                 setStepIndex(prev => prev + 1);
-                setIsAnswered(false); // Reset for next question
+                setIsAnswered(false);
             }, 1200);
 
             setTimeout(() => {
@@ -99,7 +107,7 @@ export const StoryPractice: React.FC<StoryPracticeProps> = ({
         }
     };
     
-    const progress = isCompleted ? 100 : (stepIndex / (storyData.length - 1)) * 100;
+    const progress = isCompleted ? 100 : (stepIndex / practiceData.length) * 100;
 
     return (
         <PracticeSection themeColor={themeColor}>
@@ -107,7 +115,6 @@ export const StoryPractice: React.FC<StoryPracticeProps> = ({
             {isCompleted ? (
                 <CompletionContainer>
                     <CompletionTitle>{completionTitle}</CompletionTitle>
-                    <StoryPanel>{completedStory.trim()}</StoryPanel>
                     <CompletionMessage>{completionMessage}</CompletionMessage>
                     <NextChapterButton onClick={onCompleteAll} themeColor={themeColor}>
                         {nextButtonText}
@@ -123,8 +130,15 @@ export const StoryPractice: React.FC<StoryPracticeProps> = ({
                             </PracticeHeader>
                             
                             <StoryPanel>
-                                {completedStory} <PromptText>{currentStep.prompt}</PromptText>
+                                {currentStep.sentenceParts[0]}
+                                {isAnswered ? 
+                                    <CorrectAnswerSpan>{currentStep.choices.find(c => c.isCorrect)?.text}</CorrectAnswerSpan> 
+                                    : <BlankPlaceholder>[...]</BlankPlaceholder>
+                                }
+                                {currentStep.sentenceParts[1]}
                             </StoryPanel>
+
+                            <ChineseHint>{currentStep.chineseHint}</ChineseHint>
 
                             <ChoicesContainer>
                                 {currentStep.choices.map((choice, index) => (
