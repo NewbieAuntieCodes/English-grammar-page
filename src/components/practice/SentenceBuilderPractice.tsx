@@ -22,11 +22,6 @@ import {
     CompletionTitle,
     CompletionMessage,
     NextChapterButton,
-    PracticeModeSwitcher,
-    ModeButton,
-    TranslationContainer,
-    RevealedAnswer,
-    CheckButton,
 } from './SentenceBuilderPractice.styles';
 
 interface WordData {
@@ -68,14 +63,10 @@ export const SentenceBuilderPractice: React.FC<SentenceBuilderPracticeProps> = (
     nextButtonText,
 }) => {
     const [practiceIndex, setPracticeIndex] = useState(0);
-    const [practiceMode, setPracticeMode] = useState<'build' | 'translate'>('build');
     
     // State for 'build' mode
     const [bankWords, setBankWords] = useState<WordState[]>([]);
     const [builtSentence, setBuiltSentence] = useState<WordState[]>([]);
-
-    // State for 'translate' mode
-    const [isAnswerRevealed, setIsAnswerRevealed] = useState(false);
     
     // Shared state
     const [feedback, setFeedback] = useState<{ type: 'incorrect'; message: React.ReactNode } | null>(null);
@@ -96,8 +87,7 @@ export const SentenceBuilderPractice: React.FC<SentenceBuilderPracticeProps> = (
         setBankWords(shuffledWords);
         setBuiltSentence([]);
         setFeedback(null);
-        setIsAnswerRevealed(false);
-    }, [practiceIndex, practiceMode, shuffledWords]);
+    }, [practiceIndex, shuffledWords]);
 
     const handleAddWord = (wordItem: WordState) => {
         setBuiltSentence(prev => [...prev, wordItem]);
@@ -160,21 +150,13 @@ export const SentenceBuilderPractice: React.FC<SentenceBuilderPracticeProps> = (
              }, 1500);
         }
     }, [builtSentence, currentPractice, handleNextPractice, handleResetPractice]);
-
-    const handleTranslateAction = () => {
-        if (isAnswerRevealed) {
-            handleNextPractice();
-        } else {
-            setIsAnswerRevealed(true);
-        }
-    };
     
     useEffect(() => {
-        if (practiceMode === 'build' && bankWords.length === 0 && builtSentence.length > 0 && !allPracticesCompleted) {
+        if (bankWords.length === 0 && builtSentence.length > 0 && !allPracticesCompleted) {
             const timer = setTimeout(handleCheckAnswer, 200);
             return () => clearTimeout(timer);
         }
-    }, [practiceMode, bankWords.length, builtSentence.length, handleCheckAnswer, allPracticesCompleted]);
+    }, [bankWords.length, builtSentence.length, handleCheckAnswer, allPracticesCompleted]);
 
     return (
         <PracticeSection themeColor={themeColor}>
@@ -190,68 +172,36 @@ export const SentenceBuilderPractice: React.FC<SentenceBuilderPracticeProps> = (
             ) : (
                 currentPractice && (
                     <>
-                        <PracticeTitle themeColor={themeColor}>{title}</PracticeTitle>
+                        <PracticeTitle>{title}</PracticeTitle>
                         <PracticeSubtitle>{subtitle}</PracticeSubtitle>
                         
-                        <PracticeModeSwitcher>
-                            <ModeButton 
-                                isActive={practiceMode === 'build'} 
-                                onClick={() => setPracticeMode('build')}
-                                themeColor={themeColor}
-                            >
-                                组句练习
-                            </ModeButton>
-                            <ModeButton 
-                                isActive={practiceMode === 'translate'} 
-                                onClick={() => setPracticeMode('translate')}
-                                themeColor={themeColor}
-                            >
-                                翻译练习
-                            </ModeButton>
-                        </PracticeModeSwitcher>
-
                         <ChineseHint>
                             {currentPractice.chinese}
                         </ChineseHint>
                         
-                        {practiceMode === 'build' ? (
-                            <>
-                                <WordBank>
-                                    {bankWords.map(item => (
-                                        <WordItem key={item.id} onClick={() => handleAddWord(item)}>
+                        <>
+                            <WordBank>
+                                {bankWords.map(item => (
+                                    <WordItem key={item.id} onClick={() => handleAddWord(item)}>
+                                        <WordEnglish>{item.word}</WordEnglish>
+                                    </WordItem>
+                                ))}
+                            </WordBank>
+                            
+                            <SentenceBuilder themeColor={themeColor} isShaking={isShaking}>
+                                {builtSentence.length === 0 ? (
+                                    <BuilderPlaceholder>Click words from the bank to add them here</BuilderPlaceholder>
+                                ) : (
+                                    builtSentence.map(item => (
+                                        <BuilderWord key={item.id} onClick={() => handleRemoveWord(item)} title="Click to remove" themeColor={themeColor}>
                                             <WordEnglish>{item.word}</WordEnglish>
-                                        </WordItem>
-                                    ))}
-                                </WordBank>
-                                
-                                <SentenceBuilder themeColor={themeColor} isShaking={isShaking}>
-                                    {builtSentence.length === 0 ? (
-                                        <BuilderPlaceholder>Click words from the bank to add them here</BuilderPlaceholder>
-                                    ) : (
-                                        builtSentence.map(item => (
-                                            <BuilderWord key={item.id} onClick={() => handleRemoveWord(item)} title="Click to remove" themeColor={themeColor}>
-                                                <WordEnglish>{item.word}</WordEnglish>
-                                            </BuilderWord>
-                                        ))
-                                    )}
-                                </SentenceBuilder>
-                            </>
-                        ) : (
-                            <TranslationContainer>
-                                <RevealedAnswer isVisible={isAnswerRevealed}>
-                                    {isAnswerRevealed ? currentPractice.correct.join(' ') : ''}
-                                </RevealedAnswer>
-                                <CheckButton 
-                                    themeColor={themeColor} 
-                                    onClick={handleTranslateAction}
-                                >
-                                    {isAnswerRevealed ? 'Next' : 'Check'}
-                                </CheckButton>
-                            </TranslationContainer>
-                        )}
+                                        </BuilderWord>
+                                    ))
+                                )}
+                            </SentenceBuilder>
+                        </>
 
-
-                        {practiceMode === 'build' && feedback && feedback.type === 'incorrect' && (
+                        {feedback && feedback.type === 'incorrect' && (
                             <Feedback type={feedback.type}>
                                 {feedback.message}
                             </Feedback>

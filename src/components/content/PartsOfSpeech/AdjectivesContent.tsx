@@ -21,6 +21,8 @@ const practiceData = [
     { sentence: 'This is a red apple.', targetWords: ['red'], prompt: '形容词 (Adjective)', chinese: "这是一个红苹果。" },
     { sentence: 'I am happy.', targetWords: ['happy'], prompt: '形容词 (Adjective)', chinese: "我很开心。" },
     { sentence: 'The little cat is cute.', targetWords: ['little', 'cute'], prompt: '形容词 (Adjective)', chinese: "这只小猫很可爱。" },
+    { sentence: 'The beautiful flower is in the garden.', targetWords: ['beautiful'], prompt: '形容词 (Adjective)', chinese: "美丽的花在花园里。" },
+    { sentence: 'This soup is very hot.', targetWords: ['hot'], prompt: '形容词 (Adjective)', chinese: "这个汤很烫。" },
 ];
 
 

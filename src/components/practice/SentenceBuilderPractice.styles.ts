@@ -49,46 +49,48 @@ const shake = keyframes`
 // --- Practice Section ---
 
 export const PracticeSection = styled.div<{ themeColor: string }>`
-    background: linear-gradient(to bottom, rgba(${props => hexToRgb(props.themeColor)}, 0.12), rgba(${props => hexToRgb(props.themeColor)}, 0.03));
-    border-radius: 15px;
-    padding: 30px;
+    background-color: #FFF5F5;
+    border-radius: 20px;
+    padding: 30px 40px;
     margin: 30px 0;
     min-height: 380px;
+    border: 1px solid #FEE2E2;
 `;
 
-export const PracticeTitle = styled.h4<{ themeColor: string }>`
+export const PracticeTitle = styled.h4`
     font-size: 1.3em;
     font-weight: bold;
-    color: ${props => props.themeColor};
+    color: #E11D48;
     margin-bottom: 5px;
+    text-align: center;
 `;
 
 export const PracticeSubtitle = styled.div`
-    color: #6b7280;
+    color: #4B5563;
     font-size: 0.9em;
-    margin-bottom: 15px;
+    margin-bottom: 25px;
+    text-align: center;
 `;
 
 export const PracticeModeSwitcher = styled.div`
     display: flex;
     justify-content: center;
-    background-color: #e9ecef;
-    border-radius: 25px;
-    padding: 5px;
-    margin-bottom: 25px;
-    max-width: 300px;
+    background-color: #F3F4F6;
+    border-radius: 9999px;
+    padding: 6px;
+    margin-bottom: 30px;
+    width: fit-content;
     margin-left: auto;
     margin-right: auto;
 `;
 
 export const ModeButton = styled.button<{ isActive: boolean, themeColor: string }>`
-    flex: 1;
-    padding: 10px 15px;
+    padding: 10px 24px;
     border: none;
-    border-radius: 20px;
+    border-radius: 9999px;
     cursor: pointer;
     font-size: 0.9em;
-    font-weight: bold;
+    font-weight: 600;
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     white-space: nowrap;
     
@@ -96,13 +98,13 @@ export const ModeButton = styled.button<{ isActive: boolean, themeColor: string 
         ? css`
             background-color: ${props.themeColor};
             color: white;
-            box-shadow: 0 4px 10px rgba(${hexToRgb(props.themeColor)}, 0.25);
+            box-shadow: 0 4px 14px 0 rgba(0, 0, 0, 0.1);
         `
         : css`
             background-color: transparent;
-            color: #718096;
+            color: #6B7280;
             &:hover {
-                background-color: #dfe3e6;
+                background-color: #E5E7EB;
             }
         `
     }
@@ -110,38 +112,46 @@ export const ModeButton = styled.button<{ isActive: boolean, themeColor: string 
 
 
 export const ChineseHint = styled.div`
-    color: #4a5568;
-    margin-bottom: 20px;
-    font-size: 1.1em;
+    color: #1F2937;
+    margin-bottom: 30px;
+    font-size: 1.5em;
     text-align: center;
     font-weight: 500;
 `;
 
 export const WordBank = styled.div`
     background: white;
-    border: 2px solid #e5e7eb;
+    border: 1px solid #E5E7EB;
     border-radius: 12px;
     padding: 20px;
     margin: 20px 0;
-    min-height: 80px;
+    min-height: 85px;
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 12px;
     align-items: center;
+    justify-content: center;
 `;
 
 const BaseWord = styled.div`
-    background: #1E88E5;
+    background: #3B82F6;
     color: white;
-    padding: 10px 18px;
-    border-radius: 25px;
+    padding: 10px 22px;
+    border-radius: 9999px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
     user-select: none;
     display: flex;
     align-items: center;
     justify-content: center;
     line-height: 1.3;
+    font-weight: 500;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
 `;
 
 export const WordItem = styled(BaseWord)``;
@@ -152,8 +162,9 @@ export const WordEnglish = styled.span`
 `;
 
 export const SentenceBuilder = styled(WordBank)<{ themeColor: string; isShaking?: boolean; }>`
-    border-color: ${props => props.themeColor};
-    min-height: 80px;
+    border: 2px solid #F43F5E;
+    min-height: 85px;
+    box-shadow: 0 0 10px rgba(244, 63, 94, 0.2);
     ${props => props.isShaking && css`
         animation: ${shake} 0.82s cubic-bezier(.36,.07,.19,.97) both;
     `}
@@ -165,60 +176,7 @@ export const BuilderPlaceholder = styled.span`
 `;
 
 export const BuilderWord = styled(BaseWord)<{ themeColor: string }>`
-    background: ${props => props.themeColor};
-`;
-
-export const TranslationContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    margin-top: 20px;
-`;
-
-export const RevealedAnswer = styled.div<{ isVisible: boolean }>`
-    background: #fff;
-    border: 2px solid #e5e7eb;
-    border-radius: 12px;
-    padding: 20px;
-    margin-top: 20px;
-    min-height: 85px; /* Set a min-height to ensure consistent space */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.3em;
-    color: #2d3748;
-    text-align: center;
-    font-weight: 500;
-    width: 100%;
-    transition: opacity 0.3s ease-in-out;
-    opacity: ${props => (props.isVisible ? 1 : 0)};
-`;
-
-
-export const CheckButton = styled.button<{ themeColor: string }>`
-    background: ${props => props.themeColor};
-    color: white;
-    border: none;
-    padding: 12px 40px;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-weight: bold;
-    font-size: 1.1em;
-    box-shadow: 0 5px 15px rgba(${props => hexToRgb(props.themeColor)}, 0.4);
-
-    &:hover {
-        transform: scale(1.05) translateY(-2px);
-        box-shadow: 0 8px 20px rgba(${props => hexToRgb(props.themeColor)}, 0.5);
-    }
-    
-    &:disabled {
-        background-color: #ccc;
-        box-shadow: none;
-        cursor: not-allowed;
-        transform: none;
-    }
+     background: #3B82F6;
 `;
 
 export const Feedback = styled.div<{ type: 'incorrect' }>`
@@ -237,19 +195,19 @@ export const Feedback = styled.div<{ type: 'incorrect' }>`
 export const ProgressDots = styled.div`
     display: flex;
     justify-content: center;
-    gap: 10px;
+    gap: 12px;
     margin-top: 30px;
 `;
 
 export const ProgressDot = styled.div<{ isActive: boolean; themeColor: string }>`
-    width: 12px;
-    height: 12px;
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
-    background: #d1d5db;
+    background: #D1D5DB;
     transition: all 0.3s ease;
     ${props => props.isActive && css`
-        background: ${props.themeColor};
-        transform: scale(1.3);
+        background: #F43F5E;
+        transform: scale(1.2);
     `}
 `;
 

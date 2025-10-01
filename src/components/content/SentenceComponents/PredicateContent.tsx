@@ -21,6 +21,8 @@ const practiceData = [
     { sentence: 'He is happy.', targetWords: ['is'], prompt: '谓语 (Predicate)', chinese: '他很开心。' },
     { sentence: 'They play games.', targetWords: ['play'], prompt: '谓语 (Predicate)', chinese: '他们玩游戏。' },
     { sentence: 'The baby sleeps.', targetWords: ['sleeps'], prompt: '谓语 (Predicate)', chinese: '宝宝在睡觉。' },
+    { sentence: 'The children laughed.', targetWords: ['laughed'], prompt: '谓语 (Predicate)', chinese: '孩子们笑了。' },
+    { sentence: 'I feel tired.', targetWords: ['feel'], prompt: '谓语 (Predicate)', chinese: '我感觉累了。' },
 ];
 
 

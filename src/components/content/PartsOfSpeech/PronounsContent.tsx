@@ -22,6 +22,8 @@ const practiceData = [
     { sentence: 'Do you know him?', targetWords: ['you', 'him'], prompt: '代词 (Pronoun)', chinese: "你认识他吗？" },
     { sentence: 'This is mine.', targetWords: ['mine'], prompt: '代词 (Pronoun)', chinese: "这是我的。" },
     { sentence: 'It is a sunny day.', targetWords: ['It'], prompt: '代词 (Pronoun)', chinese: "这是一个晴天。" },
+    { sentence: 'We are students.', targetWords: ['We'], prompt: '代词 (Pronoun)', chinese: "我们是学生。" },
+    { sentence: 'The book is yours.', targetWords: ['yours'], prompt: '代词 (Pronoun)', chinese: "这本书是你的。" },
 ];
 
 export const PronounsContent: React.FC<PronounsContentProps> = ({ onBack, themeColor, onCompleteAll }) => {

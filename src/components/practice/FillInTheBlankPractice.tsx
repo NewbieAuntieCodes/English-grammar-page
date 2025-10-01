@@ -2,8 +2,7 @@
  * @license
  * SPDX-License-Identifier: Apache-2.0
 */
-import React, { useState, useEffect } from 'react';
-// FIX: Import 'styled' from 'styled-components' to define styled components.
+import React, { useState, useEffect, useMemo } from 'react';
 import styled from 'styled-components';
 import {
     PracticeSection,
@@ -30,7 +29,7 @@ interface Choice {
 }
 
 interface FillPracticeData {
-    sentenceParts: [string, string];
+    sentenceParts: readonly [string, string];
     choices: Choice[];
     chineseHint: string;
 }
@@ -86,6 +85,11 @@ export const FillInTheBlankPractice: React.FC<FillInTheBlankPracticeProps> = ({
     const currentStep = practiceData[stepIndex];
     const isCompleted = stepIndex >= practiceData.length;
 
+    const shuffledChoices = useMemo(() => {
+        if (!currentStep) return [];
+        return [...currentStep.choices].sort(() => Math.random() - 0.5);
+    }, [currentStep]);
+
     const handleChoice = (choice: Choice, index: number) => {
         if (isAnswered) return;
 
@@ -96,7 +100,7 @@ export const FillInTheBlankPractice: React.FC<FillInTheBlankPracticeProps> = ({
             setTimeout(() => {
                 setStepIndex(prev => prev + 1);
                 setIsAnswered(false);
-            }, 1200);
+            }, 300);
 
             setTimeout(() => {
                 setShowCorrectSticker(false);
@@ -141,9 +145,9 @@ export const FillInTheBlankPractice: React.FC<FillInTheBlankPracticeProps> = ({
                             <ChineseHint>{currentStep.chineseHint}</ChineseHint>
 
                             <ChoicesContainer>
-                                {currentStep.choices.map((choice, index) => (
+                                {shuffledChoices.map((choice, index) => (
                                     <ChoiceButton 
-                                        key={index}
+                                        key={choice.text}
                                         themeColor={themeColor}
                                         onClick={() => handleChoice(choice, index)}
                                         isShaking={shakingButtonIndex === index}

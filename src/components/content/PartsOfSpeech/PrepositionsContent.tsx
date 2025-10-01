@@ -21,6 +21,8 @@ const practiceData = [
     { sentence: 'He lives in London.', targetWords: ['in'], prompt: '介词 (Preposition)', chinese: "他住在伦敦。" },
     { sentence: 'The book is under the bed.', targetWords: ['under'], prompt: '介词 (Preposition)', chinese: "书在床下。" },
     { sentence: "We will meet at 8 o'clock.", targetWords: ['at'], prompt: '介词 (Preposition)', chinese: "我们八点钟见。" },
+    { sentence: 'I am from China.', targetWords: ['from'], prompt: '介词 (Preposition)', chinese: "我来自中国。" },
+    { sentence: 'We will meet after school.', targetWords: ['after'], prompt: '介词 (Preposition)', chinese: "我们放学后见。" },
 ];
 
 export const PrepositionsContent: React.FC<PrepositionsContentProps> = ({ onBack, themeColor, onCompleteAll }) => {

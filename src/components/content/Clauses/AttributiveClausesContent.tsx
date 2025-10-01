@@ -81,14 +81,26 @@ const buildPracticeData = [
         correct: ['I miss the days', 'when', 'we were young'], 
         chinese: '我怀念我们年轻时的那些日子。' 
     },
+    { 
+        words: [{ en: 'The reason', cn: '那个原因' }, { en: 'why', cn: '(引导词)' }, { en: 'he was late', cn: '他迟到了' }, { en: 'is a secret', cn: '是个秘密' }], 
+        correct: ['The reason', 'why', 'he was late', 'is a secret'], 
+        chinese: '他迟到的原因是个秘密。' 
+    },
+    { 
+        words: [{ en: 'I like the movie', cn: '我喜欢那部电影' }, { en: 'which', cn: '(引导词)' }, { en: 'we watched', cn: '我们看了' }, { en: 'last night', cn: '昨晚' }], 
+        correct: ['I like the movie', 'which', 'we watched', 'last night'], 
+        chinese: '我喜欢我们昨晚看的那部电影。' 
+    },
 ];
 
 const fillPracticeData = [
-    { sentenceParts: ["The girl ", " is wearing a red hat is my sister."], choices: [{text: "who", isCorrect: true}, {text: "which", isCorrect: false}, {text: "where", isCorrect: false}], chineseHint: "那个戴着红帽子的女孩是我的妹妹。" },
-    { sentenceParts: ["This is the cake ", " I made."], choices: [{text: "that", isCorrect: true}, {text: "who", isCorrect: false}, {text: "when", isCorrect: false}], chineseHint: "这就是我做的那个蛋糕。" },
-    { sentenceParts: ["This is the park ", " we first met."], choices: [{text: "where", isCorrect: true}, {text: "which", isCorrect: false}, {text: "who", isCorrect: false}], chineseHint: "这是我们初次相遇的公园。" },
-    { sentenceParts: ["I miss the days ", " we were young."], choices: [{text: "when", isCorrect: true}, {text: "where", isCorrect: false}, {text: "that", isCorrect: false}], chineseHint: "我怀念我们年轻时的那些日子。" },
-    { sentenceParts: ["I like the movie ", " we watched last night."], choices: [{text: "which", isCorrect: true}, {text: "who", isCorrect: false}, {text: "when", isCorrect: false}], chineseHint: "我喜欢我们昨晚看的那部电影。" },
+    { sentenceParts: ["The girl ", " is wearing a red hat is my sister."] as const, choices: [{text: "who", isCorrect: true}, {text: "which", isCorrect: false}, {text: "where", isCorrect: false}], chineseHint: "那个戴着红帽子的女孩是我的妹妹。" },
+    { sentenceParts: ["This is the cake ", " I made."] as const, choices: [{text: "that", isCorrect: true}, {text: "who", isCorrect: false}, {text: "when", isCorrect: false}], chineseHint: "这就是我做的那个蛋糕。" },
+    { sentenceParts: ["This is the park ", " we first met."] as const, choices: [{text: "where", isCorrect: true}, {text: "which", isCorrect: false}, {text: "who", isCorrect: false}], chineseHint: "这是我们初次相遇的公园。" },
+    { sentenceParts: ["I miss the days ", " we were young."] as const, choices: [{text: "when", isCorrect: true}, {text: "where", isCorrect: false}, {text: "that", isCorrect: false}], chineseHint: "我怀念我们年轻时的那些日子。" },
+    { sentenceParts: ["I like the movie ", " we watched last night."] as const, choices: [{text: "which", isCorrect: true}, {text: "who", isCorrect: false}, {text: "when", isCorrect: false}], chineseHint: "我喜欢我们昨晚看的那部电影。" },
+    { sentenceParts: ["The reason ", " he was late is a secret."] as const, choices: [{text: "why", isCorrect: true}, {text: "who", isCorrect: false}, {text: "which", isCorrect: false}], chineseHint: "他迟到的原因是个秘密。" },
+    { sentenceParts: ["I know the man ", " car was stolen."] as const, choices: [{text: "whose", isCorrect: true}, {text: "who", isCorrect: false}, {text: "where", isCorrect: false}], chineseHint: "我认识那个车被偷了的男人。" },
 ];
 
 const examples = [
@@ -275,13 +287,13 @@ export const AttributiveClausesContent: React.FC<AttributiveClausesContentProps>
             {practiceMode === 'build' ? (
                 <SentenceBuilderPractice
                     themeColor={themeColor}
-                    onCompleteAll={onCompleteAll}
+                    onCompleteAll={() => setPracticeMode('fill')}
                     practiceData={buildPracticeData}
                     title="🎯 练习：构建定语从句"
                     subtitle="用下面的词块组成句子"
                     completionTitle="🎉 Perfect!"
-                    completionMessage="你已经掌握了如何使用定语从句！"
-                    nextButtonText="返回从句列表"
+                    completionMessage="你已经完成了定语从句的组句练习！"
+                    nextButtonText="开始填空练习 →"
                 />
             ) : (
                 <FillInTheBlankPractice

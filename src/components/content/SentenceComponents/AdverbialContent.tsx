@@ -21,6 +21,8 @@ const practiceData = [
     { sentence: 'They will meet tomorrow.', targetWords: ['tomorrow'], prompt: '状语 (Adverbial)', chinese: '他们明天见面。' },
     { sentence: 'I got up early.', targetWords: ['early'], prompt: '状语 (Adverbial)', chinese: '我起得很早。' },
     { sentence: 'Please speak slowly.', targetWords: ['slowly'], prompt: '状语 (Adverbial)', chinese: '请慢慢说。' },
+    { sentence: 'I often walk to school.', targetWords: ['often'], prompt: '状语 (Adverbial)', chinese: '我经常步行上学。' },
+    { sentence: 'They are playing outside.', targetWords: ['outside'], prompt: '状语 (Adverbial)', chinese: '他们在外面玩。' },
 ];
 
 export const AdverbialContent: React.FC<AdverbialContentProps> = ({ onBack, themeColor, onCompleteAll }) => {

@@ -40,14 +40,18 @@ const buildPracticeData = [
     { words: [{ en: 'It is a pity', cn: '很遗憾' }, { en: 'that', cn: '(引导词)' }, { en: 'you missed', cn: '你错过了' }, { en: 'the party', cn: '派对' }], correct: ['It is a pity', 'that', 'you missed', 'the party'], chinese: '你错过了派对，真遗憾。' },
     { words: [{ en: 'Whether', cn: '是否' }, { en: 'he can finish', cn: '他能否完成' }, { en: 'the job', cn: '工作' }, { en: 'is still', cn: '仍是' }, { en: 'a question', cn: '个问题' }], correct: ['Whether', 'he can finish', 'the job', 'is still', 'a question'], chinese: '他能否完成这项工作仍是个问题。' },
     { words: [{ en: 'It is important', cn: '很重要' }, { en: 'that', cn: '(引导词)' }, { en: 'we protect', cn: '我们保护' }, { en: 'the environment', cn: '环境' }], correct: ['It is important', 'that', 'we protect', 'the environment'], chinese: '我们保护环境很重要。' },
+    { words: [{ en: 'Who will win', cn: '谁会赢' }, { en: 'is unknown', cn: '是未知的' }], correct: ['Who will win', 'is unknown'], chinese: '谁会赢还不知道。' },
+    { words: [{ en: 'It is true', cn: '是真的' }, { en: 'that', cn: '(引导词)' }, { en: 'he is a good man', cn: '他是个好人' }], correct: ['It is true', 'that', 'he is a good man'], chinese: '他是个好人，这是真的。' },
 ];
 
 const fillPracticeData = [
-    { sentenceParts: ["", " he said is not true."], choices: [{text: "What", isCorrect: true}, {text: "That", isCorrect: false}, {text: "Who", isCorrect: false}], chineseHint: "他所说的话不是真的。" },
-    { sentenceParts: ["", " she will come is certain."], choices: [{text: "That", isCorrect: true}, {text: "What", isCorrect: false}, {text: "Whether", isCorrect: false}], chineseHint: "她会来是确定的。" },
-    { sentenceParts: ["It is a pity ", " you missed the party."], choices: [{text: "that", isCorrect: true}, {text: "what", isCorrect: false}, {text: "if", isCorrect: false}], chineseHint: "你错过了派对，真遗憾。" },
-    { sentenceParts: ["", " he can finish the job is still a question."], choices: [{text: "Whether", isCorrect: true}, {text: "That", isCorrect: false}, {text: "What", isCorrect: false}], chineseHint: "他能否完成这项工作仍是个问题。" },
-    { sentenceParts: ["It is important ", " we protect the environment."], choices: [{text: "that", isCorrect: true}, {text: "what", isCorrect: false}, {text: "whether", isCorrect: false}], chineseHint: "我们保护环境很重要。" },
+    { sentenceParts: ["", " he said is not true."] as const, choices: [{text: "What", isCorrect: true}, {text: "That", isCorrect: false}, {text: "Who", isCorrect: false}], chineseHint: "他所说的话不是真的。" },
+    { sentenceParts: ["", " she will come is certain."] as const, choices: [{text: "That", isCorrect: true}, {text: "What", isCorrect: false}, {text: "Whether", isCorrect: false}], chineseHint: "她会来是确定的。" },
+    { sentenceParts: ["It is a pity ", " you missed the party."] as const, choices: [{text: "that", isCorrect: true}, {text: "what", isCorrect: false}, {text: "if", isCorrect: false}], chineseHint: "你错过了派对，真遗憾。" },
+    { sentenceParts: ["", " he can finish the job is still a question."] as const, choices: [{text: "Whether", isCorrect: true}, {text: "That", isCorrect: false}, {text: "What", isCorrect: false}], chineseHint: "他能否完成这项工作仍是个问题。" },
+    { sentenceParts: ["It is important ", " we protect the environment."] as const, choices: [{text: "that", isCorrect: true}, {text: "what", isCorrect: false}, {text: "whether", isCorrect: false}], chineseHint: "我们保护环境很重要。" },
+    { sentenceParts: ["", " will win is unknown."] as const, choices: [{text: "Who", isCorrect: true}, {text: "What", isCorrect: false}, {text: "That", isCorrect: false}], chineseHint: "谁会赢还不知道。" },
+    { sentenceParts: ["It is true ", " he is a good man."] as const, choices: [{text: "that", isCorrect: true}, {text: "who", isCorrect: false}, {text: "what", isCorrect: false}], chineseHint: "他是个好人，这是真的。" },
 ];
 
 const examples = [
@@ -229,13 +233,13 @@ export const SubjectClausesContent: React.FC<SubjectClausesContentProps> = ({ on
             {practiceMode === 'build' ? (
                 <SentenceBuilderPractice
                     themeColor={themeColor}
-                    onCompleteAll={onCompleteAll}
+                    onCompleteAll={() => setPracticeMode('fill')}
                     practiceData={buildPracticeData}
                     title="🎯 练习：构建主语从句"
                     subtitle="用下面的词块组成句子"
                     completionTitle="🎉 Fantastic!"
-                    completionMessage="你已经掌握了所有从句类型！"
-                    nextButtonText="完成学习，返回列表"
+                    completionMessage="你已经完成了主语从句的组句练习！"
+                    nextButtonText="开始填空练习 →"
                 />
             ) : (
                  <FillInTheBlankPractice

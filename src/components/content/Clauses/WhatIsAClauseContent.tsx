@@ -83,7 +83,6 @@ const FunctionTitle = styled.h4`
     margin-bottom: 10px;
 `;
 
-// FIX: Added type for themeColor prop to fix TypeScript errors.
 const FunctionExplanation = styled.p<{ themeColor: string }>`
     font-size: 1em;
     color: #4a5568;

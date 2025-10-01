@@ -170,7 +170,6 @@ export const SwitcherButton = styled.button<{ isActive: boolean, themeColor: str
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     white-space: nowrap;
     
-    ${/* FIX: Use props from the outer scope to avoid scoping issues with nested arrow functions. */''}
     ${props => props.isActive
         ? css`
             background-color: ${props.themeColor};

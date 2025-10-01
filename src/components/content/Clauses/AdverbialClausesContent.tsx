@@ -41,14 +41,18 @@ const buildPracticeData = [
     { words: [{ en: 'She will', cn: '她会' }, { en: 'call you', cn: '给你打电话' }, { en: 'when', cn: '当' }, { en: 'she arrives', cn: '她到达时' }], correct: ['She will', 'call you', 'when', 'she arrives'], chinese: '她到达时会给你打电话。' },
     { words: [{ en: 'Although', cn: '虽然' }, { en: 'he was tired,', cn: '他很累' }, { en: 'he kept', cn: '他仍继续' }, { en: 'working', cn: '工作' }], correct: ['Although', 'he was tired,', 'he kept', 'working'], chinese: '虽然他很累，但他仍继续工作。' },
     { words: [{ en: 'You can sit', cn: '你可以坐' }, { en: 'wherever', cn: '任何地方' }, { en: 'you like', cn: '你喜欢' }], correct: ['You can sit', 'wherever', 'you like'], chinese: '你可以坐在任何你喜欢的地方。' },
+    { words: [{ en: 'I will wait', cn: '我会等' }, { en: 'until', cn: '直到' }, { en: 'you come back', cn: '你回来' }], correct: ['I will wait', 'until', 'you come back'], chinese: '我会等到你回来。' },
+    { words: [{ en: 'He studies hard', cn: '他努力学习' }, { en: 'so that', cn: '以便' }, { en: 'he can pass', cn: '他能通过' }, { en: 'the exam', cn: '考试' }], correct: ['He studies hard', 'so that', 'he can pass', 'the exam'], chinese: '他努力学习以便能通过考试。' },
 ];
 
 const fillPracticeData = [
-    { sentenceParts: ["He was late ", " he missed the bus."], choices: [{text: "because", isCorrect: true}, {text: "if", isCorrect: false}, {text: "when", isCorrect: false}], chineseHint: "他因为错过了公交车而迟到。" },
-    { sentenceParts: ["", " it rains tomorrow, we will stay home."], choices: [{text: "If", isCorrect: true}, {text: "When", isCorrect: false}, {text: "Although", isCorrect: false}], chineseHint: "如果明天下雨，我们就待在家里。" },
-    { sentenceParts: ["She will call you ", " she arrives."], choices: [{text: "when", isCorrect: true}, {text: "because", isCorrect: false}, {text: "if", isCorrect: false}], chineseHint: "她到达时会给你打电话。" },
-    { sentenceParts: ["", " he was tired, he kept working."], choices: [{text: "Although", isCorrect: true}, {text: "If", isCorrect: false}, {text: "Because", isCorrect: false}], chineseHint: "虽然他很累，但他仍继续工作。" },
-    { sentenceParts: ["You can sit ", " you like."], choices: [{text: "wherever", isCorrect: true}, {text: "whatever", isCorrect: false}, {text: "whenever", isCorrect: false}], chineseHint: "你可以坐在任何你喜欢的地方。" },
+    { sentenceParts: ["He was late ", " he missed the bus."] as const, choices: [{text: "because", isCorrect: true}, {text: "if", isCorrect: false}, {text: "when", isCorrect: false}], chineseHint: "他因为错过了公交车而迟到。" },
+    { sentenceParts: ["", " it rains tomorrow, we will stay home."] as const, choices: [{text: "If", isCorrect: true}, {text: "When", isCorrect: false}, {text: "Although", isCorrect: false}], chineseHint: "如果明天下雨，我们就待在家里。" },
+    { sentenceParts: ["She will call you ", " she arrives."] as const, choices: [{text: "when", isCorrect: true}, {text: "because", isCorrect: false}, {text: "if", isCorrect: false}], chineseHint: "她到达时会给你打电话。" },
+    { sentenceParts: ["", " he was tired, he kept working."] as const, choices: [{text: "Although", isCorrect: true}, {text: "If", isCorrect: false}, {text: "Because", isCorrect: false}], chineseHint: "虽然他很累，但他仍继续工作。" },
+    { sentenceParts: ["You can sit ", " you like."] as const, choices: [{text: "wherever", isCorrect: true}, {text: "whatever", isCorrect: false}, {text: "whenever", isCorrect: false}], chineseHint: "你可以坐在任何你喜欢的地方。" },
+    { sentenceParts: ["I will wait ", " you come back."] as const, choices: [{text: "until", isCorrect: true}, {text: "if", isCorrect: false}, {text: "because", isCorrect: false}], chineseHint: "我会等到你回来。" },
+    { sentenceParts: ["He studies hard ", " he can pass the exam."] as const, choices: [{text: "so that", isCorrect: true}, {text: "although", isCorrect: false}, {text: "when", isCorrect: false}], chineseHint: "他努力学习以便能通过考试。" },
 ];
 
 // Data for examples
@@ -228,13 +232,13 @@ export const AdverbialClausesContent: React.FC<AdverbialClausesContentProps> = (
             {practiceMode === 'build' ? (
                 <SentenceBuilderPractice
                     themeColor={themeColor}
-                    onCompleteAll={onCompleteAll}
+                    onCompleteAll={() => setPracticeMode('fill')}
                     practiceData={buildPracticeData}
                     title="🎯 练习：构建状语从句"
                     subtitle="用下面的词块组成句子"
                     completionTitle="🎉 Excellent!"
-                    completionMessage="你已经掌握了如何使用状语从句！"
-                    nextButtonText="学习主语从句 →"
+                    completionMessage="你已经完成了状语从句的组句练习！"
+                    nextButtonText="开始填空练习 →"
                 />
             ) : (
                 <FillInTheBlankPractice

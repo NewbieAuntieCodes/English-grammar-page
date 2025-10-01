@@ -21,6 +21,8 @@ const practiceData = [
     { sentence: 'My teacher helps me.', targetWords: ['teacher'], prompt: '主语 (Subject)', chinese: '我的老师帮助我。' },
     { sentence: 'We play football.', targetWords: ['We'], prompt: '主语 (Subject)', chinese: '我们踢足球。' },
     { sentence: 'The sun shines.', targetWords: ['sun'], prompt: '主语 (Subject)', chinese: '太阳在照耀。' },
+    { sentence: 'The beautiful bird sings.', targetWords: ['bird'], prompt: '主语 (Subject)', chinese: '美丽的小鸟在歌唱。' },
+    { sentence: 'Reading is fun.', targetWords: ['Reading'], prompt: '主语 (Subject)', chinese: '阅读很有趣。' },
 ];
 
 

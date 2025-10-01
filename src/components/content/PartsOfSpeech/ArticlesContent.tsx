@@ -21,6 +21,8 @@ const practiceData = [
     { sentence: 'The sun is hot.', targetWords: ['The'], prompt: '冠词 (Article)', chinese: "太阳很热。" },
     { sentence: 'She is a doctor.', targetWords: ['a'], prompt: '冠词 (Article)', chinese: "她是一名医生。" },
     { sentence: 'An hour has passed.', targetWords: ['An'], prompt: '冠词 (Article)', chinese: "一个小时过去了。" },
+    { sentence: 'I have a computer.', targetWords: ['a'], prompt: '冠词 (Article)', chinese: "我有一台电脑。" },
+    { sentence: 'The earth is round.', targetWords: ['The'], prompt: '冠词 (Article)', chinese: "地球是圆的。" },
 ];
 
 export const ArticlesContent: React.FC<ArticlesContentProps> = ({ onBack, themeColor, onCompleteAll }) => {

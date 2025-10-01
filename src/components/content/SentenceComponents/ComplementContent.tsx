@@ -22,6 +22,8 @@ const practiceData = [
     { sentence: 'The news made me happy.', targetWords: ['happy'], prompt: '补语 (Complement)', chinese: '这个消息让我很高兴。' },
     { sentence: 'She looks tired.', targetWords: ['tired'], prompt: '补语 (Complement)', chinese: '她看起来很累。' },
     { sentence: 'They painted the door green.', targetWords: ['green'], prompt: '补语 (Complement)', chinese: '他们把门漆成了绿色。' },
+    { sentence: 'The story made her sad.', targetWords: ['sad'], prompt: '补语 (Complement)', chinese: '这个故事让她感到悲伤。' },
+    { sentence: 'We consider him honest.', targetWords: ['honest'], prompt: '补语 (Complement)', chinese: '我们认为他很诚实。' },
 ];
 
 export const ComplementContent: React.FC<ComplementContentProps> = ({ onBack, themeColor, onCompleteAll }) => {

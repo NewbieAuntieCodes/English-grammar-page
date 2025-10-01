@@ -37,7 +37,6 @@ interface SVOCAdjectiveContentProps {
     onCompleteAll: () => void;
 }
 
-// FIX: Updated `words` to be an array of objects with `en` and `cn` properties to match the `PracticeData` type.
 const practiceData = {
     basic: [
         { words: [{ en: 'This song', cn: '这首歌' }, { en: 'makes', cn: '让' }, { en: 'me', cn: '我' }, { en: 'sad', cn: '伤心' }], correct: ['This song', 'makes', 'me', 'sad'], chinese: '这首歌让我伤心' },
@@ -46,6 +45,8 @@ const practiceData = {
         { words: [{ en: "Don't leave", cn: '别让' }, { en: 'the window', cn: '窗户' }, { en: 'open', cn: '开着' }], correct: ["Don't leave", 'the window', 'open'], chinese: '别让窗户开着' },
         { words: [{ en: 'She', cn: '她' }, { en: 'wants', cn: '想要' }, { en: 'her coffee', cn: '她的咖啡' }, { en: 'black', cn: '黑的' }], correct: ['She', 'wants', 'her coffee', 'black'], chinese: '她想要黑咖啡' },
         { words: [{ en: 'He', cn: '他' }, { en: 'painted', cn: '漆了' }, { en: 'the wall', cn: '墙' }, { en: 'white', cn: '白色的' }], correct: ['He', 'painted', 'the wall', 'white'], chinese: '他把墙漆成白色' },
+        { words: [{ en: 'The sun', cn: '太阳' }, { en: 'keeps', cn: '保持' }, { en: 'us', cn: '我们' }, { en: 'warm', cn: '温暖' }], correct: ['The sun', 'keeps', 'us', 'warm'], chinese: '太阳让我们保持温暖' },
+        { words: [{ en: 'Exercise', cn: '锻炼' }, { en: 'makes', cn: '使' }, { en: 'you', cn: '你' }, { en: 'healthy', cn: '健康' }], correct: ['Exercise', 'makes', 'you', 'healthy'], chinese: '锻炼使你健康' },
     ]
 };
 

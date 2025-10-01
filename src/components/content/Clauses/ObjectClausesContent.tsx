@@ -57,11 +57,13 @@ const buildPracticeData = [
 ];
 
 const fillPracticeData = [
-    { sentenceParts: ["I think ", " he is honest."], choices: [{text: "that", isCorrect: true}, {text: "if", isCorrect: false}, {text: "what", isCorrect: false}], chineseHint: "我认为他是诚实的。" },
-    { sentenceParts: ["She said ", " she was tired."], choices: [{text: "that", isCorrect: true}, {text: "who", isCorrect: false}, {text: "why", isCorrect: false}], chineseHint: "她说她累了。" },
-    { sentenceParts: ["Do you know ", " he wants?"], choices: [{text: "what", isCorrect: true}, {text: "who", isCorrect: false}, {text: "if", isCorrect: false}], chineseHint: "你知道他想要什么吗？" },
-    { sentenceParts: ["I wonder ", " it will rain."], choices: [{text: "if", isCorrect: true}, {text: "that", isCorrect: false}, {text: "what", isCorrect: false}], chineseHint: "我想知道是否会下雨。" },
-    { sentenceParts: ["Tell me ", " you live."], choices: [{text: "where", isCorrect: true}, {text: "who", isCorrect: false}, {text: "that", isCorrect: false}], chineseHint: "告诉我你住在哪里。" },
+    { sentenceParts: ["I think ", " he is honest."] as const, choices: [{text: "that", isCorrect: true}, {text: "if", isCorrect: false}, {text: "what", isCorrect: false}], chineseHint: "我认为他是诚实的。" },
+    { sentenceParts: ["She said ", " she was tired."] as const, choices: [{text: "that", isCorrect: true}, {text: "who", isCorrect: false}, {text: "why", isCorrect: false}], chineseHint: "她说她累了。" },
+    { sentenceParts: ["Do you know ", " he wants?"] as const, choices: [{text: "what", isCorrect: true}, {text: "who", isCorrect: false}, {text: "if", isCorrect: false}], chineseHint: "你知道他想要什么吗？" },
+    { sentenceParts: ["I wonder ", " it will rain."] as const, choices: [{text: "if", isCorrect: true}, {text: "that", isCorrect: false}, {text: "what", isCorrect: false}], chineseHint: "我想知道是否会下雨。" },
+    { sentenceParts: ["Tell me ", " you live."] as const, choices: [{text: "where", isCorrect: true}, {text: "who", isCorrect: false}, {text: "that", isCorrect: false}], chineseHint: "告诉我你住在哪里。" },
+    { sentenceParts: ["Nobody knows ", " he is angry."] as const, choices: [{text: "why", isCorrect: true}, {text: "who", isCorrect: false}, {text: "that", isCorrect: false}], chineseHint: "没人知道他为什么生气。" },
+    { sentenceParts: ["I don't know ", " took my pen."] as const, choices: [{text: "who", isCorrect: true}, {text: "what", isCorrect: false}, {text: "if", isCorrect: false}], chineseHint: "我不知道谁拿了我的笔。" },
 ];
 
 const normalExamples = [
@@ -344,13 +346,13 @@ export const ObjectClausesContent: React.FC<ObjectClausesContentProps> = ({ onBa
             {practiceMode === 'build' ? (
                 <SentenceBuilderPractice
                     themeColor={themeColor}
-                    onCompleteAll={onCompleteAll}
+                    onCompleteAll={() => setPracticeMode('fill')}
                     practiceData={buildPracticeData}
                     title="🎯 练习：构建宾语从句"
                     subtitle="用下面的词组成句子"
                     completionTitle="🎉 Awesome!"
-                    completionMessage="你已经掌握了宾语从句！"
-                    nextButtonText="返回从句列表"
+                    completionMessage="你已经完成了宾语从句的组句练习！"
+                    nextButtonText="开始填空练习 →"
                 />
             ) : (
                 <FillInTheBlankPractice

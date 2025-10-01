@@ -21,6 +21,8 @@ const practiceData = [
     { sentence: 'He is very tall.', targetWords: ['very'], prompt: '副词 (Adverb)', chinese: "他非常高。" },
     { sentence: 'The boy works hard.', targetWords: ['hard'], prompt: '副词 (Adverb)', chinese: "这个男孩努力工作。" },
     { sentence: 'I often read books.', targetWords: ['often'], prompt: '副词 (Adverb)', chinese: "我经常读书。" },
+    { sentence: 'Please speak slowly.', targetWords: ['slowly'], prompt: '副词 (Adverb)', chinese: "请慢慢说。" },
+    { sentence: 'She always helps others.', targetWords: ['always'], prompt: '副词 (Adverb)', chinese: "她总是帮助别人。" },
 ];
 
 export const AdverbsContent: React.FC<AdverbsContentProps> = ({ onBack, themeColor, onCompleteAll }) => {

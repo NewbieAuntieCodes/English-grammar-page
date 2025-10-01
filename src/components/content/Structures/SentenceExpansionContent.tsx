@@ -153,6 +153,23 @@ const practiceData = [
         ], 
         correct: ['The', 'beautiful', 'flowers', 'grow', 'in the valley', 'in spring'], 
         chinese: '美丽的鲜花春天在山谷里生长。' 
+    },
+    { 
+        words: [
+            { en: 'A', cn: '一个' }, { en: 'little', cn: '小' }, { en: 'boy', cn: '男孩' }, 
+            { en: 'is reading', cn: '正在读书' }, { en: 'quietly', cn: '安静地' }, { en: 'in the corner', cn: '在角落里' }
+        ], 
+        correct: ['A', 'little', 'boy', 'is reading', 'quietly', 'in the corner'], 
+        chinese: '一个小男孩正在角落里安静地读书。' 
+    },
+    { 
+        words: [
+            { en: 'The', cn: '那只' }, { en: 'black', cn: '黑色的' }, { en: 'cat', cn: '猫' }, 
+            { en: 'is sleeping', cn: '正在睡觉' }, { en: 'soundly', cn: '香甜地' }, 
+            { en: 'on the sofa', cn: '在沙发上' }, { en: 'now', cn: '现在' }
+        ], 
+        correct: ['The', 'black', 'cat', 'is sleeping', 'soundly', 'on the sofa', 'now'], 
+        chinese: '那只黑猫现在正在沙发上香甜地睡觉。' 
     }
 ];
 

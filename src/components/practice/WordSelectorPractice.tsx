@@ -50,66 +50,65 @@ export const WordSelectorPractice: React.FC<WordSelectorPracticeProps> = ({
     const [showCorrectSticker, setShowCorrectSticker] = useState(false);
     const [allPracticesCompleted, setAllPracticesCompleted] = useState(false);
     
-    const currentPractice = practiceData[practiceIndex];
+    const currentPractice = useMemo(() => practiceData[practiceIndex], [practiceData, practiceIndex]);
+    const sentenceWords = useMemo(() => currentPractice?.sentence.split(' ') || [], [currentPractice]);
 
-    const resetForNewQuestion = useCallback(() => {
+    const resetForCurrentPractice = useCallback(() => {
         setSelectedWords([]);
         setWordStatuses({});
         setFeedback(null);
     }, []);
 
     useEffect(() => {
-        resetForNewQuestion();
-    }, [practiceIndex, resetForNewQuestion]);
-    
+        resetForCurrentPractice();
+    }, [practiceIndex, resetForCurrentPractice]);
+
     const handleNextPractice = useCallback(() => {
-        if (practiceIndex >= practiceData.length - 1) {
-            setAllPracticesCompleted(true);
-        } else {
+        if (practiceIndex < practiceData.length - 1) {
             setPracticeIndex(prev => prev + 1);
+        } else {
+            setAllPracticesCompleted(true);
         }
     }, [practiceIndex, practiceData.length]);
 
     const handleWordClick = (word: string, index: number) => {
-        // Ignore clicks on already correct words
         if (wordStatuses[index] === 'correct') return;
 
         const cleanedWord = word.replace(/[.,!?]/g, '');
-        const isTarget = currentPractice.targetWords.some(target => target.toLowerCase() === cleanedWord.toLowerCase());
+        const isTarget = currentPractice.targetWords.includes(cleanedWord);
 
         if (isTarget) {
-            // Avoid re-selecting the same correct word if there are duplicates in the sentence
-            if (selectedWords.includes(cleanedWord.toLowerCase())) {
-                const countInTargets = currentPractice.targetWords.filter(t => t.toLowerCase() === cleanedWord.toLowerCase()).length;
-                const countInSelected = selectedWords.filter(s => s === cleanedWord.toLowerCase()).length;
-                if (countInSelected >= countInTargets) return;
-            }
-
-            const newSelected = [...selectedWords, cleanedWord.toLowerCase()];
-            setSelectedWords(newSelected);
+            const newSelectedWords = [...selectedWords, cleanedWord];
+            setSelectedWords(newSelectedWords);
             setWordStatuses(prev => ({ ...prev, [index]: 'correct' }));
 
-            if (newSelected.length === currentPractice.targetWords.length) {
+            // Check if all target words have been found. This handles cases with multiple target words.
+            const allTargetsFound = currentPractice.targetWords.every(target => 
+                newSelectedWords.includes(target)
+            );
+
+            if (allTargetsFound) {
                 setShowCorrectSticker(true);
-                setTimeout(() => handleNextPractice(), 800);
-                setTimeout(() => setShowCorrectSticker(false), 2000);
+                setTimeout(() => {
+                    handleNextPractice();
+                }, 1200);
+                setTimeout(() => {
+                    setShowCorrectSticker(false);
+                }, 2000);
             }
         } else {
             setWordStatuses(prev => ({ ...prev, [index]: 'incorrect' }));
-            setFeedback("🤔 That's not it, try again!");
+            setFeedback(`'${cleanedWord}' is not a ${currentPractice.prompt}. Try again!`);
             setTimeout(() => {
                 setWordStatuses(prev => ({ ...prev, [index]: 'default' }));
                 setFeedback(null);
-            }, 1000);
+            }, 1500);
         }
     };
-
-    const words = useMemo(() => currentPractice ? currentPractice.sentence.split(' ') : [], [currentPractice]);
-
-    return (
-        <PracticeSection themeColor={themeColor}>
-            {showCorrectSticker && <CorrectSticker themeColor={themeColor}>✔️ Correct!</CorrectSticker>}
-            {allPracticesCompleted ? (
+    
+    if (allPracticesCompleted) {
+        return (
+            <PracticeSection themeColor={themeColor}>
                 <CompletionContainer>
                     <CompletionTitle>{completionTitle}</CompletionTitle>
                     <CompletionMessage>{completionMessage}</CompletionMessage>
@@ -117,41 +116,45 @@ export const WordSelectorPractice: React.FC<WordSelectorPracticeProps> = ({
                         {nextButtonText}
                     </NextChapterButton>
                 </CompletionContainer>
-            ) : (
-                currentPractice && (
-                    <>
-                        <InstructionText>
-                            点击句子中的 <strong>{currentPractice.prompt}</strong>
-                        </InstructionText>
-                        
-                        <SentenceDisplay themeColor={themeColor}>
-                            {words.map((word, index) => (
-                                <WordSpan 
-                                    key={index} 
-                                    status={wordStatuses[index] || 'default'}
-                                    themeColor={themeColor}
-                                    onClick={() => handleWordClick(word, index)}
-                                >
-                                    {word}
-                                </WordSpan>
-                            ))}
-                        </SentenceDisplay>
-                        <ChineseHint>
-                            {currentPractice.chinese}
-                        </ChineseHint>
+            </PracticeSection>
+        );
+    }
+    
+    if (!currentPractice) {
+        return null; // Or a loading state
+    }
 
-                        {feedback && (
-                            <FeedbackMessage>{feedback}</FeedbackMessage>
-                        )}
+    return (
+        <PracticeSection themeColor={themeColor}>
+            {showCorrectSticker && <CorrectSticker themeColor={themeColor}>✔️ Correct!</CorrectSticker>}
+            <>
+                <InstructionText themeColor={themeColor}>
+                    Click on the <strong>{currentPractice.prompt}</strong> in the sentence below.
+                </InstructionText>
 
-                        <ProgressDots>
-                            {practiceData.map((_, index) => (
-                                <ProgressDot key={index} isActive={index === practiceIndex} themeColor={themeColor} />
-                            ))}
-                        </ProgressDots>
-                    </>
-                )
-            )}
+                <SentenceDisplay themeColor={themeColor}>
+                    {sentenceWords.map((word, index) => (
+                        <WordSpan
+                            key={index}
+                            status={wordStatuses[index] || 'default'}
+                            themeColor={themeColor}
+                            onClick={() => handleWordClick(word, index)}
+                        >
+                            {word}
+                        </WordSpan>
+                    ))}
+                </SentenceDisplay>
+
+                <ChineseHint themeColor={themeColor}>{currentPractice.chinese}</ChineseHint>
+
+                {feedback && <FeedbackMessage>{feedback}</FeedbackMessage>}
+
+                <ProgressDots>
+                    {practiceData.map((_, index) => (
+                        <ProgressDot key={index} isActive={index === practiceIndex} themeColor={themeColor} />
+                    ))}
+                </ProgressDots>
+            </>
         </PracticeSection>
     );
 };

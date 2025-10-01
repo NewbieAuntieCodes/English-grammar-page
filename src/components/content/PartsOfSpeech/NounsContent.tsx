@@ -21,6 +21,8 @@ const practiceData = [
     { sentence: 'My dad is a doctor.', targetWords: ['dad', 'doctor'], prompt: '名词 (Noun)', chinese: '我爸爸是一名医生。' },
     { sentence: 'I have a pen.', targetWords: ['pen'], prompt: '名词 (Noun)', chinese: '我有一支钢笔。' },
     { sentence: 'This is a book.', targetWords: ['book'], prompt: '名词 (Noun)', chinese: '这是一本书。' },
+    { sentence: 'The cat is on the table.', targetWords: ['cat', 'table'], prompt: '名词 (Noun)', chinese: '猫在桌子上。' },
+    { sentence: 'My friend has a new car.', targetWords: ['friend', 'car'], prompt: '名词 (Noun)', chinese: '我的朋友有一辆新车。' },
 ];
 
 export const NounsContent: React.FC<NounsContentProps> = ({ onBack, themeColor, onCompleteAll }) => {

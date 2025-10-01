@@ -37,7 +37,6 @@ interface SVOCNounContentProps {
     onCompleteAll: () => void;
 }
 
-// FIX: Updated `words` to be an array of objects with `en` and `cn` properties to match the `PracticeData` type.
 const practiceData = {
     basic: [
         { words: [{ en: 'We', cn: '我们' }, { en: 'call', cn: '称' }, { en: 'him', cn: '他' }, { en: 'a hero', cn: '英雄' }], correct: ['We', 'call', 'him', 'a hero'], chinese: '我们称他为英雄' },
@@ -46,6 +45,8 @@ const practiceData = {
         { words: [{ en: 'They', cn: '他们' }, { en: 'made', cn: '让' }, { en: 'him', cn: '他' }, { en: 'captain', cn: '队长' }], correct: ['They', 'made', 'him', 'captain'], chinese: '他们让他当上了队长' },
         { words: [{ en: 'We', cn: '我们' }, { en: 'think', cn: '认为' }, { en: 'him', cn: '他' }, { en: 'a good boy', cn: '好男孩' }], correct: ['We', 'think', 'him', 'a good boy'], chinese: '我们认为他是个好孩子' },
         { words: [{ en: 'The club', cn: '俱乐部' }, { en: 'chose', cn: '选择' }, { en: 'her', cn: '她' }, { en: 'leader', cn: '领袖' }], correct: ['The club', 'chose', 'her', 'leader'], chinese: '俱乐部选择了她当领袖' },
+        { words: [{ en: 'People', cn: '人们' }, { en: 'elected', cn: '选举' }, { en: 'him', cn: '他' }, { en: 'president', cn: '总统' }], correct: ['People', 'elected', 'him', 'president'], chinese: '人们选举他为总统' },
+        { words: [{ en: 'I', cn: '我' }, { en: 'consider', cn: '认为' }, { en: 'it', cn: '它' }, { en: 'a mistake', cn: '一个错误' }], correct: ['I', 'consider', 'it', 'a mistake'], chinese: '我认为这是一个错误' },
     ]
 };
 

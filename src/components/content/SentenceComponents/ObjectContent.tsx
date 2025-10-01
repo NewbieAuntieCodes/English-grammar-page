@@ -21,6 +21,8 @@ const practiceData = [
     { sentence: 'He loves music.', targetWords: ['music'], prompt: '宾语 (Object)', chinese: '他热爱音乐。' },
     { sentence: 'They bought a car.', targetWords: ['car'], prompt: '宾语 (Object)', chinese: '他们买了一辆车。' },
     { sentence: 'We eat apples.', targetWords: ['apples'], prompt: '宾语 (Object)', chinese: '我们吃苹果。' },
+    { sentence: 'She is writing a letter.', targetWords: ['letter'], prompt: '宾语 (Object)', chinese: '她正在写一封信。' },
+    { sentence: 'My father drives a car.', targetWords: ['car'], prompt: '宾语 (Object)', chinese: '我爸爸开一辆车。' },
 ];
 
 

@@ -21,6 +21,8 @@ const practiceData = [
     { sentence: 'That is his pencil.', targetWords: ['his'], prompt: '定语 (Attributive)', chinese: '那是他的铅笔。' },
     { sentence: 'The tall man is a doctor.', targetWords: ['tall'], prompt: '定语 (Attributive)', chinese: '那个高个子男人是一名医生。' },
     { sentence: 'She wore a blue dress.', targetWords: ['blue'], prompt: '定语 (Attributive)', chinese: '她穿了一条蓝色的连衣裙。' },
+    { sentence: 'It is a sunny day.', targetWords: ['sunny'], prompt: '定语 (Attributive)', chinese: '这是一个晴天。' },
+    { sentence: 'I have two books.', targetWords: ['two'], prompt: '定语 (Attributive)', chinese: '我有两本书。' },
 ];
 
 export const AttributiveContent: React.FC<AttributiveContentProps> = ({ onBack, themeColor, onCompleteAll }) => {

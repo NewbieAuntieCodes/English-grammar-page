@@ -38,7 +38,6 @@ interface SVCContentProps {
     onCompleteAll: () => void;
 }
 
-// FIX: Updated `words` to be an array of objects with `en` and `cn` properties to match the `PracticeData` type.
 const practiceData = {
     basic: [
         { words: [{ en: 'She', cn: '她' }, { en: 'is', cn: '是' }, { en: 'happy', cn: '开心的' }], correct: ['She', 'is', 'happy'], chinese: '她很开心' },
@@ -48,6 +47,8 @@ const practiceData = {
         { words: [{ en: 'It', cn: '它' }, { en: 'sounds', cn: '听起来' }, { en: 'great', cn: '很棒' }], correct: ['It', 'sounds', 'great'], chinese: '这听起来很棒' },
         { words: [{ en: 'He', cn: '他' }, { en: 'seems', cn: '似乎' }, { en: 'tired', cn: '累了' }], correct: ['He', 'seems', 'tired'], chinese: '他看起来很累' },
         { words: [{ en: 'You', cn: '你' }, { en: 'look', cn: '看起来' }, { en: 'beautiful', cn: '漂亮的' }], correct: ['You', 'look', 'beautiful'], chinese: '你看起来很漂亮' },
+        { words: [{ en: 'The flowers', cn: '花' }, { en: 'smell', cn: '闻起来' }, { en: 'sweet', cn: '香甜的' }], correct: ['The flowers', 'smell', 'sweet'], chinese: '花闻起来很香甜' },
+        { words: [{ en: 'His story', cn: '他的故事' }, { en: 'became', cn: '变得' }, { en: 'famous', cn: '有名的' }], correct: ['His story', 'became', 'famous'], chinese: '他的故事变得有名了' },
     ]
 };
 

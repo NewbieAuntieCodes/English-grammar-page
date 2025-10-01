@@ -21,6 +21,8 @@ const practiceData = [
     { sentence: 'Do you want water or juice?', targetWords: ['or'], prompt: '连词 (Conjunction)', chinese: "你想要水还是果汁？" },
     { sentence: 'She was tired, so she went to bed.', targetWords: ['so'], prompt: '连词 (Conjunction)', chinese: "她累了，所以她去睡觉了。" },
     { sentence: 'I will call you when I arrive.', targetWords: ['when'], prompt: '连词 (Conjunction)', chinese: "我到的时候会给你打电话。" },
+    { sentence: 'He is poor but he is happy.', targetWords: ['but'], prompt: '连词 (Conjunction)', chinese: "他很穷，但他很快乐。" },
+    { sentence: 'I like it because it is beautiful.', targetWords: ['because'], prompt: '连词 (Conjunction)', chinese: "我喜欢它，因为它很漂亮。" },
 ];
 
 export const ConjunctionsContent: React.FC<ConjunctionsContentProps> = ({ onBack, themeColor, onCompleteAll }) => {

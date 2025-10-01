@@ -161,12 +161,17 @@ export const CorrectSticker = styled.div<{ themeColor: string }>`
 
 // --- Word Selector Specific Styles ---
 
-export const InstructionText = styled.p`
+export const InstructionText = styled.p<{ themeColor: string }>`
     text-align: center;
     font-size: 1.1em;
     color: #4a5568;
     margin-bottom: 20px;
     font-weight: 500;
+
+    strong {
+        color: ${props => props.themeColor};
+        font-weight: bold;
+    }
 `;
 
 export const SentenceDisplay = styled.div<{ themeColor: string }>`
@@ -186,10 +191,10 @@ export const SentenceDisplay = styled.div<{ themeColor: string }>`
     }
 `;
 
-export const ChineseHint = styled.p`
+export const ChineseHint = styled.p<{ themeColor: string }>`
     text-align: center;
     font-size: 1.2em;
-    color: #6b7280;
+    color: ${props => props.themeColor};
     margin-top: 15px;
     font-weight: 500;
 `;

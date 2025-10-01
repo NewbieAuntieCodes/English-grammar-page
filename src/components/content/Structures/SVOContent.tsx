@@ -30,6 +30,8 @@ import {
     SVOPartOfSpeechTextEng,
 } from './SVOContent.styles';
 import { SentenceBuilderPractice } from '../../practice/SentenceBuilderPractice';
+import { FillInTheBlankPractice } from '../../practice/FillInTheBlankPractice';
+import { PracticeModeSwitcher, ModeButton } from '../../practice/SentenceBuilderPractice.styles';
 
 interface SVOContentProps {
     onBack: () => void;
@@ -37,22 +39,30 @@ interface SVOContentProps {
     onCompleteAll: () => void;
 }
 
-// FIX: Updated `words` to be an array of objects with `en` and `cn` properties to match the `PracticeData` type.
-const practiceData = {
-    basic: [
-        { words: [{ en: 'I', cn: '我' }, { en: 'like', cn: '喜欢' }, { en: 'apples', cn: '苹果' }], correct: ['I', 'like', 'apples'], chinese: '我喜欢苹果' },
-        { words: [{ en: 'She', cn: '她' }, { en: 'reads', cn: '读' }, { en: 'books', cn: '书' }], correct: ['She', 'reads', 'books'], chinese: '她读书' },
-        { words: [{ en: 'We', cn: '我们' }, { en: 'play', cn: '玩' }, { en: 'games', cn: '游戏' }], correct: ['We', 'play', 'games'], chinese: '我们玩游戏' },
-        { words: [{ en: 'He', cn: '他' }, { en: 'loves', cn: '爱' }, { en: 'music', cn: '音乐' }], correct: ['He', 'loves', 'music'], chinese: '他热爱音乐' },
-        { words: [{ en: 'They', cn: '他们' }, { en: 'eat', cn: '吃' }, { en: 'dinner', cn: '晚餐' }], correct: ['They', 'eat', 'dinner'], chinese: '他们吃晚饭' },
-        { words: [{ en: 'You', cn: '你' }, { en: 'drink', cn: '喝' }, { en: 'water', cn: '水' }], correct: ['You', 'drink', 'water'], chinese: '你喝水' },
-    ]
-};
+const buildPracticeData = [
+    { words: [{ en: 'I', cn: '我' }, { en: 'like', cn: '喜欢' }, { en: 'apples', cn: '苹果' }], correct: ['I', 'like', 'apples'], chinese: '我喜欢苹果' },
+    { words: [{ en: 'She', cn: '她' }, { en: 'reads', cn: '读' }, { en: 'books', cn: '书' }], correct: ['She', 'reads', 'books'], chinese: '她读书' },
+    { words: [{ en: 'We', cn: '我们' }, { en: 'play', cn: '玩' }, { en: 'games', cn: '游戏' }], correct: ['We', 'play', 'games'], chinese: '我们玩游戏' },
+    { words: [{ en: 'He', cn: '他' }, { en: 'loves', cn: '爱' }, { en: 'music', cn: '音乐' }], correct: ['He', 'loves', 'music'], chinese: '他热爱音乐' },
+    { words: [{ en: 'They', cn: '他们' }, { en: 'eat', cn: '吃' }, { en: 'dinner', cn: '晚餐' }], correct: ['They', 'eat', 'dinner'], chinese: '他们吃晚饭' },
+    { words: [{ en: 'You', cn: '你' }, { en: 'drink', cn: '喝' }, { en: 'water', cn: '水' }], correct: ['You', 'drink', 'water'], chinese: '你喝水' },
+    { words: [{ en: 'The students', cn: '学生们' }, { en: 'speak', cn: '说' }, { en: 'English', cn: '英语' }], correct: ['The students', 'speak', 'English'], chinese: '学生们说英语' },
+];
 
+const fillPracticeData = [
+    { sentenceParts: ["I", "apples."] as const, choices: [{text: "like", isCorrect: true}, {text: "am", isCorrect: false}, {text: "happy", isCorrect: false}], chineseHint: "我喜欢苹果。" },
+    { sentenceParts: ["She", "books."] as const, choices: [{text: "reads", isCorrect: true}, {text: "is", isCorrect: false}, {text: "reading", isCorrect: false}], chineseHint: "她读书。" },
+    { sentenceParts: ["", "play games."] as const, choices: [{text: "We", isCorrect: true}, {text: "Is", isCorrect: false}, {text: "Are", isCorrect: false}], chineseHint: "我们玩游戏。" },
+    { sentenceParts: ["He loves", "."] as const, choices: [{text: "music", isCorrect: true}, {text: "beautiful", isCorrect: false}, {text: "run", isCorrect: false}], chineseHint: "他热爱音乐。" },
+    { sentenceParts: ["They", "dinner."] as const, choices: [{text: "eat", isCorrect: true}, {text: "are", isCorrect: false}, {text: "is", isCorrect: false}], chineseHint: "他们吃晚饭。" },
+    { sentenceParts: ["You drink", "."] as const, choices: [{text: "water", isCorrect: true}, {text: "juice", isCorrect: false}, {text: "milk", isCorrect: false}], chineseHint: "你喝水。" },
+    { sentenceParts: ["The students", "English."] as const, choices: [{text: "speak", isCorrect: true}, {text: "learn", isCorrect: false}, {text: "write", isCorrect: false}], chineseHint: "学生们说英语。" },
+];
 
 export const SVOContent: React.FC<SVOContentProps> = ({ onBack, themeColor, onCompleteAll }) => {
     const [activeExample, setActiveExample] = useState<string | null>(null);
     const [voices, setVoices] = useState<SpeechSynthesisVoice[]>([]);
+    const [practiceMode, setPracticeMode] = useState<'build' | 'fill'>('build');
 
     useEffect(() => {
         const loadVoices = () => {
@@ -201,16 +211,47 @@ export const SVOContent: React.FC<SVOContentProps> = ({ onBack, themeColor, onCo
                 </ExampleItem>
             </ExamplesSection>
             
-            <SentenceBuilderPractice
-                themeColor={themeColor}
-                onCompleteAll={onCompleteAll}
-                practiceData={practiceData.basic}
-                title="🎯 Practice: Build a sentence using the words below"
-                subtitle="练习：用下面的词组成句子"
-                completionTitle="🎉 Congratulations!"
-                completionMessage="You have mastered the Subject-Verb-Object structure."
-                nextButtonText="跳到下一章。Next Page"
-            />
+            <PracticeModeSwitcher>
+                <ModeButton 
+                    isActive={practiceMode === 'build'} 
+                    onClick={() => setPracticeMode('build')}
+                    themeColor={themeColor}
+                >
+                    组句练习 (Build)
+                </ModeButton>
+                <ModeButton 
+                    isActive={practiceMode === 'fill'} 
+                    onClick={() => setPracticeMode('fill')}
+                    themeColor={themeColor}
+                >
+                    填空练习 (Fill)
+                </ModeButton>
+            </PracticeModeSwitcher>
+
+            {practiceMode === 'build' && (
+                <SentenceBuilderPractice
+                    themeColor={themeColor}
+                    onCompleteAll={() => setPracticeMode('fill')}
+                    practiceData={buildPracticeData}
+                    title="🎯 练习：构建句子"
+                    subtitle="用下面的词组成句子"
+                    completionTitle="🎉 Good Job!"
+                    completionMessage="你已完成组句练习！"
+                    nextButtonText="开始填空练习 →"
+                />
+            )}
+            {practiceMode === 'fill' && (
+                 <FillInTheBlankPractice
+                    themeColor={themeColor}
+                    onCompleteAll={onCompleteAll}
+                    practiceData={fillPracticeData}
+                    title="🎯 练习：句子填空"
+                    subtitle="选择正确的单词填入句子"
+                    completionTitle="🎉 Well Done!"
+                    completionMessage="你已经掌握了主谓宾句型！"
+                    nextButtonText="跳到下一章。Next Page"
+                />
+            )}
         </LessonContainer>
     );
 };
