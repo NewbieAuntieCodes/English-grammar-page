@@ -53,3 +53,7 @@ export const TensesIcon: React.FC = () => (
 export const ComponentsIcon: React.FC = () => (
     <span role="img" aria-label="Sentence Components Icon" style={{ fontSize: '48px' }}>🧩</span>
 );
+
+export const CommonStructureIcon: React.FC = () => (
+    <span role="img" aria-label="Common Structure Icon" style={{ fontSize: '48px' }}>🧱</span>
+);

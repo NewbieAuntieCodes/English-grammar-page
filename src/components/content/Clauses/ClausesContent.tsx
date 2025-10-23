@@ -20,13 +20,14 @@ import { ObjectClausesContent } from './ObjectClausesContent';
 import { AttributiveClausesContent } from './AttributiveClausesContent';
 import { AdverbialClausesContent } from './AdverbialClausesContent';
 import { SubjectClausesContent } from './SubjectClausesContent';
+import { FindMainClauseContent } from '../Structures/FindMainClauseContent';
 
 
 interface ContentProps {
     startLesson: (lessonType: string) => void;
 }
 
-type View = 'list' | 'what-is-a-clause' | 'object-clauses' | 'attributive-clauses' | 'adverbial-clauses' | 'subject-clauses';
+type View = 'list' | 'what-is-a-clause' | 'object-clauses' | 'attributive-clauses' | 'adverbial-clauses' | 'subject-clauses' | 'find-main-clause';
 
 
 export const ClausesContent: React.FC<ContentProps> = ({ startLesson }) => {
@@ -50,7 +51,14 @@ export const ClausesContent: React.FC<ContentProps> = ({ startLesson }) => {
     }
 
     if (view === 'subject-clauses') {
-        return <SubjectClausesContent onBack={() => setView('list')} themeColor={themeColor} onCompleteAll={() => setView('list')} />;
+        return <SubjectClausesContent onBack={() => setView('list')} themeColor={themeColor} onCompleteAll={() => setView('find-main-clause')} />;
+    }
+
+    if (view === 'find-main-clause') {
+        return <FindMainClauseContent
+            onBack={() => setView('list')}
+            themeColor={themeColor}
+        />;
     }
 
     return (
@@ -97,6 +105,13 @@ export const ClausesContent: React.FC<ContentProps> = ({ startLesson }) => {
                         <LessonTitleEnglish>Subject Clauses</LessonTitleEnglish>
                     </ClauseTitleContainer>
                     <ClauseDescription>- 作主语的从句</ClauseDescription>
+                </ClauseStep>
+                <ClauseStep onClick={() => setView('find-main-clause')} color={themeColor} style={{ gridColumn: '1 / -1' }}>
+                    <ClauseTitleContainer>
+                        <LessonTitleChinese>找主句练习</LessonTitleChinese>
+                        <LessonTitleEnglish>Find the Main Clause Practice</LessonTitleEnglish>
+                    </ClauseTitleContainer>
+                    <ClauseDescription>- 练习在复杂句中识别核心部分</ClauseDescription>
                 </ClauseStep>
             </ClauseProgression>
         </>

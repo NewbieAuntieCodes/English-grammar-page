@@ -16,13 +16,12 @@ import { SVOContent } from './SVOContent';
 import { SVCContent } from './SVCContent';
 import { SVOCContent } from './SVOCContent';
 import { SentenceExpansionContent } from './SentenceExpansionContent';
-import { FindMainClauseContent } from './FindMainClauseContent';
 
 interface ContentProps {
     startLesson: (lessonType: string) => void;
 }
 
-type View = 'list' | 'svo' | 'svc' | 'svoc' | 'expansion' | 'find-main-clause';
+type View = 'list' | 'svo' | 'svc' | 'svoc' | 'expansion';
 
 export const StructuresContent: React.FC<ContentProps> = ({ startLesson }) => {
     const [view, setView] = useState<View>('list');
@@ -59,13 +58,6 @@ export const StructuresContent: React.FC<ContentProps> = ({ startLesson }) => {
         />;
     }
 
-    if (view === 'find-main-clause') {
-        return <FindMainClauseContent
-            onBack={() => setView('list')}
-            themeColor={themeColor}
-        />;
-    }
-
     return (
         <>
             <ContentHeader>
@@ -91,10 +83,6 @@ export const StructuresContent: React.FC<ContentProps> = ({ startLesson }) => {
                 <LessonItem borderColor={themeColor} onClick={() => setView('expansion')}>
                     <LessonTitleChinese>简单句扩展练习</LessonTitleChinese>
                     <LessonTitleEnglish>Simple Sentence Expansion</LessonTitleEnglish>
-                </LessonItem>
-                <LessonItem borderColor={themeColor} onClick={() => setView('find-main-clause')}>
-                    <LessonTitleChinese>找主句练习</LessonTitleChinese>
-                    <LessonTitleEnglish>Find the Main Clause Practice</LessonTitleEnglish>
                 </LessonItem>
             </LessonList>
         </>
