@@ -9,13 +9,14 @@ import { ContentHeader, ContentIcon, ContentTitle, ContentSubtitle } from '../..
 import { LessonList, LessonItem, LessonTitleChinese, LessonTitleEnglish } from '../Structures/StructuresContent.styles'; // Reuse styles
 import { GerundAsSubjectContent } from './GerundAsSubjectContent';
 import { ItIsAdjForSbContent } from './ItIsAdjForSbContent';
+import { WithUsageContent } from './WithUsageContent';
 
 
 interface ContentProps {
     startLesson: (lessonType: string) => void;
 }
 
-type View = 'list' | 'gerund-subject' | 'it-is-adj';
+type View = 'list' | 'gerund-subject' | 'it-is-adj' | 'with-usage';
 
 export const CommonStructuresContent: React.FC<ContentProps> = ({ startLesson }) => {
     const [view, setView] = useState<View>('list');
@@ -26,7 +27,11 @@ export const CommonStructuresContent: React.FC<ContentProps> = ({ startLesson })
     }
 
     if (view === 'it-is-adj') {
-        return <ItIsAdjForSbContent onBack={() => setView('list')} themeColor={themeColor} onCompleteAll={() => setView('list')} />;
+        return <ItIsAdjForSbContent onBack={() => setView('list')} themeColor={themeColor} onCompleteAll={() => setView('with-usage')} />;
+    }
+
+    if (view === 'with-usage') {
+        return <WithUsageContent onBack={() => setView('list')} themeColor={themeColor} onCompleteAll={() => setView('list')} />;
     }
 
     return (
@@ -46,6 +51,10 @@ export const CommonStructuresContent: React.FC<ContentProps> = ({ startLesson })
                 <LessonItem borderColor={themeColor} onClick={() => setView('it-is-adj')}>
                     <LessonTitleChinese>It is adj for sb. to do sth.</LessonTitleChinese>
                     <LessonTitleEnglish>Formal Subject "It"</LessonTitleEnglish>
+                </LessonItem>
+                <LessonItem borderColor={themeColor} onClick={() => setView('with-usage')}>
+                    <LessonTitleChinese>介词 'with' 的用法</LessonTitleChinese>
+                    <LessonTitleEnglish>Usage of Preposition "with"</LessonTitleEnglish>
                 </LessonItem>
             </LessonList>
         </>

@@ -60,6 +60,8 @@ const practiceData = [
     { words: [{ en: 'It is', cn: '' }, { en: 'difficult', cn: '困难的' }, { en: 'to get up', cn: '起床' }, { en: 'early', cn: '早' }], correct: ['It is', 'difficult', 'to get up', 'early'], chinese: '早起是困难的。' },
     { words: [{ en: 'It is', cn: '' }, { en: 'fun', cn: '有趣的' }, { en: 'to play', cn: '玩' }, { en: 'with friends', cn: '和朋友' }], correct: ['It is', 'fun', 'to play', 'with friends'], chinese: '和朋友们一起玩很有趣。' },
     { words: [{ en: 'It is', cn: '' }, { en: 'necessary', cn: '必要的' }, { en: 'to protect', cn: '保护' }, { en: 'the environment', cn: '环境' }], correct: ['It is', 'necessary', 'to protect', 'the environment'], chinese: '保护环境是必要的。' },
+    { words: [{ en: 'It is', cn: '' }, { en: 'dangerous', cn: '危险的' }, { en: 'to swim', cn: '游泳' }, { en: 'in the river', cn: '在河里' }], correct: ['It is', 'dangerous', 'to swim', 'in the river'], chinese: '在河里游泳是危险的。' },
+    { words: [{ en: 'It is', cn: '' }, { en: 'not polite', cn: '不礼貌的' }, { en: 'for children', cn: '对孩子们' }, { en: 'to shout', cn: '大喊' }], correct: ['It is', 'not polite', 'for children', 'to shout'], chinese: '孩子们大喊大叫是不礼貌的。' },
 ];
 
 export const ItIsAdjForSbContent: React.FC<ItIsAdjForSbContentProps> = ({ onBack, themeColor, onCompleteAll }) => {

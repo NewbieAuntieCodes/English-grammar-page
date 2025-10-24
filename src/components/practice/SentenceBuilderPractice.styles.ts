@@ -57,10 +57,11 @@ export const PracticeSection = styled.div<{ themeColor: string }>`
     border: 1px solid #FEE2E2;
 `;
 
-export const PracticeTitle = styled.h4`
+// FIX: Added optional themeColor prop to allow for theming in other components that reuse this style.
+export const PracticeTitle = styled.h4<{ themeColor?: string }>`
     font-size: 1.3em;
     font-weight: bold;
-    color: #E11D48;
+    color: ${props => props.themeColor || '#E11D48'};
     margin-bottom: 5px;
     text-align: center;
 `;
