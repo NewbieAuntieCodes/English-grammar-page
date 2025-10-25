@@ -52,3 +52,38 @@ export const PartDescription = styled.div`
     font-size: 0.9em;
     color: #718096;
 `;
+
+export const WordFormsHeader = styled.div`
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    margin-top: 50px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    display: flex;
+    align-items: center;
+`;
+
+export const WordFormsGrid = styled(PartsOfSpeechGrid)`
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+`;
+
+export const WordFormItem = styled(PartItem)`
+    padding: 15px 15px 15px 30px;
+
+    &::before {
+        left: 12px;
+        height: 40%;
+        width: 8px;
+    }
+`;
+
+export const WordFormChinese = styled(PartChinese)`
+    font-size: 1em;
+    margin-bottom: 4px;
+`;
+
+export const WordFormDescription = styled(PartDescription)`
+    font-size: 0.85em;
+`;

@@ -4,13 +4,18 @@
 */
 import React, { useState } from 'react';
 import { cardDataConfig } from '../../../data/definitions';
-import { PartsIcon } from '../../../data/icons';
+import { PartsIcon, MultiPosIcon } from '../../../data/icons';
 import { ContentHeader, ContentIcon, ContentTitle, ContentSubtitle } from '../../../styles/shared';
 import { 
     PartsOfSpeechGrid, 
     PartItem, 
     PartChinese, 
-    PartDescription
+    PartDescription,
+    WordFormsHeader,
+    WordFormsGrid,
+    WordFormItem,
+    WordFormChinese,
+    WordFormDescription
 } from './PartsOfSpeechContent.styles';
 import { NounsContent } from './NounsContent';
 import { VerbsContent } from './VerbsContent';
@@ -20,6 +25,13 @@ import { PrepositionsContent } from './PrepositionsContent';
 import { ConjunctionsContent } from './ConjunctionsContent';
 import { PronounsContent } from './PronounsContent';
 import { ArticlesContent } from './ArticlesContent';
+
+// Imports from MultiPos
+import { FastContent } from '../MultiPos/FastContent';
+import { HappyContent } from '../MultiPos/HappyContent';
+import { GoodWellContent } from '../MultiPos/GoodWellContent';
+import { WorkContent } from '../MultiPos/WorkContent';
+import { SlowContent } from '../MultiPos/SlowContent';
 
 interface ContentProps {
     startLesson: (lessonType: string) => void;
@@ -36,15 +48,24 @@ const partsOfSpeechData = [
     { name: '冠词 (Articles)', description: 'a, an, the', lesson: 'articles' },
 ];
 
-type View = 'list' | 'nouns' | 'verbs' | 'adjectives' | 'adverbs' | 'prepositions' | 'conjunctions' | 'pronouns' | 'articles';
+const wordFormsData = [
+    { name: 'Fast', description: 'Adjective & Adverb', lesson: 'fast' },
+    { name: 'Happy / Happily', description: 'Adjective vs. Adverb', lesson: 'happy' },
+    { name: 'Good / Well', description: 'Adjective vs. Adverb', lesson: 'good-well' },
+    { name: 'Work', description: 'Noun vs. Verb', lesson: 'work' },
+    { name: 'Slow / Slowly', description: 'Adjective vs. Adverb', lesson: 'slow' },
+];
+
+type View = 'list' | 'nouns' | 'verbs' | 'adjectives' | 'adverbs' | 'prepositions' | 'conjunctions' | 'pronouns' | 'articles' | 'fast' | 'happy' | 'good-well' | 'work' | 'slow';
 
 export const PartsOfSpeechContent: React.FC<ContentProps> = ({ startLesson }) => {
     const [view, setView] = useState<View>('list');
     const themeColor = cardDataConfig.find(card => card.id === 'parts')?.color || '#4ecdc4';
+    const multiPosThemeColor = cardDataConfig.find(card => card.id === 'multi-pos')?.color || '#1abc9c';
 
     const handleItemClick = (lesson: string) => {
         const lessonView = lesson as View;
-        if (['nouns', 'verbs', 'adjectives', 'adverbs', 'prepositions', 'conjunctions', 'pronouns', 'articles'].includes(lessonView)) {
+        if (['nouns', 'verbs', 'adjectives', 'adverbs', 'prepositions', 'conjunctions', 'pronouns', 'articles', 'fast', 'happy', 'good-well', 'work', 'slow'].includes(lessonView)) {
             setView(lessonView);
         } else {
             startLesson(lesson);
@@ -76,6 +97,23 @@ export const PartsOfSpeechContent: React.FC<ContentProps> = ({ startLesson }) =>
         return <ArticlesContent onBack={() => setView('list')} themeColor={themeColor} onCompleteAll={() => setView('list')} />;
     }
 
+    // Word Forms Navigation
+    if (view === 'fast') {
+        return <FastContent onBack={() => setView('list')} themeColor={multiPosThemeColor} onCompleteAll={() => setView('happy')} />;
+    }
+    if (view === 'happy') {
+        return <HappyContent onBack={() => setView('list')} themeColor={multiPosThemeColor} onCompleteAll={() => setView('good-well')} />;
+    }
+    if (view === 'good-well') {
+        return <GoodWellContent onBack={() => setView('list')} themeColor={multiPosThemeColor} onCompleteAll={() => setView('work')} />;
+    }
+    if (view === 'work') {
+        return <WorkContent onBack={() => setView('list')} themeColor={multiPosThemeColor} onCompleteAll={() => setView('slow')} />;
+    }
+    if (view === 'slow') {
+        return <SlowContent onBack={() => setView('list')} themeColor={multiPosThemeColor} onCompleteAll={() => setView('list')} />;
+    }
+
     return (
         <>
             <ContentHeader>
@@ -93,6 +131,23 @@ export const PartsOfSpeechContent: React.FC<ContentProps> = ({ startLesson }) =>
                     </PartItem>
                 ))}
             </PartsOfSpeechGrid>
+
+            <WordFormsHeader>
+                <ContentIcon><MultiPosIcon /></ContentIcon>
+                <div>
+                    <ContentTitle>词性练习</ContentTitle>
+                    <ContentSubtitle>Word Forms</ContentSubtitle>
+                </div>
+            </WordFormsHeader>
+
+            <WordFormsGrid>
+                {wordFormsData.map(part => (
+                    <WordFormItem key={part.lesson} onClick={() => handleItemClick(part.lesson)} borderColor={multiPosThemeColor}>
+                        <WordFormChinese>{part.name}</WordFormChinese>
+                        <WordFormDescription>{part.description}</WordFormDescription>
+                    </WordFormItem>
+                ))}
+            </WordFormsGrid>
         </>
     );
 };

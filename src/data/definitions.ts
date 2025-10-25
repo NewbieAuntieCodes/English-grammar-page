@@ -10,7 +10,6 @@
 
 export const cardDataConfig = [
     { id: 'parts', title: '词性学习', subtitle: 'Parts of Speech', color: '#4ecdc4' },
-    { id: 'multi-pos', title: '词性练习', subtitle: 'Word Forms', color: '#1abc9c' },
     { id: 'components', title: '句子成分', subtitle: 'Sentence Components', color: '#ffc72c' },
     { id: 'structures', title: '基础句型结构', subtitle: 'Basic Sentence Structures', color: '#ff6b6b' },
     { id: 'clauses', title: '从句句型结构', subtitle: 'Clause Sentence Structures', color: '#0097a7' },
