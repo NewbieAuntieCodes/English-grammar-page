@@ -40,6 +40,8 @@ const practiceData = [
     { words: [{ en: 'He has a', cn: '他有' }, { en: 'happy', cn: '幸福的' }, { en: 'smile', cn: '微笑' }], correct: ['He has a', 'happy', 'smile'], chinese: '他脸上挂着幸福的微笑。' },
     { words: [{ en: 'The birds', cn: '鸟儿' }, { en: 'are singing', cn: '在歌唱' }, { en: 'happily', cn: '快乐地' }], correct: ['The birds', 'are singing', 'happily'], chinese: '鸟儿在快乐地歌唱。' },
     { words: [{ en: 'I feel', cn: '我感觉' }, { en: 'happy', cn: '开心' }, { en: 'today', cn: '今天' }], correct: ['I feel', 'happy', 'today'], chinese: '我今天感觉很开心。' },
+    { words: [{ en: 'It was a', cn: '那是个' }, { en: 'happy', cn: '快乐的' }, { en: 'moment', cn: '时刻' }], correct: ['It was a', 'happy', 'moment'], chinese: '那是一个快乐的时刻。' },
+    { words: [{ en: 'He', cn: '他' }, { en: 'happily', cn: '开心地' }, { en: 'accepted', cn: '接受了' }, { en: 'the gift', cn: '礼物' }], correct: ['He', 'happily', 'accepted', 'the gift'], chinese: '他开心地接受了礼物。' }
 ];
 
 export const HappyContent: React.FC<HappyContentProps> = ({ onBack, themeColor, onCompleteAll }) => {

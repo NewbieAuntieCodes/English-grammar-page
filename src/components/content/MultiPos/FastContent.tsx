@@ -40,6 +40,8 @@ const practiceData = [
     { words: [{ en: 'Time goes', cn: '时间过得' }, { en: 'so fast', cn: '如此快' }], correct: ['Time goes', 'so fast'], chinese: '时间过得真快。' },
     { words: [{ en: 'She', cn: '她' }, { en: 'is a', cn: '是个' }, { en: 'fast learner', cn: '学得快的人' }], correct: ['She', 'is a', 'fast learner'], chinese: '她学东西很快。' },
     { words: [{ en: 'Don\'t talk', cn: '别说得' }, { en: 'so fast', cn: '那么快' }], correct: ['Don\'t talk', 'so fast'], chinese: '别说那么快。' },
+    { words: [{ en: 'We took a', cn: '我们坐了' }, { en: 'fast train', cn: '一趟快车' }], correct: ['We took a', 'fast train'], chinese: '我们坐了一趟快车。' },
+    { words: [{ en: 'She recovered', cn: '她恢复得' }, { en: 'very fast', cn: '非常快' }], correct: ['She recovered', 'very fast'], chinese: '她恢复得非常快。' }
 ];
 
 export const FastContent: React.FC<FastContentProps> = ({ onBack, themeColor, onCompleteAll }) => {
