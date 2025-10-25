@@ -31,6 +31,8 @@ const thatFillData = [
     { sentenceParts: ["It is true ", " he is a good man."] as const, choices: [{text: "that", isCorrect: true}, {text: "who", isCorrect: false}, {text: "what", isCorrect: false}], chineseHint: "他是个好人，这是真的。" },
     { sentenceParts: ["", " the earth is round is a fact."] as const, choices: [{text: "That", isCorrect: true}, {text: "What", isCorrect: false}, {text: "If", isCorrect: false}], chineseHint: "地球是圆的，这是一个事实。" },
     { sentenceParts: ["It is important ", " we protect the environment."] as const, choices: [{text: "that", isCorrect: true}, {text: "what", isCorrect: false}, {text: "whether", isCorrect: false}], chineseHint: "我们保护环境很重要。" },
+    { sentenceParts: ["", " he didn't come to the meeting is strange."] as const, choices: [{text: "That", isCorrect: true}, {text: "What", isCorrect: false}, {text: "Why", isCorrect: false}], chineseHint: "他没来参加会议很奇怪。" },
+    { sentenceParts: ["It is obvious ", " she is not interested."] as const, choices: [{text: "that", isCorrect: true}, {text: "what", isCorrect: false}, {text: "if", isCorrect: false}], chineseHint: "很明显她不感兴趣。" },
 ];
 const thatBuildData = [
     { words: [{ en: 'That', cn: '(引导词)' }, { en: 'she will come', cn: '她将会来' }, { en: 'is certain', cn: '是确定的' }], correct: ['That', 'she will come', 'is certain'], chinese: '她会来是确定的。' },
@@ -38,6 +40,8 @@ const thatBuildData = [
     { words: [{ en: 'It is true', cn: '是真的' }, { en: 'that', cn: '(引导词)' }, { en: 'he is a good man', cn: '他是个好人' }], correct: ['It is true', 'that', 'he is a good man'], chinese: '他是个好人，这是真的。' },
     { words: [{ en: 'That the earth is round', cn: '地球是圆的' }, { en: 'is a fact', cn: '是一个事实' }], correct: ['That the earth is round', 'is a fact'], chinese: '地球是圆的，这是一个事实。' },
     { words: [{ en: 'It is important', cn: '很重要' }, { en: 'that we protect', cn: '我们保护' }, { en: 'the environment', cn: '环境' }], correct: ['It is important', 'that we protect', 'the environment'], chinese: '我们保护环境很重要。' },
+    { words: [{ en: 'That he is wrong', cn: '他是错的' }, { en: 'is clear', cn: '是清楚的' }], correct: ['That he is wrong', 'is clear'], chinese: '他错了，这是很清楚的。' },
+    { words: [{ en: 'It is a miracle', cn: '是个奇迹' }, { en: 'that', cn: '(引导词)' }, { en: 'he survived the crash', cn: '他在车祸中幸存下来' }], correct: ['It is a miracle', 'that', 'he survived the crash'], chinese: '他在车祸中幸存下来，真是个奇迹。' },
 ];
 
 // WH-clauses
@@ -47,6 +51,8 @@ const whFillData = [
     { sentenceParts: ["", " she lives is a secret."] as const, choices: [{text: "Where", isCorrect: true}, {text: "When", isCorrect: false}, {text: "Why", isCorrect: false}], chineseHint: "她住在哪里是个秘密。" },
     { sentenceParts: ["", " he left so early is a mystery."] as const, choices: [{text: "Why", isCorrect: true}, {text: "How", isCorrect: false}, {text: "What", isCorrect: false}], chineseHint: "他为何这么早离开是个谜。" },
     { sentenceParts: ["It is amazing ", " he solved the problem."] as const, choices: [{text: "how", isCorrect: true}, {text: "that", isCorrect: false}, {text: "what", isCorrect: false}], chineseHint: "他如何解决这个问题令人惊叹。" },
+    { sentenceParts: ["", " we need is more time."] as const, choices: [{text: "What", isCorrect: true}, {text: "That", isCorrect: false}, {text: "Who", isCorrect: false}], chineseHint: "我们需要的是更多时间。" },
+    { sentenceParts: ["", " the party starts is still a secret."] as const, choices: [{text: "When", isCorrect: true}, {text: "Where", isCorrect: false}, {text: "Why", isCorrect: false}], chineseHint: "派对何时开始仍是个秘密。" },
 ];
 const whBuildData = [
     { words: [{ en: 'What he said', cn: '他所说的' }, { en: 'is not', cn: '不是' }, { en: 'true', cn: '真实的' }], correct: ['What he said', 'is not', 'true'], chinese: '他所说的话不是真的。' },
@@ -54,6 +60,8 @@ const whBuildData = [
     { words: [{ en: 'Where she lives', cn: '她住在哪' }, { en: 'is a secret', cn: '是个秘密' }], correct: ['Where she lives', 'is a secret'], chinese: '她住在哪里是个秘密。' },
     { words: [{ en: 'Why he left', cn: '他为何离开' }, { en: 'is a mystery', cn: '是个谜' }], correct: ['Why he left', 'is a mystery'], chinese: '他为何离开是个谜。' },
     { words: [{ en: 'How he did it', cn: '他如何做到' }, { en: 'is incredible', cn: '难以置信' }], correct: ['How he did it', 'is incredible'], chinese: '他是如何做到这一点的，简直令人难以置信。' },
+    { words: [{ en: 'When he will arrive', cn: '他何时到达' }, { en: 'is uncertain', cn: '是不确定的' }], correct: ['When he will arrive', 'is uncertain'], chinese: '他何时到达还不确定。' },
+    { words: [{ en: 'What we should do next', cn: '我们下一步该做什么' }, { en: 'is the main question', cn: '是主要问题' }], correct: ['What we should do next', 'is the main question'], chinese: '我们下一步该怎么做是主要问题。' },
 ];
 
 // WHETHER-clauses
@@ -63,6 +71,8 @@ const whetherFillData = [
     { sentenceParts: ["", " we should go or not is the problem."] as const, choices: [{text: "Whether", isCorrect: true}, {text: "That", isCorrect: false}, {text: "What", isCorrect: false}], chineseHint: "我们是否该去，这是个问题。" },
     { sentenceParts: ["", " it will rain tomorrow is uncertain."] as const, choices: [{text: "Whether", isCorrect: true}, {text: "That", isCorrect: false}, {text: "What", isCorrect: false}], chineseHint: "明天是否会下雨还不确定。" },
     { sentenceParts: ["It depends on ", " you like it or not."] as const, choices: [{text: "whether", isCorrect: true}, {text: "that", isCorrect: false}, {text: "if", isCorrect: false}], chineseHint: "这取决于你是否喜欢它。" },
+    { sentenceParts: ["", " the report is true is still under discussion."] as const, choices: [{text: "Whether", isCorrect: true}, {text: "That", isCorrect: false}, {text: "What", isCorrect: false}], chineseHint: "该报告是否属实仍在讨论中。" },
+    { sentenceParts: ["It is not yet decided ", " we will go on holiday.",] as const, choices: [{text: "whether", isCorrect: true}, {text: "that", isCorrect: false}, {text: "what", isCorrect: false}], chineseHint: "我们是否去度假还没有决定。" },
 ];
 const whetherBuildData = [
     { words: [{ en: 'Whether he will come', cn: '他是否会来' }, { en: 'is not certain', cn: '不确定' }], correct: ['Whether he will come', 'is not certain'], chinese: '他是否会来还不确定。' },
@@ -70,6 +80,8 @@ const whetherBuildData = [
     { words: [{ en: 'Whether he agrees or not', cn: '他是否同意' }, { en: 'doesn\'t matter', cn: '不重要' }], correct: ['Whether he agrees or not', 'doesn\'t matter'], chinese: '他同不同意都无关紧要。' },
     { words: [{ en: 'It is uncertain', cn: '不确定' }, { en: 'whether the flight will be delayed', cn: '航班是否会延误' }], correct: ['It is uncertain', 'whether the flight will be delayed'], chinese: '航班是否会延误还不确定。' },
     { words: [{ en: 'Whether we can succeed', cn: '我们能否成功' }, { en: 'depends on our effort', cn: '取决于我们的努力' }], correct: ['Whether we can succeed', 'depends on our effort'], chinese: '我们能否成功取决于我们的努力。' },
+    { words: [{ en: 'Whether the project will succeed', cn: '项目是否会成功' }, { en: 'is our main concern', cn: '是我们主要关心的' }], correct: ['Whether the project will succeed', 'is our main concern'], chinese: '这个项目能否成功是我们主要关心的问题。' },
+    { words: [{ en: 'It is questionable', cn: '值得怀疑' }, { en: 'whether he told the truth', cn: '他是否说了实话' }], correct: ['It is questionable', 'whether he told the truth'], chinese: '他是否说了实话是值得怀疑的。' },
 ];
 
 
