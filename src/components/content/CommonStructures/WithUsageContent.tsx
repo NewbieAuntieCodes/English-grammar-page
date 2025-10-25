@@ -126,7 +126,7 @@ export const WithUsageContent: React.FC<WithUsageContentProps> = ({ onBack, them
                 subtitle="用下面的词组成句子"
                 completionTitle="🎉 Perfect!"
                 completionMessage="你已经掌握了 'with' 的用法！"
-                nextButtonText="完成学习，返回列表"
+                nextButtonText="学习不定式的用法 →"
             />
         </LessonContainer>
     );

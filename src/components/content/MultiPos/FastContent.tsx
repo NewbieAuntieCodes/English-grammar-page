@@ -86,14 +86,14 @@ export const FastContent: React.FC<FastContentProps> = ({ onBack, themeColor, on
                         <ExampleEnglish>He is a <strong>fast</strong> runner.</ExampleEnglish>
                         <SpeakButton onClick={(e) => { e.stopPropagation(); handleSpeak('He is a fast runner.'); }}>🔊</SpeakButton>
                     </ExampleHeader>
-                    <ExampleChinese>他是一个跑得很快的人。(什么样的 runner? -> fast runner)</ExampleChinese>
+                    <ExampleChinese>他是一个跑得很快的人。(什么样的 runner? {'->'} fast runner)</ExampleChinese>
                 </ExampleItem>
                 <ExampleItem themeColor={themeColor}>
                     <ExampleHeader>
                         <ExampleEnglish>This is a <strong>fast</strong> car.</ExampleEnglish>
                         <SpeakButton onClick={(e) => { e.stopPropagation(); handleSpeak('This is a fast car.'); }}>🔊</SpeakButton>
                     </ExampleHeader>
-                    <ExampleChinese>这是一辆快车。(什么样的 car? -> fast car)</ExampleChinese>
+                    <ExampleChinese>这是一辆快车。(什么样的 car? {'->'} fast car)</ExampleChinese>
                 </ExampleItem>
 
                 <UsageType>2. 作副词 (Adverb)</UsageType>
@@ -105,14 +105,14 @@ export const FastContent: React.FC<FastContentProps> = ({ onBack, themeColor, on
                         <ExampleEnglish>He runs <strong>fast</strong>.</ExampleEnglish>
                         <SpeakButton onClick={(e) => { e.stopPropagation(); handleSpeak('He runs fast.'); }}>🔊</SpeakButton>
                     </ExampleHeader>
-                    <ExampleChinese>他跑得很快。(跑得怎么样? -> 跑得 fast)</ExampleChinese>
+                    <ExampleChinese>他跑得很快。(跑得怎么样? {'->'} 跑得 fast)</ExampleChinese>
                 </ExampleItem>
                 <ExampleItem themeColor={themeColor}>
                     <ExampleHeader>
                         <ExampleEnglish>Don't talk so <strong>fast</strong>.</ExampleEnglish>
                         <SpeakButton onClick={(e) => { e.stopPropagation(); handleSpeak("Don't talk so fast."); }}>🔊</SpeakButton>
                     </ExampleHeader>
-                    <ExampleChinese>别说那么快。(说得怎么样? -> 说得 fast)</ExampleChinese>
+                    <ExampleChinese>别说那么快。(说得怎么样? {'->'} 说得 fast)</ExampleChinese>
                 </ExampleItem>
             </ExamplesSection>
             

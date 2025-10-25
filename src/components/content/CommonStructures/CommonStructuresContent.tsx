@@ -10,13 +10,14 @@ import { LessonList, LessonItem, LessonTitleChinese, LessonTitleEnglish } from '
 import { GerundsContent } from './GerundsContent';
 import { ItIsAdjForSbContent } from './ItIsAdjForSbContent';
 import { WithUsageContent } from './WithUsageContent';
+import { InfinitivesContent } from './InfinitivesContent';
 
 
 interface ContentProps {
     startLesson: (lessonType: string) => void;
 }
 
-type View = 'list' | 'gerunds' | 'it-is-adj' | 'with-usage';
+type View = 'list' | 'gerunds' | 'it-is-adj' | 'with-usage' | 'infinitives';
 
 export const CommonStructuresContent: React.FC<ContentProps> = ({ startLesson }) => {
     const [view, setView] = useState<View>('list');
@@ -31,7 +32,11 @@ export const CommonStructuresContent: React.FC<ContentProps> = ({ startLesson })
     }
 
     if (view === 'with-usage') {
-        return <WithUsageContent onBack={() => setView('list')} themeColor={themeColor} onCompleteAll={() => setView('list')} />;
+        return <WithUsageContent onBack={() => setView('list')} themeColor={themeColor} onCompleteAll={() => setView('infinitives')} />;
+    }
+
+    if (view === 'infinitives') {
+        return <InfinitivesContent onBack={() => setView('list')} themeColor={themeColor} onCompleteAll={() => setView('list')} />;
     }
 
     return (
@@ -55,6 +60,10 @@ export const CommonStructuresContent: React.FC<ContentProps> = ({ startLesson })
                 <LessonItem borderColor={themeColor} onClick={() => setView('with-usage')}>
                     <LessonTitleChinese>介词 'with' 的用法</LessonTitleChinese>
                     <LessonTitleEnglish>Usage of Preposition "with"</LessonTitleEnglish>
+                </LessonItem>
+                <LessonItem borderColor={themeColor} onClick={() => setView('infinitives')}>
+                    <LessonTitleChinese>不定式的用法</LessonTitleChinese>
+                    <LessonTitleEnglish>Usage of Infinitives (to do)</LessonTitleEnglish>
                 </LessonItem>
             </LessonList>
         </>
