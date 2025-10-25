@@ -5,7 +5,7 @@
 import React, { useState, useEffect } from 'react';
 import { GlobalStyle } from '../../styles/GlobalStyle';
 import { cardDataConfig } from '../../data/definitions';
-import { StructureIcon, PartsIcon, ClausesIcon, TensesIcon, ComponentsIcon, CommonStructureIcon } from '../../data/icons';
+import { StructureIcon, PartsIcon, ClausesIcon, TensesIcon, ComponentsIcon, CommonStructureIcon, MultiPosIcon } from '../../data/icons';
 import { FloatingCard } from '../FloatingCard';
 import { ExpandedContent } from '../ExpandedContent';
 import { StructuresContent } from '../content/Structures/StructuresContent';
@@ -15,12 +15,14 @@ import { TensesContent } from '../content/Tenses/TensesContent';
 import { AppContainer, Header, CardsContainer } from './App.styles';
 import { SentenceComponentsContent } from '../content/SentenceComponents/SentenceComponentsContent';
 import { CommonStructuresContent } from '../content/CommonStructures/CommonStructuresContent';
+import { MultiPosContent } from '../content/MultiPos/MultiPosContent';
 
 // --- Icon Map ---
 const iconMap: { [key: string]: React.ReactNode } = {
     structures: <StructureIcon />,
     'common-structures': <CommonStructureIcon />,
     parts: <PartsIcon />,
+    'multi-pos': <MultiPosIcon />,
     clauses: <ClausesIcon />,
     tenses: <TensesIcon />,
     components: <ComponentsIcon />,
@@ -43,6 +45,7 @@ const contentComponents: { [key: string]: React.ReactNode } = {
     structures: <StructuresContent startLesson={startLesson} />,
     'common-structures': <CommonStructuresContent startLesson={startLesson} />,
     parts: <PartsOfSpeechContent startLesson={startLesson} />,
+    'multi-pos': <MultiPosContent startLesson={startLesson} />,
     clauses: <ClausesContent startLesson={startLesson} />,
     tenses: <TensesContent startLesson={startLesson} />,
     components: <SentenceComponentsContent startLesson={startLesson} />,
