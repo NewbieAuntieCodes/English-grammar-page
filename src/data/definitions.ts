@@ -15,4 +15,5 @@ export const cardDataConfig = [
     { id: 'clauses', title: '从句句型结构', subtitle: 'Clause Sentence Structures', color: '#0097a7' },
     { id: 'common-structures', title: '常见句子结构', subtitle: 'Common Sentence Structures', color: '#5e72e4' },
     { id: 'tenses', title: '基础时态学习', subtitle: 'Basic Tenses', color: '#f093fb' },
+    { id: 'vocabulary', title: '词汇练习', subtitle: 'Vocabulary Practice', color: '#3498db' },
 ];

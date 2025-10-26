@@ -61,3 +61,7 @@ export const CommonStructureIcon: React.FC = () => (
 export const MultiPosIcon: React.FC = () => (
     <span role="img" aria-label="Multi POS Icon" style={{ fontSize: '48px' }}>🔄</span>
 );
+
+export const VocabularyIcon: React.FC = () => (
+    <span role="img" aria-label="Vocabulary Icon" style={{ fontSize: '48px' }}>📖</span>
+);
