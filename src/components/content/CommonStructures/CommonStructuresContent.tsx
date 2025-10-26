@@ -13,13 +13,14 @@ import { WithUsageContent } from './WithUsageContent';
 import { InfinitivesContent } from './InfinitivesContent';
 import { OfUsageContent } from './OfUsageContent';
 import { ByUsageContent } from './ByUsageContent';
+import { AsAsUsageContent } from './AsAsUsageContent';
 
 
 interface ContentProps {
     startLesson: (lessonType: string) => void;
 }
 
-type View = 'list' | 'gerunds' | 'it-is-adj' | 'of-usage' | 'with-usage' | 'infinitives' | 'by-usage';
+type View = 'list' | 'gerunds' | 'it-is-adj' | 'of-usage' | 'with-usage' | 'infinitives' | 'by-usage' | 'as-as-usage';
 
 export const CommonStructuresContent: React.FC<ContentProps> = ({ startLesson }) => {
     const [view, setView] = useState<View>('list');
@@ -46,7 +47,11 @@ export const CommonStructuresContent: React.FC<ContentProps> = ({ startLesson })
     }
 
     if (view === 'by-usage') {
-        return <ByUsageContent onBack={() => setView('list')} themeColor={themeColor} onCompleteAll={() => setView('list')} />;
+        return <ByUsageContent onBack={() => setView('list')} themeColor={themeColor} onCompleteAll={() => setView('as-as-usage')} />;
+    }
+
+    if (view === 'as-as-usage') {
+        return <AsAsUsageContent onBack={() => setView('list')} themeColor={themeColor} onCompleteAll={() => setView('list')} />;
     }
 
     return (
@@ -82,6 +87,10 @@ export const CommonStructuresContent: React.FC<ContentProps> = ({ startLesson })
                 <LessonItem borderColor={themeColor} onClick={() => setView('by-usage')}>
                     <LessonTitleChinese>介词 'by' 的用法</LessonTitleChinese>
                     <LessonTitleEnglish>Usage of Preposition "by"</LessonTitleEnglish>
+                </LessonItem>
+                <LessonItem borderColor={themeColor} onClick={() => setView('as-as-usage')}>
+                    <LessonTitleChinese>同级比较 'as...as'</LessonTitleChinese>
+                    <LessonTitleEnglish>Comparisons with "as...as"</LessonTitleEnglish>
                 </LessonItem>
             </LessonList>
         </>
