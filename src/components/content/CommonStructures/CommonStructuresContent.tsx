@@ -12,13 +12,14 @@ import { ItIsAdjForSbContent } from './ItIsAdjForSbContent';
 import { WithUsageContent } from './WithUsageContent';
 import { InfinitivesContent } from './InfinitivesContent';
 import { OfUsageContent } from './OfUsageContent';
+import { ByUsageContent } from './ByUsageContent';
 
 
 interface ContentProps {
     startLesson: (lessonType: string) => void;
 }
 
-type View = 'list' | 'gerunds' | 'it-is-adj' | 'of-usage' | 'with-usage' | 'infinitives';
+type View = 'list' | 'gerunds' | 'it-is-adj' | 'of-usage' | 'with-usage' | 'infinitives' | 'by-usage';
 
 export const CommonStructuresContent: React.FC<ContentProps> = ({ startLesson }) => {
     const [view, setView] = useState<View>('list');
@@ -41,7 +42,11 @@ export const CommonStructuresContent: React.FC<ContentProps> = ({ startLesson })
     }
 
     if (view === 'with-usage') {
-        return <WithUsageContent onBack={() => setView('list')} themeColor={themeColor} onCompleteAll={() => setView('list')} />;
+        return <WithUsageContent onBack={() => setView('list')} themeColor={themeColor} onCompleteAll={() => setView('by-usage')} />;
+    }
+
+    if (view === 'by-usage') {
+        return <ByUsageContent onBack={() => setView('list')} themeColor={themeColor} onCompleteAll={() => setView('list')} />;
     }
 
     return (
@@ -73,6 +78,10 @@ export const CommonStructuresContent: React.FC<ContentProps> = ({ startLesson })
                 <LessonItem borderColor={themeColor} onClick={() => setView('with-usage')}>
                     <LessonTitleChinese>介词 'with' 的用法</LessonTitleChinese>
                     <LessonTitleEnglish>Usage of Preposition "with"</LessonTitleEnglish>
+                </LessonItem>
+                <LessonItem borderColor={themeColor} onClick={() => setView('by-usage')}>
+                    <LessonTitleChinese>介词 'by' 的用法</LessonTitleChinese>
+                    <LessonTitleEnglish>Usage of Preposition "by"</LessonTitleEnglish>
                 </LessonItem>
             </LessonList>
         </>
