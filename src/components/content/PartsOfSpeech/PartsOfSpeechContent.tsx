@@ -34,6 +34,7 @@ import { WorkContent } from '../MultiPos/WorkContent';
 import { SlowContent } from '../MultiPos/SlowContent';
 import { AccessContent } from '../MultiPos/AccessContent';
 import { ValueContent } from '../MultiPos/ValueContent';
+import { AvailableContent } from '../MultiPos/AvailableContent';
 
 
 interface ContentProps {
@@ -59,9 +60,10 @@ const wordFormsData = [
     { name: 'Slow / Slowly', description: 'Adjective vs. Adverb', lesson: 'slow' },
     { name: 'Access / Accessible', description: 'Noun/Verb vs. Adjective', lesson: 'access' },
     { name: 'Value', description: 'Noun vs. Verb', lesson: 'value' },
+    { name: 'Available', description: 'Adjective', lesson: 'available' },
 ];
 
-type View = 'list' | 'nouns' | 'verbs' | 'adjectives' | 'adverbs' | 'prepositions' | 'conjunctions' | 'pronouns' | 'articles' | 'fast' | 'happy' | 'good-well' | 'work' | 'slow' | 'access' | 'value';
+type View = 'list' | 'nouns' | 'verbs' | 'adjectives' | 'adverbs' | 'prepositions' | 'conjunctions' | 'pronouns' | 'articles' | 'fast' | 'happy' | 'good-well' | 'work' | 'slow' | 'access' | 'value' | 'available';
 
 export const PartsOfSpeechContent: React.FC<ContentProps> = ({ startLesson }) => {
     const [view, setView] = useState<View>('list');
@@ -70,7 +72,7 @@ export const PartsOfSpeechContent: React.FC<ContentProps> = ({ startLesson }) =>
 
     const handleItemClick = (lesson: string) => {
         const lessonView = lesson as View;
-        if (['nouns', 'verbs', 'adjectives', 'adverbs', 'prepositions', 'conjunctions', 'pronouns', 'articles', 'fast', 'happy', 'good-well', 'work', 'slow', 'access', 'value'].includes(lessonView)) {
+        if (['nouns', 'verbs', 'adjectives', 'adverbs', 'prepositions', 'conjunctions', 'pronouns', 'articles', 'fast', 'happy', 'good-well', 'work', 'slow', 'access', 'value', 'available'].includes(lessonView)) {
             setView(lessonView);
         } else {
             startLesson(lesson);
@@ -122,7 +124,10 @@ export const PartsOfSpeechContent: React.FC<ContentProps> = ({ startLesson }) =>
         return <AccessContent onBack={() => setView('list')} themeColor={multiPosThemeColor} onCompleteAll={() => setView('value')} />;
     }
     if (view === 'value') {
-        return <ValueContent onBack={() => setView('list')} themeColor={multiPosThemeColor} onCompleteAll={() => setView('list')} />;
+        return <ValueContent onBack={() => setView('list')} themeColor={multiPosThemeColor} onCompleteAll={() => setView('available')} />;
+    }
+    if (view === 'available') {
+        return <AvailableContent onBack={() => setView('list')} themeColor={multiPosThemeColor} onCompleteAll={() => setView('list')} />;
     }
 
     return (

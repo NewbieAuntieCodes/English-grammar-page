@@ -8,19 +8,24 @@ import { VocabularyIcon } from '../../../data/icons';
 import { ContentHeader, ContentIcon, ContentTitle, ContentSubtitle } from '../../../styles/shared';
 import { LessonList, LessonItem, LessonTitleChinese, LessonTitleEnglish } from '../Structures/StructuresContent.styles'; // Reuse styles
 import { AffectEffectContent } from './AffectEffectContent';
+import { AvailableAccessibleContent } from './AvailableAccessibleContent';
 
 interface ContentProps {
     startLesson: (lessonType: string) => void;
 }
 
-type View = 'list' | 'affect-effect';
+type View = 'list' | 'affect-effect' | 'available-accessible';
 
 export const VocabularyContent: React.FC<ContentProps> = ({ startLesson }) => {
     const [view, setView] = useState<View>('list');
     const themeColor = cardDataConfig.find(card => card.id === 'vocabulary')?.color || '#3498db';
     
     if (view === 'affect-effect') {
-        return <AffectEffectContent onBack={() => setView('list')} themeColor={themeColor} onCompleteAll={() => setView('list')} />;
+        return <AffectEffectContent onBack={() => setView('list')} themeColor={themeColor} onCompleteAll={() => setView('available-accessible')} />;
+    }
+
+    if (view === 'available-accessible') {
+        return <AvailableAccessibleContent onBack={() => setView('list')} themeColor={themeColor} onCompleteAll={() => setView('list')} />;
     }
 
     return (
@@ -36,6 +41,10 @@ export const VocabularyContent: React.FC<ContentProps> = ({ startLesson }) => {
                 <LessonItem borderColor={themeColor} onClick={() => setView('affect-effect')}>
                     <LessonTitleChinese>Affect vs. Effect</LessonTitleChinese>
                     <LessonTitleEnglish>Commonly Confused Words</LessonTitleEnglish>
+                </LessonItem>
+                <LessonItem borderColor={themeColor} onClick={() => setView('available-accessible')}>
+                    <LessonTitleChinese>Available vs. Accessible</LessonTitleChinese>
+                    <LessonTitleEnglish>Commonly Confused Adjectives</LessonTitleEnglish>
                 </LessonItem>
             </LessonList>
         </>
