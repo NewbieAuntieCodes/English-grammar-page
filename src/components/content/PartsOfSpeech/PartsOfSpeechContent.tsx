@@ -32,6 +32,8 @@ import { HappyContent } from '../MultiPos/HappyContent';
 import { GoodWellContent } from '../MultiPos/GoodWellContent';
 import { WorkContent } from '../MultiPos/WorkContent';
 import { SlowContent } from '../MultiPos/SlowContent';
+import { AccessContent } from '../MultiPos/AccessContent';
+
 
 interface ContentProps {
     startLesson: (lessonType: string) => void;
@@ -54,9 +56,10 @@ const wordFormsData = [
     { name: 'Good / Well', description: 'Adjective vs. Adverb', lesson: 'good-well' },
     { name: 'Work', description: 'Noun vs. Verb', lesson: 'work' },
     { name: 'Slow / Slowly', description: 'Adjective vs. Adverb', lesson: 'slow' },
+    { name: 'Access / Accessible', description: 'Noun/Verb vs. Adjective', lesson: 'access' },
 ];
 
-type View = 'list' | 'nouns' | 'verbs' | 'adjectives' | 'adverbs' | 'prepositions' | 'conjunctions' | 'pronouns' | 'articles' | 'fast' | 'happy' | 'good-well' | 'work' | 'slow';
+type View = 'list' | 'nouns' | 'verbs' | 'adjectives' | 'adverbs' | 'prepositions' | 'conjunctions' | 'pronouns' | 'articles' | 'fast' | 'happy' | 'good-well' | 'work' | 'slow' | 'access';
 
 export const PartsOfSpeechContent: React.FC<ContentProps> = ({ startLesson }) => {
     const [view, setView] = useState<View>('list');
@@ -65,7 +68,7 @@ export const PartsOfSpeechContent: React.FC<ContentProps> = ({ startLesson }) =>
 
     const handleItemClick = (lesson: string) => {
         const lessonView = lesson as View;
-        if (['nouns', 'verbs', 'adjectives', 'adverbs', 'prepositions', 'conjunctions', 'pronouns', 'articles', 'fast', 'happy', 'good-well', 'work', 'slow'].includes(lessonView)) {
+        if (['nouns', 'verbs', 'adjectives', 'adverbs', 'prepositions', 'conjunctions', 'pronouns', 'articles', 'fast', 'happy', 'good-well', 'work', 'slow', 'access'].includes(lessonView)) {
             setView(lessonView);
         } else {
             startLesson(lesson);
@@ -111,7 +114,10 @@ export const PartsOfSpeechContent: React.FC<ContentProps> = ({ startLesson }) =>
         return <WorkContent onBack={() => setView('list')} themeColor={multiPosThemeColor} onCompleteAll={() => setView('slow')} />;
     }
     if (view === 'slow') {
-        return <SlowContent onBack={() => setView('list')} themeColor={multiPosThemeColor} onCompleteAll={() => setView('list')} />;
+        return <SlowContent onBack={() => setView('list')} themeColor={multiPosThemeColor} onCompleteAll={() => setView('access')} />;
+    }
+    if (view === 'access') {
+        return <AccessContent onBack={() => setView('list')} themeColor={multiPosThemeColor} onCompleteAll={() => setView('list')} />;
     }
 
     return (
