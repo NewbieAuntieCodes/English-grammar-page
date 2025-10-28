@@ -143,8 +143,48 @@ export const ChoiceButton = styled.button<{ themeColor: string; isShaking: boole
     `}
 `;
 
+export const NavigationDots = styled.div`
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin: 20px auto 10px;
+    padding: 10px 0;
+    overflow-x: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    max-width: 100%;
+`;
+
+export const NavigationDot = styled.button<{ isActive: boolean; themeColor: string }>`
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #d1d5db;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    flex-shrink: 0;
+
+    &:hover {
+        background: #b0b5bb;
+    }
+
+    ${props => props.isActive && css`
+        background: ${props.themeColor};
+        transform: scale(1.3);
+        cursor: default;
+
+        &:hover {
+            background: ${props.themeColor};
+        }
+    `}
+`;
+
 export const ProgressContainer = styled.div`
-    margin-top: 30px;
+    margin-top: 10px;
 `;
 
 export const ProgressBarOuter = styled.div`

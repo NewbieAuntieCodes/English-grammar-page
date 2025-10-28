@@ -20,6 +20,8 @@ import {
     CompletionMessage,
     CorrectSticker,
     NextChapterButton,
+    NavigationDots,
+    NavigationDot,
 } from './StoryPractice.styles';
 import { ChineseHint } from './SentenceBuilderPractice.styles';
 
@@ -159,11 +161,24 @@ export const FillInTheBlankPractice: React.FC<FillInTheBlankPracticeProps> = ({
                             </ChoicesContainer>
                         </div>
 
-                        <ProgressContainer>
-                            <ProgressBarOuter>
-                                <ProgressBarInner themeColor={themeColor} progress={progress} />
-                            </ProgressBarOuter>
-                        </ProgressContainer>
+                        <div>
+                            <NavigationDots>
+                                {practiceData.map((_, index) => (
+                                    <NavigationDot
+                                        key={index}
+                                        isActive={index === stepIndex}
+                                        themeColor={themeColor}
+                                        onClick={() => setStepIndex(index)}
+                                        aria-label={`Go to question ${index + 1}`}
+                                    />
+                                ))}
+                            </NavigationDots>
+                            <ProgressContainer>
+                                <ProgressBarOuter>
+                                    <ProgressBarInner themeColor={themeColor} progress={progress} />
+                                </ProgressBarOuter>
+                            </ProgressContainer>
+                        </div>
                     </>
                 )
             )}

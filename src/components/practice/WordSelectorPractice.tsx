@@ -151,7 +151,13 @@ export const WordSelectorPractice: React.FC<WordSelectorPracticeProps> = ({
 
                 <ProgressDots>
                     {practiceData.map((_, index) => (
-                        <ProgressDot key={index} isActive={index === practiceIndex} themeColor={themeColor} />
+                        <ProgressDot 
+                            key={index} 
+                            isActive={index === practiceIndex} 
+                            themeColor={themeColor} 
+                            onClick={() => setPracticeIndex(index)}
+                            aria-label={`Go to question ${index + 1}`}
+                        />
                     ))}
                 </ProgressDots>
             </>

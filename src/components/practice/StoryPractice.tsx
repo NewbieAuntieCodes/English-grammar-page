@@ -12,6 +12,8 @@ import {
     PromptText,
     ChoicesContainer,
     ChoiceButton,
+    NavigationDots,
+    NavigationDot,
     ProgressContainer,
     ProgressBarOuter,
     ProgressBarInner,
@@ -40,6 +42,7 @@ interface StoryPracticeProps {
     subtitle: string;
     completionTitle: string;
     completionMessage: string;
+
     nextButtonText: string;
 }
 
@@ -101,6 +104,19 @@ export const StoryPractice: React.FC<StoryPracticeProps> = ({
     
     const progress = isCompleted ? 100 : (stepIndex / (storyData.length - 1)) * 100;
 
+    // Rebuild completed story string when jumping to a step
+    useEffect(() => {
+        let story = '';
+        for (let i = 0; i < stepIndex; i++) {
+            const step = storyData[i];
+            const correctChoice = step.choices.find(c => c.isCorrect);
+            if (correctChoice) {
+                story += ' ' + step.prompt.replace('...', ' ' + correctChoice.text);
+            }
+        }
+        setCompletedStory(story.trim());
+    }, [stepIndex, storyData]);
+
     return (
         <PracticeSection themeColor={themeColor}>
             {showCorrectSticker && <CorrectSticker themeColor={themeColor}>✔️ Correct!</CorrectSticker>}
@@ -141,11 +157,24 @@ export const StoryPractice: React.FC<StoryPracticeProps> = ({
                             </ChoicesContainer>
                         </div>
 
-                        <ProgressContainer>
-                            <ProgressBarOuter>
-                                <ProgressBarInner themeColor={themeColor} progress={progress} />
-                            </ProgressBarOuter>
-                        </ProgressContainer>
+                        <div>
+                            <NavigationDots>
+                                {storyData.slice(0, -1).map((_, index) => (
+                                    <NavigationDot
+                                        key={index}
+                                        isActive={index === stepIndex}
+                                        themeColor={themeColor}
+                                        onClick={() => setStepIndex(index)}
+                                        aria-label={`Go to step ${index + 1}`}
+                                    />
+                                ))}
+                            </NavigationDots>
+                            <ProgressContainer>
+                                <ProgressBarOuter>
+                                    <ProgressBarInner themeColor={themeColor} progress={progress} />
+                                </ProgressBarOuter>
+                            </ProgressContainer>
+                        </div>
                     </>
                 )
             )}

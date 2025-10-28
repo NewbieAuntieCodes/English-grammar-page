@@ -197,18 +197,39 @@ export const ProgressDots = styled.div`
     display: flex;
     justify-content: center;
     gap: 12px;
-    margin-top: 30px;
+    margin: 30px auto 0;
+    padding: 10px 0;
+    overflow-x: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    max-width: 100%;
 `;
 
-export const ProgressDot = styled.div<{ isActive: boolean; themeColor: string }>`
-    width: 10px;
-    height: 10px;
+export const ProgressDot = styled.button<{ isActive: boolean; themeColor: string }>`
+    width: 12px;
+    height: 12px;
     border-radius: 50%;
     background: #D1D5DB;
     transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    flex-shrink: 0;
+
+    &:hover {
+        background: #B0B5BB;
+    }
+
     ${props => props.isActive && css`
         background: #F43F5E;
-        transform: scale(1.2);
+        transform: scale(1.3);
+        cursor: default;
+        
+        &:hover {
+            background: #F43F5E;
+        }
     `}
 `;
 
