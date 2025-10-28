@@ -14,13 +14,14 @@ import { InfinitivesContent } from './InfinitivesContent';
 import { OfUsageContent } from './OfUsageContent';
 import { ByUsageContent } from './ByUsageContent';
 import { AsAsUsageContent } from './AsAsUsageContent';
+import { ThereBeContent } from './ThereBeContent';
 
 
 interface ContentProps {
     startLesson: (lessonType: string) => void;
 }
 
-type View = 'list' | 'gerunds' | 'it-is-adj' | 'of-usage' | 'with-usage' | 'infinitives' | 'by-usage' | 'as-as-usage';
+type View = 'list' | 'gerunds' | 'it-is-adj' | 'of-usage' | 'with-usage' | 'infinitives' | 'by-usage' | 'as-as-usage' | 'there-be';
 
 export const CommonStructuresContent: React.FC<ContentProps> = ({ startLesson }) => {
     const [view, setView] = useState<View>('list');
@@ -35,7 +36,11 @@ export const CommonStructuresContent: React.FC<ContentProps> = ({ startLesson })
     }
 
     if (view === 'it-is-adj') {
-        return <ItIsAdjForSbContent onBack={() => setView('list')} themeColor={themeColor} onCompleteAll={() => setView('of-usage')} />;
+        return <ItIsAdjForSbContent onBack={() => setView('list')} themeColor={themeColor} onCompleteAll={() => setView('there-be')} />;
+    }
+
+    if (view === 'there-be') {
+        return <ThereBeContent onBack={() => setView('list')} themeColor={themeColor} onCompleteAll={() => setView('of-usage')} />;
     }
 
     if (view === 'of-usage') {
@@ -75,6 +80,10 @@ export const CommonStructuresContent: React.FC<ContentProps> = ({ startLesson })
                 <LessonItem borderColor={themeColor} onClick={() => setView('it-is-adj')}>
                     <LessonTitleChinese>It is adj./noun for sb. to do sth.</LessonTitleChinese>
                     <LessonTitleEnglish>Formal Subject "It"</LessonTitleEnglish>
+                </LessonItem>
+                <LessonItem borderColor={themeColor} onClick={() => setView('there-be')}>
+                    <LessonTitleChinese>There be 句型</LessonTitleChinese>
+                    <LessonTitleEnglish>Usage of "There is/are"</LessonTitleEnglish>
                 </LessonItem>
                 <LessonItem borderColor={themeColor} onClick={() => setView('of-usage')}>
                     <LessonTitleChinese>介词 'of' 的用法</LessonTitleChinese>

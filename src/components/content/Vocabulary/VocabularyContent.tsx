@@ -9,12 +9,13 @@ import { ContentHeader, ContentIcon, ContentTitle, ContentSubtitle } from '../..
 import { LessonList, LessonItem, LessonTitleChinese, LessonTitleEnglish } from '../Structures/StructuresContent.styles'; // Reuse styles
 import { AffectEffectContent } from './AffectEffectContent';
 import { AvailableAccessibleContent } from './AvailableAccessibleContent';
+import { BalanceAndContent } from './BalanceAndContent';
 
 interface ContentProps {
     startLesson: (lessonType: string) => void;
 }
 
-type View = 'list' | 'affect-effect' | 'available-accessible';
+type View = 'list' | 'affect-effect' | 'available-accessible' | 'balance-and';
 
 export const VocabularyContent: React.FC<ContentProps> = ({ startLesson }) => {
     const [view, setView] = useState<View>('list');
@@ -25,7 +26,11 @@ export const VocabularyContent: React.FC<ContentProps> = ({ startLesson }) => {
     }
 
     if (view === 'available-accessible') {
-        return <AvailableAccessibleContent onBack={() => setView('list')} themeColor={themeColor} onCompleteAll={() => setView('list')} />;
+        return <AvailableAccessibleContent onBack={() => setView('list')} themeColor={themeColor} onCompleteAll={() => setView('balance-and')} />;
+    }
+
+    if (view === 'balance-and') {
+        return <BalanceAndContent onBack={() => setView('list')} themeColor={themeColor} onCompleteAll={() => setView('list')} />;
     }
 
     return (
@@ -45,6 +50,10 @@ export const VocabularyContent: React.FC<ContentProps> = ({ startLesson }) => {
                 <LessonItem borderColor={themeColor} onClick={() => setView('available-accessible')}>
                     <LessonTitleChinese>Available vs. Accessible</LessonTitleChinese>
                     <LessonTitleEnglish>Commonly Confused Adjectives</LessonTitleEnglish>
+                </LessonItem>
+                <LessonItem borderColor={themeColor} onClick={() => setView('balance-and')}>
+                    <LessonTitleChinese>'balance ... and ...' 的用法</LessonTitleChinese>
+                    <LessonTitleEnglish>Phrase: 'balance ... and ...'</LessonTitleEnglish>
                 </LessonItem>
             </LessonList>
         </>
