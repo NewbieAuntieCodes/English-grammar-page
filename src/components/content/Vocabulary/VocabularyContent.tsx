@@ -10,12 +10,13 @@ import { LessonList, LessonItem, LessonTitleChinese, LessonTitleEnglish } from '
 import { AffectEffectContent } from './AffectEffectContent';
 import { AvailableAccessibleContent } from './AvailableAccessibleContent';
 import { BalanceAndContent } from './BalanceAndContent';
+import { HelpUsageContent } from './HelpUsageContent';
 
 interface ContentProps {
     startLesson: (lessonType: string) => void;
 }
 
-type View = 'list' | 'affect-effect' | 'available-accessible' | 'balance-and';
+type View = 'list' | 'affect-effect' | 'available-accessible' | 'balance-and' | 'help-usage';
 
 export const VocabularyContent: React.FC<ContentProps> = ({ startLesson }) => {
     const [view, setView] = useState<View>('list');
@@ -30,7 +31,11 @@ export const VocabularyContent: React.FC<ContentProps> = ({ startLesson }) => {
     }
 
     if (view === 'balance-and') {
-        return <BalanceAndContent onBack={() => setView('list')} themeColor={themeColor} onCompleteAll={() => setView('list')} />;
+        return <BalanceAndContent onBack={() => setView('list')} themeColor={themeColor} onCompleteAll={() => setView('help-usage')} />;
+    }
+
+    if (view === 'help-usage') {
+        return <HelpUsageContent onBack={() => setView('list')} themeColor={themeColor} onCompleteAll={() => setView('list')} />;
     }
 
     return (
@@ -54,6 +59,10 @@ export const VocabularyContent: React.FC<ContentProps> = ({ startLesson }) => {
                 <LessonItem borderColor={themeColor} onClick={() => setView('balance-and')}>
                     <LessonTitleChinese>'balance ... and ...' 的用法</LessonTitleChinese>
                     <LessonTitleEnglish>Phrase: 'balance ... and ...'</LessonTitleEnglish>
+                </LessonItem>
+                <LessonItem borderColor={themeColor} onClick={() => setView('help-usage')}>
+                    <LessonTitleChinese>'help' 的用法</LessonTitleChinese>
+                    <LessonTitleEnglish>Usage of 'help'</LessonTitleEnglish>
                 </LessonItem>
             </LessonList>
         </>
