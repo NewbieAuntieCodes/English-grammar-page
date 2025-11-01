@@ -16,13 +16,14 @@ import { ByUsageContent } from './ByUsageContent';
 import { AsAsUsageContent } from './AsAsUsageContent';
 import { ThereBeContent } from './ThereBeContent';
 import { EdIngAdjectivesContent } from './EdIngAdjectivesContent';
+import { WhatHowExclamationsContent } from './WhatHowExclamationsContent';
 
 
 interface ContentProps {
     startLesson: (lessonType: string) => void;
 }
 
-type View = 'list' | 'gerunds' | 'it-is-adj' | 'of-usage' | 'with-usage' | 'infinitives' | 'by-usage' | 'as-as-usage' | 'there-be' | 'ed-ing-adjectives';
+type View = 'list' | 'gerunds' | 'it-is-adj' | 'of-usage' | 'with-usage' | 'infinitives' | 'by-usage' | 'as-as-usage' | 'there-be' | 'ed-ing-adjectives' | 'what-how-exclamations';
 
 export const CommonStructuresContent: React.FC<ContentProps> = ({ startLesson }) => {
     const [view, setView] = useState<View>('list');
@@ -61,7 +62,11 @@ export const CommonStructuresContent: React.FC<ContentProps> = ({ startLesson })
     }
 
     if (view === 'as-as-usage') {
-        return <AsAsUsageContent onBack={() => setView('list')} themeColor={themeColor} onCompleteAll={() => setView('list')} />;
+        return <AsAsUsageContent onBack={() => setView('list')} themeColor={themeColor} onCompleteAll={() => setView('what-how-exclamations')} />;
+    }
+
+    if (view === 'what-how-exclamations') {
+        return <WhatHowExclamationsContent onBack={() => setView('list')} themeColor={themeColor} onCompleteAll={() => setView('list')} />;
     }
 
     return (
@@ -109,6 +114,10 @@ export const CommonStructuresContent: React.FC<ContentProps> = ({ startLesson })
                 <LessonItem borderColor={themeColor} onClick={() => setView('as-as-usage')}>
                     <LessonTitleChinese>同级比较 'as...as'</LessonTitleChinese>
                     <LessonTitleEnglish>Comparisons with "as...as"</LessonTitleEnglish>
+                </LessonItem>
+                <LessonItem borderColor={themeColor} onClick={() => setView('what-how-exclamations')}>
+                    <LessonTitleChinese>What 和 How 的感叹句</LessonTitleChinese>
+                    <LessonTitleEnglish>Exclamations with "What & How"</LessonTitleEnglish>
                 </LessonItem>
             </LessonList>
         </>
