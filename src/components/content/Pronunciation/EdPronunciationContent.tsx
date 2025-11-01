@@ -5,14 +5,22 @@
 import React, { useState, useEffect } from 'react';
 import { LessonContainer, BackButton, LessonTitle, WhyLearnSection, SectionTitle, SpeakButton } from '../Structures/SVOContent.styles';
 import { RuleContainer, RuleCard, RuleTitle, RuleExplanation } from '../Tenses/PastTenseContent.styles';
-import { MultipleChoicePractice } from '../../practice/MultipleChoicePractice';
-import styled from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
 
 interface EdPronunciationContentProps {
     onBack: () => void;
     themeColor: string;
     onCompleteAll: () => void;
 }
+
+const hexToRgb = (hex: string) => {
+    let c: any = hex.substring(1).split('');
+    if (c.length === 3) {
+        c = [c[0], c[0], c[1], c[1], c[2], c[2]];
+    }
+    c = '0x' + c.join('');
+    return [(c >> 16) & 255, (c >> 8) & 255, c & 255].join(',');
+};
 
 const SoundText = styled.div`
     font-size: 1.8em;
@@ -41,18 +49,61 @@ const ExampleWord = styled.div`
     gap: 8px;
 `;
 
-const practiceData = [
-    { question: 'walked', choices: [{text: "/t/", isCorrect: true}, {text: "/d/", isCorrect: false}, {text: "/ɪd/", isCorrect: false}], chineseHint: "walk (k) - voiceless" },
-    { question: 'played', choices: [{text: "/t/", isCorrect: false}, {text: "/d/", isCorrect: true}, {text: "/ɪd/", isCorrect: false}], chineseHint: "play (vowel) - voiced" },
-    { question: 'wanted', choices: [{text: "/t/", isCorrect: false}, {text: "/d/", isCorrect: false}, {text: "/ɪd/", isCorrect: true}], chineseHint: "want (t) - ends in t/d" },
-    { question: 'helped', choices: [{text: "/t/", isCorrect: true}, {text: "/d/", isCorrect: false}, {text: "/ɪd/", isCorrect: false}], chineseHint: "help (p) - voiceless" },
-    { question: 'loved', choices: [{text: "/t/", isCorrect: false}, {text: "/d/", isCorrect: true}, {text: "/ɪd/", isCorrect: false}], chineseHint: "love (v) - voiced" },
-    { question: 'needed', choices: [{text: "/t/", isCorrect: false}, {text: "/d/", isCorrect: false}, {text: "/ɪd/", isCorrect: true}], chineseHint: "need (d) - ends in t/d" },
-    { question: 'laughed', choices: [{text: "/t/", isCorrect: true}, {text: "/d/", isCorrect: false}, {text: "/ɪd/", isCorrect: false}], chineseHint: "laugh (f) - voiceless" },
-    { question: 'called', choices: [{text: "/t/", isCorrect: false}, {text: "/d/", isCorrect: true}, {text: "/ɪd/", isCorrect: false}], chineseHint: "call (l) - voiced" },
-    { question: 'decided', choices: [{text: "/t/", isCorrect: false}, {text: "/d/", isCorrect: false}, {text: "/ɪd/", isCorrect: true}], chineseHint: "decide (d) - ends in t/d" },
-    { question: 'watched', choices: [{text: "/t/", isCorrect: true}, {text: "/d/", isCorrect: false}, {text: "/ɪd/", isCorrect: false}], chineseHint: "watch (ch) - voiceless" },
-];
+const ReadingPracticeSection = styled.div<{ themeColor: string }>`
+    background: linear-gradient(to bottom, rgba(${props => hexToRgb(props.themeColor)}, 0.12), rgba(${props => hexToRgb(props.themeColor)}, 0.03));
+    border-radius: 15px;
+    padding: 30px;
+    margin: 30px 0;
+    text-align: center;
+`;
+
+const ReadingParagraph = styled.div`
+    background: #fff;
+    border: 1px solid #e9ecef;
+    border-radius: 12px;
+    padding: 25px;
+    font-size: 1.2em;
+    line-height: 1.8;
+    color: #34495e;
+    text-align: left;
+    margin-bottom: 25px;
+
+    strong {
+        font-weight: bold;
+        color: ${(props: any) => props.theme.themeColor};
+        background: rgba(${(props: any) => hexToRgb(props.theme.themeColor)}, 0.1);
+        padding: 2px 5px;
+        border-radius: 4px;
+    }
+`;
+
+const LargeSpeakButton = styled(SpeakButton)`
+    font-size: 1.5em;
+    padding: 15px 25px;
+    margin: 0 auto 25px;
+    display: flex;
+    gap: 10px;
+    border-radius: 30px;
+    width: fit-content;
+    color: #2d3748;
+`;
+
+const FinishButton = styled.button<{ themeColor: string }>`
+    background: ${props => props.themeColor};
+    color: white;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    font-size: 1em;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+`;
+
 
 export const EdPronunciationContent: React.FC<EdPronunciationContentProps> = ({ onBack, themeColor, onCompleteAll }) => {
     const [voices, setVoices] = useState<SpeechSynthesisVoice[]>([]);
@@ -75,6 +126,10 @@ export const EdPronunciationContent: React.FC<EdPronunciationContentProps> = ({ 
             window.speechSynthesis.speak(utterance);
         }
     };
+
+    const paragraphHTML = "Yesterday, I <strong>walked</strong> to my friend's house. We <strong>played</strong> a game and <strong>laughed</strong> a lot. He <strong>needed</strong> help with his project, so I <strong>helped</strong> him. We <strong>decided</strong> to order pizza because we both <strong>wanted</strong> to eat something easy. The pizza arrived and we <strong>loved</strong> it. After we <strong>finished</strong>, we <strong>watched</strong> a movie. It <strong>rained</strong> outside, but we felt cozy.";
+    const paragraphText = "Yesterday, I walked to my friend's house. We played a game and laughed a lot. He needed help with his project, so I helped him. We decided to order pizza because we both wanted to eat something easy. The pizza arrived and we loved it. After we finished, we watched a movie. It rained outside, but we felt cozy.";
+
 
     return (
         <LessonContainer>
@@ -120,16 +175,21 @@ export const EdPronunciationContent: React.FC<EdPronunciationContentProps> = ({ 
                 </RuleCard>
             </RuleContainer>
             
-            <MultipleChoicePractice
-                themeColor={themeColor}
-                onCompleteAll={onCompleteAll}
-                practiceData={practiceData}
-                title="🎯 练习：选择正确的 -ed 发音"
-                subtitle="根据单词的结尾音，选择 -ed 的正确发音"
-                completionTitle="🎉 Excellent!"
-                completionMessage="你已经掌握了 -ed 的发音规则！"
-                nextButtonText="完成练习"
-            />
+            <ReadingPracticeSection themeColor={themeColor}>
+                <SectionTitle style={{textAlign: 'center', fontSize: '1.3em'}}>朗读练习 (Reading Practice)</SectionTitle>
+                <p style={{textAlign: 'center', color: '#6b7280', fontSize: '0.9em', marginBottom: '20px'}}>
+                    听下面的段落，注意-ed单词的发音
+                </p>
+                <ThemeProvider theme={{ themeColor }}>
+                    <ReadingParagraph dangerouslySetInnerHTML={{ __html: paragraphHTML }} />
+                </ThemeProvider>
+                <LargeSpeakButton onClick={() => handleSpeak(paragraphText)} aria-label="Play Full Paragraph">
+                    <span>🔊</span> Play Audio
+                </LargeSpeakButton>
+                <FinishButton themeColor={themeColor} onClick={onBack}>
+                    完成练习
+                </FinishButton>
+            </ReadingPracticeSection>
         </LessonContainer>
     );
 };
