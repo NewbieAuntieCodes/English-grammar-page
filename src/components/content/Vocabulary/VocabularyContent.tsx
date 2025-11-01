@@ -11,12 +11,13 @@ import { AffectEffectContent } from './AffectEffectContent';
 import { AvailableAccessibleContent } from './AvailableAccessibleContent';
 import { BalanceAndContent } from './BalanceAndContent';
 import { HelpUsageContent } from './HelpUsageContent';
+import { PityUsageContent } from './PityUsageContent';
 
 interface ContentProps {
     startLesson: (lessonType: string) => void;
 }
 
-type View = 'list' | 'affect-effect' | 'available-accessible' | 'balance-and' | 'help-usage';
+type View = 'list' | 'affect-effect' | 'available-accessible' | 'balance-and' | 'help-usage' | 'pity-usage';
 
 export const VocabularyContent: React.FC<ContentProps> = ({ startLesson }) => {
     const [view, setView] = useState<View>('list');
@@ -35,7 +36,11 @@ export const VocabularyContent: React.FC<ContentProps> = ({ startLesson }) => {
     }
 
     if (view === 'help-usage') {
-        return <HelpUsageContent onBack={() => setView('list')} themeColor={themeColor} onCompleteAll={() => setView('list')} />;
+        return <HelpUsageContent onBack={() => setView('list')} themeColor={themeColor} onCompleteAll={() => setView('pity-usage')} />;
+    }
+
+    if (view === 'pity-usage') {
+        return <PityUsageContent onBack={() => setView('list')} themeColor={themeColor} onCompleteAll={() => setView('list')} />;
     }
 
     return (
@@ -63,6 +68,10 @@ export const VocabularyContent: React.FC<ContentProps> = ({ startLesson }) => {
                 <LessonItem borderColor={themeColor} onClick={() => setView('help-usage')}>
                     <LessonTitleChinese>'help' 的用法</LessonTitleChinese>
                     <LessonTitleEnglish>Usage of 'help'</LessonTitleEnglish>
+                </LessonItem>
+                <LessonItem borderColor={themeColor} onClick={() => setView('pity-usage')}>
+                    <LessonTitleChinese>'pity' 的用法</LessonTitleChinese>
+                    <LessonTitleEnglish>Usage of 'pity'</LessonTitleEnglish>
                 </LessonItem>
             </LessonList>
         </>
