@@ -65,3 +65,7 @@ export const MultiPosIcon: React.FC = () => (
 export const VocabularyIcon: React.FC = () => (
     <span role="img" aria-label="Vocabulary Icon" style={{ fontSize: '48px' }}>📖</span>
 );
+
+export const PronunciationIcon: React.FC = () => (
+    <span role="img" aria-label="Pronunciation Icon" style={{ fontSize: '48px' }}>🗣️</span>
+);

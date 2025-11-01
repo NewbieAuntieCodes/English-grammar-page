@@ -5,7 +5,7 @@
 import React, { useState, useEffect } from 'react';
 import { GlobalStyle } from '../../styles/GlobalStyle';
 import { cardDataConfig } from '../../data/definitions';
-import { StructureIcon, PartsIcon, ClausesIcon, TensesIcon, ComponentsIcon, CommonStructureIcon, VocabularyIcon } from '../../data/icons';
+import { StructureIcon, PartsIcon, ClausesIcon, TensesIcon, ComponentsIcon, CommonStructureIcon, VocabularyIcon, PronunciationIcon } from '../../data/icons';
 import { FloatingCard } from '../FloatingCard';
 import { ExpandedContent } from '../ExpandedContent';
 import { StructuresContent } from '../content/Structures/StructuresContent';
@@ -16,6 +16,7 @@ import { AppContainer, Header, CardsContainer } from './App.styles';
 import { SentenceComponentsContent } from '../content/SentenceComponents/SentenceComponentsContent';
 import { CommonStructuresContent } from '../content/CommonStructures/CommonStructuresContent';
 import { VocabularyContent } from '../content/Vocabulary/VocabularyContent';
+import { PronunciationContent } from '../content/Pronunciation/PronunciationContent';
 
 // --- Icon Map ---
 const iconMap: { [key: string]: React.ReactNode } = {
@@ -26,6 +27,7 @@ const iconMap: { [key: string]: React.ReactNode } = {
     tenses: <TensesIcon />,
     components: <ComponentsIcon />,
     vocabulary: <VocabularyIcon />,
+    pronunciation: <PronunciationIcon />,
 };
 
 // --- Augment cardData with component icons ---
@@ -49,6 +51,7 @@ const contentComponents: { [key: string]: React.ReactNode } = {
     tenses: <TensesContent startLesson={startLesson} />,
     components: <SentenceComponentsContent startLesson={startLesson} />,
     vocabulary: <VocabularyContent startLesson={startLesson} />,
+    pronunciation: <PronunciationContent startLesson={startLesson} />,
 };
 
 // --- Main App Component ---

@@ -13,12 +13,13 @@ import { BalanceAndContent } from './BalanceAndContent';
 import { HelpUsageContent } from './HelpUsageContent';
 import { PityUsageContent } from './PityUsageContent';
 import { IncorporateCooperateCorporateContent } from './IncorporateCooperateCorporateContent';
+import { SenseOfUsageContent } from './SenseOfUsageContent';
 
 interface ContentProps {
     startLesson: (lessonType: string) => void;
 }
 
-type View = 'list' | 'affect-effect' | 'available-accessible' | 'balance-and' | 'help-usage' | 'pity-usage' | 'incorporate-cooperate-corporate';
+type View = 'list' | 'affect-effect' | 'available-accessible' | 'balance-and' | 'help-usage' | 'pity-usage' | 'incorporate-cooperate-corporate' | 'sense-of-usage';
 
 export const VocabularyContent: React.FC<ContentProps> = ({ startLesson }) => {
     const [view, setView] = useState<View>('list');
@@ -45,7 +46,11 @@ export const VocabularyContent: React.FC<ContentProps> = ({ startLesson }) => {
     }
 
     if (view === 'incorporate-cooperate-corporate') {
-        return <IncorporateCooperateCorporateContent onBack={() => setView('list')} themeColor={themeColor} onCompleteAll={() => setView('list')} />;
+        return <IncorporateCooperateCorporateContent onBack={() => setView('list')} themeColor={themeColor} onCompleteAll={() => setView('sense-of-usage')} />;
+    }
+
+    if (view === 'sense-of-usage') {
+        return <SenseOfUsageContent onBack={() => setView('list')} themeColor={themeColor} onCompleteAll={() => setView('list')} />;
     }
 
     return (
@@ -81,6 +86,10 @@ export const VocabularyContent: React.FC<ContentProps> = ({ startLesson }) => {
                 <LessonItem borderColor={themeColor} onClick={() => setView('incorporate-cooperate-corporate')}>
                     <LessonTitleChinese>Incorporate / Cooperate / Corporate</LessonTitleChinese>
                     <LessonTitleEnglish>Commonly Confused Words</LessonTitleEnglish>
+                </LessonItem>
+                <LessonItem borderColor={themeColor} onClick={() => setView('sense-of-usage')}>
+                    <LessonTitleChinese>'a sense of' 的用法</LessonTitleChinese>
+                    <LessonTitleEnglish>Phrase: 'a sense of'</LessonTitleEnglish>
                 </LessonItem>
             </LessonList>
         </>
