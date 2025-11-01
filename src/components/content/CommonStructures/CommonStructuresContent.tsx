@@ -15,13 +15,14 @@ import { OfUsageContent } from './OfUsageContent';
 import { ByUsageContent } from './ByUsageContent';
 import { AsAsUsageContent } from './AsAsUsageContent';
 import { ThereBeContent } from './ThereBeContent';
+import { EdIngAdjectivesContent } from './EdIngAdjectivesContent';
 
 
 interface ContentProps {
     startLesson: (lessonType: string) => void;
 }
 
-type View = 'list' | 'gerunds' | 'it-is-adj' | 'of-usage' | 'with-usage' | 'infinitives' | 'by-usage' | 'as-as-usage' | 'there-be';
+type View = 'list' | 'gerunds' | 'it-is-adj' | 'of-usage' | 'with-usage' | 'infinitives' | 'by-usage' | 'as-as-usage' | 'there-be' | 'ed-ing-adjectives';
 
 export const CommonStructuresContent: React.FC<ContentProps> = ({ startLesson }) => {
     const [view, setView] = useState<View>('list');
@@ -40,7 +41,11 @@ export const CommonStructuresContent: React.FC<ContentProps> = ({ startLesson })
     }
 
     if (view === 'there-be') {
-        return <ThereBeContent onBack={() => setView('list')} themeColor={themeColor} onCompleteAll={() => setView('of-usage')} />;
+        return <ThereBeContent onBack={() => setView('list')} themeColor={themeColor} onCompleteAll={() => setView('ed-ing-adjectives')} />;
+    }
+
+    if (view === 'ed-ing-adjectives') {
+        return <EdIngAdjectivesContent onBack={() => setView('list')} themeColor={themeColor} onCompleteAll={() => setView('of-usage')} />;
     }
 
     if (view === 'of-usage') {
@@ -84,6 +89,10 @@ export const CommonStructuresContent: React.FC<ContentProps> = ({ startLesson })
                 <LessonItem borderColor={themeColor} onClick={() => setView('there-be')}>
                     <LessonTitleChinese>There be 句型</LessonTitleChinese>
                     <LessonTitleEnglish>Usage of "There is/are"</LessonTitleEnglish>
+                </LessonItem>
+                <LessonItem borderColor={themeColor} onClick={() => setView('ed-ing-adjectives')}>
+                    <LessonTitleChinese>形容词 -ed vs -ing</LessonTitleChinese>
+                    <LessonTitleEnglish>Adjectives: -ed vs -ing</LessonTitleEnglish>
                 </LessonItem>
                 <LessonItem borderColor={themeColor} onClick={() => setView('of-usage')}>
                     <LessonTitleChinese>介词 'of' 的用法</LessonTitleChinese>
