@@ -2,7 +2,7 @@
  * @license
  * SPDX-License-Identifier: Apache-2.0
 */
-import React, { useState, useEffect, useMemo, useCallback } from 'react';
+import React, { useState, useEffect, useMemo, useCallback, useRef } from 'react';
 import {
     PracticeSection,
     ProgressDots,
@@ -54,14 +54,23 @@ export const WordSelectorPractice: React.FC<WordSelectorPracticeProps> = ({
     const sentenceWords = useMemo(() => currentPractice?.sentence.split(' ') || [], [currentPractice]);
 
     const resetForCurrentPractice = useCallback(() => {
+        if (allPracticesCompleted) {
+            setAllPracticesCompleted(false);
+        }
         setSelectedWords([]);
         setWordStatuses({});
         setFeedback(null);
-    }, []);
+    }, [allPracticesCompleted]);
 
     useEffect(() => {
         resetForCurrentPractice();
     }, [practiceIndex, resetForCurrentPractice]);
+
+    const handlePrevPractice = () => {
+        if (practiceIndex > 0) {
+            setPracticeIndex(prev => prev - 1);
+        }
+    };
 
     const handleNextPractice = useCallback(() => {
         if (practiceIndex < practiceData.length - 1) {
@@ -106,6 +115,32 @@ export const WordSelectorPractice: React.FC<WordSelectorPracticeProps> = ({
         }
     };
     
+    const touchStartRef = useRef<number | null>(null);
+    const minSwipeDistance = 50;
+
+    const onTouchStart = (e: React.TouchEvent) => {
+        touchStartRef.current = e.targetTouches[0].clientX;
+    };
+
+    const onTouchEnd = (e: React.TouchEvent) => {
+        if (touchStartRef.current === null) {
+            return;
+        }
+
+        const touchEnd = e.changedTouches[0].clientX;
+        const distance = touchStartRef.current - touchEnd;
+        const isLeftSwipe = distance > minSwipeDistance;
+        const isRightSwipe = distance < -minSwipeDistance;
+
+        if (isLeftSwipe) {
+            handleNextPractice();
+        } else if (isRightSwipe) {
+            handlePrevPractice();
+        }
+
+        touchStartRef.current = null;
+    };
+
     if (allPracticesCompleted) {
         return (
             <PracticeSection themeColor={themeColor}>
@@ -125,7 +160,7 @@ export const WordSelectorPractice: React.FC<WordSelectorPracticeProps> = ({
     }
 
     return (
-        <PracticeSection themeColor={themeColor}>
+        <PracticeSection themeColor={themeColor} onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
             {showCorrectSticker && <CorrectSticker themeColor={themeColor}>✔️ Correct!</CorrectSticker>}
             <>
                 <InstructionText themeColor={themeColor}>

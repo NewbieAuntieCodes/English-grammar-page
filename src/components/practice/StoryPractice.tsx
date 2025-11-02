@@ -2,7 +2,7 @@
  * @license
  * SPDX-License-Identifier: Apache-2.0
 */
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import {
     PracticeSection,
     PracticeHeader,
@@ -72,6 +72,18 @@ export const StoryPractice: React.FC<StoryPracticeProps> = ({
     const currentStep = storyData[stepIndex];
     const isCompleted = stepIndex >= storyData.length - 1;
     
+    const handleNextPractice = () => {
+        if (stepIndex < storyData.length - 1) {
+            setStepIndex(prev => prev + 1);
+        }
+    };
+
+    const handlePrevPractice = () => {
+        if (stepIndex > 0) {
+            setStepIndex(prev => prev - 1);
+        }
+    };
+
     const handleChoice = (choice: Choice, index: number) => {
         if (isAnswered) return;
 
@@ -89,7 +101,7 @@ export const StoryPractice: React.FC<StoryPracticeProps> = ({
                 }
 
                 setCompletedStory(updatedStory);
-                setStepIndex(prev => prev + 1);
+                handleNextPractice();
                 setIsAnswered(false); // Reset for next question
             }, 1200);
 
@@ -117,8 +129,34 @@ export const StoryPractice: React.FC<StoryPracticeProps> = ({
         setCompletedStory(story.trim());
     }, [stepIndex, storyData]);
 
+    const touchStartRef = useRef<number | null>(null);
+    const minSwipeDistance = 50;
+
+    const onTouchStart = (e: React.TouchEvent) => {
+        touchStartRef.current = e.targetTouches[0].clientX;
+    };
+
+    const onTouchEnd = (e: React.TouchEvent) => {
+        if (touchStartRef.current === null) {
+            return;
+        }
+
+        const touchEnd = e.changedTouches[0].clientX;
+        const distance = touchStartRef.current - touchEnd;
+        const isLeftSwipe = distance > minSwipeDistance;
+        const isRightSwipe = distance < -minSwipeDistance;
+
+        if (isLeftSwipe) {
+            handleNextPractice();
+        } else if (isRightSwipe) {
+            handlePrevPractice();
+        }
+
+        touchStartRef.current = null;
+    };
+
     return (
-        <PracticeSection themeColor={themeColor}>
+        <PracticeSection themeColor={themeColor} onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
             {showCorrectSticker && <CorrectSticker themeColor={themeColor}>✔️ Correct!</CorrectSticker>}
             {isCompleted ? (
                 <CompletionContainer>
@@ -164,7 +202,7 @@ export const StoryPractice: React.FC<StoryPracticeProps> = ({
                                         key={index}
                                         isActive={index === stepIndex}
                                         themeColor={themeColor}
-                                        onClick={() => setStepIndex(index)}
+                                        onClick={() => !isAnswered && setStepIndex(index)}
                                         aria-label={`Go to step ${index + 1}`}
                                     />
                                 ))}

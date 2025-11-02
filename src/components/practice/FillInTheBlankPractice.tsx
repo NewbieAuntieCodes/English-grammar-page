@@ -2,7 +2,7 @@
  * @license
  * SPDX-License-Identifier: Apache-2.0
 */
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, useRef } from 'react';
 import styled from 'styled-components';
 import {
     PracticeSection,
@@ -87,6 +87,18 @@ export const FillInTheBlankPractice: React.FC<FillInTheBlankPracticeProps> = ({
     const currentStep = practiceData[stepIndex];
     const isCompleted = stepIndex >= practiceData.length;
 
+    const handleNextPractice = () => {
+        if (stepIndex < practiceData.length) {
+            setStepIndex(prev => prev + 1);
+        }
+    };
+
+    const handlePrevPractice = () => {
+        if (stepIndex > 0) {
+            setStepIndex(prev => prev - 1);
+        }
+    };
+
     const shuffledChoices = useMemo(() => {
         if (!currentStep) return [];
         return [...currentStep.choices].sort(() => Math.random() - 0.5);
@@ -100,7 +112,7 @@ export const FillInTheBlankPractice: React.FC<FillInTheBlankPracticeProps> = ({
             setShowCorrectSticker(true);
 
             setTimeout(() => {
-                setStepIndex(prev => prev + 1);
+                handleNextPractice();
                 setIsAnswered(false);
             }, 300);
 
@@ -115,8 +127,34 @@ export const FillInTheBlankPractice: React.FC<FillInTheBlankPracticeProps> = ({
     
     const progress = isCompleted ? 100 : (stepIndex / practiceData.length) * 100;
 
+    const touchStartRef = useRef<number | null>(null);
+    const minSwipeDistance = 50;
+
+    const onTouchStart = (e: React.TouchEvent) => {
+        touchStartRef.current = e.targetTouches[0].clientX;
+    };
+
+    const onTouchEnd = (e: React.TouchEvent) => {
+        if (touchStartRef.current === null) {
+            return;
+        }
+
+        const touchEnd = e.changedTouches[0].clientX;
+        const distance = touchStartRef.current - touchEnd;
+        const isLeftSwipe = distance > minSwipeDistance;
+        const isRightSwipe = distance < -minSwipeDistance;
+
+        if (isLeftSwipe) {
+            handleNextPractice();
+        } else if (isRightSwipe) {
+            handlePrevPractice();
+        }
+
+        touchStartRef.current = null;
+    };
+
     return (
-        <PracticeSection themeColor={themeColor}>
+        <PracticeSection themeColor={themeColor} onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
             {showCorrectSticker && <CorrectSticker themeColor={themeColor}>✔️ Correct!</CorrectSticker>}
             {isCompleted ? (
                 <CompletionContainer>
@@ -168,7 +206,7 @@ export const FillInTheBlankPractice: React.FC<FillInTheBlankPracticeProps> = ({
                                         key={index}
                                         isActive={index === stepIndex}
                                         themeColor={themeColor}
-                                        onClick={() => setStepIndex(index)}
+                                        onClick={() => !isAnswered && setStepIndex(index)}
                                         aria-label={`Go to question ${index + 1}`}
                                     />
                                 ))}

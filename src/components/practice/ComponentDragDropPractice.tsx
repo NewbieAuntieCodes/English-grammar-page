@@ -66,6 +66,20 @@ export const ComponentDragDropPractice: React.FC<ComponentDragDropPracticeProps>
 
     const currentPractice = useMemo(() => practiceData[practiceIndex], [practiceData, practiceIndex]);
 
+    const handleNextPractice = useCallback(() => {
+        if (practiceIndex < practiceData.length - 1) {
+            setPracticeIndex(prev => prev + 1);
+        } else {
+            setAllPracticesCompleted(true);
+        }
+    }, [practiceIndex, practiceData.length]);
+
+    const handlePrevPractice = () => {
+        if (practiceIndex > 0) {
+            setPracticeIndex(prev => prev - 1);
+        }
+    };
+
     const resetStateForCurrentPractice = useCallback(() => {
         if (currentPractice) {
             setUnplaced([...currentPractice.components].sort(() => Math.random() - 0.5));
@@ -144,11 +158,7 @@ export const ComponentDragDropPractice: React.FC<ComponentDragDropPracticeProps>
         if (allCorrect) {
             setShowCorrectSticker(true);
             setTimeout(() => {
-                if (practiceIndex < practiceData.length - 1) {
-                    setPracticeIndex(prev => prev + 1);
-                } else {
-                    setAllPracticesCompleted(true);
-                }
+                handleNextPractice();
             }, 1200);
             setTimeout(() => setShowCorrectSticker(false), 2000);
         } else {
@@ -156,6 +166,32 @@ export const ComponentDragDropPractice: React.FC<ComponentDragDropPracticeProps>
         }
     };
     
+    const touchStartRef = React.useRef<number | null>(null);
+    const minSwipeDistance = 50;
+
+    const onTouchStart = (e: React.TouchEvent) => {
+        touchStartRef.current = e.targetTouches[0].clientX;
+    };
+
+    const onTouchEnd = (e: React.TouchEvent) => {
+        if (touchStartRef.current === null) {
+            return;
+        }
+
+        const touchEnd = e.changedTouches[0].clientX;
+        const distance = touchStartRef.current - touchEnd;
+        const isLeftSwipe = distance > minSwipeDistance;
+        const isRightSwipe = distance < -minSwipeDistance;
+
+        if (isLeftSwipe) {
+            handleNextPractice();
+        } else if (isRightSwipe) {
+            handlePrevPractice();
+        }
+
+        touchStartRef.current = null;
+    };
+
     if (allPracticesCompleted) {
         return (
             <PracticeSection themeColor={themeColor}>
@@ -173,7 +209,7 @@ export const ComponentDragDropPractice: React.FC<ComponentDragDropPracticeProps>
     const allDropped = unplaced.length === 0;
 
     return (
-        <PracticeSection themeColor={themeColor}>
+        <PracticeSection themeColor={themeColor} onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
             {showCorrectSticker && <CorrectSticker themeColor={themeColor}>✔️ Perfect!</CorrectSticker>}
             <>
                 <PracticeTitle themeColor={themeColor}>🎯 练习：拖拽分类</PracticeTitle>
@@ -226,9 +262,13 @@ export const ComponentDragDropPractice: React.FC<ComponentDragDropPracticeProps>
                 </CheckButton>
 
                 <ProgressDots>
-                    {practiceData.map((_, index) => (
-                        <ProgressDot key={index} isActive={index === practiceIndex} themeColor={themeColor} />
-                    ))}
+                    {practiceData.map((_, index) => (<ProgressDot 
+                        key={index} 
+                        isActive={index === practiceIndex} 
+                        themeColor={themeColor} 
+                        onClick={() => setPracticeIndex(index)}
+                        aria-label={`Go to question ${index + 1}`}
+                    />))}
                 </ProgressDots>
             </>
         </PracticeSection>

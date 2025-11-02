@@ -2,7 +2,7 @@
  * @license
  * SPDX-License-Identifier: Apache-2.0
 */
-import React, { useState, useEffect, useMemo, useCallback } from 'react';
+import React, { useState, useEffect, useMemo, useCallback, useRef } from 'react';
 import {
     PracticeSection,
     PracticeTitle,
@@ -75,6 +75,12 @@ export const SentenceBuilderPractice: React.FC<SentenceBuilderPracticeProps> = (
     const [allPracticesCompleted, setAllPracticesCompleted] = useState(false);
     
     const currentPractice = practiceData[practiceIndex];
+
+    const handlePrevPractice = () => {
+        if (practiceIndex > 0) {
+            setPracticeIndex(prev => prev - 1);
+        }
+    };
 
     const shuffledWords = useMemo(() => {
         if (!currentPractice) return [];
@@ -158,8 +164,34 @@ export const SentenceBuilderPractice: React.FC<SentenceBuilderPracticeProps> = (
         }
     }, [bankWords.length, builtSentence.length, handleCheckAnswer, allPracticesCompleted]);
 
+    const touchStartRef = useRef<number | null>(null);
+    const minSwipeDistance = 50;
+
+    const onTouchStart = (e: React.TouchEvent) => {
+        touchStartRef.current = e.targetTouches[0].clientX;
+    };
+
+    const onTouchEnd = (e: React.TouchEvent) => {
+        if (touchStartRef.current === null) {
+            return;
+        }
+
+        const touchEnd = e.changedTouches[0].clientX;
+        const distance = touchStartRef.current - touchEnd;
+        const isLeftSwipe = distance > minSwipeDistance;
+        const isRightSwipe = distance < -minSwipeDistance;
+
+        if (isLeftSwipe) {
+            handleNextPractice();
+        } else if (isRightSwipe) {
+            handlePrevPractice();
+        }
+
+        touchStartRef.current = null;
+    };
+
     return (
-        <PracticeSection themeColor={themeColor}>
+        <PracticeSection themeColor={themeColor} onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
             {showCorrectSticker && <CorrectSticker themeColor={themeColor}>✔️ Correct!</CorrectSticker>}
             {allPracticesCompleted ? (
                 <CompletionContainer>
