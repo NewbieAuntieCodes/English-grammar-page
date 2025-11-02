@@ -62,6 +62,7 @@ const practiceData = [
     { words: [{ en: 'There are', cn: '有' }, { en: 'some flowers', cn: '一些花' }, { en: 'in the vase', cn: '在花瓶里' }], correct: ['There are', 'some flowers', 'in the vase'], chinese: '花瓶里有一些花。' },
     { words: [{ en: 'There is no', cn: '没有' }, { en: 'milk', cn: '牛奶' }, { en: 'in the fridge', cn: '在冰箱里' }], correct: ['There is no', 'milk', 'in the fridge'], chinese: '冰箱里没有牛奶了。' },
     { words: [{ en: 'There were', cn: '曾有' }, { en: 'many people', cn: '很多人' }, { en: 'at the party', cn: '在派对上' }], correct: ['There were', 'many people', 'at the party'], chinese: '昨晚派对上有很多人。' },
+    { words: [{ en: 'Are there', cn: '有吗' }, { en: 'any questions', cn: '任何问题' }], correct: ['Are there', 'any questions'], chinese: '有什么问题吗？' },
 ];
 
 export const ThereBeContent: React.FC<ThereBeContentProps> = ({ onBack, themeColor, onCompleteAll }) => {
@@ -104,7 +105,9 @@ export const ThereBeContent: React.FC<ThereBeContentProps> = ({ onBack, themeCol
             <FormulaSection themeColor={themeColor}>
                 <FormulaTitle themeColor={themeColor}>结构公式</FormulaTitle>
                 <FormulaContainer>
-                    <Part color={themeColor}>There</Part> + <Part>be (is/are/was...)</Part> + <Part>Noun (名词)</Part> + <OptionalPart>(Place/Time)</OptionalPart>.
+                    <div><Part color={themeColor}>There</Part> + <Part>be (is/are/was...)</Part> + <Part>Noun (名词)</Part> + <OptionalPart>(Place/Time)</OptionalPart>.</div>
+                    <div style={{ margin: '15px 0', fontSize: '0.9em', color: '#718096' }}>--- 疑问句 (Question) ---</div>
+                    <div><Part>Be (Is/Are...)</Part> + <Part color={themeColor}>there</Part> + <Part>Noun (名词)</Part> + <OptionalPart>(Place/Time)</OptionalPart>?</div>
                 </FormulaContainer>
             </FormulaSection>
 
@@ -140,6 +143,12 @@ export const ThereBeContent: React.FC<ThereBeContentProps> = ({ onBack, themeCol
                         <SpeakButton onClick={(e) => { e.stopPropagation(); handleSpeak('Is there a hospital near here?'); }}>🔊</SpeakButton>
                     </ExampleHeader>
                     <ExampleChinese>这附近有医院吗？(疑问句：把 be 动词提前)</ExampleChinese>
+                    <ExampleBreakdown show={activeExample === 'ex3'} themeColor={themeColor}>
+                        <BreakdownPart><strong>Be 动词 (提前):</strong> Is</BreakdownPart>
+                        <BreakdownPart><strong>引导词:</strong> there</BreakdownPart>
+                        <BreakdownPart><strong>名词:</strong> a hospital</BreakdownPart>
+                        <BreakdownPart><strong>地点:</strong> near here</BreakdownPart>
+                    </ExampleBreakdown>
                 </ExampleItem>
             </ExamplesSection>
             
