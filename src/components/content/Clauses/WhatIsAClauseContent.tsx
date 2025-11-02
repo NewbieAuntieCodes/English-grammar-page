@@ -194,7 +194,6 @@ const ExampleAnalysis = styled.div`
 
 
 export const WhatIsAClauseContent: React.FC<WhatIsAClauseContentProps> = ({ onBack, themeColor, onComplete }) => {
-    const [activeExample, setActiveExample] = useState<string | null>(null);
     const [voices, setVoices] = useState<SpeechSynthesisVoice[]>([]);
 
     useEffect(() => {
@@ -213,10 +212,6 @@ export const WhatIsAClauseContent: React.FC<WhatIsAClauseContentProps> = ({ onBa
             }
         };
     }, []);
-
-    const handleToggleBreakdown = (exampleId: string) => {
-        setActiveExample(prev => (prev === exampleId ? null : exampleId));
-    };
 
     const handleSpeak = (text: string) => {
         if ('speechSynthesis' in window) {
@@ -311,30 +306,30 @@ export const WhatIsAClauseContent: React.FC<WhatIsAClauseContentProps> = ({ onBa
 
 
             <ExamplesSection>
-                <SectionTitle>📝 例子 (点击拆解“句子套娃”)</SectionTitle>
-                <ExampleItem onClick={() => handleToggleBreakdown('ex1')} themeColor={themeColor}>
+                <SectionTitle>📝 例子</SectionTitle>
+                <ExampleItem themeColor={themeColor}>
                     <ExampleHeader>
                         <ExampleEnglish>I know that you are right.</ExampleEnglish>
                         <SpeakButton onClick={(e) => { e.stopPropagation(); handleSpeak('I know that you are right.'); }} aria-label="Speak sentence">🔊</SpeakButton>
                     </ExampleHeader>
                     <ExampleChinese>我知道你是对的。</ExampleChinese>
-                    <ExampleBreakdown show={activeExample === 'ex1'} themeColor={themeColor}>
+                    <ExampleBreakdown show={true} themeColor={themeColor}>
                         <BreakdownPart><strong>“大”句子是:</strong> I know ... (我知道...)</BreakdownPart>
                         <BreakdownPart><strong>藏着的“小”句子是:</strong> ... that you are right. (...你是对的。)</BreakdownPart>
                         <BreakdownPart><strong>分析:</strong> 我知道 “<strong>什么</strong>” 呢？ ⟶ 我知道了 “<strong>你是对的</strong>” 这件事。这句“小话”完整地解释了 “know” 的内容。</BreakdownPart>
                     </ExampleBreakdown>
                 </ExampleItem>
 
-                <ExampleItem onClick={() => handleToggleBreakdown('ex2')} themeColor={themeColor}>
+                <ExampleItem themeColor={themeColor}>
                     <ExampleHeader>
-                        <ExampleEnglish>The man who is standing there is my teacher.</ExampleEnglish>
-                        <SpeakButton onClick={(e) => { e.stopPropagation(); handleSpeak('The man who is standing there is my teacher.'); }} aria-label="Speak sentence">🔊</SpeakButton>
+                        <ExampleEnglish>I like the cake which she made.</ExampleEnglish>
+                        <SpeakButton onClick={(e) => { e.stopPropagation(); handleSpeak('I like the cake which she made.'); }} aria-label="Speak sentence">🔊</SpeakButton>
                     </ExampleHeader>
-                    <ExampleChinese>站在那里的那个男人是我的老师。</ExampleChinese>
-                    <ExampleBreakdown show={activeExample === 'ex2'} themeColor={themeColor}>
-                        <BreakdownPart><strong>“大”句子是:</strong> The man ... is my teacher. (那个男人...是我的老师。)</BreakdownPart>
-                        <BreakdownPart><strong>藏着的“小”句子是:</strong> ... who is standing there. (...他正站在那里。)</BreakdownPart>
-                        <BreakdownPart><strong>分析:</strong> “<strong>什么样的</strong>” 男人是我的老师？ ⟶ 是 “<strong>正站在那里的</strong>” 那个。这句“小话”像一个形容词，详细描述了 “The man” 的样子。</BreakdownPart>
+                    <ExampleChinese>我喜欢她做的那个蛋糕。</ExampleChinese>
+                    <ExampleBreakdown show={true} themeColor={themeColor}>
+                        <BreakdownPart><strong>“大”句子是:</strong> I like the cake. (我喜欢那个蛋糕。)</BreakdownPart>
+                        <BreakdownPart><strong>藏着的“小”句子是:</strong> ... which she made. (...是她做的。)</BreakdownPart>
+                        <BreakdownPart><strong>分析:</strong> “<strong>什么样的</strong>” 蛋糕我喜欢？ ⟶ 是 “<strong>她做的</strong>” 那个。这句“小话”像一个形容词，详细描述了 “the cake”。</BreakdownPart>
                     </ExampleBreakdown>
                 </ExampleItem>
             </ExamplesSection>
