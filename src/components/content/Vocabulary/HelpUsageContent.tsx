@@ -34,12 +34,14 @@ const UsageType = styled.h3`
 `;
 
 const practiceData = [
-    { words: [{ en: 'Can you help me', cn: '你能帮我' }, { en: 'carry this bag?', cn: '拿这个包吗？' }], correct: ['Can you help me', 'carry this bag?'], chinese: '你能帮我拿这个包吗？' },
+    { words: [{ en: 'Can you', cn: '你能' }, { en: 'help me', cn: '帮我' }, { en: 'carry this bag?', cn: '拿这个包吗？' }], correct: ['Can you', 'help me', 'carry this bag?'], chinese: '你能帮我拿这个包吗？' },
     { words: [{ en: 'My teacher', cn: '我的老师' }, { en: 'helped me', cn: '帮助了我' }, { en: 'with my math', cn: '在数学上' }], correct: ['My teacher', 'helped me', 'with my math'], chinese: '我的老师在数学上帮助了我。' },
     { words: [{ en: "I can't help", cn: '我忍不住' }, { en: 'laughing', cn: '笑' }, { en: 'at the joke', cn: '听到那个笑话' }], correct: ["I can't help", 'laughing', 'at the joke'], chinese: '听到那个笑话我忍不住笑了。' },
     { words: [{ en: 'He helped', cn: '他帮助' }, { en: 'his friend', cn: '他的朋友' }, { en: 'to move', cn: '移动' }, { en: 'the table', cn: '桌子' }], correct: ['He helped', 'his friend', 'to move', 'the table'], chinese: '他帮助他的朋友移动桌子。' },
-    { words: [{ en: 'Let me help you', cn: '让我帮你' }, { en: 'with your luggage', cn: '拿行李吧' }], correct: ['Let me help you', 'with your luggage'], chinese: '让我帮你拿行李吧。' },
-    { words: [{ en: "She couldn't help", cn: '她忍不住' }, { en: 'crying', cn: '哭' }, { en: 'during the movie', cn: '在看电影时' }], correct: ["She couldn't help", 'crying', 'during the movie'], chinese: '看电影时她忍不住哭了。' }
+    { words: [{ en: 'Let me', cn: '让我' }, { en: 'help you', cn: '帮你' }, { en: 'with your luggage', cn: '拿行李吧' }], correct: ['Let me', 'help you', 'with your luggage'], chinese: '让我帮你拿行李吧。' },
+    { words: [{ en: "She couldn't help", cn: '她忍不住' }, { en: 'crying', cn: '哭' }, { en: 'during the movie', cn: '在看电影时' }], correct: ["She couldn't help", 'crying', 'during the movie'], chinese: '看电影时她忍不住哭了。' },
+    { words: [{ en: 'Reading can help you', cn: '阅读可以帮助你' }, { en: 'improve', cn: '提高' }, { en: 'your vocabulary', cn: '你的词汇量' }], correct: ['Reading can help you', 'improve', 'your vocabulary'], chinese: '阅读可以帮助你提高词汇量。' },
+    { words: [{ en: 'Could you please', cn: '请问你能否' }, { en: 'help me', cn: '帮我' }, { en: 'with the dishes?', cn: '洗碗？' }], correct: ['Could you please', 'help me', 'with the dishes?'], chinese: '你能帮我洗碗吗？' }
 ];
 
 export const HelpUsageContent: React.FC<HelpUsageContentProps> = ({ onBack, themeColor, onCompleteAll }) => {
