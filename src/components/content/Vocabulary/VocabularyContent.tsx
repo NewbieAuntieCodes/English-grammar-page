@@ -16,12 +16,15 @@ import { IncorporateCooperateCorporateContent } from './IncorporateCooperateCorp
 import { SenseOfUsageContent } from './SenseOfUsageContent';
 import { ImpressionUsageContent } from './ImpressionUsageContent';
 import { DoMoreHarmGoodContent } from './DoMoreHarmGoodContent';
+import { GuaranteeUsageContent } from './GuaranteeUsageContent';
+import { AdmitAdmissionUsageContent } from './AdmitAdmissionUsageContent';
+import { MicroMacroContent } from './MicroMacroContent';
 
 interface ContentProps {
     startLesson: (lessonType: string) => void;
 }
 
-type View = 'list' | 'affect-effect' | 'available-accessible' | 'balance-and' | 'help-usage' | 'pity-usage' | 'incorporate-cooperate-corporate' | 'sense-of-usage' | 'impression-usage' | 'do-more-harm-good';
+type View = 'list' | 'affect-effect' | 'available-accessible' | 'balance-and' | 'help-usage' | 'pity-usage' | 'incorporate-cooperate-corporate' | 'sense-of-usage' | 'impression-usage' | 'do-more-harm-good' | 'guarantee' | 'admit-admission' | 'micro-macro';
 
 export const VocabularyContent: React.FC<ContentProps> = ({ startLesson }) => {
     const [view, setView] = useState<View>('list');
@@ -60,7 +63,19 @@ export const VocabularyContent: React.FC<ContentProps> = ({ startLesson }) => {
     }
 
     if (view === 'do-more-harm-good') {
-        return <DoMoreHarmGoodContent onBack={() => setView('list')} themeColor={themeColor} onCompleteAll={() => setView('list')} />;
+        return <DoMoreHarmGoodContent onBack={() => setView('list')} themeColor={themeColor} onCompleteAll={() => setView('guarantee')} />;
+    }
+
+    if (view === 'guarantee') {
+        return <GuaranteeUsageContent onBack={() => setView('list')} themeColor={themeColor} onCompleteAll={() => setView('admit-admission')} />;
+    }
+
+    if (view === 'admit-admission') {
+        return <AdmitAdmissionUsageContent onBack={() => setView('list')} themeColor={themeColor} onCompleteAll={() => setView('micro-macro')} />;
+    }
+
+    if (view === 'micro-macro') {
+        return <MicroMacroContent onBack={() => setView('list')} themeColor={themeColor} onCompleteAll={() => setView('list')} />;
     }
 
     return (
@@ -108,6 +123,18 @@ export const VocabularyContent: React.FC<ContentProps> = ({ startLesson }) => {
                 <LessonItem borderColor={themeColor} onClick={() => setView('do-more-harm-good')}>
                     <LessonTitleChinese>'do more harm than good'</LessonTitleChinese>
                     <LessonTitleEnglish>Phrase: 弊大于利 / 利大于弊</LessonTitleEnglish>
+                </LessonItem>
+                <LessonItem borderColor={themeColor} onClick={() => setView('guarantee')}>
+                    <LessonTitleChinese>'guarantee' 的用法</LessonTitleChinese>
+                    <LessonTitleEnglish>Usage of 'guarantee'</LessonTitleEnglish>
+                </LessonItem>
+                <LessonItem borderColor={themeColor} onClick={() => setView('admit-admission')}>
+                    <LessonTitleChinese>Admit vs. Admission</LessonTitleChinese>
+                    <LessonTitleEnglish>Commonly Confused Words</LessonTitleEnglish>
+                </LessonItem>
+                 <LessonItem borderColor={themeColor} onClick={() => setView('micro-macro')}>
+                    <LessonTitleChinese>前缀 micro- vs macro-</LessonTitleChinese>
+                    <LessonTitleEnglish>Prefixes: micro- vs macro-</LessonTitleEnglish>
                 </LessonItem>
             </LessonList>
         </>

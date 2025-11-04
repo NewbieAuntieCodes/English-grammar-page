@@ -17,13 +17,14 @@ import { AsAsUsageContent } from './AsAsUsageContent';
 import { ThereBeContent } from './ThereBeContent';
 import { EdIngAdjectivesContent } from './EdIngAdjectivesContent';
 import { WhatHowExclamationsContent } from './WhatHowExclamationsContent';
+import { SoThatContent } from './SoThatContent';
 
 
 interface ContentProps {
     startLesson: (lessonType: string) => void;
 }
 
-type View = 'list' | 'gerunds' | 'it-is-adj' | 'of-usage' | 'with-usage' | 'infinitives' | 'by-usage' | 'as-as-usage' | 'there-be' | 'ed-ing-adjectives' | 'what-how-exclamations';
+type View = 'list' | 'gerunds' | 'it-is-adj' | 'of-usage' | 'with-usage' | 'infinitives' | 'by-usage' | 'as-as-usage' | 'there-be' | 'ed-ing-adjectives' | 'what-how-exclamations' | 'so-that';
 
 export const CommonStructuresContent: React.FC<ContentProps> = ({ startLesson }) => {
     const [view, setView] = useState<View>('list');
@@ -66,7 +67,11 @@ export const CommonStructuresContent: React.FC<ContentProps> = ({ startLesson })
     }
 
     if (view === 'what-how-exclamations') {
-        return <WhatHowExclamationsContent onBack={() => setView('list')} themeColor={themeColor} onCompleteAll={() => setView('list')} />;
+        return <WhatHowExclamationsContent onBack={() => setView('list')} themeColor={themeColor} onCompleteAll={() => setView('so-that')} />;
+    }
+
+    if (view === 'so-that') {
+        return <SoThatContent onBack={() => setView('list')} themeColor={themeColor} onCompleteAll={() => setView('list')} />;
     }
 
     return (
@@ -118,6 +123,10 @@ export const CommonStructuresContent: React.FC<ContentProps> = ({ startLesson })
                 <LessonItem borderColor={themeColor} onClick={() => setView('what-how-exclamations')}>
                     <LessonTitleChinese>What 和 How 的感叹句</LessonTitleChinese>
                     <LessonTitleEnglish>Exclamations with "What & How"</LessonTitleEnglish>
+                </LessonItem>
+                <LessonItem borderColor={themeColor} onClick={() => setView('so-that')}>
+                    <LessonTitleChinese>so that / so...that... 的用法</LessonTitleChinese>
+                    <LessonTitleEnglish>Expressing Purpose and Result</LessonTitleEnglish>
                 </LessonItem>
             </LessonList>
         </>
