@@ -85,8 +85,8 @@ export const CommonStructuresContent: React.FC<ContentProps> = ({ startLesson })
             </ContentHeader>
             <LessonList>
                 <LessonItem borderColor={themeColor} onClick={() => setView('gerunds')}>
-                    <LessonTitleChinese>动名词的用法</LessonTitleChinese>
-                    <LessonTitleEnglish>Usage of Gerunds (V-ing)</LessonTitleEnglish>
+                    <LessonTitleChinese>动词-ing的用法</LessonTitleChinese>
+                    <LessonTitleEnglish>Usage of V-ing</LessonTitleEnglish>
                 </LessonItem>
                 <LessonItem borderColor={themeColor} onClick={() => setView('infinitives')}>
                     <LessonTitleChinese>不定式的用法</LessonTitleChinese>

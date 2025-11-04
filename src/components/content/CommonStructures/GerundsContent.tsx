@@ -105,6 +105,22 @@ const complementPracticeData = [
     { words: [{ en: 'Seeing', cn: '眼见' }, { en: 'is', cn: '是' }, { en: 'believing', cn: '为实' }], correct: ['Seeing', 'is', 'believing'], chinese: '眼见为实。' },
 ];
 
+const adverbialPracticeData = [
+    { words: [{ en: 'He sat on the sofa,', cn: '他坐在沙发上，' }, { en: 'watching TV', cn: '看着电视' }], correct: ['He sat on the sofa,', 'watching TV'], chinese: '他坐在沙发上，看着电视。' },
+    { words: [{ en: 'She walked out,', cn: '她走了出去，' }, { en: 'singing a song', cn: '唱着一首歌' }], correct: ['She walked out,', 'singing a song'], chinese: '她唱着歌走了出去。' },
+    { words: [{ en: 'They stood there,', cn: '他们站在那里，' }, { en: 'waiting for the bus', cn: '等着公交车' }], correct: ['They stood there,', 'waiting for the bus'], chinese: '他们站在那里等公交车。' },
+    { words: [{ en: 'The children ran out,', cn: '孩子们跑了出去，' }, { en: 'laughing loudly', cn: '大声笑着' }], correct: ['The children ran out,', 'laughing loudly'], chinese: '孩子们大笑着跑了出去。' },
+    { words: [{ en: 'He fell asleep,', cn: '他睡着了，' }, { en: 'listening to the rain', cn: '听着雨声' }], correct: ['He fell asleep,', 'listening to the rain'], chinese: '他听着雨声睡着了。' },
+];
+
+const attributivePracticeData = [
+    { words: [{ en: 'The man', cn: '那个男人' }, { en: 'talking to the teacher', cn: '正在和老师说话' }, { en: 'is my father', cn: '是我的父亲' }], correct: ['The man', 'talking to the teacher', 'is my father'], chinese: '正在和老师说话的那个男人是我的父亲。' },
+    { words: [{ en: 'Do you know the girl', cn: '你认识那个女孩吗' }, { en: 'wearing a red hat?', cn: '戴着红帽子的' }], correct: ['Do you know the girl', 'wearing a red hat?'], chinese: '你认识那个戴红帽子的女孩吗？' },
+    { words: [{ en: 'The dog', cn: '那只狗' }, { en: 'barking loudly', cn: '大声叫' }, { en: 'is my neighbor\'s', cn: '是我邻居的' }], correct: ['The dog', 'barking loudly', 'is my neighbor\'s'], chinese: '那只大声叫的狗是我邻居的。' },
+    { words: [{ en: 'The boy', cn: '那个男孩' }, { en: 'playing football', cn: '正在踢足球' }, { en: 'is my brother', cn: '是我的弟弟' }], correct: ['The boy', 'playing football', 'is my brother'], chinese: '那个正在踢足球的男孩是我的弟弟。' },
+    { words: [{ en: 'I saw a car', cn: '我看见一辆车' }, { en: 'driving too fast', cn: '开得太快' }], correct: ['I saw a car', 'driving too fast'], chinese: '我看见一辆车开得太快了。' },
+];
+
 
 export const GerundsContent: React.FC<GerundsContentProps> = ({ onBack, themeColor, onCompleteAll }) => {
     const [voices, setVoices] = useState<SpeechSynthesisVoice[]>([]);
@@ -136,15 +152,15 @@ export const GerundsContent: React.FC<GerundsContentProps> = ({ onBack, themeCol
     return (
         <LessonContainer>
             <BackButton onClick={onBack} themeColor={themeColor}>← Back to List</BackButton>
-            <LessonTitle>🏃 动名词的用法 (Usage of Gerunds)</LessonTitle>
+            <LessonTitle>🏃 动词-ing的用法 (Usage of V-ing)</LessonTitle>
 
             <WhyLearnSection themeColor={themeColor}>
-                <SectionTitle>💡 什么是动名词？</SectionTitle>
-                <p>动名词 (Gerund) 是动词的-ing形式，但它在句子中像一个【名词】一样使用。它可以做主语、宾语、表语等。学会它能让你的表达更流畅、更地道！</p>
+                <SectionTitle>💡 什么是动词-ing？</SectionTitle>
+                <p>动词的-ing形式是一个“多面手”！当它像【名词】一样使用时，我们称之为动名词 (Gerund)；当它像【形容词】或【副词】一样使用时，我们称之为现在分词 (Present Participle)。它可以在句子中扮演多种角色，学会它能让你的表达更流畅、更地道！</p>
             </WhyLearnSection>
 
             {/* Section 1: Gerund as Subject */}
-            <UsageType>1. 动名词作主语 (Gerund as Subject)</UsageType>
+            <UsageType>1. 作主语 (As Subject)</UsageType>
             <p style={{ color: '#4a5568', marginBottom: '15px' }}>把一个“动作”当作句子的“主角”。</p>
             <FormulaSection themeColor={themeColor}>
                 <FormulaTitle themeColor={themeColor}>结构公式</FormulaTitle>
@@ -163,7 +179,7 @@ export const GerundsContent: React.FC<GerundsContentProps> = ({ onBack, themeCol
             <SentenceBuilderPractice themeColor={themeColor} onCompleteAll={() => alert('已完成主语练习！请继续学习。')} practiceData={subjectPracticeData} title="🎯 练习：作主语" subtitle="用下面的词组成句子" completionTitle="🎉 Great!" completionMessage="你已完成动名词作主语的练习！" nextButtonText="完成练习" />
 
             {/* Section 2: Gerund as Object */}
-            <UsageType>2. 动名词作宾语 (Gerund as Object)</UsageType>
+            <UsageType>2. 作宾语 (As Object)</UsageType>
             <p style={{ color: '#4a5568', marginBottom: '15px' }}>放在 `enjoy`, `finish`, `mind`, `practice`, `avoid`, `suggest` 等动词后面，作为动作的对象。</p>
             <ExamplesSection>
                 <ExampleItem onClick={() => handleToggleBreakdown('ex2')} themeColor={themeColor}>
@@ -174,7 +190,7 @@ export const GerundsContent: React.FC<GerundsContentProps> = ({ onBack, themeCol
             <SentenceBuilderPractice themeColor={themeColor} onCompleteAll={() => alert('已完成宾语练习！请继续学习。')} practiceData={objectPracticeData} title="🎯 练习：作宾语" subtitle="用下面的词组成句子" completionTitle="🎉 Excellent!" completionMessage="你已完成动名词作宾语的练习！" nextButtonText="完成练习" />
 
             {/* Section 3: Gerund as Object of a Preposition */}
-            <UsageType>3. 动名词作介词宾语 (Gerund as Object of a Preposition)</UsageType>
+            <UsageType>3. 作介词宾语 (As Object of a Preposition)</UsageType>
             <p style={{ color: '#4a5568', marginBottom: '15px' }}>放在 `at`, `for`, `in`, `of`, `without` 等介词后面。</p>
             <ExamplesSection>
                 <ExampleItem onClick={() => handleToggleBreakdown('ex3')} themeColor={themeColor}>
@@ -185,7 +201,7 @@ export const GerundsContent: React.FC<GerundsContentProps> = ({ onBack, themeCol
             <SentenceBuilderPractice themeColor={themeColor} onCompleteAll={() => alert('已完成介词宾语练习！请继续学习。')} practiceData={prepositionObjectPracticeData} title="🎯 练习：作介词宾语" subtitle="用下面的词组成句子" completionTitle="🎉 Awesome!" completionMessage="你已完成动名词作介词宾语的练习！" nextButtonText="完成练习" />
             
             {/* Section 4: Gerund as Complement */}
-            <UsageType>4. 动名词作表语 (Gerund as Complement)</UsageType>
+            <UsageType>4. 作表语 (As Complement)</UsageType>
             <p style={{ color: '#4a5568', marginBottom: '15px' }}>放在系动词 (如 is, am, are) 后面，用来解释说明主语是什么。</p>
             <ExamplesSection>
                 <ExampleItem onClick={() => handleToggleBreakdown('ex4')} themeColor={themeColor}>
@@ -193,7 +209,33 @@ export const GerundsContent: React.FC<GerundsContentProps> = ({ onBack, themeCol
                     <ExampleChinese>我的爱好是集邮。</ExampleChinese>
                 </ExampleItem>
             </ExamplesSection>
-            <SentenceBuilderPractice themeColor={themeColor} onCompleteAll={onCompleteAll} practiceData={complementPracticeData} title="🎯 练习：作表语" subtitle="用下面的词组成句子" completionTitle="🎉 Fantastic!" completionMessage="你已全面掌握动名词的用法！" nextButtonText="学习下一个句型 →" />
+            <SentenceBuilderPractice themeColor={themeColor} onCompleteAll={() => alert('已完成表语练习！请继续学习。')} practiceData={complementPracticeData} title="🎯 练习：作表语" subtitle="用下面的词组成句子" completionTitle="🎉 Fantastic!" completionMessage="你已完成动名词作表语的练习！" nextButtonText="完成练习" />
+
+            {/* Section 5: As Adverbial */}
+            <UsageType>5. 作状语 (As Adverbial) - 表示伴随</UsageType>
+            <p style={{ color: '#4a5568', marginBottom: '15px' }}>
+                表示伴随情况，说明主语在做主要动作的同时，还在做什么。它通常用逗号与主句隔开。
+            </p>
+            <ExamplesSection>
+                <ExampleItem themeColor={themeColor}>
+                    <ExampleHeader><ExampleEnglish>He sat on the sofa, <strong>watching TV</strong>.</ExampleEnglish><SpeakButton onClick={(e) => { e.stopPropagation(); handleSpeak('He sat on the sofa, watching TV.'); }}>🔊</SpeakButton></ExampleHeader>
+                    <ExampleChinese>他坐在沙发上，看着电视。</ExampleChinese>
+                </ExampleItem>
+            </ExamplesSection>
+            <SentenceBuilderPractice themeColor={themeColor} onCompleteAll={() => alert('已完成状语练习！请继续学习。')} practiceData={adverbialPracticeData} title="🎯 练习：作状语" subtitle="用下面的词组成句子" completionTitle="🎉 Perfect!" completionMessage="你已完成动名词作状语的练习！" nextButtonText="完成练习" />
+
+            {/* Section 6: As Attributive */}
+            <UsageType>6. 作定语 (As Attributive) - 后置修饰</UsageType>
+            <p style={{ color: '#4a5568', marginBottom: '15px' }}>
+                放在名词后面，作后置定语，用来修饰该名词，功能类似于一个定语从句。
+            </p>
+            <ExamplesSection>
+                <ExampleItem themeColor={themeColor}>
+                    <ExampleHeader><ExampleEnglish>The man <strong>talking to John</strong> is my teacher.</ExampleEnglish><SpeakButton onClick={(e) => { e.stopPropagation(); handleSpeak('The man talking to John is my teacher.'); }}>🔊</SpeakButton></ExampleHeader>
+                    <ExampleChinese>正在和约翰说话的那个男人是我的老师。(= The man who is talking to John...)</ExampleChinese>
+                </ExampleItem>
+            </ExamplesSection>
+            <SentenceBuilderPractice themeColor={themeColor} onCompleteAll={onCompleteAll} practiceData={attributivePracticeData} title="🎯 练习：作定语" subtitle="用下面的词组成句子" completionTitle="🎉 Fantastic!" completionMessage="你已全面掌握动词-ing的用法！" nextButtonText="学习下一个句型 →" />
 
         </LessonContainer>
     );
