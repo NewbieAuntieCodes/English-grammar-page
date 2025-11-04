@@ -34,14 +34,14 @@ const UsageType = styled.h3`
 `;
 
 const practiceData = [
-    { words: [{ en: 'What a', cn: '多么' }, { en: 'beautiful garden!', cn: '美丽的花园！' }], correct: ['What a', 'beautiful garden!'], chinese: '多么美丽的花园啊！' },
-    { words: [{ en: 'How fast', cn: '多么快' }, { en: 'he runs!', cn: '他跑得！' }], correct: ['How fast', 'he runs!'], chinese: '他跑得真快啊！' },
+    { words: [{ en: 'What a', cn: '多么' }, { en: 'beautiful', cn: '美丽的' }, { en: 'garden!', cn: '花园！' }], correct: ['What a', 'beautiful', 'garden!'], chinese: '多么美丽的花园啊！' },
+    { words: [{ en: 'How fast', cn: '多么快' }, { en: 'he', cn: '他' }, { en: 'runs!', cn: '跑得！' }], correct: ['How fast', 'he', 'runs!'], chinese: '他跑得真快啊！' },
     { words: [{ en: 'What an', cn: '多么一本' }, { en: 'interesting book', cn: '有趣的书' }, { en: 'this is!', cn: '这是！' }], correct: ['What an', 'interesting book', 'this is!'], chinese: '这是一本多么有趣的书啊！' },
     { words: [{ en: 'How cold', cn: '多么冷' }, { en: 'it is', cn: '天气' }, { en: 'today!', cn: '今天！' }], correct: ['How cold', 'it is', 'today!'], chinese: '今天天气真冷啊！' },
-    { words: [{ en: 'What a', cn: '多么一顿' }, { en: 'delicious meal!', cn: '美味的餐！' }], correct: ['What a', 'delicious meal!'], chinese: '多么美味的一餐啊！' },
-    { words: [{ en: 'How well', cn: '多么好' }, { en: 'she sings!', cn: '她唱得！' }], correct: ['How well', 'she sings!'], chinese: '她唱得多好啊！' },
-    { words: [{ en: 'What a surprise', cn: '多么惊喜' }, { en: 'to see you here!', cn: '在这里见到你！' }], correct: ['What a surprise', 'to see you here!'], chinese: '在这里见到你真是个惊喜！' },
-    { words: [{ en: 'How quickly', cn: '多么快' }, { en: 'time flies!', cn: '时间飞逝！' }], correct: ['How quickly', 'time flies!'], chinese: '时间过得真快啊！' },
+    { words: [{ en: 'What a', cn: '多么一顿' }, { en: 'delicious', cn: '美味的' }, { en: 'meal!', cn: '餐！' }], correct: ['What a', 'delicious', 'meal!'], chinese: '多么美味的一餐啊！' },
+    { words: [{ en: 'How well', cn: '多么好' }, { en: 'she', cn: '她' }, { en: 'sings!', cn: '唱得！' }], correct: ['How well', 'she', 'sings!'], chinese: '她唱得多好啊！' },
+    { words: [{ en: 'What a surprise', cn: '多么惊喜' }, { en: 'to see', cn: '见到' }, { en: 'you here!', cn: '你在这里！' }], correct: ['What a surprise', 'to see', 'you here!'], chinese: '在这里见到你真是个惊喜！' },
+    { words: [{ en: 'How quickly', cn: '多么快' }, { en: 'time', cn: '时间' }, { en: 'flies!', cn: '飞逝！' }], correct: ['How quickly', 'time', 'flies!'], chinese: '时间过得真快啊！' },
 ];
 
 export const WhatHowExclamationsContent: React.FC<WhatHowExclamationsContentProps> = ({ onBack, themeColor, onCompleteAll }) => {
