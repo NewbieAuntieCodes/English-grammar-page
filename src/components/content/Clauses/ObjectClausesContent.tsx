@@ -80,16 +80,16 @@ const whFillData = [
     { sentenceParts: ["I can't remember ", " I put my keys."] as const, choices: [{text: "where", isCorrect: true}, {text: "what", isCorrect: false}, {text: "who", isCorrect: false}], chineseHint: "我不记得我把钥匙放在哪里了。" },
 ];
 const whBuildData = [
-    { words: [{ en: 'Do you know', cn: '你知道' }, { en: 'what he wants', cn: '他想要什么' }], correct: ['Do you know', 'what he wants'], chinese: '你知道他想要什么吗？' },
-    { words: [{ en: 'Tell me', cn: '告诉我' }, { en: 'where you live', cn: '你住哪里' }], correct: ['Tell me', 'where you live'], chinese: '告诉我你住在哪里。' },
-    { words: [{ en: 'Nobody knows', cn: '没人知道' }, { en: 'why he is angry', cn: '他为何生气' }], correct: ['Nobody knows', 'why he is angry'], chinese: '没人知道他为什么生气。' },
-    { words: [{ en: "I don't know", cn: '我不知道' }, { en: 'who took my pen', cn: '谁拿了我的笔' }], correct: ["I don't know", 'who took my pen'], chinese: '我不知道谁拿了我的笔。' },
-    { words: [{ en: 'She asked', cn: '她问' }, { en: 'when the train would arrive', cn: '火车何时到达' }], correct: ['She asked', 'when the train would arrive'], chinese: '她问火车什么时候到。' },
-    { words: [{ en: 'I want to know', cn: '我想知道' }, { en: 'how this works', cn: '这个如何运作' }], correct: ['I want to know', 'how this works'], chinese: '我想知道这个是怎么运作的。' },
-    { words: [{ en: 'Can you show me', cn: '你能告诉我' }, { en: 'where the station is', cn: '车站在哪' }], correct: ['Can you show me', 'where the station is'], chinese: '你能告诉我车站在哪里吗？' },
-    { words: [{ en: 'He explained', cn: '他解释了' }, { en: 'why he made that decision', cn: '他为何做此决定' }], correct: ['He explained', 'why he made that decision'], chinese: '他解释了他为什么做出那个决定。' },
-    { words: [{ en: 'We need to decide', cn: '我们需要决定' }, { en: 'what to do next', cn: '下一步做什么' }], correct: ['We need to decide', 'what to do next'], chinese: '我们需要决定下一步该做什么。' },
-    { words: [{ en: 'I can’t remember', cn: '我不记得' }, { en: 'who I gave the book to', cn: '我把书给了谁' }], correct: ['I can’t remember', 'who I gave the book to'], chinese: '我不记得我把书给谁了。' },
+    { words: [{ en: 'Do you know', cn: '你知道' }, { en: 'what', cn: '什么' }, { en: 'he wants', cn: '他想要' }], correct: ['Do you know', 'what', 'he wants'], chinese: '你知道他想要什么吗？' },
+    { words: [{ en: 'Tell me', cn: '告诉我' }, { en: 'where', cn: '哪里' }, { en: 'you live', cn: '你住' }], correct: ['Tell me', 'where', 'you live'], chinese: '告诉我你住在哪里。' },
+    { words: [{ en: 'Nobody knows', cn: '没人知道' }, { en: 'why', cn: '为何' }, { en: 'he is angry', cn: '他生气' }], correct: ['Nobody knows', 'why', 'he is angry'], chinese: '没人知道他为什么生气。' },
+    { words: [{ en: "I don't know", cn: '我不知道' }, { en: 'who', cn: '谁' }, { en: 'took my pen', cn: '拿了我的笔' }], correct: ["I don't know", 'who', 'took my pen'], chinese: '我不知道谁拿了我的笔。' },
+    { words: [{ en: 'She asked', cn: '她问' }, { en: 'when', cn: '何时' }, { en: 'the train would arrive', cn: '火车会到达' }], correct: ['She asked', 'when', 'the train would arrive'], chinese: '她问火车什么时候到。' },
+    { words: [{ en: 'I want to know', cn: '我想知道' }, { en: 'how', cn: '如何' }, { en: 'this works', cn: '这个运作' }], correct: ['I want to know', 'how', 'this works'], chinese: '我想知道这个是怎么运作的。' },
+    { words: [{ en: 'Can you show me', cn: '你能告诉我' }, { en: 'where', cn: '哪里' }, { en: 'the station is', cn: '车站在' }], correct: ['Can you show me', 'where', 'the station is'], chinese: '你能告诉我车站在哪里吗？' },
+    { words: [{ en: 'He explained', cn: '他解释了' }, { en: 'why', cn: '为何' }, { en: 'he made that decision', cn: '他做了那个决定' }], correct: ['He explained', 'why', 'he made that decision'], chinese: '他解释了他为什么做出那个决定。' },
+    { words: [{ en: 'We need to decide', cn: '我们需要决定' }, { en: 'what', cn: '什么' }, { en: 'to do next', cn: '下一步做' }], correct: ['We need to decide', 'what', 'to do next'], chinese: '我们需要决定下一步该做什么。' },
+    { words: [{ en: 'I can’t remember', cn: '我不记得' }, { en: 'who I gave', cn: '我给了谁' }, { en: 'the book to', cn: '这本书' }], correct: ['I can’t remember', 'who I gave', 'the book to'], chinese: '我不记得我把书给谁了。' },
 ];
 
 // --- Styled Components ---
