@@ -15,12 +15,13 @@ import { PityUsageContent } from './PityUsageContent';
 import { IncorporateCooperateCorporateContent } from './IncorporateCooperateCorporateContent';
 import { SenseOfUsageContent } from './SenseOfUsageContent';
 import { ImpressionUsageContent } from './ImpressionUsageContent';
+import { DoMoreHarmGoodContent } from './DoMoreHarmGoodContent';
 
 interface ContentProps {
     startLesson: (lessonType: string) => void;
 }
 
-type View = 'list' | 'affect-effect' | 'available-accessible' | 'balance-and' | 'help-usage' | 'pity-usage' | 'incorporate-cooperate-corporate' | 'sense-of-usage' | 'impression-usage';
+type View = 'list' | 'affect-effect' | 'available-accessible' | 'balance-and' | 'help-usage' | 'pity-usage' | 'incorporate-cooperate-corporate' | 'sense-of-usage' | 'impression-usage' | 'do-more-harm-good';
 
 export const VocabularyContent: React.FC<ContentProps> = ({ startLesson }) => {
     const [view, setView] = useState<View>('list');
@@ -55,7 +56,11 @@ export const VocabularyContent: React.FC<ContentProps> = ({ startLesson }) => {
     }
 
     if (view === 'impression-usage') {
-        return <ImpressionUsageContent onBack={() => setView('list')} themeColor={themeColor} onCompleteAll={() => setView('list')} />;
+        return <ImpressionUsageContent onBack={() => setView('list')} themeColor={themeColor} onCompleteAll={() => setView('do-more-harm-good')} />;
+    }
+
+    if (view === 'do-more-harm-good') {
+        return <DoMoreHarmGoodContent onBack={() => setView('list')} themeColor={themeColor} onCompleteAll={() => setView('list')} />;
     }
 
     return (
@@ -99,6 +104,10 @@ export const VocabularyContent: React.FC<ContentProps> = ({ startLesson }) => {
                 <LessonItem borderColor={themeColor} onClick={() => setView('impression-usage')}>
                     <LessonTitleChinese>'impression' 的用法</LessonTitleChinese>
                     <LessonTitleEnglish>Usage of 'impression'</LessonTitleEnglish>
+                </LessonItem>
+                <LessonItem borderColor={themeColor} onClick={() => setView('do-more-harm-good')}>
+                    <LessonTitleChinese>'do more harm than good'</LessonTitleChinese>
+                    <LessonTitleEnglish>Phrase: 弊大于利 / 利大于弊</LessonTitleEnglish>
                 </LessonItem>
             </LessonList>
         </>

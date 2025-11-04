@@ -20,120 +20,79 @@ import {
     SpeakButton,
     ExampleEnglish,
     ExampleChinese,
-    ExampleBreakdown,
-    BreakdownPart,
     SVOFormulaPart,
     SVOPartEnglish,
     SVOPartChinese,
-    SVOPartDivider,
-    SVOPartOfSpeechInfo,
-    SVOPartOfSpeechText,
-    SVOPartOfSpeechTextEng,
-    ExampleSwitcher,
-    SwitcherButton,
-    AnalysisGrid,
-    AnalysisColumn,
     popIn,
 } from '../Structures/SVOContent.styles';
 import { SentenceBuilderPractice } from '../../practice/SentenceBuilderPractice';
 import { FillInTheBlankPractice } from '../../practice/FillInTheBlankPractice';
 import { PracticeModeSwitcher, ModeButton } from '../../practice/SentenceBuilderPractice.styles';
 
-
+// --- Interface and Props ---
 interface ObjectClausesContentProps {
     onBack: () => void;
     themeColor: string;
     onCompleteAll: () => void;
 }
 
-const buildPracticeData = [
-    { words: [{ en: 'I', cn: '我' }, { en: 'think', cn: '认为' }, { en: 'that', cn: '' }, { en: 'he', cn: '他' }, { en: 'is honest', cn: '是诚实的' }], correct: ['I', 'think', 'that', 'he', 'is honest'], chinese: '我认为他是诚实的。' },
-    { words: [{ en: 'She', cn: '她' }, { en: 'said', cn: '说' }, { en: 'that', cn: '' }, { en: 'she', cn: '她' }, { en: 'was tired', cn: '累了' }], correct: ['She', 'said', 'that', 'she', 'was tired'], chinese: '她说她累了。' },
-    { words: [{ en: 'Do you know', cn: '你知道' }, { en: 'what', cn: '什么' }, { en: 'he', cn: '他' }, { en: 'wants', cn: '想要' }], correct: ['Do you know', 'what', 'he', 'wants'], chinese: '你知道他想要什么吗？' },
-    { words: [{ en: 'I wonder', cn: '我想知道' }, { en: 'if', cn: '是否' }, { en: 'it', cn: '它' }, { en: 'will rain', cn: '会下雨' }], correct: ['I wonder', 'if', 'it', 'will rain'], chinese: '我想知道是否会下雨。' },
-    { words: [{ en: 'Tell me', cn: '告诉我' }, { en: 'where', cn: '哪里' }, { en: 'you', cn: '你' }, { en: 'live', cn: '住' }], correct: ['Tell me', 'where', 'you', 'live'], chinese: '告诉我你住在哪里。' },
-    { words: [{ en: 'Nobody knows', cn: '没人知道' }, { en: 'why', cn: '为什么' }, { en: 'he', cn: '他' }, { en: 'is angry', cn: '生气' }], correct: ['Nobody knows', 'why', 'he', 'is angry'], chinese: '没人知道他为什么生气。' },
-    { words: [{ en: "I don't know", cn: '我不知道' }, { en: 'who', cn: '谁' }, { en: 'took', cn: '拿了' }, { en: 'my pen', cn: '我的笔' }], correct: ["I don't know", 'who', 'took', 'my pen'], chinese: '我不知道谁拿了我的笔。' },
-];
+// --- Grouped Practice Data ---
 
-const fillPracticeData = [
+// THAT-clauses
+const thatFillData = [
     { sentenceParts: ["I think ", " he is honest."] as const, choices: [{text: "that", isCorrect: true}, {text: "if", isCorrect: false}, {text: "what", isCorrect: false}], chineseHint: "我认为他是诚实的。" },
     { sentenceParts: ["She said ", " she was tired."] as const, choices: [{text: "that", isCorrect: true}, {text: "who", isCorrect: false}, {text: "why", isCorrect: false}], chineseHint: "她说她累了。" },
+    { sentenceParts: ["We hope ", " you can come to the party."] as const, choices: [{text: "that", isCorrect: true}, {text: "if", isCorrect: false}, {text: "what", isCorrect: false}], chineseHint: "我们希望你能来参加派对。" },
+    { sentenceParts: ["He knows ", " the earth is round."] as const, choices: [{text: "that", isCorrect: true}, {text: "what", isCorrect: false}, {text: "whether", isCorrect: false}], chineseHint: "他知道地球是圆的。" },
+];
+const thatBuildData = [
+    { words: [{ en: 'I think', cn: '我认为' }, { en: '(that)', cn: '(可省略)' }, { en: 'he is honest', cn: '他是诚实的' }], correct: ['I think', '(that)', 'he is honest'], chinese: '我认为他是诚实的。' },
+    { words: [{ en: 'She said', cn: '她说' }, { en: '(that)', cn: '(可省略)' }, { en: 'she was tired', cn: '她累了' }], correct: ['She said', '(that)', 'she was tired'], chinese: '她说她累了。' },
+    { words: [{ en: 'We hope', cn: '我们希望' }, { en: 'that you can come', cn: '你能来' }], correct: ['We hope', 'that you can come'], chinese: '我们希望你能来。' },
+    { words: [{ en: 'He knows', cn: '他知道' }, { en: 'that the earth is round', cn: '地球是圆的' }], correct: ['He knows', 'that the earth is round'], chinese: '他知道地球是圆的。' },
+];
+
+// IF/WHETHER-clauses
+const ifWhetherFillData = [
+    { sentenceParts: ["I wonder ", " it will rain tomorrow."] as const, choices: [{text: "if", isCorrect: true}, {text: "that", isCorrect: false}, {text: "what", isCorrect: false}], chineseHint: "我想知道明天是否会下雨。" },
+    { sentenceParts: ["Can you tell me ", " he is at home?"] as const, choices: [{text: "whether", isCorrect: true}, {text: "that", isCorrect: false}, {text: "what", isCorrect: false}], chineseHint: "你能告诉我他是否在家吗？" },
+    { sentenceParts: ["She asked ", " I could help her."] as const, choices: [{text: "if", isCorrect: true}, {text: "who", isCorrect: false}, {text: "what", isCorrect: false}], chineseHint: "她问我是否能帮助她。" },
+    { sentenceParts: ["I'm not sure ", " this is the right answer."] as const, choices: [{text: "whether", isCorrect: true}, {text: "that", isCorrect: false}, {text: "what", isCorrect: false}], chineseHint: "我不确定这是否是正确答案。" },
+];
+const ifWhetherBuildData = [
+    { words: [{ en: 'I wonder', cn: '我想知道' }, { en: 'if', cn: '是否' }, { en: 'it will rain', cn: '会下雨' }], correct: ['I wonder', 'if', 'it will rain'], chinese: '我想知道明天是否会下雨。' },
+    { words: [{ en: 'Ask him', cn: '问问他' }, { en: 'whether', cn: '是否' }, { en: 'he can come', cn: '他能来' }], correct: ['Ask him', 'whether', 'he can come'], chinese: '问问他是否能来。' },
+    { words: [{ en: 'She wants to know', cn: '她想知道' }, { en: 'if you are free', cn: '你是否有空' }], correct: ['She wants to know', 'if you are free'], chinese: '她想知道你是否有空。' },
+    { words: [{ en: "I don't know", cn: '我不知道' }, { en: 'whether to go or not', cn: '是否该去' }], correct: ["I don't know", 'whether to go or not'], chinese: '我不知道是否该去。' },
+];
+
+// WH-clauses
+const whFillData = [
     { sentenceParts: ["Do you know ", " he wants?"] as const, choices: [{text: "what", isCorrect: true}, {text: "who", isCorrect: false}, {text: "if", isCorrect: false}], chineseHint: "你知道他想要什么吗？" },
-    { sentenceParts: ["I wonder ", " it will rain."] as const, choices: [{text: "if", isCorrect: true}, {text: "that", isCorrect: false}, {text: "what", isCorrect: false}], chineseHint: "我想知道是否会下雨。" },
     { sentenceParts: ["Tell me ", " you live."] as const, choices: [{text: "where", isCorrect: true}, {text: "who", isCorrect: false}, {text: "that", isCorrect: false}], chineseHint: "告诉我你住在哪里。" },
     { sentenceParts: ["Nobody knows ", " he is angry."] as const, choices: [{text: "why", isCorrect: true}, {text: "who", isCorrect: false}, {text: "that", isCorrect: false}], chineseHint: "没人知道他为什么生气。" },
     { sentenceParts: ["I don't know ", " took my pen."] as const, choices: [{text: "who", isCorrect: true}, {text: "what", isCorrect: false}, {text: "if", isCorrect: false}], chineseHint: "我不知道谁拿了我的笔。" },
+    { sentenceParts: ["Can you tell me ", " the party will start?"] as const, choices: [{text: "when", isCorrect: true}, {text: "if", isCorrect: false}, {text: "what", isCorrect: false}], chineseHint: "你能告诉我派对什么时候开始吗？" },
+    { sentenceParts: ["I'd like to know ", " you solved the problem."] as const, choices: [{text: "how", isCorrect: true}, {text: "why", isCorrect: false}, {text: "where", isCorrect: false}], chineseHint: "我想知道你是如何解决这个问题的。" },
+    { sentenceParts: ["Please show me ", " the bathroom is."] as const, choices: [{text: "where", isCorrect: true}, {text: "what", isCorrect: false}, {text: "when", isCorrect: false}], chineseHint: "请告诉我卫生间在哪里。" },
+    { sentenceParts: ["I wonder ", " is calling at this hour."] as const, choices: [{text: "who", isCorrect: true}, {text: "what", isCorrect: false}, {text: "if", isCorrect: false}], chineseHint: "我想知道谁在这个时候打电话。" },
+    { sentenceParts: ["He didn't explain ", " he was so late."] as const, choices: [{text: "why", isCorrect: true}, {text: "how", isCorrect: false}, {text: "when", isCorrect: false}], chineseHint: "他没有解释为什么他迟到了这么久。" },
+    { sentenceParts: ["I can't remember ", " I put my keys."] as const, choices: [{text: "where", isCorrect: true}, {text: "what", isCorrect: false}, {text: "who", isCorrect: false}], chineseHint: "我不记得我把钥匙放在哪里了。" },
+];
+const whBuildData = [
+    { words: [{ en: 'Do you know', cn: '你知道' }, { en: 'what he wants', cn: '他想要什么' }], correct: ['Do you know', 'what he wants'], chinese: '你知道他想要什么吗？' },
+    { words: [{ en: 'Tell me', cn: '告诉我' }, { en: 'where you live', cn: '你住哪里' }], correct: ['Tell me', 'where you live'], chinese: '告诉我你住在哪里。' },
+    { words: [{ en: 'Nobody knows', cn: '没人知道' }, { en: 'why he is angry', cn: '他为何生气' }], correct: ['Nobody knows', 'why he is angry'], chinese: '没人知道他为什么生气。' },
+    { words: [{ en: "I don't know", cn: '我不知道' }, { en: 'who took my pen', cn: '谁拿了我的笔' }], correct: ["I don't know", 'who took my pen'], chinese: '我不知道谁拿了我的笔。' },
+    { words: [{ en: 'She asked', cn: '她问' }, { en: 'when the train would arrive', cn: '火车何时到达' }], correct: ['She asked', 'when the train would arrive'], chinese: '她问火车什么时候到。' },
+    { words: [{ en: 'I want to know', cn: '我想知道' }, { en: 'how this works', cn: '这个如何运作' }], correct: ['I want to know', 'how this works'], chinese: '我想知道这个是怎么运作的。' },
+    { words: [{ en: 'Can you show me', cn: '你能告诉我' }, { en: 'where the station is', cn: '车站在哪' }], correct: ['Can you show me', 'where the station is'], chinese: '你能告诉我车站在哪里吗？' },
+    { words: [{ en: 'He explained', cn: '他解释了' }, { en: 'why he made that decision', cn: '他为何做此决定' }], correct: ['He explained', 'why he made that decision'], chinese: '他解释了他为什么做出那个决定。' },
+    { words: [{ en: 'We need to decide', cn: '我们需要决定' }, { en: 'what to do next', cn: '下一步做什么' }], correct: ['We need to decide', 'what to do next'], chinese: '我们需要决定下一步该做什么。' },
+    { words: [{ en: 'I can’t remember', cn: '我不记得' }, { en: 'who I gave the book to', cn: '我把书给了谁' }], correct: ['I can’t remember', 'who I gave the book to'], chinese: '我不记得我把书给谁了。' },
 ];
 
-const normalExamples = [
-    {
-        id: 'ex1',
-        title: 'I hope...',
-        english: 'I hope (that) you can come.',
-        chinese: '我希望你能来。',
-        mainClause: { subject: 'I', verb: 'hope' },
-        objectClause: { connector: '(that) - 已省略', subject: 'you', verb: 'can come' },
-        core: '动词 `hope` 的宾语(object)是什么？是 `(that) you can come` 这整件事。'
-    },
-    {
-        id: 'ex2',
-        title: "I don't know...",
-        english: "I don't know what I should do.",
-        chinese: '我不知道我应该做什么。',
-        mainClause: { subject: 'I', verb: "don't know" },
-        objectClause: { connector: 'what', subject: 'I', verb: 'should do' },
-        core: "动词 `know` 的宾语是什么？是 `what I should do` 这个从句。引导词 `what` 在从句中也充当 `do` 的宾语。"
-    },
-    {
-        id: 'ex3',
-        title: 'Can you tell me...',
-        english: 'Can you tell me if he is at home?',
-        chinese: '你能告诉我他是否在家吗？',
-        mainClause: { subject: 'You', verb: 'tell', indirectObject: 'me' },
-        objectClause: { connector: 'if', subject: 'he', verb: 'is', complement: 'at home' },
-        core: '动词 `tell` 有两个宾语。`me` 是间接宾语，而 `if he is at home` 整个从句是直接宾语，回答了 "tell me what?"'
-    },
-    {
-        id: 'ex4',
-        title: "I don't understand...",
-        english: "I don't understand why she is upset.",
-        chinese: '我不明白她为什么不高兴。',
-        mainClause: { subject: 'I', verb: "don't understand" },
-        objectClause: { connector: 'why', subject: 'she', verb: 'is', complement: 'upset' },
-        core: '动词 `understand` 的宾语是什么？是 `why she is upset` 这个从句，解释了不明白的内容。'
-    },
-];
-
-const specialCaseExamples = [
-    {
-        id: 'ex5',
-        title: 'He asked who...',
-        english: 'He asked who ate the cake.',
-        chinese: '他问是谁吃了蛋糕。',
-        mainClause: { subject: 'He', verb: 'asked' },
-        objectClause: { connector: 'who', subject: 'who (既是引导词也是主语)', verb: 'ate the cake' },
-        core: '动词 `asked` 的宾语是 `who ate the cake` 这个从句。在这里引导词 `who` 同时充当从句的主语。'
-    },
-    {
-        id: 'ex6',
-        title: 'I want to know what...',
-        english: 'I want to know what happened.',
-        chinese: '我想知道发生了什么事。',
-        mainClause: { subject: 'I', verb: 'want to know' },
-        objectClause: { connector: 'what', subject: 'what (既是引导词也是主语)', verb: 'happened' },
-        core: '动词 `know` 的宾语是 `what happened` 这个从句。`what` 在这里既是引导词，也是从句 `happened` 的主语。'
-    },
-    {
-        id: 'ex7',
-        title: 'They will find out who...',
-        english: 'They will find out who is responsible.',
-        chinese: '他们会查出谁是负责人。',
-        mainClause: { subject: 'They', verb: 'will find out' },
-        objectClause: { connector: 'who', subject: 'who (既是引导词也是主语)', verb: 'is responsible' },
-        core: '动词 `find out` 的宾语是 `who is responsible` 这个从句。`who` 在这里既是引导词，也是从句的主语。'
-    }
-];
+// --- Styled Components ---
 
 const AnimatedExampleItem = styled(ExampleItem)`
     animation: ${popIn} 0.4s ease-out;
@@ -142,40 +101,101 @@ const AnimatedExampleItem = styled(ExampleItem)`
 const TipSection = styled(WhyLearnSection)`
     background: linear-gradient(135deg, rgba(254, 249, 195, 1), rgba(253, 230, 138, 0.2));
     border-left-color: #FBBF24;
-    p, h4 {
+    p, h4, strong {
         color: #92400E;
     }
 `;
 
-const SpecialCaseSection = styled(WhyLearnSection)`
-    background: linear-gradient(135deg, rgba(224, 231, 255, 1), rgba(239, 246, 255, 0.2));
-    border-left-color: #6366F1;
-    p, h4 {
-        color: #4338CA;
-    }
+const ClauseGroup = styled.div`
+    margin-top: 50px;
+    padding-top: 30px;
+    border-top: 3px dashed #e2e8f0;
 `;
 
+const GroupTitle = styled.h3`
+    font-size: 1.6em;
+    font-weight: bold;
+    color: #2d3748;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+`;
+
+const PracticeWrapper = styled.div`
+    margin-top: 40px;
+    background-color: #f8f9fa;
+    border-radius: 20px;
+    border: 1px solid #e9ecef;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+`;
+
+// --- Helper Practice Component ---
+interface ClausePracticeGroupProps {
+    themeColor: string;
+    onFillComplete: () => void;
+    buildData: any[];
+    fillData: any[];
+}
+
+const ClausePracticeGroup: React.FC<ClausePracticeGroupProps> = ({ themeColor, onFillComplete, buildData, fillData }) => {
+    const [practiceMode, setPracticeMode] = useState<'build' | 'fill'>('build');
+    
+    const handleBuildComplete = () => {
+        setPracticeMode('fill');
+    };
+
+    return (
+        <PracticeWrapper>
+            <PracticeModeSwitcher>
+                <ModeButton isActive={practiceMode === 'build'} onClick={() => setPracticeMode('build')} themeColor={themeColor}>
+                    组句练习
+                </ModeButton>
+                <ModeButton isActive={practiceMode === 'fill'} onClick={() => setPracticeMode('fill')} themeColor={themeColor}>
+                    填空练习
+                </ModeButton>
+            </PracticeModeSwitcher>
+
+            {practiceMode === 'build' ? (
+                <SentenceBuilderPractice
+                    themeColor={themeColor}
+                    onCompleteAll={handleBuildComplete}
+                    practiceData={buildData}
+                    title="🎯 组句练习"
+                    subtitle="用下面的词块组成句子"
+                    completionTitle="🎉 组句完成!"
+                    completionMessage="已自动进入填空练习..."
+                    nextButtonText="开始填空 →"
+                />
+            ) : (
+                <FillInTheBlankPractice
+                    themeColor={themeColor}
+                    onCompleteAll={onFillComplete}
+                    practiceData={fillData}
+                    title="🎯 填空练习"
+                    subtitle="选择正确的引导词"
+                    completionTitle="🎉 本组完成!"
+                    completionMessage="你已掌握此类宾语从句！"
+                    nextButtonText="继续学习"
+                />
+            )}
+        </PracticeWrapper>
+    );
+};
+
+
+// --- Main Component ---
 export const ObjectClausesContent: React.FC<ObjectClausesContentProps> = ({ onBack, themeColor, onCompleteAll }) => {
     const [voices, setVoices] = useState<SpeechSynthesisVoice[]>([]);
-    const [activeNormalExampleIndex, setActiveNormalExampleIndex] = useState(0);
-    const [activeSpecialExampleIndex, setActiveSpecialExampleIndex] = useState(0);
-    const [practiceMode, setPracticeMode] = useState<'build' | 'fill'>('build');
 
     useEffect(() => {
-        const loadVoices = () => {
-            setVoices(window.speechSynthesis.getVoices());
-        };
-
+        const loadVoices = () => setVoices(window.speechSynthesis.getVoices());
         if ('speechSynthesis' in window) {
             loadVoices();
             window.speechSynthesis.onvoiceschanged = loadVoices;
         }
-
-        return () => {
-            if ('speechSynthesis' in window) {
-                window.speechSynthesis.onvoiceschanged = null;
-            }
-        };
+        return () => { if ('speechSynthesis' in window) window.speechSynthesis.onvoiceschanged = null; };
     }, []);
 
     const handleExplainPart = (part: 'main' | 'object-clause') => {
@@ -191,58 +211,14 @@ export const ObjectClausesContent: React.FC<ObjectClausesContentProps> = ({ onBa
             window.speechSynthesis.cancel();
             const utterance = new SpeechSynthesisUtterance(text);
             const usVoice = voices.find(voice => voice.lang === 'en-US');
-            
             utterance.voice = usVoice || voices.find(voice => voice.lang.startsWith('en-')) || null;
-            utterance.rate = 0.9;
-            utterance.pitch = 1.1;
-
             window.speechSynthesis.speak(utterance);
-        } else {
-            alert("Sorry, your browser doesn't support text-to-speech.");
         }
     };
-
-    const activeNormalExample = normalExamples[activeNormalExampleIndex];
-    const activeSpecialExample = specialCaseExamples[activeSpecialExampleIndex];
-
-    const renderExample = (example: any) => (
-        <AnimatedExampleItem themeColor={themeColor}>
-            <ExampleHeader>
-                <ExampleEnglish>{example.english}</ExampleEnglish>
-                <SpeakButton onClick={(e) => { e.stopPropagation(); handleSpeak(example.english.replace(/[()]/g, '')); }} aria-label="Speak sentence">🔊</SpeakButton>
-            </ExampleHeader>
-            <ExampleChinese>{example.chinese}</ExampleChinese>
-            <ExampleBreakdown show={true} themeColor={themeColor}>
-                <AnalysisGrid>
-                    <AnalysisColumn themeColor={themeColor}>
-                        <h4>主句分析</h4>
-                        <BreakdownPart>- <strong>主语:</strong> {example.mainClause.subject}</BreakdownPart>
-                        <BreakdownPart>- <strong>谓语:</strong> {example.mainClause.verb}</BreakdownPart>
-                        {example.mainClause.indirectObject && (
-                            <BreakdownPart>- <strong>间接宾语:</strong> {example.mainClause.indirectObject}</BreakdownPart>
-                        )}
-                    </AnalysisColumn>
-                    <AnalysisColumn themeColor={themeColor}>
-                        <h4>宾语从句分析</h4>
-                        <BreakdownPart>- <strong>引导词:</strong> {example.objectClause.connector}</BreakdownPart>
-                        <BreakdownPart>- <strong>从句主语:</strong> {example.objectClause.subject}</BreakdownPart>
-                        <BreakdownPart>- <strong>从句谓语:</strong> {example.objectClause.verb}</BreakdownPart>
-                        {example.objectClause.complement && (
-                            <BreakdownPart>- <strong>从句表语:</strong> {example.objectClause.complement}</BreakdownPart>
-                        )}
-                    </AnalysisColumn>
-                </AnalysisGrid>
-                <BreakdownPart style={{ marginTop: '20px', paddingTop: '15px', borderTop: '1px solid #e2e8f0' }}>
-                    <strong>* 核心:</strong> {example.core}
-                </BreakdownPart>
-            </ExampleBreakdown>
-        </AnimatedExampleItem>
-    );
 
     return (
         <LessonContainer>
             <BackButton onClick={onBack} themeColor={themeColor}>← Back to Clause List</BackButton>
-
             <LessonTitle>📦 宾语从句 Object Clauses</LessonTitle>
 
             <WhyLearnSection themeColor={themeColor}>
@@ -256,117 +232,71 @@ export const ObjectClausesContent: React.FC<ObjectClausesContentProps> = ({ onBa
                     <SVOFormulaPart themeColor={themeColor} onClick={() => handleExplainPart('main')}>
                         <SVOPartEnglish>Main Clause</SVOPartEnglish>
                         <SVOPartChinese>主句 (主+谓)</SVOPartChinese>
-                        <SVOPartDivider />
-                        <SVOPartOfSpeechInfo>
-                            <SVOPartOfSpeechText>I think...</SVOPartOfSpeechText>
-                            <SVOPartOfSpeechTextEng>She knows...</SVOPartOfSpeechTextEng>
-                        </SVOPartOfSpeechInfo>
                     </SVOFormulaPart>
                     <PlusSign themeColor={themeColor}>+</PlusSign>
                     <SVOFormulaPart themeColor={themeColor} onClick={() => handleExplainPart('object-clause')}>
                         <SVOPartEnglish>Object Clause</SVOPartEnglish>
                         <SVOPartChinese>宾语从句</SVOPartChinese>
-                        <SVOPartDivider />
-                        <SVOPartOfSpeechInfo>
-                            <SVOPartOfSpeechText>引导词+陈述句</SVOPartOfSpeechText>
-                            <SVOPartOfSpeechTextEng>(that/if/what... + SVO)</SVOPartOfSpeechTextEng>
-                        </SVOPartOfSpeechInfo>
                     </SVOFormulaPart>
                 </FormulaParts>
             </FormulaSection>
 
             <TipSection themeColor={themeColor}>
-                <SectionTitle>💡 小贴士：'that' 的省略</SectionTitle>
-                <p>在多数口语和非正式写作中，如果宾语从句由 <strong>that</strong> 引导，这个 <strong>that</strong> 通常可以省略，句子意思不变。但它其实还在那里，只是“隐身”了！</p>
+                <SectionTitle>💡 黄金法则：永远用陈述句语序</SectionTitle>
+                <p>这是宾语从句最重要的规则！无论主句是什么，<strong>宾语从句内部永远是陈述句语序 (主语 + 谓语...)</strong>，绝对不能用疑问句语序 (助动词/be动词提前)。</p>
                 <ExampleEnglish style={{ marginTop: '10px', fontSize: '1.1em', fontWeight: 'normal' }}>
-                    I think <strong>(that)</strong> he is right.
+                    ❌ I don't know where <strong>is he</strong>.
+                    <br/>
+                    ✅ I don't know where <strong>he is</strong>.
                 </ExampleEnglish>
             </TipSection>
 
-            <ExamplesSection>
-                <SectionTitle>📝 基础例子分析</SectionTitle>
-                <ExampleSwitcher>
-                    {normalExamples.map((ex, index) => (
-                        <SwitcherButton
-                            key={ex.id}
-                            isActive={activeNormalExampleIndex === index}
-                            onClick={() => setActiveNormalExampleIndex(index)}
-                            themeColor={themeColor}
-                        >
-                            {ex.title}
-                        </SwitcherButton>
-                    ))}
-                </ExampleSwitcher>
-                {activeNormalExample && renderExample(activeNormalExample)}
-            </ExamplesSection>
+            {/* --- Group 1: that --- */}
+            <ClauseGroup>
+                <GroupTitle>☝️ 第一组: 陈述事实 (that)</GroupTitle>
+                <p>当你想把一个【陈述句】作为宾语时，用 <strong>that</strong> 来引导。在口语中，这个 <strong>that</strong> 常常被省略。</p>
+                <ExamplesSection>
+                    <AnimatedExampleItem themeColor={themeColor}>
+                        <ExampleHeader><ExampleEnglish>I think <strong>(that) you are right</strong>.</ExampleEnglish><SpeakButton onClick={() => handleSpeak('I think that you are right.')}>🔊</SpeakButton></ExampleHeader>
+                        <ExampleChinese>我认为你是对的。</ExampleChinese>
+                    </AnimatedExampleItem>
+                </ExamplesSection>
+                <ClausePracticeGroup themeColor={themeColor} onFillComplete={() => {}} buildData={thatBuildData} fillData={thatFillData} />
+            </ClauseGroup>
 
-            <SpecialCaseSection themeColor={themeColor}>
-                <SectionTitle>📌 特殊情况：引导词同时作主语</SectionTitle>
-                <p>有时候，引导词如 <strong>who</strong>, <strong>what</strong>, <strong>which</strong> 不仅引导从句，也直接充当从句的【主语】。这时，从句的结构是【引导词(主语) + 谓语...】，引导词后面不再有其他主语。</p>
-                <ExampleEnglish style={{ marginTop: '10px', fontSize: '1.1em', fontWeight: 'normal' }}>
-                    I want to know <strong>who</strong> opened the door.
-                </ExampleEnglish>
-                <p style={{ marginTop: '5px', fontSize: '0.9em', color: '#4338CA' }}>- 在这里，<strong>who</strong> 就是动词 <strong>opened</strong> 的主语。</p>
-            </SpecialCaseSection>
+            {/* --- Group 2: if / whether --- */}
+            <ClauseGroup>
+                <GroupTitle>🤔 第二组: 表达“是否” (if / whether)</GroupTitle>
+                <p>当你想把一个【一般疑问句】（Yes/No 问题）作为宾语时，用 <strong>if</strong> 或 <strong>whether</strong> 来引导。</p>
+                <ExamplesSection>
+                    <AnimatedExampleItem themeColor={themeColor}>
+                        <ExampleHeader><ExampleEnglish>I want to know <strong>if you can come</strong>.</ExampleEnglish><SpeakButton onClick={() => handleSpeak('I want to know if you can come.')}>🔊</SpeakButton></ExampleHeader>
+                        <ExampleChinese>我想知道你是否能来。</ExampleChinese>
+                    </AnimatedExampleItem>
+                </ExamplesSection>
+                <ClausePracticeGroup themeColor={themeColor} onFillComplete={() => {}} buildData={ifWhetherBuildData} fillData={ifWhetherFillData} />
+            </ClauseGroup>
 
-            <ExamplesSection>
-                <SectionTitle>📌 特殊情况例句</SectionTitle>
-                <ExampleSwitcher>
-                    {specialCaseExamples.map((ex, index) => (
-                        <SwitcherButton
-                            key={ex.id}
-                            isActive={activeSpecialExampleIndex === index}
-                            onClick={() => setActiveSpecialExampleIndex(index)}
-                            themeColor={themeColor}
-                        >
-                            {ex.title}
-                        </SwitcherButton>
-                    ))}
-                </ExampleSwitcher>
-                {activeSpecialExample && renderExample(activeSpecialExample)}
-            </ExamplesSection>
-            
-            <PracticeModeSwitcher>
-                <ModeButton 
-                    isActive={practiceMode === 'build'} 
-                    onClick={() => setPracticeMode('build')}
-                    themeColor={themeColor}
-                >
-                    组句练习
-                </ModeButton>
-                <ModeButton 
-                    isActive={practiceMode === 'fill'} 
-                    onClick={() => setPracticeMode('fill')}
-                    themeColor={themeColor}
-                >
-                    填空练习
-                </ModeButton>
-            </PracticeModeSwitcher>
-
-            {practiceMode === 'build' ? (
-                <SentenceBuilderPractice
-                    themeColor={themeColor}
-                    onCompleteAll={() => setPracticeMode('fill')}
-                    practiceData={buildPracticeData}
-                    title="🎯 练习：构建宾语从句"
-                    subtitle="用下面的词组成句子"
-                    completionTitle="🎉 Awesome!"
-                    completionMessage="你已经完成了宾语从句的组句练习！"
-                    nextButtonText="开始填空练习 →"
-                />
-            ) : (
-                <FillInTheBlankPractice
-                    themeColor={themeColor}
-                    onCompleteAll={onCompleteAll}
-                    practiceData={fillPracticeData}
-                    title="🎯 练习：宾语从句填空"
-                    subtitle="选择正确的引导词"
-                    completionTitle="🎉 Awesome!"
-                    completionMessage="你已经掌握了宾语从句！"
-                    nextButtonText="返回从句列表"
-                />
-            )}
-
+            {/* --- Group 3: Wh- words --- */}
+            <ClauseGroup>
+                <GroupTitle>❓ 第三组: 提出问题 (Wh- words)</GroupTitle>
+                <p>当你想把一个【特殊疑问句】作为宾语时，用 <strong>what, who, where, when, why, how</strong> 等疑问词来引导。</p>
+                <TipSection themeColor={themeColor}>
+                    <SectionTitle>📌 特殊情况：引导词同时作主语</SectionTitle>
+                    <p>有时候，引导词如 <strong>who, what</strong> 不仅引导从句，也直接充当从句的【主语】。这时，引导词后面直接跟谓语动词。</p>
+                </TipSection>
+                <ExamplesSection>
+                    <AnimatedExampleItem themeColor={themeColor}>
+                        <ExampleHeader><ExampleEnglish>Tell me <strong>what you want</strong>.</ExampleEnglish><SpeakButton onClick={() => handleSpeak('Tell me what you want.')}>🔊</SpeakButton></ExampleHeader>
+                        <ExampleChinese>告诉我你想要什么。</ExampleChinese>
+                    </AnimatedExampleItem>
+                    <AnimatedExampleItem themeColor={themeColor}>
+                        <ExampleHeader><ExampleEnglish>I don't know <strong>who took my pen</strong>.</ExampleEnglish><SpeakButton onClick={() => handleSpeak('I don\'t know who took my pen.')}>🔊</SpeakButton></ExampleHeader>
+                        <ExampleChinese>我不知道谁拿了我的笔。(who 在此既是引导词也是从句的主语)</ExampleChinese>
+                    </AnimatedExampleItem>
+                </ExamplesSection>
+                <ClausePracticeGroup themeColor={themeColor} onFillComplete={onCompleteAll} buildData={whBuildData} fillData={whFillData} />
+            </ClauseGroup>
         </LessonContainer>
     );
 };
