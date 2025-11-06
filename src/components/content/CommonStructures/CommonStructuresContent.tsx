@@ -18,13 +18,14 @@ import { ThereBeContent } from './ThereBeContent';
 import { EdIngAdjectivesContent } from './EdIngAdjectivesContent';
 import { WhatHowExclamationsContent } from './WhatHowExclamationsContent';
 import { SoThatContent } from './SoThatContent';
+import { ComparativesSuperlativesContent } from './ComparativesSuperlativesContent';
 
 
 interface ContentProps {
     startLesson: (lessonType: string) => void;
 }
 
-type View = 'list' | 'gerunds' | 'it-is-adj' | 'of-usage' | 'with-usage' | 'infinitives' | 'by-usage' | 'as-as-usage' | 'there-be' | 'ed-ing-adjectives' | 'what-how-exclamations' | 'so-that';
+type View = 'list' | 'gerunds' | 'it-is-adj' | 'of-usage' | 'with-usage' | 'infinitives' | 'by-usage' | 'as-as-usage' | 'there-be' | 'ed-ing-adjectives' | 'what-how-exclamations' | 'so-that' | 'comparatives-superlatives';
 
 export const CommonStructuresContent: React.FC<ContentProps> = ({ startLesson }) => {
     const [view, setView] = useState<View>('list');
@@ -63,7 +64,11 @@ export const CommonStructuresContent: React.FC<ContentProps> = ({ startLesson })
     }
 
     if (view === 'as-as-usage') {
-        return <AsAsUsageContent onBack={() => setView('list')} themeColor={themeColor} onCompleteAll={() => setView('what-how-exclamations')} />;
+        return <AsAsUsageContent onBack={() => setView('list')} themeColor={themeColor} onCompleteAll={() => setView('comparatives-superlatives')} />;
+    }
+
+    if (view === 'comparatives-superlatives') {
+        return <ComparativesSuperlativesContent onBack={() => setView('list')} themeColor={themeColor} onCompleteAll={() => setView('what-how-exclamations')} />;
     }
 
     if (view === 'what-how-exclamations') {
@@ -119,6 +124,10 @@ export const CommonStructuresContent: React.FC<ContentProps> = ({ startLesson })
                 <LessonItem borderColor={themeColor} onClick={() => setView('as-as-usage')}>
                     <LessonTitleChinese>同级比较 'as...as'</LessonTitleChinese>
                     <LessonTitleEnglish>Comparisons with "as...as"</LessonTitleEnglish>
+                </LessonItem>
+                <LessonItem borderColor={themeColor} onClick={() => setView('comparatives-superlatives')}>
+                    <LessonTitleChinese>比较级和最高级</LessonTitleChinese>
+                    <LessonTitleEnglish>Comparatives & Superlatives</LessonTitleEnglish>
                 </LessonItem>
                 <LessonItem borderColor={themeColor} onClick={() => setView('what-how-exclamations')}>
                     <LessonTitleChinese>What 和 How 的感叹句</LessonTitleChinese>
