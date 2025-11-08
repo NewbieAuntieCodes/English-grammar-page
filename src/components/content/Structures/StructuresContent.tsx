@@ -18,12 +18,13 @@ import { SVOCContent } from './SVOCContent';
 import { SentenceExpansionContent } from './SentenceExpansionContent';
 import { YesNoQuestionsContent } from './YesNoQuestionsContent';
 import { WhQuestionsContent } from './WhQuestionsContent';
+import { OtherQuestionsContent } from './OtherQuestionsContent';
 
 interface ContentProps {
     startLesson: (lessonType: string) => void;
 }
 
-type View = 'list' | 'svo' | 'svc' | 'svoc' | 'expansion' | 'yes-no-questions' | 'wh-questions';
+type View = 'list' | 'svo' | 'svc' | 'svoc' | 'expansion' | 'yes-no-questions' | 'wh-questions' | 'other-questions';
 
 export const StructuresContent: React.FC<ContentProps> = ({ startLesson }) => {
     const [view, setView] = useState<View>('list');
@@ -53,13 +54,6 @@ export const StructuresContent: React.FC<ContentProps> = ({ startLesson }) => {
         />;
     }
 
-    if (view === 'expansion') {
-        return <SentenceExpansionContent
-            onBack={() => setView('list')}
-            themeColor={themeColor}
-        />;
-    }
-
     if (view === 'yes-no-questions') {
         return <YesNoQuestionsContent
             onBack={() => setView('list')}
@@ -69,6 +63,20 @@ export const StructuresContent: React.FC<ContentProps> = ({ startLesson }) => {
 
     if (view === 'wh-questions') {
         return <WhQuestionsContent
+            onBack={() => setView('list')}
+            themeColor={themeColor}
+        />;
+    }
+
+    if (view === 'other-questions') {
+        return <OtherQuestionsContent
+            onBack={() => setView('list')}
+            themeColor={themeColor}
+        />;
+    }
+
+    if (view === 'expansion') {
+        return <SentenceExpansionContent
             onBack={() => setView('list')}
             themeColor={themeColor}
         />;
@@ -103,6 +111,10 @@ export const StructuresContent: React.FC<ContentProps> = ({ startLesson }) => {
                 <LessonItem borderColor={themeColor} onClick={() => setView('wh-questions')}>
                     <LessonTitleChinese>特殊疑问句</LessonTitleChinese>
                     <LessonTitleEnglish>Wh- Questions</LessonTitleEnglish>
+                </LessonItem>
+                <LessonItem borderColor={themeColor} onClick={() => setView('other-questions')}>
+                    <LessonTitleChinese>其他常见疑问句</LessonTitleChinese>
+                    <LessonTitleEnglish>Other Common Questions</LessonTitleEnglish>
                 </LessonItem>
                 <LessonItem borderColor={themeColor} onClick={() => setView('expansion')}>
                     <LessonTitleChinese>简单句扩展练习</LessonTitleChinese>
