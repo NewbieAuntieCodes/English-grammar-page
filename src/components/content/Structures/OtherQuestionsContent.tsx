@@ -30,6 +30,8 @@ const wouldShouldPracticeData = [
     { words: [{ en: 'Should I', cn: '我应该' }, { en: 'buy', cn: '买' }, { en: 'the new phone?', cn: '新手机吗？' }], correct: ['Should I', 'buy', 'the new phone?'], chinese: '我应该买这部新手机吗？' },
     { words: [{ en: 'Would you like', cn: '你想要' }, { en: 'to go to', cn: '去' }, { en: 'the movies?', cn: '看电影吗？' }], correct: ['Would you like', 'to go to', 'the movies?'], chinese: '你想去看电影吗？' },
     { words: [{ en: 'What should I do', cn: '我该做什么' }, { en: 'to improve', cn: '来提高' }, { en: 'my English?', cn: '我的英语？' }], correct: ['What should I do', 'to improve', 'my English?'], chinese: '我该怎么做才能提高我的英语？' },
+    { words: [{ en: 'Would you mind', cn: '你介意' }, { en: 'opening', cn: '打开' }, { en: 'the window?', cn: '窗户吗？' }], correct: ['Would you mind', 'opening', 'the window?'], chinese: '你介意打开窗户吗？' },
+    { words: [{ en: 'Where should we', cn: '我们应该去哪' }, { en: 'go', cn: '去' }, { en: 'for dinner?', cn: '吃晚饭？' }], correct: ['Where should we', 'go', 'for dinner?'], chinese: '我们应该去哪里吃晚饭？' },
 ];
 
 const howOftenPracticeData = [
