@@ -16,12 +16,14 @@ import { SVOContent } from './SVOContent';
 import { SVCContent } from './SVCContent';
 import { SVOCContent } from './SVOCContent';
 import { SentenceExpansionContent } from './SentenceExpansionContent';
+import { YesNoQuestionsContent } from './YesNoQuestionsContent';
+import { WhQuestionsContent } from './WhQuestionsContent';
 
 interface ContentProps {
     startLesson: (lessonType: string) => void;
 }
 
-type View = 'list' | 'svo' | 'svc' | 'svoc' | 'expansion';
+type View = 'list' | 'svo' | 'svc' | 'svoc' | 'expansion' | 'yes-no-questions' | 'wh-questions';
 
 export const StructuresContent: React.FC<ContentProps> = ({ startLesson }) => {
     const [view, setView] = useState<View>('list');
@@ -58,6 +60,20 @@ export const StructuresContent: React.FC<ContentProps> = ({ startLesson }) => {
         />;
     }
 
+    if (view === 'yes-no-questions') {
+        return <YesNoQuestionsContent
+            onBack={() => setView('list')}
+            themeColor={themeColor}
+        />;
+    }
+
+    if (view === 'wh-questions') {
+        return <WhQuestionsContent
+            onBack={() => setView('list')}
+            themeColor={themeColor}
+        />;
+    }
+
     return (
         <>
             <ContentHeader>
@@ -79,6 +95,14 @@ export const StructuresContent: React.FC<ContentProps> = ({ startLesson }) => {
                 <LessonItem borderColor={themeColor} onClick={() => setView('svoc')}>
                     <LessonTitleChinese>主语 + 谓语 + 宾语 + 宾补</LessonTitleChinese>
                     <LessonTitleEnglish>Subject + Verb + Object + Complement (SVOC)</LessonTitleEnglish>
+                </LessonItem>
+                <LessonItem borderColor={themeColor} onClick={() => setView('yes-no-questions')}>
+                    <LessonTitleChinese>一般疑问句</LessonTitleChinese>
+                    <LessonTitleEnglish>Yes/No Questions</LessonTitleEnglish>
+                </LessonItem>
+                <LessonItem borderColor={themeColor} onClick={() => setView('wh-questions')}>
+                    <LessonTitleChinese>特殊疑问句</LessonTitleChinese>
+                    <LessonTitleEnglish>Wh- Questions</LessonTitleEnglish>
                 </LessonItem>
                 <LessonItem borderColor={themeColor} onClick={() => setView('expansion')}>
                     <LessonTitleChinese>简单句扩展练习</LessonTitleChinese>
