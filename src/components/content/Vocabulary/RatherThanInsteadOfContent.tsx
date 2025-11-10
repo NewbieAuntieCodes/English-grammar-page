@@ -47,18 +47,18 @@ const TipSection = styled(WhyLearnSection)`
     }
 `;
 
-const insteadOfPracticeData = [
-    { sentenceParts: ["I'll have tea ", " coffee, please."] as const, choices: [{text: "instead of", isCorrect: true}, {text: "rather than", isCorrect: false}], chineseHint: "请给我茶，不要咖啡。" },
-    { sentenceParts: ["", " watching TV, you should read a book."] as const, choices: [{text: "Instead of", isCorrect: true}, {text: "Rather than", isCorrect: false}], chineseHint: "你应该读本书，而不是看电视。" },
-    { sentenceParts: ["We went to the beach ", " the mountains."] as const, choices: [{text: "instead of", isCorrect: true}, {text: "rather than", isCorrect: false}], chineseHint: "我们去了海滩，而不是山区。" },
-    { sentenceParts: ["He bought a new one ", " getting the old one repaired."] as const, choices: [{text: "instead of", isCorrect: true}, {text: "rather than", isCorrect: false}], chineseHint: "他买了个新的，而不是修理旧的。" }
+const insteadOfGrammarPracticeData = [
+    { sentenceParts: ["We decided to eat out instead of ", " at home."] as const, choices: [{text: "cooking", isCorrect: true}, {text: "cook", isCorrect: false}], chineseHint: "我们决定出去吃，而不是在家做饭。" },
+    { sentenceParts: ["He bought a new car instead of ", " his old one."] as const, choices: [{text: "repairing", isCorrect: true}, {text: "repair", isCorrect: false}], chineseHint: "他买了一辆新车，而不是修理他的旧车。" },
+    { sentenceParts: ["She chose the stairs instead of ", " the elevator."] as const, choices: [{text: "taking", isCorrect: true}, {text: "take", isCorrect: false}], chineseHint: "她选择了走楼梯，而不是乘电梯。" },
+    { sentenceParts: ["Instead of ", ", you should listen carefully."] as const, choices: [{text: "talking", isCorrect: true}, {text: "talk", isCorrect: false}], chineseHint: "你应该仔细听，而不是说话。" }
 ];
 
-const ratherThanPracticeData = [
-    { sentenceParts: ["He chose to go by train ", " fly."] as const, choices: [{text: "rather than", isCorrect: true}, {text: "instead of", isCorrect: false}], chineseHint: "他选择乘火车去，而不是坐飞机。" },
-    { sentenceParts: ["She prefers to write ", " type her essays."] as const, choices: [{text: "rather than", isCorrect: true}, {text: "instead of", isCorrect: false}], chineseHint: "她更喜欢手写论文，而不是打字。" },
-    { sentenceParts: ["Why not use your savings ", " borrowing money?"] as const, choices: [{text: "rather than", isCorrect: true}, {text: "instead of", isCorrect: false}], chineseHint: "为什么不用你的存款，而非要借钱呢？" },
-    { sentenceParts: ["I'd prefer to go in May ", " in August."] as const, choices: [{text: "rather than", isCorrect: true}, {text: "instead of", isCorrect: false}], chineseHint: "我宁愿五月去，也不愿八月去。" },
+const ratherThanGrammarPracticeData = [
+    { sentenceParts: ["I would prefer to stay home rather than ", " out tonight."] as const, choices: [{text: "go", isCorrect: true}, {text: "going", isCorrect: false}], chineseHint: "我今晚宁愿待在家里，也不愿出去。" },
+    { sentenceParts: ["He decided to write rather than ", "."] as const, choices: [{text: "call", isCorrect: true}, {text: "calling", isCorrect: false}], chineseHint: "他决定写信而不是打电话。" },
+    { sentenceParts: ["She enjoys reading rather than ", " TV."] as const, choices: [{text: "watching", isCorrect: true}, {text: "watch", isCorrect: false}], chineseHint: "她喜欢阅读而不是看电视。" },
+    { sentenceParts: ["Why complain about the problem rather than ", " to solve it?"] as const, choices: [{text: "try", isCorrect: true}, {text: "trying", isCorrect: false}], chineseHint: "为什么抱怨问题而不是试着去解决它呢？" }
 ];
 
 const mixedPracticeData = [
@@ -162,9 +162,9 @@ export const RatherThanInsteadOfContent: React.FC<RatherThanInsteadOfContentProp
             <FillInTheBlankPractice
                 themeColor={themeColor}
                 onCompleteAll={() => {}}
-                practiceData={insteadOfPracticeData}
-                title="🎯 练习 1: 'instead of'"
-                subtitle="选择正确的短语填入句子"
+                practiceData={insteadOfGrammarPracticeData}
+                title="🎯 练习 1: 'instead of' 的用法"
+                subtitle="选择正确的动词形式"
                 completionTitle="🎉 Good!"
                 completionMessage="你已完成 'instead of' 专项练习！"
                 nextButtonText="继续下一个练习"
@@ -173,9 +173,9 @@ export const RatherThanInsteadOfContent: React.FC<RatherThanInsteadOfContentProp
             <FillInTheBlankPractice
                 themeColor={themeColor}
                 onCompleteAll={() => {}}
-                practiceData={ratherThanPracticeData}
-                title="🎯 练习 2: 'rather than'"
-                subtitle="选择正确的短语填入句子"
+                practiceData={ratherThanGrammarPracticeData}
+                title="🎯 练习 2: 'rather than' 的用法"
+                subtitle="选择正确的动词形式"
                 completionTitle="🎉 Well Done!"
                 completionMessage="你已完成 'rather than' 专项练习！"
                 nextButtonText="继续下一个练习"
