@@ -19,12 +19,13 @@ import { DoMoreHarmGoodContent } from './DoMoreHarmGoodContent';
 import { GuaranteeUsageContent } from './GuaranteeUsageContent';
 import { AdmitAdmissionUsageContent } from './AdmitAdmissionUsageContent';
 import { MicroMacroContent } from './MicroMacroContent';
+import { RatherThanInsteadOfContent } from './RatherThanInsteadOfContent';
 
 interface ContentProps {
     startLesson: (lessonType: string) => void;
 }
 
-type View = 'list' | 'affect-effect' | 'available-accessible' | 'balance-and' | 'help-usage' | 'pity-usage' | 'incorporate-cooperate-corporate' | 'sense-of-usage' | 'impression-usage' | 'do-more-harm-good' | 'guarantee' | 'admit-admission' | 'micro-macro';
+type View = 'list' | 'affect-effect' | 'available-accessible' | 'balance-and' | 'help-usage' | 'pity-usage' | 'incorporate-cooperate-corporate' | 'sense-of-usage' | 'impression-usage' | 'do-more-harm-good' | 'guarantee' | 'admit-admission' | 'micro-macro' | 'rather-than-instead-of';
 
 export const VocabularyContent: React.FC<ContentProps> = ({ startLesson }) => {
     const [view, setView] = useState<View>('list');
@@ -75,7 +76,11 @@ export const VocabularyContent: React.FC<ContentProps> = ({ startLesson }) => {
     }
 
     if (view === 'micro-macro') {
-        return <MicroMacroContent onBack={() => setView('list')} themeColor={themeColor} onCompleteAll={() => setView('list')} />;
+        return <MicroMacroContent onBack={() => setView('list')} themeColor={themeColor} onCompleteAll={() => setView('rather-than-instead-of')} />;
+    }
+
+    if (view === 'rather-than-instead-of') {
+        return <RatherThanInsteadOfContent onBack={() => setView('list')} themeColor={themeColor} onCompleteAll={() => setView('list')} />;
     }
 
     return (
@@ -135,6 +140,10 @@ export const VocabularyContent: React.FC<ContentProps> = ({ startLesson }) => {
                  <LessonItem borderColor={themeColor} onClick={() => setView('micro-macro')}>
                     <LessonTitleChinese>前缀 micro- vs macro-</LessonTitleChinese>
                     <LessonTitleEnglish>Prefixes: micro- vs macro-</LessonTitleEnglish>
+                </LessonItem>
+                <LessonItem borderColor={themeColor} onClick={() => setView('rather-than-instead-of')}>
+                    <LessonTitleChinese>Rather than vs. Instead of</LessonTitleChinese>
+                    <LessonTitleEnglish>Expressing Alternatives</LessonTitleEnglish>
                 </LessonItem>
             </LessonList>
         </>
