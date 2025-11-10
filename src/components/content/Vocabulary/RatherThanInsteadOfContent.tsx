@@ -47,7 +47,21 @@ const TipSection = styled(WhyLearnSection)`
     }
 `;
 
-const practiceData = [
+const insteadOfPracticeData = [
+    { sentenceParts: ["I'll have tea ", " coffee, please."] as const, choices: [{text: "instead of", isCorrect: true}, {text: "rather than", isCorrect: false}], chineseHint: "请给我茶，不要咖啡。" },
+    { sentenceParts: ["", " watching TV, you should read a book."] as const, choices: [{text: "Instead of", isCorrect: true}, {text: "Rather than", isCorrect: false}], chineseHint: "你应该读本书，而不是看电视。" },
+    { sentenceParts: ["We went to the beach ", " the mountains."] as const, choices: [{text: "instead of", isCorrect: true}, {text: "rather than", isCorrect: false}], chineseHint: "我们去了海滩，而不是山区。" },
+    { sentenceParts: ["He bought a new one ", " getting the old one repaired."] as const, choices: [{text: "instead of", isCorrect: true}, {text: "rather than", isCorrect: false}], chineseHint: "他买了个新的，而不是修理旧的。" }
+];
+
+const ratherThanPracticeData = [
+    { sentenceParts: ["He chose to go by train ", " fly."] as const, choices: [{text: "rather than", isCorrect: true}, {text: "instead of", isCorrect: false}], chineseHint: "他选择乘火车去，而不是坐飞机。" },
+    { sentenceParts: ["She prefers to write ", " type her essays."] as const, choices: [{text: "rather than", isCorrect: true}, {text: "instead of", isCorrect: false}], chineseHint: "她更喜欢手写论文，而不是打字。" },
+    { sentenceParts: ["Why not use your savings ", " borrowing money?"] as const, choices: [{text: "rather than", isCorrect: true}, {text: "instead of", isCorrect: false}], chineseHint: "为什么不用你的存款，而非要借钱呢？" },
+    { sentenceParts: ["I'd prefer to go in May ", " in August."] as const, choices: [{text: "rather than", isCorrect: true}, {text: "instead of", isCorrect: false}], chineseHint: "我宁愿五月去，也不愿八月去。" },
+];
+
+const mixedPracticeData = [
     { sentenceParts: ["I'll have tea ", " coffee, please."] as const, choices: [{text: "instead of", isCorrect: true}, {text: "rather than", isCorrect: false}], chineseHint: "请给我茶，不要咖啡。" },
     { sentenceParts: ["He chose to go by train ", " fly."] as const, choices: [{text: "rather than", isCorrect: true}, {text: "instead of", isCorrect: false}], chineseHint: "他选择乘火车去，而不是坐飞机。" },
     { sentenceParts: ["", " watching TV, you should read a book."] as const, choices: [{text: "Instead of", isCorrect: true}, {text: "Rather than", isCorrect: false}], chineseHint: "你应该读本书，而不是看电视。" },
@@ -147,12 +161,34 @@ export const RatherThanInsteadOfContent: React.FC<RatherThanInsteadOfContentProp
             
             <FillInTheBlankPractice
                 themeColor={themeColor}
-                onCompleteAll={onCompleteAll}
-                practiceData={practiceData}
-                title="🎯 练习：Rather than 还是 Instead of？"
+                onCompleteAll={() => {}}
+                practiceData={insteadOfPracticeData}
+                title="🎯 练习 1: 'instead of'"
                 subtitle="选择正确的短语填入句子"
+                completionTitle="🎉 Good!"
+                completionMessage="你已完成 'instead of' 专项练习！"
+                nextButtonText="继续下一个练习"
+            />
+
+            <FillInTheBlankPractice
+                themeColor={themeColor}
+                onCompleteAll={() => {}}
+                practiceData={ratherThanPracticeData}
+                title="🎯 练习 2: 'rather than'"
+                subtitle="选择正确的短语填入句子"
+                completionTitle="🎉 Well Done!"
+                completionMessage="你已完成 'rather than' 专项练习！"
+                nextButtonText="继续下一个练习"
+            />
+            
+            <FillInTheBlankPractice
+                themeColor={themeColor}
+                onCompleteAll={onCompleteAll}
+                practiceData={mixedPracticeData}
+                title="🎯 练习 3: 综合练习"
+                subtitle="选择 'rather than' 还是 'instead of'？"
                 completionTitle="🎉 Perfect Choice!"
-                completionMessage="你已经掌握了 'rather than' 和 'instead of' 的区别！"
+                completionMessage="你已经完全掌握了 'rather than' 和 'instead of' 的区别！"
                 nextButtonText="返回列表"
             />
         </LessonContainer>
