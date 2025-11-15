@@ -14,6 +14,7 @@ import { InfinitivesContent } from './InfinitivesContent';
 import { OfUsageContent } from './OfUsageContent';
 import { ByUsageContent } from './ByUsageContent';
 import { MakeUsageContent } from './MakeUsageContent';
+import { KeepUsageContent } from './KeepUsageContent';
 import { AsUsageContent } from './AsUsageContent';
 import { AsAsUsageContent } from './AsAsUsageContent';
 import { ThereBeContent } from './ThereBeContent';
@@ -28,7 +29,7 @@ interface ContentProps {
     startLesson: (lessonType: string) => void;
 }
 
-type View = 'list' | 'gerunds' | 'it-is-adj' | 'of-usage' | 'with-usage' | 'infinitives' | 'by-usage' | 'make-usage' | 'as-usage' | 'as-as-usage' | 'there-be' | 'ed-ing-adjectives' | 'what-how-exclamations' | 'so-that' | 'comparatives-superlatives' | 'one-of-usage';
+type View = 'list' | 'gerunds' | 'it-is-adj' | 'of-usage' | 'with-usage' | 'infinitives' | 'by-usage' | 'make-usage' | 'keep-usage' | 'as-usage' | 'as-as-usage' | 'there-be' | 'ed-ing-adjectives' | 'what-how-exclamations' | 'so-that' | 'comparatives-superlatives' | 'one-of-usage';
 
 export const CommonStructuresContent: React.FC<ContentProps> = ({ startLesson }) => {
     const [view, setView] = useState<View>('list');
@@ -67,7 +68,11 @@ export const CommonStructuresContent: React.FC<ContentProps> = ({ startLesson })
     }
 
     if (view === 'make-usage') {
-        return <MakeUsageContent onBack={() => setView('list')} themeColor={themeColor} onCompleteAll={() => setView('as-usage')} />;
+        return <MakeUsageContent onBack={() => setView('list')} themeColor={themeColor} onCompleteAll={() => setView('keep-usage')} />;
+    }
+
+    if (view === 'keep-usage') {
+        return <KeepUsageContent onBack={() => setView('list')} themeColor={themeColor} onCompleteAll={() => setView('as-usage')} />;
     }
 
     if (view === 'as-usage') {
@@ -139,6 +144,10 @@ export const CommonStructuresContent: React.FC<ContentProps> = ({ startLesson })
                 <LessonItem borderColor={themeColor} onClick={() => setView('make-usage')}>
                     <LessonTitleChinese>'make' 的用法</LessonTitleChinese>
                     <LessonTitleEnglish>Usage of 'make'</LessonTitleEnglish>
+                </LessonItem>
+                <LessonItem borderColor={themeColor} onClick={() => setView('keep-usage')}>
+                    <LessonTitleChinese>'keep' 的用法</LessonTitleChinese>
+                    <LessonTitleEnglish>Usage of 'keep'</LessonTitleEnglish>
                 </LessonItem>
                 <LessonItem borderColor={themeColor} onClick={() => setView('as-usage')}>
                     <LessonTitleChinese>as 的用法</LessonTitleChinese>
