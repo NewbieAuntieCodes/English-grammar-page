@@ -54,15 +54,31 @@ const OptionalPart = styled(Part)`
 `;
 
 
-const practiceData = [
+const adjectivePracticeData = [
     { words: [{ en: 'It is', cn: '' }, { en: 'important', cn: '重要的' }, { en: 'for us', cn: '对我们' }, { en: 'to learn', cn: '去学习' }, { en: 'English', cn: '英语' }], correct: ['It is', 'important', 'for us', 'to learn', 'English'], chinese: '对我们来说，学英语很重要。' },
-    { words: [{ en: 'It is', cn: '' }, { en: 'a good habit', cn: '一个好习惯' }, { en: 'to read', cn: '阅读' }, { en: 'every day', cn: '每天' }], correct: ['It is', 'a good habit', 'to read', 'every day'], chinese: '每天读书是一个好习惯。' },
     { words: [{ en: 'It is', cn: '' }, { en: 'easy', cn: '容易的' }, { en: 'for him', cn: '对他' }, { en: 'to do this', cn: '做这个' }], correct: ['It is', 'easy', 'for him', 'to do this'], chinese: '做这件事对他来说很容易。' },
-    { words: [{ en: 'It is', cn: '' }, { en: 'our duty', cn: '我们的责任' }, { en: 'to help', cn: '帮助' }, { en: 'others', cn: '他人' }], correct: ['It is', 'our duty', 'to help', 'others'], chinese: '帮助他人是我们的责任。' },
     { words: [{ en: 'It is', cn: '' }, { en: 'difficult', cn: '困难的' }, { en: 'to get up', cn: '起床' }, { en: 'early', cn: '早' }], correct: ['It is', 'difficult', 'to get up', 'early'], chinese: '早起是困难的。' },
-    { words: [{ en: 'It is', cn: '' }, { en: 'a pleasure', cn: '一件乐事' }, { en: 'to work', cn: '工作' }, { en: 'with you', cn: '和你一起' }], correct: ['It is', 'a pleasure', 'to work', 'with you'], chinese: '和你一起工作是一件乐事。' },
     { words: [{ en: 'It is', cn: '' }, { en: 'dangerous', cn: '危险的' }, { en: 'to swim', cn: '游泳' }, { en: 'in the river', cn: '在河里' }], correct: ['It is', 'dangerous', 'to swim', 'in the river'], chinese: '在河里游泳是危险的。' },
     { words: [{ en: 'It is', cn: '' }, { en: 'necessary', cn: '必要的' }, { en: 'to protect', cn: '保护' }, { en: 'the environment', cn: '环境' }], correct: ['It is', 'necessary', 'to protect', 'the environment'], chinese: '保护环境是必要的。' },
+];
+
+const nounPracticeData = [
+    { words: [{ en: 'It is', cn: '' }, { en: 'a good habit', cn: '一个好习惯' }, { en: 'to read', cn: '阅读' }, { en: 'every day', cn: '每天' }], correct: ['It is', 'a good habit', 'to read', 'every day'], chinese: '每天读书是一个好习惯。' },
+    { words: [{ en: 'It is', cn: '' }, { en: 'our duty', cn: '我们的责任' }, { en: 'to help', cn: '帮助' }, { en: 'others', cn: '他人' }], correct: ['It is', 'our duty', 'to help', 'others'], chinese: '帮助他人是我们的责任。' },
+    { words: [{ en: 'It is', cn: '' }, { en: 'a pleasure', cn: '一件乐事' }, { en: 'to work', cn: '工作' }, { en: 'with you', cn: '和你一起' }], correct: ['It is', 'a pleasure', 'to work', 'with you'], chinese: '和你一起工作是一件乐事。' },
+    { words: [{ en: 'It is', cn: '' }, { en: 'a mistake', cn: '一个错误' }, { en: 'to ignore', cn: '忽略' }, { en: 'this problem', cn: '这个问题' }], correct: ['It is', 'a mistake', 'to ignore', 'this problem'], chinese: '忽略这个问题是个错误。' },
+    { words: [{ en: 'It is', cn: '' }, { en: 'a good idea', cn: '一个好主意' }, { en: 'to start', cn: '开始' }, { en: 'now', cn: '现在' }], correct: ['It is', 'a good idea', 'to start', 'now'], chinese: '现在开始是个好主意。' },
+];
+
+const mixedPracticeData = [
+    { words: [{ en: 'It is', cn: '' }, { en: 'a good idea', cn: '一个好主意' }, { en: 'to exercise', cn: '锻炼' }, { en: 'regularly', cn: '定期地' }], correct: ['It is', 'a good idea', 'to exercise', 'regularly'], chinese: '定期锻炼是个好主意。' },
+    { words: [{ en: 'It is', cn: '' }, { en: 'hard for me', cn: '对我来说很难' }, { en: 'to understand', cn: '去理解' }, { en: 'this', cn: '这个' }], correct: ['It is', 'hard for me', 'to understand', 'this'], chinese: '对我来说理解这个很难。' },
+    { words: [{ en: 'It is', cn: '' }, { en: 'a common practice', cn: '一个普遍做法' }, { en: 'to shake hands', cn: '握手' }], correct: ['It is', 'a common practice', 'to shake hands'], chinese: '握手是一种普遍的做法。' },
+    { words: [{ en: 'It is', cn: '' }, { en: 'better', cn: '更好的' }, { en: 'to be safe', cn: '安全' }, { en: 'than sorry', cn: '比后悔' }], correct: ['It is', 'better', 'to be safe', 'than sorry'], chinese: '安全总比后悔好。' },
+    { words: [{ en: 'It is', cn: '' }, { en: 'his dream', cn: '他的梦想' }, { en: 'to travel', cn: '旅行' }, { en: 'the world', cn: '世界' }], correct: ['It is', 'his dream', 'to travel', 'the world'], chinese: '环游世界是他的梦想。' },
+    { words: [{ en: 'It is', cn: '' }, { en: 'essential', cn: '必要的' }, { en: 'to drink', cn: '喝' }, { en: 'enough water', cn: '足够的水' }], correct: ['It is', 'essential', 'to drink', 'enough water'], chinese: '喝足够的水是必要的。' },
+    { words: [{ en: 'It is', cn: '' }, { en: 'a waste of time', cn: '浪费时间' }, { en: 'to argue', cn: '争论' }, { en: 'with him', cn: '和他' }], correct: ['It is', 'a waste of time', 'to argue', 'with him'], chinese: '和他争论是浪费时间。' },
+    { words: [{ en: 'It is not', cn: '' }, { en: 'polite', cn: '礼貌的' }, { en: 'to interrupt', cn: '打断' }, { en: 'others', cn: '别人' }], correct: ['It is not', 'polite', 'to interrupt', 'others'], chinese: '打断别人是不礼貌的。' },
 ];
 
 export const ItIsAdjForSbContent: React.FC<ItIsAdjForSbContentProps> = ({ onBack, themeColor, onCompleteAll }) => {
@@ -126,19 +142,30 @@ export const ItIsAdjForSbContent: React.FC<ItIsAdjForSbContentProps> = ({ onBack
                 </ExampleItem>
                 <ExampleItem onClick={() => handleToggleBreakdown('ex2')} themeColor={themeColor}>
                     <ExampleHeader>
-                        <ExampleEnglish>It is difficult to learn English well.</ExampleEnglish>
-                        <SpeakButton onClick={(e) => { e.stopPropagation(); handleSpeak('It is difficult to learn English well.'); }}>🔊</SpeakButton>
+                        <ExampleEnglish>It is better for you to finish your work now.</ExampleEnglish>
+                        <SpeakButton onClick={(e) => { e.stopPropagation(); handleSpeak('It is better for you to finish your work now.'); }}>🔊</SpeakButton>
                     </ExampleHeader>
-                    <ExampleChinese>学好英语是困难的。</ExampleChinese>
+                    <ExampleChinese>你最好现在就完成你的工作。(比较级)</ExampleChinese>
                     <ExampleBreakdown show={activeExample === 'ex2'} themeColor={themeColor}>
                         <BreakdownPart><strong>形式主语 (Formal Subject):</strong> It</BreakdownPart>
-                        <BreakdownPart><strong>形容词 (Adjective):</strong> difficult</BreakdownPart>
-                        <BreakdownPart><strong>逻辑主语 (Logical Subject):</strong> (省略了，泛指 for anyone)</BreakdownPart>
-                        <BreakdownPart><strong>真正主语 (Real Subject):</strong> to learn English well</BreakdownPart>
+                        <BreakdownPart><strong>形容词 (Adjective):</strong> better (comparative)</BreakdownPart>
+                        <BreakdownPart><strong>逻辑主语 (Logical Subject):</strong> for you</BreakdownPart>
+                        <BreakdownPart><strong>真正主语 (Real Subject):</strong> to finish your work now</BreakdownPart>
                     </ExampleBreakdown>
                 </ExampleItem>
             </ExamplesSection>
             
+            <SentenceBuilderPractice
+                themeColor={themeColor}
+                onCompleteAll={() => {}}
+                practiceData={adjectivePracticeData}
+                title="🎯 练习1：形容词句型"
+                subtitle="用下面的词组成句子"
+                completionTitle="🎉 Good Job!"
+                completionMessage="你已完成形容词句型练习！"
+                nextButtonText="继续名词练习"
+            />
+
             <ExamplesSection>
                 <SectionTitle>📝 名词 (Noun) 的例子</SectionTitle>
                 <ExampleItem onClick={() => handleToggleBreakdown('ex3')} themeColor={themeColor}>
@@ -166,16 +193,27 @@ export const ItIsAdjForSbContent: React.FC<ItIsAdjForSbContentProps> = ({ onBack
                     </ExampleBreakdown>
                 </ExampleItem>
             </ExamplesSection>
-            
+
+            <SentenceBuilderPractice
+                themeColor={themeColor}
+                onCompleteAll={() => {}}
+                practiceData={nounPracticeData}
+                title="🎯 练习2：名词句型"
+                subtitle="用下面的词组成句子"
+                completionTitle="🎉 Excellent!"
+                completionMessage="你已完成名词句型练习！"
+                nextButtonText="继续综合练习"
+            />
+
             <SentenceBuilderPractice
                 themeColor={themeColor}
                 onCompleteAll={onCompleteAll}
-                practiceData={practiceData}
-                title="🎯 练习：构建句子"
+                practiceData={mixedPracticeData}
+                title="🎯 综合练习"
                 subtitle="用下面的词组成句子"
                 completionTitle="🎉 Fantastic!"
                 completionMessage="你已掌握 'It is...' 句型！"
-                nextButtonText="学习 'with' 的用法 →"
+                nextButtonText="学习下一个句型 →"
             />
         </LessonContainer>
     );
