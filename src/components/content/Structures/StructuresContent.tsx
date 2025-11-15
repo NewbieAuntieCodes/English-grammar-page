@@ -15,6 +15,7 @@ import {
 import { SVOContent } from './SVOContent';
 import { SVCContent } from './SVCContent';
 import { SVOCContent } from './SVOCContent';
+import { ModalVerbsContent } from './ModalVerbsContent';
 import { SentenceExpansionContent } from './SentenceExpansionContent';
 import { YesNoQuestionsContent } from './YesNoQuestionsContent';
 import { WhQuestionsContent } from './WhQuestionsContent';
@@ -24,7 +25,7 @@ interface ContentProps {
     startLesson: (lessonType: string) => void;
 }
 
-type View = 'list' | 'svo' | 'svc' | 'svoc' | 'expansion' | 'yes-no-questions' | 'wh-questions' | 'other-questions';
+type View = 'list' | 'svo' | 'svc' | 'svoc' | 'modal-verbs' | 'expansion' | 'yes-no-questions' | 'wh-questions' | 'other-questions';
 
 export const StructuresContent: React.FC<ContentProps> = ({ startLesson }) => {
     const [view, setView] = useState<View>('list');
@@ -49,6 +50,13 @@ export const StructuresContent: React.FC<ContentProps> = ({ startLesson }) => {
 
     if (view === 'svoc') {
         return <SVOCContent
+            onBack={() => setView('list')}
+            themeColor={themeColor}
+        />;
+    }
+
+    if (view === 'modal-verbs') {
+        return <ModalVerbsContent
             onBack={() => setView('list')}
             themeColor={themeColor}
         />;
@@ -103,6 +111,10 @@ export const StructuresContent: React.FC<ContentProps> = ({ startLesson }) => {
                 <LessonItem borderColor={themeColor} onClick={() => setView('svoc')}>
                     <LessonTitleChinese>主语 + 谓语 + 宾语 + 宾补</LessonTitleChinese>
                     <LessonTitleEnglish>Subject + Verb + Object + Complement (SVOC)</LessonTitleEnglish>
+                </LessonItem>
+                <LessonItem borderColor={themeColor} onClick={() => setView('modal-verbs')}>
+                    <LessonTitleChinese>情态动词</LessonTitleChinese>
+                    <LessonTitleEnglish>Modal Verbs</LessonTitleEnglish>
                 </LessonItem>
                 <LessonItem borderColor={themeColor} onClick={() => setView('yes-no-questions')}>
                     <LessonTitleChinese>一般疑问句</LessonTitleChinese>
