@@ -16,7 +16,7 @@ import {
     ExampleEnglish,
     ExampleChinese,
 } from '../Structures/SVOContent.styles';
-import { SentenceBuilderPractice } from '../../practice/SentenceBuilderPractice';
+import { FillInTheBlankPractice } from '../../practice/FillInTheBlankPractice';
 import styled from 'styled-components';
 
 interface AsUsageContentProps {
@@ -34,14 +34,14 @@ const UsageType = styled.h3`
 `;
 
 const practiceData = [
-    { words: [{ en: 'She works', cn: '她工作' }, { en: 'as a doctor', cn: '作为一名医生' }], correct: ['She works', 'as a doctor'], chinese: '她是一名医生。' },
-    { words: [{ en: 'As it was raining,', cn: '因为下雨了，' }, { en: 'we stayed', cn: '我们待在' }, { en: 'indoors', cn: '室内' }], correct: ['As it was raining,', 'we stayed', 'indoors'], chinese: '因为下雨了，我们待在室内。' },
-    { words: [{ en: 'He arrived', cn: '他到达' }, { en: 'just as', cn: '正当' }, { en: 'I was leaving', cn: '我正要离开时' }], correct: ['He arrived', 'just as', 'I was leaving'], chinese: '我正要离开时，他到了。' },
-    { words: [{ en: 'Please do', cn: '请做' }, { en: 'as I say', cn: '照我说的' }], correct: ['Please do', 'as I say'], chinese: '请照我说的做。' },
-    { words: [{ en: 'He used his coat', cn: '他用他的外套' }, { en: 'as a blanket', cn: '作为毯子' }], correct: ['He used his coat', 'as a blanket'], chinese: '他把外套当作毯子用。' },
-    { words: [{ en: 'As he grew older,', cn: '随着他长大，' }, { en: 'he became', cn: '他变得' }, { en: 'wiser', cn: '更聪明' }], correct: ['As he grew older,', 'he became', 'wiser'], chinese: '随着年龄的增长，他变得更聪明了。' },
-    { words: [{ en: 'I can\'t run', cn: '我不能跑' }, { en: 'as fast', cn: '那么快' }, { en: 'as you', cn: '像你一样' }], correct: ['I can\'t run', 'as fast', 'as you'], chinese: '我跑得没你快。' },
-    { words: [{ en: 'As you know,', cn: '如你所知，' }, { en: 'the meeting is', cn: '会议' }, { en: 'cancelled', cn: '取消了' }], correct: ['As you know,', 'the meeting is', 'cancelled'], chinese: '如你所知，会议取消了。' },
+    { sentenceParts: ["She works ", " a doctor."] as const, choices: [{text: "as", isCorrect: true}, {text: "like", isCorrect: false}, {text: "for", isCorrect: false}], chineseHint: "她是一名医生。" },
+    { sentenceParts: ["", " it was raining, we stayed indoors."] as const, choices: [{text: "As", isCorrect: true}, {text: "When", isCorrect: false}, {text: "Since", isCorrect: false}], chineseHint: "因为下雨了，我们待在室内。" },
+    { sentenceParts: ["He arrived just ", " I was leaving."] as const, choices: [{text: "as", isCorrect: true}, {text: "when", isCorrect: false}, {text: "while", isCorrect: false}], chineseHint: "我正要离开时，他到了。" },
+    { sentenceParts: ["Please do ", " I say."] as const, choices: [{text: "as", isCorrect: true}, {text: "like", isCorrect: false}, {text: "what", isCorrect: false}], chineseHint: "请照我说的做。" },
+    { sentenceParts: ["He used his coat ", " a blanket."] as const, choices: [{text: "as", isCorrect: true}, {text: "like", isCorrect: false}, {text: "for", isCorrect: false}], chineseHint: "他把外套当作毯子用。" },
+    { sentenceParts: ["", " he grew older, he became wiser."] as const, choices: [{text: "As", isCorrect: true}, {text: "When", isCorrect: false}, {text: "While", isCorrect: false}], chineseHint: "随着年龄的增长，他变得更聪明了。" },
+    { sentenceParts: ["I can't run ", " fast as you."] as const, choices: [{text: "as", isCorrect: true}, {text: "so", isCorrect: false}, {text: "very", isCorrect: false}], chineseHint: "我跑得没你快。" },
+    { sentenceParts: ["", " you know, the meeting is cancelled."] as const, choices: [{text: "As", isCorrect: true}, {text: "Like", isCorrect: false}, {text: "What", isCorrect: false}], chineseHint: "如你所知，会议取消了。" },
 ];
 
 export const AsUsageContent: React.FC<AsUsageContentProps> = ({ onBack, themeColor, onCompleteAll }) => {
@@ -116,12 +116,12 @@ export const AsUsageContent: React.FC<AsUsageContentProps> = ({ onBack, themeCol
                 </ExampleItem>
             </ExamplesSection>
             
-            <SentenceBuilderPractice
+            <FillInTheBlankPractice
                 themeColor={themeColor}
                 onCompleteAll={onCompleteAll}
                 practiceData={practiceData}
-                title="🎯 练习：使用 'as' 构建句子"
-                subtitle="用下面的词组成句子"
+                title="🎯 练习：使用 'as'"
+                subtitle="选择正确的单词填空"
                 completionTitle="🎉 Perfect!"
                 completionMessage="你已经掌握了 'as' 的用法！"
                 nextButtonText="学习下一个句型 →"
