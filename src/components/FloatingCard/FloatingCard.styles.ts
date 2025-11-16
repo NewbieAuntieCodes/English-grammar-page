@@ -14,8 +14,8 @@ export const FloatingCardWrapper = styled.div<{ delay: string }>`
 `;
 
 export const RoundCard = styled.div`
-    width: 280px;
-    height: 280px;
+    width: 220px;
+    height: 220px;
     border-radius: 50%;
     background: radial-gradient(circle at 70% 30%, #ffffff 0%, #f0f2f5 90%);
     display: flex;
@@ -23,7 +23,7 @@ export const RoundCard = styled.div`
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 40px;
+    padding: 30px;
     box-shadow: 0 20px 40px rgba(0,0,0,0.15);
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     margin: 0 auto;
@@ -34,43 +34,43 @@ export const RoundCard = styled.div`
     }
 
     @media (max-width: 768px) {
-        width: 240px;
-        height: 240px;
-        padding: 30px;
+        width: 180px;
+        height: 180px;
+        padding: 20px;
     }
 `;
 
 export const CardIcon = styled.div`
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
 
     @media (max-width: 768px) {
-        margin-bottom: 15px;
-        transform: scale(0.9);
+        margin-bottom: 10px;
+        transform: scale(0.8);
     }
 `;
 
 export const CardTitle = styled.div`
-    font-size: 1.4em;
+    font-size: 1.2em;
     font-weight: bold;
     color: #2d3748;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     line-height: 1.3;
 
     @media (max-width: 768px) {
-        font-size: 1.2em;
+        font-size: 1.1em;
     }
 `;
 
 export const CardSubtitle = styled.div`
-    font-size: 1em;
+    font-size: 0.9em;
     color: #718096;
     font-style: italic;
 
     @media (max-width: 768px) {
-        font-size: 0.9em;
+        font-size: 0.8em;
     }
 `;
 
