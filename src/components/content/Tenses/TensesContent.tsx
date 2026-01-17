@@ -18,12 +18,13 @@ import { PastTenseContent } from './PastTenseContent';
 import { PresentContinuousContent } from './PresentContinuousContent';
 import { PastContinuousContent } from './PastContinuousContent';
 import { FutureTenseContent } from './FutureTenseContent';
+import { PresentPerfectContent } from './PresentPerfectContent';
 
 interface ContentProps {
     startLesson: (lessonType: string) => void;
 }
 
-type View = 'list' | 'past-tense' | 'present-continuous' | 'past-continuous' | 'future-tense';
+type View = 'list' | 'past-tense' | 'present-continuous' | 'past-continuous' | 'future-tense' | 'present-perfect';
 
 export const TensesContent: React.FC<ContentProps> = ({ startLesson }) => {
     const [view, setView] = useState<View>('list');
@@ -42,7 +43,11 @@ export const TensesContent: React.FC<ContentProps> = ({ startLesson }) => {
     }
 
     if (view === 'future-tense') {
-        return <FutureTenseContent onBack={() => setView('list')} themeColor={themeColor} onCompleteAll={() => setView('list')} />;
+        return <FutureTenseContent onBack={() => setView('list')} themeColor={themeColor} onCompleteAll={() => setView('present-perfect')} />;
+    }
+
+    if (view === 'present-perfect') {
+        return <PresentPerfectContent onBack={() => setView('list')} themeColor={themeColor} onCompleteAll={() => setView('list')} />;
     }
 
     return (
@@ -82,6 +87,13 @@ export const TensesContent: React.FC<ContentProps> = ({ startLesson }) => {
                         <TenseEnglish>Future Tense</TenseEnglish>
                     </TenseTitleContainer>
                     <TenseDescription>表示将来的事情</TenseDescription>
+                </TenseItem>
+                <TenseItem onClick={() => setView('present-perfect')} borderColor={themeColor}>
+                    <TenseTitleContainer>
+                        <TenseChinese>现在完成时</TenseChinese>
+                        <TenseEnglish>Present Perfect</TenseEnglish>
+                    </TenseTitleContainer>
+                    <TenseDescription>过去对现在的影响</TenseDescription>
                 </TenseItem>
             </TenseTimeline>
         </>
