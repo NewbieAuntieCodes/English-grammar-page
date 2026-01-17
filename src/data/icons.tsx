@@ -1,3 +1,4 @@
+
 /**
  * @license
  * SPDX-License-Identifier: Apache-2.0
@@ -30,6 +31,10 @@ const StyledClausesIcon = styled(IconWrapper)`
 
 export const StructureIcon: React.FC = () => (
     <span role="img" aria-label="Structure Icon" style={{ fontSize: '48px' }}>🏗️</span>
+);
+
+export const QuestionsIcon: React.FC = () => (
+    <span role="img" aria-label="Questions Icon" style={{ fontSize: '48px' }}>❓</span>
 );
 
 export const PartsIcon: React.FC = () => (

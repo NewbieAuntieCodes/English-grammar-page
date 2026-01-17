@@ -1,3 +1,4 @@
+
 /**
  * @license
  * SPDX-License-Identifier: Apache-2.0
@@ -12,6 +13,7 @@ export const cardDataConfig = [
     { id: 'parts', title: '词性学习', subtitle: 'Parts of Speech', color: '#4ecdc4' },
     { id: 'components', title: '句子成分', subtitle: 'Sentence Components', color: '#ffc72c' },
     { id: 'structures', title: '基础句型结构', subtitle: 'Basic Sentence Structures', color: '#ff6b6b' },
+    { id: 'questions', title: '疑问句学习', subtitle: 'Questions', color: '#ff4757' },
     { id: 'clauses', title: '从句句型结构', subtitle: 'Clause Sentence Structures', color: '#0097a7' },
     { id: 'common-structures', title: '常见句子结构', subtitle: 'Common Sentence Structures', color: '#5e72e4' },
     { id: 'tenses', title: '基础时态学习', subtitle: 'Basic Tenses', color: '#f093fb' },

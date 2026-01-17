@@ -1,3 +1,4 @@
+
 /**
  * @license
  * SPDX-License-Identifier: Apache-2.0
@@ -5,10 +6,11 @@
 import React, { useState, useEffect } from 'react';
 import { GlobalStyle } from '../../styles/GlobalStyle';
 import { cardDataConfig } from '../../data/definitions';
-import { StructureIcon, PartsIcon, ClausesIcon, TensesIcon, ComponentsIcon, CommonStructureIcon, VocabularyIcon, PronunciationIcon } from '../../data/icons';
+import { StructureIcon, PartsIcon, ClausesIcon, TensesIcon, ComponentsIcon, CommonStructureIcon, VocabularyIcon, PronunciationIcon, QuestionsIcon } from '../../data/icons';
 import { FloatingCard } from '../FloatingCard';
 import { ExpandedContent } from '../ExpandedContent';
 import { StructuresContent } from '../content/Structures/StructuresContent';
+import { QuestionsContent } from '../content/Questions/QuestionsContent';
 import { PartsOfSpeechContent } from '../content/PartsOfSpeech/PartsOfSpeechContent';
 import { ClausesContent } from '../content/Clauses/ClausesContent';
 import { TensesContent } from '../content/Tenses/TensesContent';
@@ -21,6 +23,7 @@ import { PronunciationContent } from '../content/Pronunciation/PronunciationCont
 // --- Icon Map ---
 const iconMap: { [key: string]: React.ReactNode } = {
     structures: <StructureIcon />,
+    questions: <QuestionsIcon />,
     'common-structures': <CommonStructureIcon />,
     parts: <PartsIcon />,
     clauses: <ClausesIcon />,
@@ -45,6 +48,7 @@ const startLesson = (lessonType: string) => {
 // --- Content Component Map ---
 const contentComponents: { [key: string]: React.ReactNode } = {
     structures: <StructuresContent startLesson={startLesson} />,
+    questions: <QuestionsContent startLesson={startLesson} />,
     'common-structures': <CommonStructuresContent startLesson={startLesson} />,
     parts: <PartsOfSpeechContent startLesson={startLesson} />,
     clauses: <ClausesContent startLesson={startLesson} />,
