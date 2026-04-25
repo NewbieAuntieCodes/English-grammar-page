@@ -23,7 +23,6 @@ interface TaskStep {
 
 interface LessonPair {
     id: string;
-    title: string;
     sentence: string[];
     skeletonSteps: TaskStep[];
     posSteps: TaskStep[];
@@ -186,22 +185,8 @@ const TaskTitle = styled.h4`
     font-size: 1.08em;
 `;
 
-const TaskTip = styled.p`
-    margin: 0;
-    color: #4b5563;
-    line-height: 1.6;
-    font-weight: 600;
-`;
-
-const StepIndicator = styled.div<{ themeColor: string }>`
-    margin-top: 16px;
-    color: ${props => props.themeColor};
-    font-size: 0.9em;
-    font-weight: 800;
-`;
-
 const StepPrompt = styled.div`
-    margin-top: 8px;
+    margin-top: 14px;
     color: #111827;
     font-size: 1.16em;
     font-weight: 800;
@@ -271,97 +256,91 @@ const Takeaway = styled.div<{ themeColor: string }>`
 const lessons: LessonPair[] = [
     {
         id: 'sv',
-        title: '一句话先找主干，再看词性',
         sentence: ['The', 'boy', 'runs.'],
         skeletonSteps: [
-            { title: '先点主语', targetIndexes: [0, 1], hint: '主语就是“谁 / 什么”。' },
-            { title: '再点谓语', targetIndexes: [2], hint: '谓语就是动作或状态的核心。' },
+            { title: '点主语', targetIndexes: [0, 1], hint: '主语就是“谁 / 什么”。' },
+            { title: '点谓语', targetIndexes: [2], hint: '谓语就是动作或状态的核心。' },
         ],
         posSteps: [
-            { title: '先点名词', targetIndexes: [1], hint: '这里只抓核心词，不抓 the。' },
-            { title: '再点动词', targetIndexes: [2], hint: '动作词通常就是动词。' },
+            { title: '点名词', targetIndexes: [1], hint: '这里只抓核心词，不抓 the。' },
+            { title: '点动词', targetIndexes: [2], hint: '动作词通常就是动词。' },
         ],
-        takeaway: '`boy` 是名词，作主语；`runs` 是动词，作谓语。先找主干，再看词性会更清楚。',
+        takeaway: '`boy` 是名词，作主语；`runs` 是动词，作谓语。',
     },
     {
         id: 'svo',
-        title: '同一句话继续：先看 SVO，再看名词 / 动词 / 形容词',
         sentence: ['The', 'tall', 'boy', 'likes', 'music.'],
         skeletonSteps: [
-            { title: '先点主语', targetIndexes: [0, 1, 2], hint: '谁喜欢音乐？整块主语先点出来。' },
-            { title: '再点谓语', targetIndexes: [3], hint: '主语后面最核心的动作词，就是谓语。' },
-            { title: '最后点宾语', targetIndexes: [4], hint: '喜欢什么？答案就是宾语。' },
+            { title: '点主语', targetIndexes: [0, 1, 2], hint: '谁喜欢音乐？把整块主语点出来。' },
+            { title: '点谓语', targetIndexes: [3], hint: '主语后面最核心的动作词，就是谓语。' },
+            { title: '点宾语', targetIndexes: [4], hint: '喜欢什么？答案就是宾语。' },
         ],
         posSteps: [
-            { title: '先点名词', targetIndexes: [2, 4], hint: 'boy 和 music 都是名词。' },
-            { title: '再点动词', targetIndexes: [3], hint: 'likes 是动作词。' },
-            { title: '最后点形容词', targetIndexes: [1], hint: 'tall 在修饰 boy，所以它是形容词。' },
+            { title: '点名词', targetIndexes: [2, 4], hint: 'boy 和 music 都是名词。' },
+            { title: '点动词', targetIndexes: [3], hint: 'likes 是动作词。' },
+            { title: '点形容词', targetIndexes: [1], hint: 'tall 在修饰 boy，所以它是形容词。' },
         ],
         takeaway: '`boy` 和 `music` 是名词；`likes` 是动词；`tall` 是形容词。句子成分看“做什么”，词性看“是什么词”。',
     },
     {
         id: 'svc',
-        title: '再看一个句子：形容词在句子里不一定只是修饰词',
         sentence: ['My', 'teacher', 'is', 'kind.'],
         skeletonSteps: [
-            { title: '先点主语', targetIndexes: [0, 1], hint: '谁是 kind？先找主语。' },
-            { title: '再点谓语', targetIndexes: [2], hint: 'be 动词这里是谓语核心。' },
-            { title: '最后点补语', targetIndexes: [3], hint: 'kind 在补充说明主语的状态。' },
+            { title: '点主语', targetIndexes: [0, 1], hint: '谁是 kind？看主语。' },
+            { title: '点谓语', targetIndexes: [2], hint: 'be 动词这里是谓语核心。' },
+            { title: '点补语', targetIndexes: [3], hint: 'kind 在补充说明主语的状态。' },
         ],
         posSteps: [
-            { title: '先点名词', targetIndexes: [1], hint: 'teacher 是名词。' },
-            { title: '再点动词', targetIndexes: [2], hint: 'is 是动词。' },
-            { title: '最后点形容词', targetIndexes: [3], hint: 'kind 是形容词。' },
+            { title: '点名词', targetIndexes: [1], hint: 'teacher 是名词。' },
+            { title: '点动词', targetIndexes: [2], hint: 'is 是动词。' },
+            { title: '点形容词', targetIndexes: [3], hint: 'kind 是形容词。' },
         ],
         takeaway: '`teacher` 是名词，作主语；`is` 是动词，作谓语；`kind` 是形容词，但它在句子里作补语。',
     },
     {
         id: 'svo-2',
-        title: '再练一个 SVO：还是先抓骨架',
         sentence: ['The', 'young', 'doctor', 'helps', 'patients.'],
         skeletonSteps: [
-            { title: '先点主语', targetIndexes: [0, 1, 2], hint: '谁在帮助别人？先把主语整块点出来。' },
-            { title: '再点谓语', targetIndexes: [3], hint: 'helps 是这个句子的动作核心。' },
-            { title: '最后点宾语', targetIndexes: [4], hint: '帮助谁？patients 就是宾语。' },
+            { title: '点主语', targetIndexes: [0, 1, 2], hint: '谁在帮助别人？把主语整块点出来。' },
+            { title: '点谓语', targetIndexes: [3], hint: 'helps 是这个句子的动作核心。' },
+            { title: '点宾语', targetIndexes: [4], hint: '帮助谁？patients 就是宾语。' },
         ],
         posSteps: [
-            { title: '先点名词', targetIndexes: [2, 4], hint: 'doctor 和 patients 都是名词。' },
-            { title: '再点动词', targetIndexes: [3], hint: 'helps 是动词。' },
-            { title: '最后点形容词', targetIndexes: [1], hint: 'young 在修饰 doctor，所以它是形容词。' },
+            { title: '点名词', targetIndexes: [2, 4], hint: 'doctor 和 patients 都是名词。' },
+            { title: '点动词', targetIndexes: [3], hint: 'helps 是动词。' },
+            { title: '点形容词', targetIndexes: [1], hint: 'young 在修饰 doctor，所以它是形容词。' },
         ],
-        takeaway: '`doctor` 和 `patients` 是名词；`helps` 是动词；`young` 是形容词。先看 SVO，再看词性，最不容易乱。',
+        takeaway: '`doctor` 和 `patients` 是名词；`helps` 是动词；`young` 是形容词。',
     },
     {
         id: 'svc-2',
-        title: '再练一个 SVC：形容词也可以放在句子主干里',
         sentence: ['Our', 'classroom', 'looks', 'bright.'],
         skeletonSteps: [
-            { title: '先点主语', targetIndexes: [0, 1], hint: '什么东西 looks bright？先找主语。' },
-            { title: '再点谓语', targetIndexes: [2], hint: 'looks 是句子的谓语核心。' },
-            { title: '最后点补语', targetIndexes: [3], hint: 'bright 在补充说明 classroom 的状态。' },
+            { title: '点主语', targetIndexes: [0, 1], hint: '什么东西 looks bright？看主语。' },
+            { title: '点谓语', targetIndexes: [2], hint: 'looks 是句子的谓语核心。' },
+            { title: '点补语', targetIndexes: [3], hint: 'bright 在补充说明 classroom 的状态。' },
         ],
         posSteps: [
-            { title: '先点名词', targetIndexes: [1], hint: 'classroom 是名词。' },
-            { title: '再点动词', targetIndexes: [2], hint: 'looks 是动词。' },
-            { title: '最后点形容词', targetIndexes: [3], hint: 'bright 是形容词。' },
+            { title: '点名词', targetIndexes: [1], hint: 'classroom 是名词。' },
+            { title: '点动词', targetIndexes: [2], hint: 'looks 是动词。' },
+            { title: '点形容词', targetIndexes: [3], hint: 'bright 是形容词。' },
         ],
         takeaway: '`classroom` 是名词，作主语；`looks` 是动词，作谓语；`bright` 是形容词，但在句子里作补语。',
     },
     {
         id: 'review',
-        title: '最后再来一句综合一点的',
         sentence: ['The', 'clever', 'students', 'finish', 'homework.'],
         skeletonSteps: [
-            { title: '先点主语', targetIndexes: [0, 1, 2], hint: '谁完成作业？先把主语整块抓出来。' },
-            { title: '再点谓语', targetIndexes: [3], hint: 'finish 是这个句子的动作核心。' },
-            { title: '最后点宾语', targetIndexes: [4], hint: '完成什么？homework 是宾语。' },
+            { title: '点主语', targetIndexes: [0, 1, 2], hint: '谁完成作业？把主语整块抓出来。' },
+            { title: '点谓语', targetIndexes: [3], hint: 'finish 是这个句子的动作核心。' },
+            { title: '点宾语', targetIndexes: [4], hint: '完成什么？homework 是宾语。' },
         ],
         posSteps: [
-            { title: '先点名词', targetIndexes: [2, 4], hint: 'students 和 homework 都是名词。' },
-            { title: '再点动词', targetIndexes: [3], hint: 'finish 是动词。' },
-            { title: '最后点形容词', targetIndexes: [1], hint: 'clever 在修饰 students，所以它是形容词。' },
+            { title: '点名词', targetIndexes: [2, 4], hint: 'students 和 homework 都是名词。' },
+            { title: '点动词', targetIndexes: [3], hint: 'finish 是动词。' },
+            { title: '点形容词', targetIndexes: [1], hint: 'clever 在修饰 students，所以它是形容词。' },
         ],
-        takeaway: '你现在应该能先看出 `students + finish + homework` 这个主干，再看 `clever` 是形容词、`students/homework` 是名词、`finish` 是动词。',
+        takeaway: '`students + finish + homework` 是句子的主干；`clever` 是形容词，`students/homework` 是名词，`finish` 是动词。',
     },
 ];
 
@@ -423,16 +402,7 @@ const SequentialTapCard: React.FC<{
         <TaskCard themeColor={themeColor}>
             <TaskTag themeColor={themeColor}>{tag}</TaskTag>
             <TaskTitle>{subtitle}</TaskTitle>
-            <TaskTip>同一句话，按顺序做。</TaskTip>
-
-            {!isFinished && (
-                <>
-                    <StepIndicator themeColor={themeColor}>
-                        第 {stepIndex + 1} 步 / {steps.length}
-                    </StepIndicator>
-                    <StepPrompt>{currentStep.title}</StepPrompt>
-                </>
-            )}
+            {!isFinished && <StepPrompt>{currentStep.title}</StepPrompt>}
 
             {isFinished && (
                 <StepPrompt>这一组做完了</StepPrompt>
@@ -474,12 +444,12 @@ export const PosComponentsBridgeContent: React.FC<PosComponentsBridgeContentProp
                 <TinyGuideCard themeColor={themeColor}>
                     <TinyGuideBadge themeColor={themeColor}>角度 A</TinyGuideBadge>
                     <TinyGuideTitle>看句子主干</TinyGuideTitle>
-                    <TinyGuideText>先只看主语、谓语、宾语，或者主语、谓语、补语。</TinyGuideText>
+                    <TinyGuideText>只看主语、谓语、宾语，或者主语、谓语、补语。</TinyGuideText>
                 </TinyGuideCard>
                 <TinyGuideCard themeColor={themeColor}>
                     <TinyGuideBadge themeColor={themeColor}>角度 B</TinyGuideBadge>
                     <TinyGuideTitle>看词性</TinyGuideTitle>
-                    <TinyGuideText>还是同一句话，再看哪些是名词、动词、形容词。</TinyGuideText>
+                    <TinyGuideText>看哪些是名词、动词、形容词。</TinyGuideText>
                 </TinyGuideCard>
             </TinyGuideGrid>
 
@@ -488,11 +458,9 @@ export const PosComponentsBridgeContent: React.FC<PosComponentsBridgeContentProp
                     <LessonBlock key={lesson.id} themeColor={themeColor}>
                         <LessonHeading>
                             <LessonLabel themeColor={themeColor}>句子 {index + 1}</LessonLabel>
-                            <LessonBlockTitle>{lesson.title}</LessonBlockTitle>
                         </LessonHeading>
 
                         <SentenceBoard themeColor={themeColor}>
-                            <SentenceLabel>Sentence</SentenceLabel>
                             <SentenceText>{lesson.sentence.join(' ')}</SentenceText>
                         </SentenceBoard>
 
@@ -501,15 +469,15 @@ export const PosComponentsBridgeContent: React.FC<PosComponentsBridgeContentProp
                                 sentence={lesson.sentence}
                                 steps={lesson.skeletonSteps}
                                 themeColor={themeColor}
-                                tag="先找主干"
-                                subtitle="先点主语、谓语、宾语 / 补语"
+                                tag="看句子主干"
+                                subtitle="点主语、谓语、宾语 / 补语"
                             />
                             <SequentialTapCard
                                 sentence={lesson.sentence}
                                 steps={lesson.posSteps}
                                 themeColor={themeColor}
-                                tag="再看词性"
-                                subtitle="再点名词、动词、形容词"
+                                tag="看词性"
+                                subtitle="点名词、动词、形容词"
                             />
                         </PairGrid>
 
