@@ -268,29 +268,6 @@ const Takeaway = styled.div<{ themeColor: string }>`
     font-weight: 700;
 `;
 
-const FinalSummary = styled.div<{ themeColor: string }>`
-    margin-top: 26px;
-    border-radius: 26px;
-    padding: 22px;
-    background:
-        radial-gradient(circle at top right, rgba(${props => hexToRgb(props.themeColor)}, 0.16), transparent 38%),
-        linear-gradient(135deg, #ffffff, rgba(${props => hexToRgb(props.themeColor)}, 0.05));
-    border: 1px solid rgba(${props => hexToRgb(props.themeColor)}, 0.14);
-`;
-
-const FinalTitle = styled.h3`
-    margin: 0 0 12px;
-    color: #111827;
-    font-size: 1.2em;
-`;
-
-const FinalItem = styled.div`
-    padding: 10px 0;
-    color: #374151;
-    line-height: 1.65;
-    font-weight: 700;
-`;
-
 const lessons: LessonPair[] = [
     {
         id: 'sv',
@@ -337,6 +314,54 @@ const lessons: LessonPair[] = [
             { title: '最后点形容词', targetIndexes: [3], hint: 'kind 是形容词。' },
         ],
         takeaway: '`teacher` 是名词，作主语；`is` 是动词，作谓语；`kind` 是形容词，但它在句子里作补语。',
+    },
+    {
+        id: 'svo-2',
+        title: '再练一个 SVO：还是先抓骨架',
+        sentence: ['The', 'young', 'doctor', 'helps', 'patients.'],
+        skeletonSteps: [
+            { title: '先点主语', targetIndexes: [0, 1, 2], hint: '谁在帮助别人？先把主语整块点出来。' },
+            { title: '再点谓语', targetIndexes: [3], hint: 'helps 是这个句子的动作核心。' },
+            { title: '最后点宾语', targetIndexes: [4], hint: '帮助谁？patients 就是宾语。' },
+        ],
+        posSteps: [
+            { title: '先点名词', targetIndexes: [2, 4], hint: 'doctor 和 patients 都是名词。' },
+            { title: '再点动词', targetIndexes: [3], hint: 'helps 是动词。' },
+            { title: '最后点形容词', targetIndexes: [1], hint: 'young 在修饰 doctor，所以它是形容词。' },
+        ],
+        takeaway: '`doctor` 和 `patients` 是名词；`helps` 是动词；`young` 是形容词。先看 SVO，再看词性，最不容易乱。',
+    },
+    {
+        id: 'svc-2',
+        title: '再练一个 SVC：形容词也可以放在句子主干里',
+        sentence: ['Our', 'classroom', 'looks', 'bright.'],
+        skeletonSteps: [
+            { title: '先点主语', targetIndexes: [0, 1], hint: '什么东西 looks bright？先找主语。' },
+            { title: '再点谓语', targetIndexes: [2], hint: 'looks 是句子的谓语核心。' },
+            { title: '最后点补语', targetIndexes: [3], hint: 'bright 在补充说明 classroom 的状态。' },
+        ],
+        posSteps: [
+            { title: '先点名词', targetIndexes: [1], hint: 'classroom 是名词。' },
+            { title: '再点动词', targetIndexes: [2], hint: 'looks 是动词。' },
+            { title: '最后点形容词', targetIndexes: [3], hint: 'bright 是形容词。' },
+        ],
+        takeaway: '`classroom` 是名词，作主语；`looks` 是动词，作谓语；`bright` 是形容词，但在句子里作补语。',
+    },
+    {
+        id: 'review',
+        title: '最后再来一句综合一点的',
+        sentence: ['The', 'clever', 'students', 'finish', 'homework.'],
+        skeletonSteps: [
+            { title: '先点主语', targetIndexes: [0, 1, 2], hint: '谁完成作业？先把主语整块抓出来。' },
+            { title: '再点谓语', targetIndexes: [3], hint: 'finish 是这个句子的动作核心。' },
+            { title: '最后点宾语', targetIndexes: [4], hint: '完成什么？homework 是宾语。' },
+        ],
+        posSteps: [
+            { title: '先点名词', targetIndexes: [2, 4], hint: 'students 和 homework 都是名词。' },
+            { title: '再点动词', targetIndexes: [3], hint: 'finish 是动词。' },
+            { title: '最后点形容词', targetIndexes: [1], hint: 'clever 在修饰 students，所以它是形容词。' },
+        ],
+        takeaway: '你现在应该能先看出 `students + finish + homework` 这个主干，再看 `clever` 是形容词、`students/homework` 是名词、`finish` 是动词。',
     },
 ];
 
@@ -447,13 +472,13 @@ export const PosComponentsBridgeContent: React.FC<PosComponentsBridgeContentProp
 
             <TinyGuideGrid>
                 <TinyGuideCard themeColor={themeColor}>
-                    <TinyGuideBadge themeColor={themeColor}>Step 1</TinyGuideBadge>
-                    <TinyGuideTitle>先找主干</TinyGuideTitle>
+                    <TinyGuideBadge themeColor={themeColor}>角度 A</TinyGuideBadge>
+                    <TinyGuideTitle>看句子主干</TinyGuideTitle>
                     <TinyGuideText>先只看主语、谓语、宾语，或者主语、谓语、补语。</TinyGuideText>
                 </TinyGuideCard>
                 <TinyGuideCard themeColor={themeColor}>
-                    <TinyGuideBadge themeColor={themeColor}>Step 2</TinyGuideBadge>
-                    <TinyGuideTitle>再看词性</TinyGuideTitle>
+                    <TinyGuideBadge themeColor={themeColor}>角度 B</TinyGuideBadge>
+                    <TinyGuideTitle>看词性</TinyGuideTitle>
                     <TinyGuideText>还是同一句话，再看哪些是名词、动词、形容词。</TinyGuideText>
                 </TinyGuideCard>
             </TinyGuideGrid>
@@ -493,12 +518,6 @@ export const PosComponentsBridgeContent: React.FC<PosComponentsBridgeContentProp
                 ))}
             </LessonStack>
 
-            <FinalSummary themeColor={themeColor}>
-                <FinalTitle>最后只记这三句</FinalTitle>
-                <FinalItem>先找主干：主语、谓语、宾语，先把句子的骨架抓出来。</FinalItem>
-                <FinalItem>再看词性：名词、动词、形容词，是在说“这个词本身是什么词”。</FinalItem>
-                <FinalItem>同一个词，既有词性，也可能在句子里承担主语、谓语、宾语或补语。</FinalItem>
-            </FinalSummary>
         </LessonContainer>
     );
 };
