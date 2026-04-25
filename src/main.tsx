@@ -1,0 +1,17 @@
+/**
+ * @license
+ * SPDX-License-Identifier: Apache-2.0
+*/
+import React from 'react';
+import { createRoot } from 'react-dom/client';
+import GrammarIsland from './components/App';
+import { configureSpeechSynthesis } from './utils/configureSpeechSynthesis';
+import '../index.css';
+
+// --- Rendering Logic for standalone preview ---
+const container = document.getElementById('root');
+if (container) {
+    configureSpeechSynthesis();
+    const root = createRoot(container);
+    root.render(<React.StrictMode><GrammarIsland /></React.StrictMode>);
+}

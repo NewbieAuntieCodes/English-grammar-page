@@ -1,0 +1,119 @@
+/**
+ * @license
+ * SPDX-License-Identifier: Apache-2.0
+*/
+import React, { useState } from 'react';
+import { cardDataConfig } from '../../../data/definitions';
+import { ClausesIcon } from '../../../data/icons';
+import { ContentHeader, ContentIcon, ContentTitle, ContentSubtitle } from '../../../styles/shared';
+import {
+    IntroClauseStep,
+    ClauseProgression,
+    ClauseStep,
+    ClauseTitleContainer,
+    LessonTitleChinese,
+    LessonTitleEnglish,
+    ClauseDescription
+} from './ClausesContent.styles';
+import { WhatIsAClauseContent } from './WhatIsAClauseContent';
+import { ObjectClausesContent } from './ObjectClausesContent';
+import { AttributiveClausesContent } from './AttributiveClausesContent';
+import { AdverbialClausesContent } from './AdverbialClausesContent';
+import { SubjectClausesContent } from './SubjectClausesContent';
+import { FindMainClauseContent } from '../Structures/FindMainClauseContent';
+
+
+interface ContentProps {
+    startLesson: (lessonType: string) => void;
+}
+
+type View = 'list' | 'what-is-a-clause' | 'object-clauses' | 'attributive-clauses' | 'adverbial-clauses' | 'subject-clauses' | 'find-main-clause';
+
+
+export const ClausesContent: React.FC<ContentProps> = ({ startLesson }) => {
+    const [view, setView] = useState<View>('list');
+    const themeColor = cardDataConfig.find(card => card.id === 'clauses')?.color || '#0097a7';
+    
+    if (view === 'what-is-a-clause') {
+        return <WhatIsAClauseContent onBack={() => setView('list')} themeColor={themeColor} onComplete={() => setView('object-clauses')} />;
+    }
+
+    if (view === 'object-clauses') {
+        return <ObjectClausesContent onBack={() => setView('list')} themeColor={themeColor} onCompleteAll={() => setView('attributive-clauses')} />;
+    }
+
+    if (view === 'attributive-clauses') {
+        return <AttributiveClausesContent onBack={() => setView('list')} themeColor={themeColor} onCompleteAll={() => setView('adverbial-clauses')} />;
+    }
+
+    if (view === 'adverbial-clauses') {
+        return <AdverbialClausesContent onBack={() => setView('list')} themeColor={themeColor} onCompleteAll={() => setView('subject-clauses')} />;
+    }
+
+    if (view === 'subject-clauses') {
+        return <SubjectClausesContent onBack={() => setView('list')} themeColor={themeColor} onCompleteAll={() => setView('find-main-clause')} />;
+    }
+
+    if (view === 'find-main-clause') {
+        return <FindMainClauseContent
+            onBack={() => setView('list')}
+            themeColor={themeColor}
+        />;
+    }
+
+    return (
+        <>
+            <ContentHeader>
+                <ContentIcon><ClausesIcon /></ContentIcon>
+                <div>
+                    <ContentTitle>从句</ContentTitle>
+                    <ContentSubtitle>Clauses</ContentSubtitle>
+                </div>
+            </ContentHeader>
+            <ClauseProgression>
+                <IntroClauseStep onClick={() => setView('what-is-a-clause')} color={themeColor}>
+                    <ClauseTitleContainer>
+                        <LessonTitleChinese>什么是从句？</LessonTitleChinese>
+                        <LessonTitleEnglish>What is a Clause?</LessonTitleEnglish>
+                    </ClauseTitleContainer>
+                    <ClauseDescription>- 点击了解从句的基本概念</ClauseDescription>
+                </IntroClauseStep>
+                <ClauseStep onClick={() => setView('object-clauses')} color={themeColor}>
+                    <ClauseTitleContainer>
+                        <LessonTitleChinese>宾语从句</LessonTitleChinese>
+                        <LessonTitleEnglish>Object Clauses</LessonTitleEnglish>
+                    </ClauseTitleContainer>
+                    <ClauseDescription>- 作宾语的从句</ClauseDescription>
+                </ClauseStep>
+                <ClauseStep onClick={() => setView('attributive-clauses')} color={themeColor}>
+                    <ClauseTitleContainer>
+                        <LessonTitleChinese>定语从句</LessonTitleChinese>
+                        <LessonTitleEnglish>Attributive Clauses</LessonTitleEnglish>
+                    </ClauseTitleContainer>
+                    <ClauseDescription>- 修饰名词的从句</ClauseDescription>
+                </ClauseStep>
+                <ClauseStep onClick={() => setView('adverbial-clauses')} color={themeColor}>
+                    <ClauseTitleContainer>
+                        <LessonTitleChinese>状语从句</LessonTitleChinese>
+                        <LessonTitleEnglish>Adverbial Clauses</LessonTitleEnglish>
+                    </ClauseTitleContainer>
+                    <ClauseDescription>- 作状语的从句</ClauseDescription>
+                </ClauseStep>
+                <ClauseStep onClick={() => setView('subject-clauses')} color={themeColor}>
+                    <ClauseTitleContainer>
+                        <LessonTitleChinese>主语从句</LessonTitleChinese>
+                        <LessonTitleEnglish>Subject Clauses</LessonTitleEnglish>
+                    </ClauseTitleContainer>
+                    <ClauseDescription>- 作主语的从句</ClauseDescription>
+                </ClauseStep>
+                <ClauseStep onClick={() => setView('find-main-clause')} color={themeColor} style={{ gridColumn: '1 / -1' }}>
+                    <ClauseTitleContainer>
+                        <LessonTitleChinese>找主句练习</LessonTitleChinese>
+                        <LessonTitleEnglish>Find the Main Clause Practice</LessonTitleEnglish>
+                    </ClauseTitleContainer>
+                    <ClauseDescription>- 练习在复杂句中识别核心部分</ClauseDescription>
+                </ClauseStep>
+            </ClauseProgression>
+        </>
+    );
+}

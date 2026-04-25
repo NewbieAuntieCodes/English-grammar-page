@@ -1,0 +1,273 @@
+/**
+ * @license
+ * SPDX-License-Identifier: Apache-2.0
+*/
+import React, { useState, useEffect, useMemo, useCallback, useRef } from 'react';
+import {
+    PracticeSection,
+    PracticeTitle,
+    PracticeSubtitle,
+    ChineseHint,
+    WordBank,
+    WordItem,
+    WordEnglish,
+    SentenceBuilder,
+    BuilderPlaceholder,
+    BuilderWord,
+    ProgressDots,
+    ProgressDot,
+    Feedback,
+    CorrectSticker,
+    CompletionContainer,
+    CompletionTitle,
+    CompletionMessage,
+    NextChapterButton,
+} from './SentenceBuilderPractice.styles';
+
+interface WordData {
+    en: string;
+    cn: string;
+}
+
+interface PracticeData {
+    words: WordData[];
+    correct: string[];
+    chinese: string;
+}
+
+interface SentenceBuilderPracticeProps {
+    themeColor: string;
+    onCompleteAll: () => void;
+    practiceData: PracticeData[];
+    title: string;
+    subtitle: string;
+    completionTitle: string;
+    completionMessage: string;
+    nextButtonText: string;
+    autoAdvanceOnComplete?: boolean;
+    hideCompletionButton?: boolean;
+}
+
+interface WordState {
+    word: string;
+    id: number;
+    cn: string;
+}
+
+export const SentenceBuilderPractice: React.FC<SentenceBuilderPracticeProps> = ({
+    themeColor,
+    onCompleteAll,
+    practiceData,
+    title,
+    subtitle,
+    completionTitle,
+    completionMessage,
+    nextButtonText,
+    autoAdvanceOnComplete = false,
+    hideCompletionButton = false,
+}) => {
+    const [practiceIndex, setPracticeIndex] = useState(0);
+    
+    // State for 'build' mode
+    const [bankWords, setBankWords] = useState<WordState[]>([]);
+    const [builtSentence, setBuiltSentence] = useState<WordState[]>([]);
+    
+    // Shared state
+    const [feedback, setFeedback] = useState<{ type: 'incorrect'; message: React.ReactNode } | null>(null);
+    const [showCorrectSticker, setShowCorrectSticker] = useState(false);
+    const [isShaking, setIsShaking] = useState(false);
+    const [allPracticesCompleted, setAllPracticesCompleted] = useState(false);
+    
+    const currentPractice = practiceData[practiceIndex];
+
+    const handlePrevPractice = () => {
+        if (practiceIndex > 0) {
+            setPracticeIndex(prev => prev - 1);
+        }
+    };
+
+    const shuffledWords = useMemo(() => {
+        if (!currentPractice) return [];
+        return [...currentPractice.words]
+            .sort(() => Math.random() - 0.5)
+            .map((wordData, index) => ({ word: wordData.en, id: index, cn: wordData.cn }));
+    }, [practiceIndex, currentPractice]);
+
+    useEffect(() => {
+        setBankWords(shuffledWords);
+        setBuiltSentence([]);
+        setFeedback(null);
+    }, [practiceIndex, shuffledWords]);
+
+    const handleAddWord = (wordItem: WordState) => {
+        setBuiltSentence(prev => [...prev, wordItem]);
+        setBankWords(prev => prev.filter(item => item.id !== wordItem.id));
+        setFeedback(null);
+    };
+
+    const handleRemoveWord = (wordItem: WordState) => {
+        setBankWords(prev => [...prev, wordItem].sort((a, b) => a.id - b.id));
+        setBuiltSentence(prev => prev.filter(item => item.id !== wordItem.id));
+        setFeedback(null);
+    };
+    
+    const handleNextPractice = useCallback(() => {
+        const isLastQuestion = practiceIndex >= practiceData.length - 1;
+
+        if (isLastQuestion) {
+            setAllPracticesCompleted(true);
+        } else {
+            setPracticeIndex(prev => prev + 1);
+        }
+    }, [practiceIndex, practiceData.length]);
+
+    const handleResetPractice = useCallback(() => {
+        setBankWords(shuffledWords);
+        setBuiltSentence([]);
+        setFeedback(null);
+    }, [shuffledWords]);
+
+    const handleCheckAnswer = useCallback(() => {
+        if (builtSentence.length === 0) return;
+        const userSentence = builtSentence.map(item => item.word);
+        const isCorrect = JSON.stringify(userSentence) === JSON.stringify(currentPractice.correct);
+        
+        if (isCorrect) {
+            setShowCorrectSticker(true);
+            setTimeout(() => {
+                handleNextPractice();
+            }, 300);
+
+            setTimeout(() => {
+                setShowCorrectSticker(false);
+            }, 900);
+        } else {
+            setFeedback({ 
+                type: 'incorrect', 
+                message: (
+                    <>
+                        🤔 不太对哦，再试一次!
+                        <br />
+                        Remember the sentence structure.
+                    </>
+                )
+             });
+             setIsShaking(true);
+
+             setTimeout(() => {
+                 handleResetPractice();
+                 setIsShaking(false);
+             }, 700);
+        }
+    }, [builtSentence, currentPractice, handleNextPractice, handleResetPractice]);
+    
+    useEffect(() => {
+        if (bankWords.length === 0 && builtSentence.length > 0 && !allPracticesCompleted) {
+            const timer = setTimeout(handleCheckAnswer, 200);
+            return () => clearTimeout(timer);
+        }
+    }, [bankWords.length, builtSentence.length, handleCheckAnswer, allPracticesCompleted]);
+
+    useEffect(() => {
+        if (allPracticesCompleted && autoAdvanceOnComplete) {
+            const timer = setTimeout(() => {
+                onCompleteAll();
+            }, 500);
+            return () => clearTimeout(timer);
+        }
+    }, [allPracticesCompleted, autoAdvanceOnComplete, onCompleteAll]);
+
+    const touchStartRef = useRef<number | null>(null);
+    const minSwipeDistance = 50;
+
+    const onTouchStart = (e: React.TouchEvent) => {
+        touchStartRef.current = e.targetTouches[0].clientX;
+    };
+
+    const onTouchEnd = (e: React.TouchEvent) => {
+        if (touchStartRef.current === null) {
+            return;
+        }
+
+        const touchEnd = e.changedTouches[0].clientX;
+        const distance = touchStartRef.current - touchEnd;
+        const isLeftSwipe = distance > minSwipeDistance;
+        const isRightSwipe = distance < -minSwipeDistance;
+
+        if (isLeftSwipe) {
+            handleNextPractice();
+        } else if (isRightSwipe) {
+            handlePrevPractice();
+        }
+
+        touchStartRef.current = null;
+    };
+
+    return (
+        <PracticeSection themeColor={themeColor} onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
+            {showCorrectSticker && <CorrectSticker themeColor={themeColor}>✔️ Correct!</CorrectSticker>}
+            {allPracticesCompleted ? (
+                <CompletionContainer>
+                    <CompletionTitle>{completionTitle}</CompletionTitle>
+                    <CompletionMessage>{completionMessage}</CompletionMessage>
+                    {!autoAdvanceOnComplete && !hideCompletionButton && (
+                        <NextChapterButton onClick={onCompleteAll} themeColor={themeColor}>
+                            {nextButtonText}
+                        </NextChapterButton>
+                    )}
+                </CompletionContainer>
+            ) : (
+                currentPractice && (
+                    <>
+                        <PracticeTitle>{title}</PracticeTitle>
+                        <PracticeSubtitle>{subtitle}</PracticeSubtitle>
+                        
+                        <ChineseHint>
+                            {currentPractice.chinese}
+                        </ChineseHint>
+                        
+                        <>
+                            <WordBank>
+                                {bankWords.map(item => (
+                                    <WordItem key={item.id} onClick={() => handleAddWord(item)}>
+                                        <WordEnglish>{item.word}</WordEnglish>
+                                    </WordItem>
+                                ))}
+                            </WordBank>
+                            
+                            <SentenceBuilder themeColor={themeColor} isShaking={isShaking}>
+                                {builtSentence.length === 0 ? (
+                                    <BuilderPlaceholder>Click words from the bank to add them here</BuilderPlaceholder>
+                                ) : (
+                                    builtSentence.map(item => (
+                                        <BuilderWord key={item.id} onClick={() => handleRemoveWord(item)} title="Click to remove" themeColor={themeColor}>
+                                            <WordEnglish>{item.word}</WordEnglish>
+                                        </BuilderWord>
+                                    ))
+                                )}
+                            </SentenceBuilder>
+                        </>
+
+                        {feedback && feedback.type === 'incorrect' && (
+                            <Feedback type={feedback.type}>
+                                {feedback.message}
+                            </Feedback>
+                        )}
+
+                        <ProgressDots>
+                            {practiceData.map((_, index) => (
+                                <ProgressDot 
+                                    key={index} 
+                                    isActive={index === practiceIndex} 
+                                    themeColor={themeColor}
+                                    onClick={() => setPracticeIndex(index)}
+                                    aria-label={`Go to question ${index + 1}`}
+                                />
+                            ))}
+                        </ProgressDots>
+                    </>
+                )
+            )}
+        </PracticeSection>
+    );
+};
