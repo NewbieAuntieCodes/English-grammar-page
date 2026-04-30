@@ -1,54 +1,96 @@
-# Affect vs. Effect / Commonly Confused Words
+# affect vs. effect
 
-## Basic Info
+## 一句话先记住
 
-- Module: 词汇练习 / Vocabulary Practice
-- Track: 词汇辨析
-- Source file(s): `src/components/content/Vocabulary/AffectEffectContent.tsx`
-- Current status: imported from existing code structure
+`affect` 常作动词，`effect` 常作名词。
 
-## Current Goal
+## 最短区别
 
-- 
+- `affect` = 影响
+- `effect` = 结果 / 影响
 
-## Final Content Spec
+## 最常见用法
 
-### One-line student takeaway
+### affect
 
-- 
+常见结构：
 
-### What to teach
+`affect + 名词`
 
-- 
+例子：
 
-### What not to over-explain
+- `The weather affects my mood.`
+- `Lack of sleep affects students.`
 
-- 
+### effect
 
-### Minimum examples
+常见结构：
 
-- 
+- `have an effect on ...`
+- `the effect of ...`
 
-### Micro-practice 1
+例子：
 
-- 
+- `This law has a big effect on schools.`
+- `We studied the effect of light on plants.`
 
-### Micro-practice 2
+## 例句
 
-- 
+1. `Noise affects my work.`
+2. `The medicine had a good effect.`
+3. `Stress affects health.`
+4. `The effect of exercise is clear.`
 
-### Final practice
+## 一个容易错的地方
 
-- 
+不要写：
 
-## UX Notes
+`The rain effect my plan.`
 
-- 
+这里需要动词，所以要用：
 
-## Keep From Current Code
+`The rain affected my plan.`
 
-- 
+## 快速练习 1
 
-## Remove / Rewrite
+选空：
 
-- 
+1. The heat `____` my sleep.  
+   A. affected  
+   B. effect
+
+2. The new rule had a strong `____` on us.  
+   A. affect  
+   B. effect
+
+3. Music can `____` your mood.  
+   A. affect  
+   B. effect
+
+## 快速练习 2
+
+把中文写成英文：
+
+1. 天气影响了比赛。
+2. 这项变化产生了很大影响。
+3. 压力会影响学习。
+
+## 答案
+
+### 快速练习 1
+
+1. A
+2. B
+3. A
+
+### 快速练习 2
+
+1. `The weather affected the game.`
+2. `This change had a big effect.`
+3. `Stress can affect study.`
+
+## 小结
+
+做题时先问自己：
+
+- 这里缺动作，还是缺名词？

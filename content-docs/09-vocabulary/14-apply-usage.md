@@ -1,54 +1,89 @@
-# apply 的用法 / Usage of apply
+# apply 的用法
 
-## Basic Info
+## 一句话先记住
 
-- Module: 词汇练习 / Vocabulary Practice
-- Track: 固定表达
-- Source file(s): `src/components/content/Vocabulary/ApplyUsageContent.tsx`
-- Current status: imported from existing code structure
+`apply` 最常见有两个方向：申请，或者应用。
 
-## Current Goal
+## 最常见结构
 
-- 
+### 1. apply for
 
-## Final Content Spec
+表示“申请”。
 
-### One-line student takeaway
+- `apply for a job`
+- `apply for a visa`
 
-- 
+### 2. apply to
 
-### What to teach
+表示“适用于；向……申请”。
 
-- 
+- `This rule applies to everyone.`
+- `apply to a university`
 
-### What not to over-explain
+### 3. apply sth. to sth.
 
-- 
+表示“把……应用到……”。
 
-### Minimum examples
+- `apply this idea to real life`
 
-- 
+## 例句
 
-### Micro-practice 1
+1. `She applied for the job yesterday.`
+2. `This rule applies to all students.`
+3. `He wants to apply to that university.`
+4. `We should apply what we learn to real problems.`
 
-- 
+## 一个容易错的地方
 
-### Micro-practice 2
+不要写：
 
-- 
+`apply the job`
 
-### Final practice
+如果是“申请工作”，常说：
 
-- 
+`apply for the job`
 
-## UX Notes
+## 快速练习 1
 
-- 
+选空：
 
-## Keep From Current Code
+1. He wants to apply `____` the job.  
+   A. for  
+   B. to
 
-- 
+2. This rule applies `____` every student.  
+   A. for  
+   B. to
 
-## Remove / Rewrite
+3. We should apply this method `____` daily study.  
+   A. to  
+   B. for
 
-- 
+## 快速练习 2
+
+把中文写成英文：
+
+1. 她想申请这份工作。
+2. 这条规则适用于所有人。
+3. 我们要把知识应用到生活中。
+
+## 答案
+
+### 快速练习 1
+
+1. A
+2. B
+3. A
+
+### 快速练习 2
+
+1. `She wants to apply for this job.`
+2. `This rule applies to everyone.`
+3. `We should apply knowledge to life.`
+
+## 小结
+
+学 `apply` 时，先记住两个最常用搭配：
+
+- `apply for`
+- `apply to`

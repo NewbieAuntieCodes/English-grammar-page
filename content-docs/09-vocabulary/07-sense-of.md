@@ -1,54 +1,72 @@
-# a sense of 的用法 / a sense of
+# a sense of 的用法
 
-## Basic Info
+## 一句话先记住
 
-- Module: 词汇练习 / Vocabulary Practice
-- Track: 固定表达
-- Source file(s): `src/components/content/Vocabulary/SenseOfUsageContent.tsx`
-- Current status: imported from existing code structure
+`a sense of` 表示“一种……感”。
 
-## Current Goal
+## 最常见搭配
 
-- 
+- a sense of duty
+- a sense of humor
+- a sense of safety
+- a sense of responsibility
 
-## Final Content Spec
+## 例句
 
-### One-line student takeaway
+1. `He has a strong sense of responsibility.`
+2. `She has a good sense of humor.`
+3. `Children need a sense of safety.`
+4. `This work gave me a sense of achievement.`
 
-- 
+## 一个容易错的地方
 
-### What to teach
+不要把它拆成很奇怪的中文直译后再硬翻。
 
-- 
+这个短语常常要整块记。
 
-### What not to over-explain
+比如：
 
-- 
+- `sense of humor`
+- `sense of direction`
 
-### Minimum examples
+## 快速练习 1
 
-- 
+选空：
 
-### Micro-practice 1
+1. She has a strong sense `____` duty.  
+   A. of  
+   B. in
 
-- 
+2. He has no sense of `____`.  
+   A. humor  
+   B. humorous
 
-### Micro-practice 2
+3. A good teacher should have a sense of `____`.  
+   A. responsibility  
+   B. responsible
 
-- 
+## 快速练习 2
 
-### Final practice
+把中文写成英文：
 
-- 
+1. 他很有幽默感。
+2. 孩子需要安全感。
+3. 这次成功给了我成就感。
 
-## UX Notes
+## 答案
 
-- 
+### 快速练习 1
 
-## Keep From Current Code
+1. A
+2. A
+3. A
 
-- 
+### 快速练习 2
 
-## Remove / Rewrite
+1. `He has a good sense of humor.`
+2. `Children need a sense of safety.`
+3. `This success gave me a sense of achievement.`
 
-- 
+## 小结
+
+`a sense of` 最好整块记忆，不要临时拼。

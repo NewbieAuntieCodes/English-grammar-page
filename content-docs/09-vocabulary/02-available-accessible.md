@@ -1,54 +1,96 @@
-# Available vs. Accessible / Commonly Confused Adjectives
+# available vs. accessible
 
-## Basic Info
+## 一句话先记住
 
-- Module: 词汇练习 / Vocabulary Practice
-- Track: 词汇辨析
-- Source file(s): `src/components/content/Vocabulary/AvailableAccessibleContent.tsx`
-- Current status: imported from existing code structure
+`available` 强调“可得到”，`accessible` 强调“可进入 / 可接触 / 可理解”。
 
-## Current Goal
+## 最短区别
 
-- 
+### available
 
-## Final Content Spec
+表示：
 
-### One-line student takeaway
+- 有空
+- 现成可用
+- 可以得到
 
-- 
+例子：
 
-### What to teach
+- `Is this room available?`
+- `The book is available online.`
 
-- 
+### accessible
 
-### What not to over-explain
+表示：
 
-- 
+- 能进入
+- 能接触到
+- 容易理解
 
-### Minimum examples
+例子：
 
-- 
+- `The building is accessible to wheelchairs.`
+- `The article is accessible to beginners.`
 
-### Micro-practice 1
+## 例句
 
-- 
+1. `These tickets are still available.`
+2. `The teacher is available this afternoon.`
+3. `The museum is easily accessible by bus.`
+4. `This book is accessible to young readers.`
 
-### Micro-practice 2
+## 一个容易错的地方
 
-- 
+不要把：
 
-### Final practice
+`The doctor is accessible now.`
 
-- 
+乱用在“医生现在有空”这种意思上。
 
-## UX Notes
+这里更自然的是：
 
-- 
+`The doctor is available now.`
 
-## Keep From Current Code
+## 快速练习 1
 
-- 
+选空：
 
-## Remove / Rewrite
+1. Is this seat `____`?  
+   A. available  
+   B. accessible
 
-- 
+2. The station is easily `____` by subway.  
+   A. available  
+   B. accessible
+
+3. These videos are `____` online for free.  
+   A. available  
+   B. accessible
+
+## 快速练习 2
+
+把中文写成英文：
+
+1. 这个房间现在可以用。
+2. 图书馆坐地铁很容易到。
+3. 这本书对中学生来说比较容易懂。
+
+## 答案
+
+### 快速练习 1
+
+1. A
+2. B
+3. A
+
+### 快速练习 2
+
+1. `This room is available now.`
+2. `The library is accessible by subway.`
+3. `This book is accessible to middle school students.`
+
+## 小结
+
+看到 `available`，多想“有没有”。
+
+看到 `accessible`，多想“能不能到 / 能不能懂”。

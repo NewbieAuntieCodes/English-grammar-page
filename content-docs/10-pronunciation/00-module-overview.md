@@ -1,18 +1,77 @@
 # 发音练习 / Pronunciation Practice
 
-## Purpose
+## 这一组在学什么？
 
-This folder stores the content planning docs for the `发音练习` module.
+这一组在学：
 
-## Current source entry
+英语单词结尾怎么读得更自然。
 
-- Module entry file:
-  - `src/components/content/Pronunciation/PronunciationContent.tsx`
+这部分虽然只有一个单元，但很实用。
 
-## Current unit order
+因为很多同学看到 `-ed` 就一律读成一个完整音节。
 
-### 发音规则
+其实不对。
 
-- 01. [-ed 结尾的发音 / Pronunciation of -ed Endings](./01-ed-endings.md)
-  - Source: `src/components/content/Pronunciation/EdPronunciationContent.tsx`
+## 先记住这 3 个核心词
 
+1. `looked` /t/
+2. `played` /d/
+3. `wanted` /ɪd/
+
+## 先记住的最短规则
+
+- 清辅音后，`-ed` 常读 `/t/`
+- 浊辅音和元音后，`-ed` 常读 `/d/`
+- `/t/` 和 `/d/` 后，`-ed` 常读 `/ɪd/`
+
+## 怎么学这一组？
+
+不要只看拼写。
+
+要先听前一个音。
+
+学 `-ed` 发音时，最重要的不是“单词最后一个字母”，而是：
+
+动词原形最后一个音是什么。
+
+## 学习顺序
+
+1. [ -ed 结尾的发音 / Pronunciation of -ed Endings](./01-ed-endings.md)
+
+## 先看一个总例子
+
+下面三个词，拼写都加了 `-ed`，但读法不同：
+
+- `helped` → /t/
+- `cleaned` → /d/
+- `needed` → /ɪd/
+
+所以：
+
+`-ed` 不是永远都读 “ed”。
+
+## 这一组最容易错的地方
+
+- 看字母，不听最后一个音
+- 把所有 `-ed` 都读成 `/ɪd/`
+- `wanted` 和 `played` 读成一样
+
+## 学完这一组后，你应该会什么？
+
+- 能分出 `-ed` 的三种常见发音
+- 能根据前面的音大概判断读法
+- 朗读过去式单词时更自然
+
+## 模块小练习
+
+判断下面 `-ed` 的发音类别：
+
+1. `worked`
+2. `loved`
+3. `started`
+
+## 答案
+
+1. `/t/`
+2. `/d/`
+3. `/ɪd/`
