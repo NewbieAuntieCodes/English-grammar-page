@@ -242,13 +242,14 @@ export const ObjectClausesContent: React.FC<ObjectClausesContentProps> = ({ onBa
             </FormulaSection>
 
             <TipSection themeColor={themeColor}>
-                <SectionTitle>💡 黄金法则：永远用陈述句语序</SectionTitle>
-                <p>这是宾语从句最重要的规则！无论主句是什么，<strong>宾语从句内部永远是陈述句语序 (主语 + 谓语...)</strong>，绝对不能用疑问句语序 (助动词/be动词提前)。</p>
+                <SectionTitle>💡 重点规则：问题放到动词后面时，要改语序</SectionTitle>
+                <p>如果一个问题变成从句，放在主句的动词后面，它就不再是直接问题，所以通常要改成普通句子的语序。</p>
                 <ExampleEnglish style={{ marginTop: '10px', fontSize: '1.1em', fontWeight: 'normal' }}>
                     ❌ I don't know where <strong>is he</strong>.
                     <br/>
                     ✅ I don't know where <strong>he is</strong>.
                 </ExampleEnglish>
+                <p style={{ marginTop: '10px' }}>注意：如果 <strong>who</strong> / <strong>what</strong> 本身就是“谁做了这件事”，后面可以直接跟动作。</p>
             </TipSection>
 
             {/* --- Group 1: that --- */}

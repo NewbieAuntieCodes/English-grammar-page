@@ -126,6 +126,69 @@ const ClauseStructureDetail = styled.div`
     }
 `;
 
+const ClausePatternCard = styled.div<{ themeColor: string }>`
+    background: white;
+    border-radius: 14px;
+    padding: 20px;
+    margin: 0 auto 24px;
+    max-width: 760px;
+    border-top: 4px solid ${props => props.themeColor};
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    text-align: center;
+`;
+
+const PatternLabel = styled.div<{ themeColor: string }>`
+    color: ${props => props.themeColor};
+    font-weight: bold;
+    font-size: 1.05em;
+    margin-bottom: 12px;
+`;
+
+const PatternFormula = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    color: #2d3748;
+    font-size: 1.15em;
+    font-weight: bold;
+    line-height: 1.6;
+`;
+
+const PatternPart = styled.span`
+    background: #f7fafc;
+    border: 1px solid #edf2f7;
+    border-radius: 8px;
+    padding: 5px 10px;
+`;
+
+const PatternPlus = styled.span<{ themeColor: string }>`
+    color: ${props => props.themeColor};
+`;
+
+const PatternExample = styled.div`
+    color: #4a5568;
+    margin-top: 14px;
+    line-height: 1.7;
+
+    code {
+        background: #f7fafc;
+        border: 1px solid #edf2f7;
+        border-radius: 6px;
+        color: #2d3748;
+        padding: 2px 6px;
+        white-space: nowrap;
+    }
+`;
+
+const PatternNote = styled.div`
+    color: #718096;
+    font-size: 0.95em;
+    margin-top: 8px;
+    line-height: 1.5;
+`;
+
 const RuleSection = styled(WhyLearnSection)`
     background: linear-gradient(135deg, rgba(254, 249, 195, 0.8), rgba(253, 230, 138, 0.2));
     border-left-color: #FBBF24; // yellow color for tips
@@ -235,22 +298,37 @@ export const WhatIsAClauseContent: React.FC<WhatIsAClauseContentProps> = ({ onBa
             <LessonTitle>📖 什么是从句？ What is a Clause?</LessonTitle>
             
             <WhyLearnSection themeColor={themeColor}>
-                <SectionTitle>🚀 从句：英语“升级”的秘密武器！</SectionTitle>
-                <p>想让你的英语听起来更地道、更有水平吗？从句就是你的秘密武器！它能帮你把两个简单的想法，合并成一个更酷、更丰富的句子。</p>
+                <SectionTitle>从句是什么？</SectionTitle>
+                <p>从句是依附在主句里的句子成分。它通常有自己的主语和谓语，用来补充说明主句里的某个部分。</p>
             </WhyLearnSection>
 
             <DefinitionSection themeColor={themeColor}>
-                <SectionTitle>🤔 一个简单的比喻</SectionTitle>
-                <p className="analogy-title">
-                    从句就像是 “<strong>句子套娃</strong>”：
-                </p>
+                <SectionTitle>先看一个简单例子</SectionTitle>
                 <p>
-                    简单说，就是 <strong>“一句话”里面，又藏着另一句“小话”</strong>。这句“小话”自己也是完整的 (有主角和动作)，我们用它来给“大话”增加更多的信息！
+                    比如 <strong>I know that you are right.</strong> 里面，主句是 <strong>I know</strong>，从句是 <strong>that you are right</strong>。这个从句有自己的主语 <strong>you</strong> 和谓语 <strong>are</strong>。
                 </p>
             </DefinitionSection>
 
             <FormulaSection themeColor={themeColor}>
                 <FormulaTitle themeColor={themeColor}>从句的基本构成</FormulaTitle>
+                <ClausePatternCard themeColor={themeColor}>
+                    <PatternLabel themeColor={themeColor}>从句一般先由一个引导词开头，后面接一个“小句子”</PatternLabel>
+                    <PatternFormula>
+                        <PatternPart>引导词</PatternPart>
+                        <PatternPlus themeColor={themeColor}>+</PatternPlus>
+                        <PatternPart>主语</PatternPart>
+                        <PatternPlus themeColor={themeColor}>+</PatternPlus>
+                        <PatternPart>谓语 / 系表</PatternPart>
+                        <PatternPlus themeColor={themeColor}>+</PatternPlus>
+                        <PatternPart>其他信息</PatternPart>
+                    </PatternFormula>
+                    <PatternExample>
+                        例如 <code>that you are right</code> / <code>when the class starts</code> / <code>because he was tired</code>
+                    </PatternExample>
+                    <PatternNote>
+                        重点：引导词负责把从句接到主句里；后面的从句主体通常要用普通陈述句语序。
+                    </PatternNote>
+                </ClausePatternCard>
                 <FormulaParts>
                     <SVOFormulaPart themeColor={themeColor}>
                         <SVOPartEnglish>Connector</SVOPartEnglish>
@@ -266,13 +344,13 @@ export const WhatIsAClauseContent: React.FC<WhatIsAClauseContentProps> = ({ onBa
                                 <br/>
                                 because, so...
                             </SVOPartOfSpeechText>
-                            <SVOPartOfSpeechTextEng style={{marginTop: '8px'}}>连接主句和从句</SVOPartOfSpeechTextEng>
+                            <SVOPartOfSpeechTextEng style={{marginTop: '8px'}}>放在从句前面，把它接到主句里</SVOPartOfSpeechTextEng>
                         </SVOPartOfSpeechInfo>
                     </SVOFormulaPart>
                     <PlusSign themeColor={themeColor}>+</PlusSign>
                     <SVOFormulaPart themeColor={themeColor}>
                         <SVOPartEnglish>Clause</SVOPartEnglish>
-                        <SVOPartChinese>一个完整的句子</SVOPartChinese>
+                        <SVOPartChinese>从句主体</SVOPartChinese>
                         <SVOPartDivider />
                         <SVOPartOfSpeechInfo>
                             <ClauseStructureDetail>- 主语 + 谓语... (S+V...)</ClauseStructureDetail>
@@ -283,23 +361,23 @@ export const WhatIsAClauseContent: React.FC<WhatIsAClauseContentProps> = ({ onBa
             </FormulaSection>
 
             <ClauseFunctionSection>
-                <SectionTitle>“小话”的作用：它是什么从句？</SectionTitle>
+                <SectionTitle>从句在句子里做什么？</SectionTitle>
                 <FunctionGrid>
                     <FunctionCard>
                         <FunctionTitle>宾语从句</FunctionTitle>
-                        <FunctionExplanation themeColor={themeColor}>当“小话”是动词的<strong>宾语</strong>时 (回答“...什么?”)</FunctionExplanation>
+                        <FunctionExplanation themeColor={themeColor}>当从句放在动词后面，回答“知道什么 / 说什么 / 相信什么”</FunctionExplanation>
                     </FunctionCard>
                     <FunctionCard>
                         <FunctionTitle>主语从句</FunctionTitle>
-                        <FunctionExplanation themeColor={themeColor}>当“小话”是整个句子的<strong>主语</strong>时</FunctionExplanation>
+                        <FunctionExplanation themeColor={themeColor}>当从句放在主语位置，表示一件事</FunctionExplanation>
                     </FunctionCard>
                     <FunctionCard>
                         <FunctionTitle>定语从句</FunctionTitle>
-                        <FunctionExplanation themeColor={themeColor}>当“小话”是<strong>定语</strong>，像形容词一样修饰名词时</FunctionExplanation>
+                        <FunctionExplanation themeColor={themeColor}>当从句跟在名词后面，修饰这个名词</FunctionExplanation>
                     </FunctionCard>
                     <FunctionCard>
                         <FunctionTitle>状语从句</FunctionTitle>
-                        <FunctionExplanation themeColor={themeColor}>当“小话”是<strong>状语</strong>，像副词一样描述动作时</FunctionExplanation>
+                        <FunctionExplanation themeColor={themeColor}>当从句说明时间、原因、条件等背景信息</FunctionExplanation>
                     </FunctionCard>
                 </FunctionGrid>
             </ClauseFunctionSection>
@@ -314,9 +392,9 @@ export const WhatIsAClauseContent: React.FC<WhatIsAClauseContentProps> = ({ onBa
                     </ExampleHeader>
                     <ExampleChinese>我知道你是对的。</ExampleChinese>
                     <ExampleBreakdown show={true} themeColor={themeColor}>
-                        <BreakdownPart><strong>“大”句子是:</strong> I know ... (我知道...)</BreakdownPart>
-                        <BreakdownPart><strong>藏着的“小”句子是:</strong> ... that you are right. (...你是对的。)</BreakdownPart>
-                        <BreakdownPart><strong>分析:</strong> 我知道 “<strong>什么</strong>” 呢？ ⟶ 我知道了 “<strong>你是对的</strong>” 这件事。这句“小话”完整地解释了 “know” 的内容。</BreakdownPart>
+                        <BreakdownPart><strong>主句 / 主干句子:</strong> I know ... (我知道...)</BreakdownPart>
+                        <BreakdownPart><strong>从句:</strong> ... that you are right. (...你是对的。)</BreakdownPart>
+                        <BreakdownPart><strong>分析:</strong> 我知道 “<strong>什么</strong>” 呢？ ⟶ 我知道了 “<strong>你是对的</strong>” 这件事。这个从句完整地解释了 “know” 的内容。</BreakdownPart>
                     </ExampleBreakdown>
                 </ExampleItem>
 
@@ -327,17 +405,17 @@ export const WhatIsAClauseContent: React.FC<WhatIsAClauseContentProps> = ({ onBa
                     </ExampleHeader>
                     <ExampleChinese>我喜欢她做的那个蛋糕。</ExampleChinese>
                     <ExampleBreakdown show={true} themeColor={themeColor}>
-                        <BreakdownPart><strong>“大”句子是:</strong> I like the cake. (我喜欢那个蛋糕。)</BreakdownPart>
-                        <BreakdownPart><strong>藏着的“小”句子是:</strong> ... which she made. (...是她做的。)</BreakdownPart>
-                        <BreakdownPart><strong>分析:</strong> “<strong>什么样的</strong>” 蛋糕我喜欢？ ⟶ 是 “<strong>她做的</strong>” 那个。这句“小话”像一个形容词，详细描述了 “the cake”。</BreakdownPart>
+                        <BreakdownPart><strong>主句 / 主干句子:</strong> I like the cake. (我喜欢那个蛋糕。)</BreakdownPart>
+                        <BreakdownPart><strong>从句:</strong> ... which she made. (...是她做的。)</BreakdownPart>
+                        <BreakdownPart><strong>分析:</strong> “<strong>什么样的</strong>” 蛋糕我喜欢？ ⟶ 是 “<strong>她做的</strong>” 那个。这个从句像一个形容词，详细描述了 “the cake”。</BreakdownPart>
                     </ExampleBreakdown>
                 </ExampleItem>
             </ExamplesSection>
             
             <RuleSection themeColor={themeColor}>
-                <RuleTitle>💡 从句黄金法则：永远使用陈述句语序</RuleTitle>
+                <RuleTitle>💡 重点规则：问题变成从句时，语序要变</RuleTitle>
                 <p>
-                    这是学习从句最重要的规则！无论主句是问句还是陈述句，<strong>从句内部永远要用陈述句的语序 (主语 + 动词...)</strong>，绝对不能用疑问句的语序 (动词提前)。
+                    当一个问题不再独立提问，而是变成从句放进主句里时，通常不再使用疑问句语序，而要改成普通句子的语序。
                 </p>
                 <ExampleComparison>
                     <ExampleBox isCorrect={false}>
