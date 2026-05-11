@@ -1,62 +1,62 @@
-# Work
+# 🔄 "Work" 的多种用法
 
-## 一句话先记住
+> Synced from web component: `src/components/content/MultiPos/WorkContent.tsx`
 
-`work` 有时是名词，有时是动词。
+## Web Lesson Text
 
-## 两种用法
+### 💡 为什么学这个？
 
-### 1. 名词
+### 📝 主要用法
 
-- I have a lot of work.
-- This work is difficult.
+### 1. 作动词 (Verb)
 
-这里 `work` 是“工作/任务”这个东西，所以是名词。
+### 2. 作名词 (Noun)
 
-### 2. 动词
+"Work" 是一个非常基础且重要的词，它既可以作动词表示“工作”或“运转”，也可以作名词表示“工作内容”或“作品”。理解它的不同角色是造句的基础。
 
-- I work every day.
-- She works in a hospital.
+当 "work" 表示一个动作时，它是动词。意思是“工作”、“学习”或“(机器等)运转”。
 
-这里 `work` 是“工作”这个动作，所以是动词。
+当 "work" 表示一个事物时，它是名词。意思是“工作”、“任务”、“作品”。注意：作为“工作”讲时，它通常是不可数名词。
 
-## 最短提醒
+## Examples
 
-如果它像“东西”，多半是名词。
+1. `I **work** in an office.`
+   - 我在办公室工作。
+2. `My phone doesn't **work**.`
+   - 我的手机坏了（不运转了）。
+3. `I have a lot of **work** to do.`
+   - 我有很多工作要做。
+4. `This painting is a beautiful **work** of art.`
+   - 这幅画是一件美丽的艺术品。
 
-如果它像“动作”，多半是动词。
+## Sentence Builder Practice
 
-## 快速练习 1
+1. Words: `I have to` / `work` / `today`
+   - Correct: `I have to work today`
+   - Chinese: 我今天必须工作。
+2. Words: `He finished` / `his` / `work`
+   - Correct: `He finished his work`
+   - Chinese: 他完成了他的工作。
+3. Words: `My computer` / `doesn't work`
+   - Correct: `My computer doesn't work`
+   - Chinese: 我的电脑坏了。
+4. Words: `She is looking for` / `work`
+   - Correct: `She is looking for work`
+   - Chinese: 她在找工作。
+5. Words: `They` / `work` / `very hard`
+   - Correct: `They work very hard`
+   - Chinese: 他们工作非常努力。
+6. Words: `This is a great` / `work of art`
+   - Correct: `This is a great work of art`
+   - Chinese: 这是一件伟大的艺术品。
+7. Words: `Does this machine` / `work` / `properly?`
+   - Correct: `Does this machine work properly?`
+   - Chinese: 这台机器运转正常吗？
+8. Words: `What kind of` / `work` / `do you do?`
+   - Correct: `What kind of work do you do?`
+   - Chinese: 你做什么样的工作？
 
-判断 `work` 是名词还是动词：
+## Sync Notes
 
-1. My work is easy.
-2. They work at school.
-3. We finished the work.
-4. He works hard.
-
-## 快速练习 2
-
-下面句子里的 `work` 是什么？
-
-1. I need more work.
-   - A. 名词
-   - B. 动词
-
-2. I work at night.
-   - A. 名词
-   - B. 动词
-
-## 答案
-
-### 快速练习 1
-
-1. 名词
-2. 动词
-3. 名词
-4. 动词
-
-### 快速练习 2
-
-1. A
-2. B
+- This doc mirrors the current web lesson content for the component listed above.
+- If you edit this doc, the corresponding web component should be updated afterward.

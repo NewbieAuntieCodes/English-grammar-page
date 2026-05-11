@@ -1,79 +1,56 @@
-# pity 的用法
+# 📖 'pity' 的用法
 
-## 一句话先记住
+> Synced from web component: `src/components/content/Vocabulary/PityUsageContent.tsx`
 
-`pity` 最常见在 `It's a pity that ...` 这个句型里。
+## Web Lesson Text
 
-## 最常见结构
+### 💡 为什么学这个？
 
-### 1. It's a pity that ...
+### 📝 主要用法
 
-- `It's a pity that you missed the game.`
+### 1. 作名词 (Noun)
 
-### 2. What a pity!
+### 2. 作动词 (Verb)
 
-- `What a pity!`
+"pity" 是一个用来表达“同情”、“怜悯”或“遗憾”的词。它既可以作名词，也可以作动词，并且常用于一些固定搭配中。掌握这些用法能让你的情感表达更地道。
 
-### 3. out of pity
+作为名词，"pity" 表示“怜悯，同情”或“憾事”。
 
-- `He helped her out of pity.`
+作为动词，"pity" 表示“同情，怜悯”。
 
-## 例句
+## Examples
 
-1. `It's a pity that he cannot come.`
-2. `What a pity!`
-3. `It is a pity to waste food.`
-4. `She gave him money out of pity.`
+1. `**It's a pity** that you can't join us.`
+   - 你不能加入我们，真是件憾事。
+2. `She **took pity on** the poor child.`
+   - 她很可怜那个贫穷的孩子。(固定搭配: take pity on sb)
+3. `I **felt pity for** him.`
+   - 我为他感到惋惜。(固定搭配: feel pity for sb)
+4. `I **pity** anyone who has to work in such conditions.`
+   - 我同情任何必须在这种条件下工作的人。
 
-## 一个容易错的地方
+## Selector / Fill Practice
 
-不要把 `pity` 乱当形容词用。
+1. `____ that you missed the concert. It was amazing.`
+   - Choices: **It's a pity** / I pity / Take pity
+   - Chinese: 你错过了音乐会，真遗憾。它太棒了。
+2. `I really ____ anyone who has to work on a holiday.`
+   - Choices: **pity** / a pity for / take pity
+   - Chinese: 我真的很同情那些不得不在假日工作的人。
+3. `She ____ the stray cat and gave it some milk.`
+   - Choices: **took pity on** / felt pity that / is a pity
+   - Chinese: 她可怜那只流浪猫，给了它一些牛奶。
+4. `We all ____ the team after they lost the final game.`
+   - Choices: **felt pity for** / are a pity for / pity on
+   - Chinese: 在他们输掉决赛后，我们都为他们感到惋惜。
+5. `____ he didn't get the job he wanted.`
+   - Choices: **It's a pity** / Pity him / Take pity
+   - Chinese: 真遗憾，他没有得到他想要的工作。
+6. `Don't just ____ them; do something to help.`
+   - Choices: **pity** / a pity for / feel pity
+   - Chinese: 不要只是同情他们；做些什么来帮助他们。
 
-比如：
+## Sync Notes
 
-- `It is pity.` 不自然
-- `It is a pity.` 对
-
-## 快速练习 1
-
-选空：
-
-1. It is `____` pity that she was late.  
-   A. a  
-   B. an
-
-2. `____` a pity!  
-   A. What  
-   B. How
-
-3. He helped the old man out of `____`.  
-   A. pity  
-   B. pitiful
-
-## 快速练习 2
-
-把中文写成英文：
-
-1. 真可惜，你没有来。
-2. 多可惜啊！
-3. 浪费时间很可惜。
-
-## 答案
-
-### 快速练习 1
-
-1. A
-2. A
-3. A
-
-### 快速练习 2
-
-1. `It is a pity that you did not come.`
-2. `What a pity!`
-3. `It is a pity to waste time.`
-
-## 小结
-
-学 `pity` 时，先整块记住：
-
-`It's a pity that ...`
+- This doc mirrors the current web lesson content for the component listed above.
+- If you edit this doc, the corresponding web component should be updated afterward.

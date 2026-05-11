@@ -1,95 +1,71 @@
-# 主谓宾 / Subject + Verb + Object
+# 🏗️ Subject + Verb + Object (主谓宾)
 
-## 一句话先记住
+> Synced from web component: `src/components/content/Structures/SVOContent.tsx`
 
-`主谓宾 = 谁 + 做什么 + 对谁 / 对什么。`
+## Web Lesson Text
 
-## 怎么认主谓宾？
+### 💡 为什么学这个？Why learn this?
 
-先看句子里有没有一个明确的动作。
+### 📝 One Example
 
-再问：
+### Sentence Structure Formula
 
-- 谁做这个动作？
-- 动作落在谁 / 什么上？
+这是英语里很基础、很常见的句型。很多短句都可以先用这个结构理解。
 
-如果这 3 部分都很清楚，常常就是主谓宾。
+## Examples
 
-## 例句
+1. `I love English.`
+   - 我喜欢英语。
 
-1. I like music.
-2. She reads books.
-3. They watch TV.
-4. The boy opened the door.
+## Sentence Builder Practice
 
-可以这样看：
+1. Words: `I` / `like` / `apples`
+   - Correct: `I like apples`
+   - Chinese: 我喜欢苹果
+2. Words: `She` / `reads` / `books`
+   - Correct: `She reads books`
+   - Chinese: 她读书
+3. Words: `We` / `play` / `games`
+   - Correct: `We play games`
+   - Chinese: 我们玩游戏
+4. Words: `He` / `loves` / `music`
+   - Correct: `He loves music`
+   - Chinese: 他热爱音乐
+5. Words: `They` / `eat` / `dinner`
+   - Correct: `They eat dinner`
+   - Chinese: 他们吃晚饭
+6. Words: `You` / `drink` / `water`
+   - Correct: `You drink water`
+   - Chinese: 你喝水
+7. Words: `The students` / `speak` / `English`
+   - Correct: `The students speak English`
+   - Chinese: 学生们说英语
 
-- I / like / music
-- She / reads / books
-- They / watch / TV
-- The boy / opened / the door
+## Selector / Fill Practice
 
-## 最短提醒
+1. `I____apples.`
+   - Choices: **like** / am / happy
+   - Chinese: 我喜欢苹果。
+2. `She____books.`
+   - Choices: **reads** / is / reading
+   - Chinese: 她读书。
+3. `____play games.`
+   - Choices: **We** / Is / Are
+   - Chinese: 我们玩游戏。
+4. `He loves____.`
+   - Choices: **music** / beautiful / run
+   - Chinese: 他热爱音乐。
+5. `They____dinner.`
+   - Choices: **eat** / are / is
+   - Chinese: 他们吃晚饭。
+6. `You drink____.`
+   - Choices: **water** / juice / milk
+   - Chinese: 你喝水。
+7. `The students____English.`
+   - Choices: **speak** / learn / write
+   - Chinese: 学生们说英语。
 
-- 中间通常是动作动词
-- 最后那个部分是宾语，不是补语
-- `like`, `read`, `open`, `watch` 这类词很常见
+## Sync Notes
 
-## 一个容易混的对比
-
-`She likes music.`
-
-- `music` 是宾语
-- 因为 `like` 这个动作指向 `music`
-
-`She is happy.`
-
-- `happy` 不是宾语
-- 它是在说明 `She`
-- 所以这是主系表，不是主谓宾
-
-## 快速练习 1
-
-找出下面句子里的主语、谓语、宾语：
-
-1. We study English.
-2. Tom drinks water.
-3. My sister loves cats.
-4. The students clean the room.
-
-## 快速练习 2
-
-下面哪些句子是主谓宾？
-
-1. He likes tea.
-2. She is a teacher.
-3. They play football.
-4. The soup tastes good.
-
-## 答案
-
-### 快速练习 1
-
-1. We / study / English
-2. Tom / drinks / water
-3. My sister / loves / cats
-4. The students / clean / the room
-
-### 快速练习 2
-
-1. 是
-2. 不是
-3. 是
-4. 不是
-
-## 小结
-
-主谓宾最常见。
-
-你只要先抓住：
-
-- 谁
-- 做什么
-- 对谁 / 对什么
-
-就能很快认出来。
+- This doc mirrors the current web lesson content for the component listed above.
+- If you edit this doc, the corresponding web component should be updated afterward.

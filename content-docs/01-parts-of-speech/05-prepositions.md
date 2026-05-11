@@ -1,88 +1,61 @@
-# 介词 / Prepositions
+# 📍 Prepositions (介词)
 
-## 一句话先记住
+> Synced from web component: `src/components/content/PartsOfSpeech/PrepositionsContent.tsx`
 
-`介词是表示关系的小词。`
+## Web Lesson Text
 
-## 怎么认介词？
+### 💡 什么是介词？
 
-先看它是不是在表示：
+### 👀 先做一个小练习
 
-- 地点关系
-- 时间关系
-- 方向关系
+### 🎯 先看最常用的 3 个：in / on / at
 
-最常见的介词有：
+### 🧩 其他常见介词
 
-- in
-- on
-- at
-- under
-- behind
-- with
+### IN
 
-## 例子
+### ON
 
-1. The book is on the desk.
-2. We meet at seven.
-3. The cat is under the chair.
-4. She goes to school by bus.
+### AT
 
-这些介词有：
+介词是放在名词前面的“小连接词”，用来说明**位置**、**时间**、**方向**这些关系。
 
-- on
-- at
-- under
-- by
+你可以先把它理解成：它负责告诉我们“在哪里”“什么时候”“往哪里去”“从哪里来”。
 
-## 最短提醒
+先不要急着分 **in / on / at**。先练习一件事：在句子里把介词找出来。
 
-- 介词后面常跟名词或代词
-- 介词自己通常不能单独表达完整意思
+这 3 个最容易混。先看图，再做题，会比直接背规则更容易记住。
 
-## 快速练习 1
+除了 **in / on / at**，这些也很常用。先认一下，再做题。
 
-找出下面句子里的介词：
+## Selector / Fill Practice
 
-1. The bag is in the box.
-2. He sits beside me.
-3. We play after school.
-4. She is with her mother.
+1. `The cat is on the table.`
+   - Target: `on`
+   - Chinese: 猫在桌子上。
+2. `I go to school.`
+   - Target: `to`
+   - Chinese: 我去上学。
+3. `He lives in London.`
+   - Target: `in`
+   - Chinese: 他住在伦敦。
+4. `The book is under the bed.`
+   - Target: `under`
+   - Chinese: 书在床下。
+5. `We will meet at 8 o'clock.`
+   - Target: `at`
+   - Chinese: 我们八点钟见。
+6. `I am from China.`
+   - Target: `from`
+   - Chinese: 我来自中国。
+7. `We will meet after school.`
+   - Target: `after`
+   - Chinese: 我们放学后见。
+8. `The ball is behind the door.`
+   - Target: `behind`
+   - Chinese: 球在门后面。
 
-## 快速练习 2
+## Sync Notes
 
-下面哪个词是介词？
-
-1. The dog is under the bed.
-   - A. dog
-   - B. under
-   - C. bed
-
-2. I study in the library.
-   - A. study
-   - B. library
-   - C. in
-
-3. She came yesterday.
-   - A. came
-   - B. yesterday
-   - C. 没有介词
-
-## 小结
-
-介词是在说“什么关系”。
-
-## 答案
-
-### 快速练习 1
-
-1. in
-2. beside
-3. after
-4. with
-
-### 快速练习 2
-
-1. B
-2. C
-3. C
+- This doc mirrors the current web lesson content for the component listed above.
+- If you edit this doc, the corresponding web component should be updated afterward.

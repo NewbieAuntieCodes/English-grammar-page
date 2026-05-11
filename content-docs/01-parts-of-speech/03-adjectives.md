@@ -1,80 +1,50 @@
-# 形容词 / Adjectives
+# 🎨 Adjectives (形容词)
 
-## 一句话先记住
+> Synced from web component: `src/components/content/PartsOfSpeech/AdjectivesContent.tsx`
 
-`形容词是描述人或事物“什么样”的词。`
+## Web Lesson Text
 
-## 怎么认形容词？
+### 💡 为什么学形容词？
 
-先问：
+### 📝 Examples
 
-- 它在说明什么样？
-- 它在描述大小、颜色、感觉、外形吗？
+形容词给句子增添色彩和细节！它们用来描述名词，告诉我们事物“怎么样”。使用形容词能让你的英语表达更生动。
 
-如果是在给名词加特点，它通常就是形容词。
+## Examples
 
-## 例子
+1. `A **red** car.`
+   - 一辆红色的车。（red 描述 car 的颜色）
+2. `The music is **loud**.`
+   - 音乐很大声。（loud 描述 music 的状态）
 
-1. a red apple
-2. a big house
-3. The girl is happy.
-4. The question is easy.
+## Selector / Fill Practice
 
-这些形容词有：
+1. `He is a tall boy.`
+   - Target: `tall`
+   - Chinese: 他是一个高个子男孩。
+2. `The sky is blue.`
+   - Target: `blue`
+   - Chinese: 天空是蓝色的。
+3. `This is a red apple.`
+   - Target: `red`
+   - Chinese: 这是一个红苹果。
+4. `I am happy.`
+   - Target: `happy`
+   - Chinese: 我很开心。
+5. `The little cat is cute.`
+   - Target: `little`, `cute`
+   - Chinese: 这只小猫很可爱。
+6. `The beautiful flower is in the garden.`
+   - Target: `beautiful`
+   - Chinese: 美丽的花在花园里。
+7. `This soup is very hot.`
+   - Target: `hot`
+   - Chinese: 这个汤很烫。
+8. `Their new house is spacious.`
+   - Target: `new`, `spacious`
+   - Chinese: 他们的新房子很宽敞。
 
-- red
-- big
-- happy
-- easy
+## Sync Notes
 
-## 最短提醒
-
-- 形容词常放在名词前
-- 也常放在 `be` 动词后
-
-## 快速练习 1
-
-找出下面句子里的形容词：
-
-1. The old man is kind.
-2. I have a new bag.
-3. The soup is hot.
-4. She lives in a small house.
-
-## 快速练习 2
-
-下面哪个词是形容词？
-
-1. He is a smart student.
-   - A. is
-   - B. smart
-   - C. student
-
-2. The flower is beautiful.
-   - A. beautiful
-   - B. flower
-   - C. is
-
-3. They run quickly.
-   - A. run
-   - B. quickly
-   - C. 没有形容词
-
-## 小结
-
-形容词是在说“什么样”。
-
-## 答案
-
-### 快速练习 1
-
-1. old, kind
-2. new
-3. hot
-4. small
-
-### 快速练习 2
-
-1. B
-2. A
-3. C
+- This doc mirrors the current web lesson content for the component listed above.
+- If you edit this doc, the corresponding web component should be updated afterward.

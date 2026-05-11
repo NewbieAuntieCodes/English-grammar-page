@@ -1,98 +1,63 @@
-# 主系表 / Subject + Verb + Complement
+# 🏗️ Subject + Linking Verb + Complement (主系表)
 
-## 一句话先记住
+> Synced from web component: `src/components/content/Structures/SVCContent.tsx`
 
-`主系表 = 谁 / 什么 + 是 / 看起来 / 变得怎样。`
+## Web Lesson Text
 
-## 怎么认主系表？
+### 💡 为什么学这个？Why learn this?
 
-这类句子后面不是动作对象。
+### 🧩 分开看
 
-后面的部分是在说明主语：
+### 👀 一个重点
 
-- 是什么
-- 怎么样
-- 什么状态
+### 📝 One Example
 
-## 常见例句
+### Sentence Structure Formula
 
-1. She is happy.
-2. He is a doctor.
-3. The soup tastes good.
-4. The flowers smell sweet.
+这个句型用来描述主语的状态、身份或特征。比如'我是学生'或'天气很好'。它和SVO一样重要，是表达'是什么'和'怎么样'的关键！
 
-可以这样看：
+不要一起记。先只看**系动词**，再看**表语**。
 
-- She / is / happy
-- He / is / a doctor
-- The soup / tastes / good
-- The flowers / smell / sweet
+**The soup tastes good.** 是主系表，因为 **good** 在描述 **the soup**。
 
-## 常见系动词
+**I taste the soup.** 不是主系表，因为这里是动作“尝”，后面有宾语 **the soup**。
 
-- `be`：am / is / are / was / were
-- `look`
-- `sound`
-- `smell`
-- `taste`
-- `feel`
-- `become`
-- `seem`
+## Examples
 
-## 最短提醒
+1. `The soup tastes delicious.`
+   - 这汤尝起来很美味。
 
-- 表语是在说明主语
-- 表语常是形容词或名词
-- 不要把表语当宾语
+## Sentence Builder Practice
 
-## 一个容易混的对比
+1. Words: `She` / `is` / `happy`
+   - Correct: `She is happy`
+   - Chinese: 她很开心
+2. Words: `They` / `are` / `doctors`
+   - Correct: `They are doctors`
+   - Chinese: 他们是医生
+3. Words: `The food` / `tastes` / `delicious`
+   - Correct: `The food tastes delicious`
+   - Chinese: 食物尝起来很美味
+4. Words: `I` / `feel` / `cold`
+   - Correct: `I feel cold`
+   - Chinese: 我感觉很冷
+5. Words: `It` / `sounds` / `great`
+   - Correct: `It sounds great`
+   - Chinese: 这听起来很棒
+6. Words: `He` / `seems` / `tired`
+   - Correct: `He seems tired`
+   - Chinese: 他看起来很累
+7. Words: `You` / `look` / `beautiful`
+   - Correct: `You look beautiful`
+   - Chinese: 你看起来很漂亮
+8. Words: `The flowers` / `smell` / `sweet`
+   - Correct: `The flowers smell sweet`
+   - Chinese: 花闻起来很香甜
+9. Words: `His story` / `became` / `famous`
+   - Correct: `His story became famous`
+   - Chinese: 他的故事变得有名了
 
-`The flowers smell sweet.`
+## Sync Notes
 
-- `sweet` 是表语
-- 句子是在说花闻起来怎么样
-
-`I smell the flowers.`
-
-- `the flowers` 是宾语
-- 句子是在说“我闻花”
-
-前一句是主系表，后一句是主谓宾。
-
-## 快速练习 1
-
-找出下面句子里的表语：
-
-1. My mother is kind.
-2. The milk smells bad.
-3. They became friends.
-4. You look tired.
-
-## 快速练习 2
-
-判断下面句子是不是主系表：
-
-1. She is busy.
-2. We like movies.
-3. The food tastes great.
-4. Tom opened the box.
-
-## 答案
-
-### 快速练习 1
-
-1. kind
-2. bad
-3. friends
-4. tired
-
-### 快速练习 2
-
-1. 是
-2. 不是
-3. 是
-4. 不是
-
-## 小结
-
-主系表里，最后一个部分是在说明主语，不是在承受动作。
+- This doc mirrors the current web lesson content for the component listed above.
+- If you edit this doc, the corresponding web component should be updated afterward.

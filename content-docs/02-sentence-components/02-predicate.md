@@ -1,80 +1,47 @@
-# 谓语 / Predicate
+# 🏃 Predicate (谓语)
 
-## 一句话先记住
+> Synced from web component: `src/components/content/SentenceComponents/PredicateContent.tsx`
 
-`谓语说明主语在做什么，或者是什么状态。`
+## Web Lesson Text
 
-## 怎么找谓语？
+### 💡 什么是谓语？
 
-先找到主语，再看：
+### 📝 Examples
 
-- 主语做了什么？
-- 主语是什么状态？
+谓语是句子的“心脏”！它说明主语“做什么”或“是什么”。这页先练最重要的部分：**谓语动词**。
 
-回答这两个问题的核心部分，通常就是谓语。
+## Examples
 
-对初学者来说，可以先把“句子里的核心动词”看作谓语。
+1. `The cat **sleeps**.`
+   - 猫在睡觉。（猫在做什么？睡觉。）
+2. `He **is** a student.`
+   - 他是一名学生。（谓语动词是 is。）
 
-## 例子
+## Selector / Fill Practice
 
-1. Tom `[runs]` every day.
-2. She `[is]` happy.
-3. My father `[works]` in a hospital.
-4. The children `[are playing]` outside.
+1. `Birds fly.`
+   - Target: `fly`
+   - Chinese: 鸟儿飞翔。
+2. `She reads a book.`
+   - Target: `reads`
+   - Chinese: 她在读书。
+3. `He is happy.`
+   - Target: `is`
+   - Chinese: 他很开心。
+4. `They play games.`
+   - Target: `play`
+   - Chinese: 他们玩游戏。
+5. `The baby sleeps.`
+   - Target: `sleeps`
+   - Chinese: 宝宝在睡觉。
+6. `The children laughed.`
+   - Target: `laughed`
+   - Chinese: 孩子们笑了。
+7. `I feel tired.`
+   - Target: `feel`
+   - Chinese: 我感觉累了。
 
-## 最短提醒
+## Sync Notes
 
-- 有动作的词，常常是谓语
-- `be` 动词也能作谓语
-- 有时谓语不止一个单词，比如 `is reading`、`are playing`
-
-## 快速练习 1
-
-找出下面句子的谓语：
-
-1. Lily sings well.
-2. My brother is tired.
-3. They are watching TV.
-4. The train arrived late.
-
-## 快速练习 2
-
-下面哪一部分是谓语？
-
-1. The cat is under the chair.
-   - A. The cat
-   - B. is
-   - C. under the chair
-
-2. We play football after school.
-   - A. We
-   - B. play
-   - C. football
-
-3. The students are studying now.
-   - A. are studying
-   - B. The students
-   - C. now
-
-## 小结
-
-谓语是句子的动作中心或状态中心。
-
-## 答案
-
-### 快速练习 1
-
-1. sings
-2. is
-3. are watching
-4. arrived
-
-### 快速练习 2
-
-1. B
-2. B
-3. A
-
-## 对应网页文件
-
-- `src/components/content/SentenceComponents/PredicateContent.tsx`
+- This doc mirrors the current web lesson content for the component listed above.
+- If you edit this doc, the corresponding web component should be updated afterward.

@@ -1,101 +1,33 @@
-# 将来时 / Future Tense
+# 🚀 一般将来时 (Simple Future Tense)
 
-## 一句话先记住
+> Synced from web component: `src/components/content/Tenses/FutureTenseContent.tsx`
 
-`将来时表示将来要发生的事。`
+## Web Lesson Text
 
-## 最常见的两种说法
+### 💡 为什么学这个？
 
-### 1. will
+### 📝 两种核心结构
 
-常用来表示：
+### 📝 例子 (Examples)
 
-- 预测
-- 临时决定
-- 承诺
+### be going to
 
-例子：
+### will
 
-- `I will help you.`
-- `I think it will rain tomorrow.`
+将来时用来谈论【未来】的计划、意图、预测和承诺。英语中最常用 "will" 和 "be going to" 来表达将来，它们有细微的差别。
 
-### 2. be going to
+## Examples
 
-常用来表示：
+1. `We **are going to** travel to Japan next year.`
+   - 我们明年要去日本旅行。(be going to: 预先计划)
+2. `Look at the dark clouds! It**'s going to** rain.`
+   - 看那乌云！快要下雨了。(be going to: 有迹象的预测)
+3. `I think he **will** win the game.`
+   - 我认为他会赢得比赛。(will: 个人观点的预测)
+4. `Don't worry, I **will** help you.`
+   - 别担心，我会帮你的。(will: 承诺)
 
-- 计划
-- 已经有迹象要发生
+## Sync Notes
 
-例子：
-
-- `We are going to visit our teacher next week.`
-- `Look at the clouds. It is going to rain.`
-
-## 最短提醒
-
-- `will` 后面接动词原形
-- `be going to` 里不要忘记 `be`
-
-## 例句
-
-1. `She will call you tonight.`
-2. `I will open the door.`
-3. `They are going to have a party this weekend.`
-4. `It is going to snow.`
-
-## 一个容易错的地方
-
-不要写：
-
-`He will goes there.`
-
-要写：
-
-`He will go there.`
-
-因为 `will` 后面接动词原形。
-
-## 快速练习 1
-
-选空：
-
-1. I think she `____` come tomorrow.  
-   A. will  
-   B. is
-
-2. We `____` play basketball this afternoon.  
-   A. are going to  
-   B. were going to
-
-3. He will `____` you later.  
-   A. calls  
-   B. call
-
-## 快速练习 2
-
-把中文写成英文：
-
-1. 我明天会给你打电话。
-2. 我们下周要去看爷爷奶奶。
-3. 看那片乌云，快要下雨了。
-
-## 答案
-
-### 快速练习 1
-
-1. A
-2. A
-3. B
-
-### 快速练习 2
-
-1. `I will call you tomorrow.`
-2. `We are going to visit our grandparents next week.`
-3. `Look at the dark clouds. It is going to rain.`
-
-## 小结
-
-写将来时最先看两件事：
-
-- 是临时决定还是已有计划
-- 后面是不是用了动词原形
+- This doc mirrors the current web lesson content for the component listed above.
+- If you edit this doc, the corresponding web component should be updated afterward.

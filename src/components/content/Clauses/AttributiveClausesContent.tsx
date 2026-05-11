@@ -62,7 +62,7 @@ const whereWhenBuildData = [
     { words: [{ en: "I'll never forget", cn: '我永不忘记' }, { en: 'the day', cn: '那一天' }, { en: 'when', cn: '(定语)' }, { en: 'we first met', cn: '我们初次见面' }], correct: ["I'll never forget", 'the day', 'when', 'we first met'], chinese: '我永远不会忘记我们初次见面的那一天。' },
     { words: [{ en: 'The park', cn: '公园' }, { en: 'where', cn: '(定语)' }, { en: 'we play', cn: '我们玩耍' }, { en: 'is very big', cn: '很大' }], correct: ['The park', 'where', 'we play', 'is very big'], chinese: '我们玩耍的那个公园很大。' },
     { words: [{ en: 'Summer is', cn: '夏天是' }, { en: 'the season', cn: '季节' }, { en: 'when', cn: '(定语)' }, { en: 'I feel happiest', cn: '我感觉最快乐' }], correct: ['Summer is', 'the season', 'when', 'I feel happiest'], chinese: '夏天是我感觉最快乐的季节。' },
-    { words: [{ en: 'Do you know', cn: '你知道' }, { en: 'a place', cn: '一个地方' }, { en: 'where', cn: '(定语)' }, { en: 'we can eat', cn: '我们可以吃饭' }], correct: ['Do you know', 'a place', 'where', 'we can eat'], chinese: '你知道一个我们可以吃饭的地方吗？' },
+    { words: [{ en: 'Do you know', cn: '你知道' }, { en: 'a place', cn: '一个地方' }, { en: 'where', cn: '(定语)' }, { en: 'we can eat?', cn: '我们可以吃饭' }], correct: ['Do you know', 'a place', 'where', 'we can eat?'], chinese: '你知道一个我们可以吃饭的地方吗？' },
 ];
 
 // --- WHO / WHOM ---
@@ -109,7 +109,7 @@ const whyBuildData = [
     { words: [{ en: 'Tell me', cn: '告诉我' }, { en: 'the reason', cn: '原因' }, { en: 'why', cn: '(定语)' }, { en: 'you were late', cn: '你迟到了' }], correct: ['Tell me', 'the reason', 'why', 'you were late'], chinese: '告诉我你迟到的原因。' },
     { words: [{ en: "I don't know", cn: '我不知道' }, { en: 'the reason', cn: '原因' }, { en: 'why', cn: '(定语)' }, { en: 'she is angry', cn: '她生气' }], correct: ["I don't know", 'the reason', 'why', 'she is angry'], chinese: '我不知道她为什么生气。' },
     { words: [{ en: 'That is', cn: '那是' }, { en: 'the reason', cn: '原因' }, { en: 'why', cn: '(定语)' }, { en: 'I quit my job', cn: '我辞职' }], correct: ['That is', 'the reason', 'why', 'I quit my job'], chinese: '那就是我辞职的原因。' },
-    { words: [{ en: 'Is there', cn: '有' }, { en: 'a reason', cn: '一个原因' }, { en: 'why', cn: '(定语)' }, { en: "you can't come", cn: '你不能来' }], correct: ['Is there', 'a reason', 'why', "you can't come"], chinese: '你有什么不能来的理由吗？' },
+    { words: [{ en: 'Is there', cn: '有' }, { en: 'a reason', cn: '一个原因' }, { en: 'why', cn: '(定语)' }, { en: "you can't come?", cn: '你不能来' }], correct: ['Is there', 'a reason', 'why', "you can't come?"], chinese: '你有什么不能来的理由吗？' },
     { words: [{ en: 'The reason', cn: '原因' }, { en: 'why he failed', cn: '他失败' }, { en: 'is obvious', cn: '是明显的' }], correct: ['The reason', 'why he failed', 'is obvious'], chinese: '他失败的原因很明显。' },
 ];
 
@@ -341,7 +341,7 @@ export const AttributiveClausesContent: React.FC<AttributiveClausesContentProps>
                         <li><strong>who</strong>: 作从句的【主语】 (做动作的人)。例: The man <code>who <strong>lives</strong> here</code>...</li>
                         <li><strong>whom</strong>: 作从句的【宾语】 (接受动作的人)。例: The man <code>whom <strong>I met</strong></code>...</li>
                     </ul>
-                    <p style={{marginTop: '10px'}}><strong>注意:</strong> 在口语中，作宾语时也常用 <strong>who</strong> 代替 <strong>whom</strong>。但在正式写作和介词后面，必须用 <strong>whom</strong>。</p>
+                    <p style={{marginTop: '10px'}}><strong>注意:</strong> 在口语中，作宾语时也常用 <strong>who</strong> 代替 <strong>whom</strong>。正式写作中，介词后用 <strong>whom</strong> 更稳妥。</p>
                 </TipSection>
                 <ExamplesSection>
                     <AnimatedExampleItem themeColor={themeColor}>

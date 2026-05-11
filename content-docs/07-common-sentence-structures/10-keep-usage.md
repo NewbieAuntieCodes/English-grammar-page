@@ -1,79 +1,62 @@
-# keep 的用法 / keep
+# 📖 'keep' 的用法
 
-## 一句话先记住
+> Synced from web component: `src/components/content/CommonStructures/KeepUsageContent.tsx`
 
-`keep` 常见意思是“保持”或“继续”。
+## Web Lesson Text
 
-## 最常见的两种结构
+### 💡 为什么学这个？
 
-### 1. `keep + 形容词`
+### 📝 主要结构
 
-- `Keep quiet.`
-- `Please keep the door open.`
+### 1. keep + V-ing (继续/反复做某事)
 
-### 2. `keep + doing`
+### 2. keep + 宾语 + 形容词 (使...保持...)
 
-- `He kept talking.`
-- `She kept smiling.`
+### 3. keep + 宾语 + from + V-ing (阻止...做某事)
 
-## 例句
+### 4. keep + 宾语 (保留)
 
-1. `Please keep calm.`
-2. `Keep the window closed.`
-3. `He kept asking the same question.`
-4. `They kept working after dinner.`
+"keep" 是一个非常灵活的动词，核心意思是“保持”。它可以表示动作的持续、状态的维持，甚至可以表示“阻止”。掌握它的核心句型对于日常交流至关重要。
 
-## 一个容易错的地方
+## Examples
 
-不要写：
+1. `He **kept talking** about his trip.`
+   - 他不停地谈论他的旅行。
+2. `Please **keep the room clean**.`
+   - 请保持房间干净。
+3. `The heavy rain **kept us from going out**.`
+   - 大雨使我们无法外出。
+4. `You can **keep the change**.`
+   - 不用找零了。（保留零钱）
 
-`He kept to talk.`
+## Sentence Builder Practice
 
-这里更自然的是：
+1. Words: `The baby` / `kept crying`
+   - Correct: `The baby kept crying`
+   - Chinese: 那个婴儿不停地哭。
+2. Words: `Please` / `keep the door` / `closed`
+   - Correct: `Please keep the door closed`
+   - Chinese: 请保持门关闭。
+3. Words: `The noise` / `kept me from` / `sleeping`
+   - Correct: `The noise kept me from sleeping`
+   - Chinese: 噪音使我无法入睡。
+4. Words: `You can` / `keep this book`
+   - Correct: `You can keep this book`
+   - Chinese: 你可以留下这本书。
+5. Words: `She` / `keeps her desk` / `tidy`
+   - Correct: `She keeps her desk tidy`
+   - Chinese: 她保持书桌整洁。
+6. Words: `He` / `keeps asking` / `the same question`
+   - Correct: `He keeps asking the same question`
+   - Chinese: 他不停地问同一个问题。
+7. Words: `What kept you from` / `calling me?`
+   - Correct: `What kept you from calling me?`
+   - Chinese: 是什么让你没给我打电话？
+8. Words: `Keep the change`
+   - Correct: `Keep the change`
+   - Chinese: 零钱不用找了。
 
-`He kept talking.`
+## Sync Notes
 
-## 快速练习 1
-
-选空：
-
-1. Please keep `____`.  
-   A. quiet  
-   B. quietly
-
-2. She kept `____` all night.  
-   A. study  
-   B. studying
-
-3. Keep the door `____`.  
-   A. open  
-   B. opening
-
-## 快速练习 2
-
-把中文写成英文：
-
-1. 请保持安静。
-2. 他一直在笑。
-3. 请让灯一直开着。
-
-## 答案
-
-### 快速练习 1
-
-1. A
-2. B
-3. A
-
-### 快速练习 2
-
-1. `Please keep quiet.`
-2. `He kept laughing.`
-3. `Please keep the light on.`
-
-## 小结
-
-看到 `keep`，常先想两个模板：
-
-- `keep + adj.`
-- `keep + doing`
+- This doc mirrors the current web lesson content for the component listed above.
+- If you edit this doc, the corresponding web component should be updated afterward.

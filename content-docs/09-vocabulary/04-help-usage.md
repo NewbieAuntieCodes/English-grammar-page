@@ -1,84 +1,64 @@
-# help 的用法
+# 📖 'help' 的用法
 
-## 一句话先记住
+> Synced from web component: `src/components/content/Vocabulary/HelpUsageContent.tsx`
 
-`help` 后面常见两种结构：`help sb. do sth.` 和 `help sb. with sth.`。
+## Web Lesson Text
 
-## 最常见结构
+### 💡 为什么学这个？
 
-### 1. help sb. do sth.
+### 📝 主要结构
 
-- `Can you help me carry this box?`
-- `She helped me solve the problem.`
+### 1. help sb (to) do sth (帮助某人做某事)
 
-### 2. help sb. with sth.
+### 2. help sb with sth (在某方面帮助某人)
 
-- `He helped me with my homework.`
-- `Can I help you with your bag?`
+### 3. can't help doing sth (情不自禁做某事)
 
-### 3. help (to) do sth.
+"help" 是一个非常基础且高频的动词，但它的用法却很灵活。掌握它的几种核心句型，比如 help sb (to) do, help sb with sth, 和 can't help doing，能让你的求助、提供帮助和描述情感的表达更地道、更准确。
 
-- `Exercise helps improve health.`
-- `This guide helps to save time.`
+这是最常见的用法。动词 `do` 前面的 `to` 可以省略，尤其是在口语中。
 
-## 例句
+当帮助的内容是一个名词（比如一个任务或学科）时，使用这个结构。
 
-1. `Please help me open the door.`
-2. `She helped her brother with math.`
-3. `Good habits help us grow.`
-4. `This app helps people learn English.`
+这是一个固定短语，意思是“忍不住做某事”。注意后面跟的是动名词 (v-ing)。
 
-## 一个容易错的地方
+## Examples
 
-不要把两个结构乱拼在一起。
+1. `Can you **help** me **(to) carry** this box?`
+   - 你能帮我搬这个箱子吗？
+2. `My brother **helped** me **with my homework**.`
+   - 我哥哥帮我做作业。
+3. `I **can't help laughing** when I see that video.`
+   - 看到那个视频我就忍不住想笑。
 
-比如：
+## Sentence Builder Practice
 
-- `help me with carry the box` 不对
-- `help me carry the box` 对
-- `help me with the box` 也对
+1. Words: `Can you` / `help me` / `carry this bag?`
+   - Correct: `Can you help me carry this bag?`
+   - Chinese: 你能帮我拿这个包吗？
+2. Words: `My teacher` / `helped me` / `with my math`
+   - Correct: `My teacher helped me with my math`
+   - Chinese: 我的老师在数学上帮助了我。
+3. Words: `I can't help` / `laughing` / `at the joke`
+   - Correct: `I can't help laughing at the joke`
+   - Chinese: 听到那个笑话我忍不住笑了。
+4. Words: `He helped` / `his friend` / `to move` / `the table`
+   - Correct: `He helped his friend to move the table`
+   - Chinese: 他帮助他的朋友移动桌子。
+5. Words: `Let me` / `help you` / `with your luggage`
+   - Correct: `Let me help you with your luggage`
+   - Chinese: 让我帮你拿行李吧。
+6. Words: `She couldn't help` / `crying` / `during the movie`
+   - Correct: `She couldn't help crying during the movie`
+   - Chinese: 看电影时她忍不住哭了。
+7. Words: `Reading can help you` / `improve` / `your vocabulary`
+   - Correct: `Reading can help you improve your vocabulary`
+   - Chinese: 阅读可以帮助你提高词汇量。
+8. Words: `Could you please` / `help me` / `with the dishes?`
+   - Correct: `Could you please help me with the dishes?`
+   - Chinese: 你能帮我洗碗吗？
 
-## 快速练习 1
+## Sync Notes
 
-选空：
-
-1. Can you help me `____` this problem?  
-   A. solve  
-   B. with solve
-
-2. She helped me `____` my report.  
-   A. with  
-   B. do
-
-3. Reading helps us `____` more clearly.  
-   A. think  
-   B. with think
-
-## 快速练习 2
-
-把中文写成英文：
-
-1. 你能帮我搬这张桌子吗？
-2. 他帮我做作业。
-3. 运动有助于保持健康。
-
-## 答案
-
-### 快速练习 1
-
-1. A
-2. A
-3. A
-
-### 快速练习 2
-
-1. `Can you help me move this desk?`
-2. `He helped me with my homework.`
-3. `Exercise helps keep people healthy.`
-
-## 小结
-
-见到 `help` 时，先决定：
-
-- 后面接动作
-- 还是接事情
+- This doc mirrors the current web lesson content for the component listed above.
+- If you edit this doc, the corresponding web component should be updated afterward.

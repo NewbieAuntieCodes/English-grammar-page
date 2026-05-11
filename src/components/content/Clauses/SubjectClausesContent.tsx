@@ -269,7 +269,7 @@ export const SubjectClausesContent: React.FC<SubjectClausesContentProps> = ({ on
                 <p>用 <strong>whether</strong> 来引导一个表示“是否”的从句作主语。同样，也可以用 <strong>It</strong> 作形式主语。</p>
                  <TipSection themeColor={themeColor}>
                     <SectionTitle>💡 小贴士：Whether vs. If</SectionTitle>
-                    <p>在引导主语从句时，只能用 <strong>whether</strong>，不能用 <strong>if</strong>。 If 不能放在句首引导主语从句。</p>
+                    <p>主语从句放在句首时，通常用 <strong>whether</strong>，不用 <strong>if</strong>。</p>
                 </TipSection>
                 <ExamplesSection>
                     <AnimatedExampleItem themeColor={themeColor}>

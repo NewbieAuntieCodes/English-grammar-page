@@ -1,82 +1,80 @@
-# 主语 / Subject
+# 👤 Subject (主语)
 
-## 一句话先记住
+> Synced from web component: `src/components/content/SentenceComponents/SubjectContent.tsx`
 
-`主语就是句子里“谁”或者“什么”。`
+## Web Lesson Text
 
-## 怎么找主语？
+### 💡 什么是主语？
 
-先看句子里：
+### 📝 充当主语的常见形式
 
-- 谁做了这个动作？
-- 什么处在这个状态？
+### 🎯 做题时怎么判断？
 
-能回答这个问题的，通常就是主语。
+### 1. 名词 (Noun)
 
-## 例子
+### 2. 代词 (Pronoun)
 
-1. `[Tom]` runs every day.
-2. `[The dog]` is hungry.
-3. `[My sister]` likes music.
-4. `[The little girl in red]` is singing.
+### 3. 动名词 (Gerund)
 
-注意：
+### 4. 不定式 (Infinitive)
 
-- 主语不一定只有一个词
-- 有时候主语是一整个短语
+### 5. 名词性从句 (Noun Clause)
 
-## 最短提醒
+主语是句子的“主角”！它告诉我们句子在谈论“谁”或“什么”，是动作的发出者。**主语通常由名词或起名词作用的成分充当。** 找到主语是理解句子的第一步。
 
-- 主语常在句首
-- 但重点不是“在前面”，重点是“谁 / 什么”
+要特别注意：语法里常常区分**完整主语**和**主语中心词**。比如 **The cat sleeps.** 里面，**The cat** 整个都是主语，**cat** 只是主语里的核心名词。
 
-## 快速练习 1
+动词的-ing形式也可以像名词一样，充当句子的主语，表示一个“动作”或“事情”。
 
-找出下面句子的主语：
+`to + 动词原形` 也可以作主语，但更常见的是用 `It` 作形式主语将不定式后置。
 
-1. Lucy plays tennis.
-2. The old man walks slowly.
-3. My parents are at home.
-4. The blue car is very expensive.
+一个完整的句子（由 `what`, `that`, `whether` 等引导）也可以充当另一个大句子的主语。
 
-## 快速练习 2
+这一页练习默认找的是**完整主语**，不是只点中心词。
 
-下面哪一部分是主语？
+所以像 **The dog barks.** 要点 **The dog**；**My teacher helps me.** 要点 **My teacher**；如果主语本身是一个短语或从句，也要整块找出来。
 
-1. The boy opened the window.
-   - A. The boy
-   - B. opened
-   - C. the window
+## Examples
 
-2. The students in Class 3 are reading.
-   - A. The students in Class 3
-   - B. are reading
-   - C. Class 3
+1. `**The cat** sleeps.`
+   - 猫在睡觉。（谁在睡觉？是 The cat。这里整个 The cat 是主语，cat 是中心词。）
+2. `**He** loves music.`
+   - 他热爱音乐。（谁热爱音乐？他。）
+3. `**Reading** is fun.`
+   - 阅读很有趣。（什么很有趣？阅读这件事。）
+4. `**To learn a new language** takes time.`
+   - 学习一门新语言需要时间。（什么需要时间？学习一门新语言这件事。）
+5. `**What he said** is not true.`
+   - 他所说的话不是真的。（什么不是真的？他所说的话。）
 
-3. My new teacher is kind.
-   - A. kind
-   - B. is
-   - C. My new teacher
+## Selector / Fill Practice
 
-## 小结
+1. `The dog barks.`
+   - Target: `The`, `dog`
+   - Chinese: 狗在叫。
+2. `She is a doctor.`
+   - Target: `She`
+   - Chinese: 她是一名医生。
+3. `Reading is fun.`
+   - Target: `Reading`
+   - Chinese: 阅读很有趣。
+4. `My teacher helps me.`
+   - Target: `My`, `teacher`
+   - Chinese: 我的老师帮助我。
+5. `To swim is good exercise.`
+   - Target: `To`, `swim`
+   - Chinese: 游泳是很好的锻炼。
+6. `We play football.`
+   - Target: `We`
+   - Chinese: 我们踢足球。
+7. `What he said is a secret.`
+   - Target: `What`, `he`, `said`
+   - Chinese: 他所说的是个秘密。
+8. `The sun shines.`
+   - Target: `The`, `sun`
+   - Chinese: 太阳在照耀。
 
-主语就是句子在说“谁”或者“什么”。
+## Sync Notes
 
-## 答案
-
-### 快速练习 1
-
-1. Lucy
-2. The old man
-3. My parents
-4. The blue car
-
-### 快速练习 2
-
-1. A
-2. A
-3. C
-
-## 对应网页文件
-
-- `src/components/content/SentenceComponents/SubjectContent.tsx`
+- This doc mirrors the current web lesson content for the component listed above.
+- If you edit this doc, the corresponding web component should be updated afterward.

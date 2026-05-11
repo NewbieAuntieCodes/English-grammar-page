@@ -72,7 +72,7 @@ export const OneOfUsageContent: React.FC<OneOfUsageContentProps> = ({ onBack, th
 
             <WhyLearnSection themeColor={themeColor}>
                 <SectionTitle>💡 为什么学这个？</SectionTitle>
-                <p>"one of" 是一个非常高频的短语，用于从一个群体中挑出其中一个。它有一个核心语法规则：<strong>"one of" 后面必须跟【复数名词】</strong>，但整个短语作主语时，谓语动词通常用【单数】形式。</p>
+                <p>"one of" 是一个非常高频的短语，用于从一个群体中挑出其中一个。<strong>one of + 复数名词</strong> 是最常见结构；整个短语作主语时，谓语动词通常用【单数】形式。</p>
             </WhyLearnSection>
 
             <ExamplesSection>

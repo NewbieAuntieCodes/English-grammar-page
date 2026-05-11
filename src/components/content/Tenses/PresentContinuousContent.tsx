@@ -66,7 +66,7 @@ export const PresentContinuousContent: React.FC<PresentContinuousContentProps> =
 
             <WhyLearnSection themeColor={themeColor}>
                 <SectionTitle>💡 为什么学这个？</SectionTitle>
-                <p>现在进行时用来描述【现在正在发生】的动作。如果你想说 “我正在吃饭” 或 “天正在下雨”，就必须用这个时态。它让你的描述充满动感！</p>
+                <p>现在进行时用来描述【现在正在发生】的动作。比如 “我正在吃饭” 或 “天正在下雨”，通常会用这个时态。</p>
             </WhyLearnSection>
 
             <FormulaSection themeColor={themeColor}>

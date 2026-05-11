@@ -1,82 +1,62 @@
-# 介词 with 的用法 / with
+# 🤝 介词 'with' 的用法
 
-## 一句话先记住
+> Synced from web component: `src/components/content/CommonStructures/WithUsageContent.tsx`
 
-`with` 最常见是“和……一起”或“带着……”。
+## Web Lesson Text
 
-## 最常见的几种意思
+### 💡 为什么学这个？
 
-### 1. 和……一起
+### 📝 主要用法
 
-- `I went there with my sister.`
+### 1. 表示伴随 (Accompaniment)
 
-### 2. 带着 / 有
+### 2. 表示拥有 (Possession)
 
-- `a girl with long hair`
-- `a house with a garden`
+### 3. 表示工具 (Instrument)
 
-### 3. 用某种工具
+### 4. 表示方式 (Manner)
 
-- `write with a pen`
+"with" 是一个非常灵活和常用的介词。它可以表示“和...一起”（伴随）、“带有”（拥有）、“用...”（工具）或描述动作的方式。掌握它能让你的句子内容更丰富！
 
-## 例句
+## Examples
 
-1. `She lives with her parents.`
-2. `The boy with glasses is my cousin.`
-3. `I cut the paper with scissors.`
-4. `He smiled with confidence.`
+1. `I go to school **with my friends**.`
+   - 我和我的朋友们一起去上学。
+2. `She is a girl **with long hair**.`
+   - 她是一个长头发的女孩。
+3. `He writes **with a pen**.`
+   - 他用钢笔写字。
+4. `She sang **with a smile**.`
+   - 她微笑着唱歌。
 
-## 一个容易错的地方
+## Sentence Builder Practice
 
-不要把“用某种交通方式”都写成 `with`。
+1. Words: `It is a house` / `with` / `a big garden`
+   - Correct: `It is a house with a big garden`
+   - Chinese: 这是一个带有大花园的房子。
+2. Words: `I drink coffee` / `with` / `milk and sugar`
+   - Correct: `I drink coffee with milk and sugar`
+   - Chinese: 我喝咖啡加牛奶和糖。
+3. Words: `He opened` / `the door` / `with a key`
+   - Correct: `He opened the door with a key`
+   - Chinese: 他用钥匙打开了门。
+4. Words: `She looked at me` / `with surprise`
+   - Correct: `She looked at me with surprise`
+   - Chinese: 她惊讶地看着我。
+5. Words: `The man` / `with a beard` / `is my uncle`
+   - Correct: `The man with a beard is my uncle`
+   - Chinese: 那个有胡子的男人是我的叔叔。
+6. Words: `He went on a trip` / `with his family`
+   - Correct: `He went on a trip with his family`
+   - Chinese: 他和家人一起去旅行了。
+7. Words: `She filled` / `the bottle` / `with water`
+   - Correct: `She filled the bottle with water`
+   - Chinese: 她用水装满了瓶子。
+8. Words: `He spoke` / `with confidence`
+   - Correct: `He spoke with confidence`
+   - Chinese: 他自信地说话。
 
-比如：
+## Sync Notes
 
-- `by bus` 对
-- `with bus` 不对
-
-## 快速练习 1
-
-选空：
-
-1. I had lunch `____` my friend.  
-   A. with  
-   B. of
-
-2. The man `____` a black bag is a teacher.  
-   A. with  
-   B. by
-
-3. She wrote the letter `____` a pen.  
-   A. with  
-   B. of
-
-## 快速练习 2
-
-把中文写成英文：
-
-1. 我跟妈妈一起去了。
-2. 那个戴眼镜的女孩是 Lucy。
-3. 他用铅笔画画。
-
-## 答案
-
-### 快速练习 1
-
-1. A
-2. A
-3. A
-
-### 快速练习 2
-
-1. `I went with my mother.`
-2. `The girl with glasses is Lucy.`
-3. `He draws with a pencil.`
-
-## 小结
-
-`with` 很常见，但核心感觉很简单：
-
-- 一起
-- 带着
-- 用
+- This doc mirrors the current web lesson content for the component listed above.
+- If you edit this doc, the corresponding web component should be updated afterward.

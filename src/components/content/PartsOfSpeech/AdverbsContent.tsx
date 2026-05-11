@@ -26,6 +26,42 @@ const UsageType = styled.h3`
     margin-bottom: 10px;
 `;
 
+const OrderCard = styled.div`
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-left: 4px solid #3b82f6;
+    border-radius: 8px;
+    padding: 14px 16px;
+    margin: 0 0 18px 0;
+    color: #2d3748;
+`;
+
+const OrderTitle = styled.div`
+    font-weight: 700;
+    margin-bottom: 10px;
+`;
+
+const OrderExamples = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 10px;
+`;
+
+const OrderPill = styled.span`
+    background: #ffffff;
+    border: 1px solid #dbeafe;
+    border-radius: 999px;
+    color: #1e40af;
+    font-weight: 700;
+    padding: 6px 10px;
+`;
+
+const OrderNote = styled.div`
+    color: #4a5568;
+    line-height: 1.5;
+`;
+
 const practiceDataModifyingVerbs = [
     { sentence: 'He runs fast.', targetWords: ['fast'], prompt: '副词 (Adverb)', chinese: "他跑得很快。" },
     { sentence: 'She sings well.', targetWords: ['well'], prompt: '副词 (Adverb)', chinese: "她唱得很好。" },
@@ -88,6 +124,15 @@ export const AdverbsContent: React.FC<AdverbsContentProps> = ({ onBack, themeCol
             <p style={{ color: '#4a5568', margin: '0 0 15px 5px' }}>
                 这是副词最常见的用法。它们告诉我们动作发生的方式、时间、地点或频率。
             </p>
+            <OrderCard>
+                <OrderTitle>slowly 常放在动作后面。</OrderTitle>
+                <OrderExamples>
+                    <OrderPill>walk slowly</OrderPill>
+                    <OrderPill>speak slowly</OrderPill>
+                    <OrderPill>drive slowly</OrderPill>
+                </OrderExamples>
+                <OrderNote>如果句子里还有地点，地点放后面：drive slowly here。</OrderNote>
+            </OrderCard>
             <ExamplesSection style={{margin: '0'}}>
                 <ExampleItem themeColor={themeColor} isExpanded={activeExample === 'ex1'} onClick={() => setActiveExample(p => p === 'ex1' ? null : 'ex1')}>
                     <ExampleHeader>

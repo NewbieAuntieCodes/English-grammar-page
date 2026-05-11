@@ -20,6 +20,7 @@ import { CommonStructuresContent } from '../content/CommonStructures/CommonStruc
 import { VocabularyContent } from '../content/Vocabulary/VocabularyContent';
 import { PronunciationContent } from '../content/Pronunciation/PronunciationContent';
 import { PosComponentsBridgeContent } from '../content/Bridge/PosComponentsBridgeContent';
+import ContentPreview from '../ContentPreview';
 
 // --- Icon Map ---
 const iconMap: { [key: string]: React.ReactNode } = {
@@ -122,10 +123,12 @@ const GrammarApp = () => {
 
 // --- Encapsulating Wrapper Component for Integration ---
 const GrammarIsland = () => {
+    const showContentPreview = typeof window !== 'undefined' && new URLSearchParams(window.location.search).has('content-preview');
+
     return (
         <>
             <GlobalStyle />
-            <GrammarApp />
+            {showContentPreview ? <ContentPreview /> : <GrammarApp />}
         </>
     );
 };

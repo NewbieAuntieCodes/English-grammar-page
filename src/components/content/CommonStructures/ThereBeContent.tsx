@@ -57,12 +57,12 @@ const OptionalPart = styled(Part)`
 const practiceData = [
     { words: [{ en: 'There is', cn: '有' }, { en: 'a cat', cn: '一只猫' }, { en: 'on the roof', cn: '在屋顶上' }], correct: ['There is', 'a cat', 'on the roof'], chinese: '屋顶上有一只猫。' },
     { words: [{ en: 'There are', cn: '有' }, { en: 'three books', cn: '三本书' }, { en: 'in my bag', cn: '在我的包里' }], correct: ['There are', 'three books', 'in my bag'], chinese: '我的包里有三本书。' },
-    { words: [{ en: 'Is there', cn: '有吗' }, { en: 'a bank', cn: '一家银行' }, { en: 'near here', cn: '在这附近' }], correct: ['Is there', 'a bank', 'near here'], chinese: '这附近有银行吗？' },
+    { words: [{ en: 'Is there', cn: '有吗' }, { en: 'a bank', cn: '一家银行' }, { en: 'near here?', cn: '在这附近' }], correct: ['Is there', 'a bank', 'near here?'], chinese: '这附近有银行吗？' },
     { words: [{ en: 'There is', cn: '有' }, { en: 'a big tree', cn: '一棵大树' }, { en: 'in front of the house', cn: '在房子前面' }], correct: ['There is', 'a big tree', 'in front of the house'], chinese: '房子前面有一棵大树。' },
     { words: [{ en: 'There are', cn: '有' }, { en: 'some flowers', cn: '一些花' }, { en: 'in the vase', cn: '在花瓶里' }], correct: ['There are', 'some flowers', 'in the vase'], chinese: '花瓶里有一些花。' },
     { words: [{ en: 'There is no', cn: '没有' }, { en: 'milk', cn: '牛奶' }, { en: 'in the fridge', cn: '在冰箱里' }], correct: ['There is no', 'milk', 'in the fridge'], chinese: '冰箱里没有牛奶了。' },
     { words: [{ en: 'There were', cn: '曾有' }, { en: 'many people', cn: '很多人' }, { en: 'at the party', cn: '在派对上' }], correct: ['There were', 'many people', 'at the party'], chinese: '昨晚派对上有很多人。' },
-    { words: [{ en: 'Are there', cn: '有吗' }, { en: 'any questions', cn: '任何问题' }], correct: ['Are there', 'any questions'], chinese: '有什么问题吗？' },
+    { words: [{ en: 'Are there', cn: '有吗' }, { en: 'any questions?', cn: '任何问题' }], correct: ['Are there', 'any questions?'], chinese: '有什么问题吗？' },
 ];
 
 export const ThereBeContent: React.FC<ThereBeContentProps> = ({ onBack, themeColor, onCompleteAll }) => {

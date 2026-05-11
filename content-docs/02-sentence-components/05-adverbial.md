@@ -1,79 +1,49 @@
-# 状语 / Adverbial
+# 🌶️ Adverbial (状语)
 
-## 一句话先记住
+> Synced from web component: `src/components/content/SentenceComponents/AdverbialContent.tsx`
 
-`状语是在补充动作发生的时间、地点、方式、原因等信息。`
+## Web Lesson Text
 
-## 怎么找状语？
+### 💡 什么是状语？
 
-找到动作以后，再问：
+### 📝 Examples
 
-- 什么时候？
-- 在哪里？
-- 怎么做？
-- 为什么？
+状语是句子的“调味品”！它用来修饰动词、形容词、副词或整个句子，告诉我们动作发生的**时间(when)**、**地点(where)**、**方式(how)**等。它让句子信息更完整。
 
-回答这些问题的部分，常常就是状语。
+## Examples
 
-## 例子
+1. `He runs **quickly**.`
+   - 他跑得很快。（怎样跑？快快地。）
+2. `I will go **tomorrow**.`
+   - 我明天去。（什么时候去？明天。）
+3. `She lives **here**.`
+   - 她住在这里。（住在哪里？这里。）
 
-1. He runs `[every morning]`.
-2. She sings `[beautifully]`.
-3. We study `[in the classroom]`.
-4. Tom stayed home `[because it rained]`.
+## Selector / Fill Practice
 
-## 最短提醒
+1. `She sings beautifully.`
+   - Target: `beautifully`
+   - Chinese: 她唱歌唱得很美。
+2. `He works hard.`
+   - Target: `hard`
+   - Chinese: 他工作很努力。
+3. `They will meet tomorrow.`
+   - Target: `tomorrow`
+   - Chinese: 他们明天见面。
+4. `I got up early.`
+   - Target: `early`
+   - Chinese: 我起得很早。
+5. `Please speak slowly.`
+   - Target: `slowly`
+   - Chinese: 请慢慢说。
+6. `I often walk to school.`
+   - Target: `often`
+   - Chinese: 我经常步行上学。
+7. `They are playing outside.`
+   - Target: `outside`
+   - Chinese: 他们在外面玩。
 
-- 状语常常修饰动词
-- 状语可以是一个词，也可以是一整个短语或从句
+## Sync Notes
 
-## 快速练习 1
-
-找出下面句子里的状语：
-
-1. They arrived late.
-2. I read in the library.
-3. She went home after school.
-4. He spoke slowly.
-
-## 快速练习 2
-
-下面哪一部分是状语？
-
-1. The boy plays football after class.
-   - A. The boy
-   - B. plays
-   - C. after class
-
-2. She danced beautifully.
-   - A. danced
-   - B. beautifully
-   - C. She
-
-3. We met at the station.
-   - A. at the station
-   - B. met
-   - C. We
-
-## 小结
-
-状语是在补充动作发生的细节。
-
-## 答案
-
-### 快速练习 1
-
-1. late
-2. in the library
-3. after school
-4. slowly
-
-### 快速练习 2
-
-1. C
-2. B
-3. A
-
-## 对应网页文件
-
-- `src/components/content/SentenceComponents/AdverbialContent.tsx`
+- This doc mirrors the current web lesson content for the component listed above.
+- If you edit this doc, the corresponding web component should be updated afterward.

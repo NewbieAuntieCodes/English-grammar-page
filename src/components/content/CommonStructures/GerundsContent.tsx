@@ -92,7 +92,7 @@ const prepositionObjectPracticeData = [
     { words: [{ en: 'I look forward to', cn: '我期待' }, { en: 'seeing', cn: '见到' }, { en: 'you', cn: '你' }], correct: ['I look forward to', 'seeing', 'you'], chinese: '我期待见到你。' },
     { words: [{ en: 'He left', cn: '他离开了' }, { en: 'without saying', cn: '没有说' }, { en: 'goodbye', cn: '再见' }], correct: ['He left', 'without saying', 'goodbye'], chinese: '他一声不响地走了。' },
     { words: [{ en: 'She insisted on', cn: '她坚持' }, { en: 'paying for', cn: '支付' }, { en: 'the meal', cn: '这顿饭' }], correct: ['She insisted on', 'paying for', 'the meal'], chinese: '她坚持要付饭钱。' },
-    { words: [{ en: 'How about', cn: '...怎么样?' }, { en: 'taking', cn: '进行' }, { en: 'a break', cn: '休息' }], correct: ['How about', 'taking', 'a break'], chinese: '休息一下怎么样？' },
+    { words: [{ en: 'How about', cn: '...怎么样?' }, { en: 'taking', cn: '进行' }, { en: 'a break?', cn: '休息' }], correct: ['How about', 'taking', 'a break?'], chinese: '休息一下怎么样？' },
 ];
 
 const complementPracticeData = [

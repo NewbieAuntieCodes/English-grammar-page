@@ -1,78 +1,62 @@
-# as 的用法 / as
+# 🤝 介词/连词 'as' 的用法
 
-## 一句话先记住
+> Synced from web component: `src/components/content/CommonStructures/AsUsageContent.tsx`
 
-`as` 是一个很常见的功能词，常见意思有“作为”“像……一样”“当……时候”“因为”。
+## Web Lesson Text
 
-## 先学最常见的 3 个
+### 💡 为什么学这个？
 
-### 1. 作为
+### 📝 主要用法
 
-- `He works as a teacher.`
+### 1. 表示身份“作为” (In the role of)
 
-### 2. 当……时候
+### 2. 表示时间“当...时候” (Time)
 
-- `As I was leaving, he called me.`
+### 3. 表示原因“因为” (Reason)
 
-### 3. 因为
+### 4. 表示方式/比较“像...一样” (Manner/Comparison)
 
-- `As it was raining, we stayed home.`
+"as" 是一个极其多功能的词。它可以表示“作为”（身份）、“当...时候”（时间）、“因为”（原因）和“像...一样”（方式/比较）。掌握它的不同用法能让你更灵活地组织句子。
 
-## 例句
+## Examples
 
-1. `She used a box as a table.`
-2. `As I grew older, I became quieter.`
-3. `As he was sick, he didn't come.`
-4. `He is famous as a writer.`
+1. `He works **as a teacher**.`
+   - 他以教师的身份工作。
+2. `**As** I was leaving, the phone rang.`
+   - 我正要离开时，电话响了。
+3. `**As** it was getting late, we went home.`
+   - 因为天色已晚，我们就回家了。
+4. `Do **as** I tell you.`
+   - 照我告诉你的去做。
 
-## 一个容易错的地方
+## Selector / Fill Practice
 
-不要把所有的 `as` 都看成“像……一样”。
+1. `She works ____ a doctor.`
+   - Choices: **as** / like / for
+   - Chinese: 她是一名医生。
+2. `____ it was raining, we stayed indoors.`
+   - Choices: **As** / When / Since
+   - Chinese: 因为下雨了，我们待在室内。
+3. `He arrived just ____ I was leaving.`
+   - Choices: **as** / when / while
+   - Chinese: 我正要离开时，他到了。
+4. `Please do ____ I say.`
+   - Choices: **as** / like / what
+   - Chinese: 请照我说的做。
+5. `He used his coat ____ a blanket.`
+   - Choices: **as** / like / for
+   - Chinese: 他把外套当作毯子用。
+6. `____ he grew older, he became wiser.`
+   - Choices: **As** / When / While
+   - Chinese: 随着年龄的增长，他变得更聪明了。
+7. `I can't run ____ fast as you.`
+   - Choices: **as** / so / very
+   - Chinese: 我跑得没你快。
+8. `____ you know, the meeting is cancelled.`
+   - Choices: **As** / Like / What
+   - Chinese: 如你所知，会议取消了。
 
-它有时是：
+## Sync Notes
 
-- 作为
-- 当……时候
-- 因为
-
-要看整句。
-
-## 快速练习 1
-
-判断下面 `as` 的意思：
-
-1. He works as a driver.
-2. As I opened the door, the phone rang.
-3. As it was late, we left.
-
-## 快速练习 2
-
-把中文写成英文：
-
-1. 她作为护士工作。
-2. 当我走进房间时，他们正在笑。
-3. 因为天气很冷，我们没有出去。
-
-## 答案
-
-### 快速练习 1
-
-1. 作为
-2. 当……时候
-3. 因为
-
-### 快速练习 2
-
-1. `She works as a nurse.`
-2. `As I walked into the room, they were laughing.`
-3. `As it was very cold, we did not go out.`
-
-## 小结
-
-看到 `as` 先别急着翻。
-
-先看它是在表示：
-
-- 身份
-- 时间
-- 原因
+- This doc mirrors the current web lesson content for the component listed above.
+- If you edit this doc, the corresponding web component should be updated afterward.

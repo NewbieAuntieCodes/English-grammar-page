@@ -1,78 +1,51 @@
-# impression 的用法
+# 📖 'impression' 的用法
 
-## 一句话先记住
+> Synced from web component: `src/components/content/Vocabulary/ImpressionUsageContent.tsx`
 
-`impression` 最常见搭配是 `make a good / bad impression on sb.`。
+## Web Lesson Text
 
-## 最常见结构
+### 💡 为什么学这个？
 
-### 1. make an impression on sb.
+### 📝 主要用法
 
-- `He made a strong impression on me.`
+### 1. a first impression (第一印象)
 
-### 2. first impression
+### 2. make/create/leave an impression on sb (给某人留下/创造...印象)
 
-- `My first impression of the school was good.`
+### 3. get an impression that... (得到...的印象/感觉)
 
-### 3. under the impression that ...
+### 4. be under the impression that... (误以为...)
 
-- `I was under the impression that he had left.`
+### 5. do an impression of sb (模仿某人)
 
-## 例句
+"impression" 是一个关于观点和感觉的高频名词。掌握它及相关短语，如 "make an impression" 或 "be under the impression"，可以帮助你更准确地描述人和事给你留下的感觉。
 
-1. `She made a good impression on the interviewer.`
-2. `His speech left a deep impression on us.`
-3. `First impressions are important.`
-4. `I was under the impression that the meeting was today.`
+指初次见面或接触时对某人或某物形成的感觉。
 
-## 一个容易错的地方
+指因某个行为或特质而让别人对你产生某种看法。
 
-不要写：
+指从某人的言行中形成一种感觉或看法。
 
-`do a good impression`
+指错误地相信某件事是真的。
 
-更自然的是：
+指模仿某人的言行举止以达到娱乐效果。
 
-`make a good impression`
+## Examples
 
-## 快速练习 1
+1. `My **first impression** of him was that he was very shy.`
+   - 我对他的第一印象是他非常害羞。
+2. `He **made a good impression on** his new boss.`
+   - 他给他的新老板留下了好印象。
+3. `The beautiful scenery **left a lasting impression on** me.`
+   - 美丽的风景给我留下了持久的印象。
+4. `I **get the impression that** she doesn't like me.`
+   - 我感觉她不喜欢我。
+5. `I **was under the impression that** the meeting was cancelled.`
+   - 我误以为会议取消了。
+6. `He can **do a great impression of** the teacher.`
+   - 他能惟妙惟肖地模仿老师。
 
-选空：
+## Sync Notes
 
-1. He made a good impression `____` us.  
-   A. on  
-   B. at
-
-2. My first `____` of her was very positive.  
-   A. impression  
-   B. impressive
-
-3. She wants to make a strong impression `____` the teacher.  
-   A. on  
-   B. of
-
-## 快速练习 2
-
-把中文写成英文：
-
-1. 她给我留下了很好的印象。
-2. 第一印象很重要。
-3. 我原以为他已经回家了。
-
-## 答案
-
-### 快速练习 1
-
-1. A
-2. A
-3. A
-
-### 快速练习 2
-
-1. `She made a good impression on me.`
-2. `First impressions are important.`
-3. `I was under the impression that he had gone home.`
-
-## 小结
-
-学 `impression` 时，先把搭配记住比单记词义更重要。
+- This doc mirrors the current web lesson content for the component listed above.
+- If you edit this doc, the corresponding web component should be updated afterward.

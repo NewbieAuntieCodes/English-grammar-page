@@ -37,11 +37,11 @@ const practiceData = [
     { words: [{ en: 'It is a', cn: '这是一辆' }, { en: 'slow', cn: '慢' }, { en: 'train', cn: '火车' }], correct: ['It is a', 'slow', 'train'], chinese: '这是一辆慢车。' },
     { words: [{ en: 'He talks', cn: '他说话' }, { en: 'very', cn: '非常' }, { en: 'slowly', cn: '慢' }], correct: ['He talks', 'very', 'slowly'], chinese: '他说话非常慢。' },
     { words: [{ en: 'The traffic', cn: '交通' }, { en: 'is', cn: '是' }, { en: 'slow', cn: '缓慢的' }, { en: 'today', cn: '今天' }], correct: ['The traffic', 'is', 'slow', 'today'], chinese: '今天的交通很缓慢。' },
-    { words: [{ en: 'Please drive', cn: '请' }, { en: 'slowly', cn: '慢点' }, { en: 'here', cn: '这里' }], correct: ['Please drive', 'slowly', 'here'], chinese: '请在这里慢点开车。' },
+    { words: [{ en: 'Please speak', cn: '请说话' }, { en: 'slowly', cn: '慢一点' }], correct: ['Please speak', 'slowly'], chinese: '请慢慢说。' },
     { words: [{ en: 'That was a', cn: '那是一个' }, { en: 'slow', cn: '缓慢的' }, { en: 'process', cn: '过程' }], correct: ['That was a', 'slow', 'process'], chinese: '那是一个缓慢的过程。' },
     { words: [{ en: 'The turtle', cn: '乌龟' }, { en: 'walks', cn: '走路' }, { en: 'slowly', cn: '慢慢地' }], correct: ['The turtle', 'walks', 'slowly'], chinese: '乌龟走得很慢。' },
     { words: [{ en: 'He is a', cn: '他是个' }, { en: 'slow', cn: '慢' }, { en: 'worker', cn: '工人' }], correct: ['He is a', 'slow', 'worker'], chinese: '他是个慢性子的工人。' },
-    { words: [{ en: 'The river flows', cn: '河流' }, { en: 'slowly', cn: '缓慢地' }, { en: 'to the sea', cn: '流向大海' }], correct: ['The river flows', 'slowly', 'to the sea'], chinese: '河流缓缓地流向大海。' }
+    { words: [{ en: 'She reads', cn: '她读书' }, { en: 'slowly', cn: '慢慢地' }], correct: ['She reads', 'slowly'], chinese: '她读得很慢。' }
 ];
 
 export const SlowContent: React.FC<SlowContentProps> = ({ onBack, themeColor, onCompleteAll }) => {

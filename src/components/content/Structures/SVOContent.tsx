@@ -228,7 +228,7 @@ export const SVOContent: React.FC<SVOContentProps> = ({ onBack, themeColor, onCo
 
             <WhyLearnSection themeColor={themeColor}>
                 <SectionTitle>💡 为什么学这个？Why learn this?</SectionTitle>
-                <p>这是英语最基本的句型！80%的英语句子都是这个结构。掌握了它，你就能说基本的英语了！</p>
+                <p>这是英语里很基础、很常见的句型。很多短句都可以先用这个结构理解。</p>
             </WhyLearnSection>
 
             <QuickGrid>

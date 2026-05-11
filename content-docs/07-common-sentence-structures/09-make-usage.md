@@ -1,85 +1,78 @@
-# make 的用法 / make
+# 📖 'make' 的用法
 
-## 一句话先记住
+> Synced from web component: `src/components/content/CommonStructures/MakeUsageContent.tsx`
 
-`make` 最常见有两个方向：做出某物，或者使某人怎么样。
+## Web Lesson Text
 
-## 常见用法 1
+### 💡 为什么学这个？
 
-`make + 东西`
+### 📝 主要结构
 
-- `make a cake`
-- `make a plan`
+### 1. make + 名词 (制作；引起)
 
-## 常见用法 2
+### 2. make + 宾语 + 形容词 (使...变得...)
 
-`make + 宾语 + 形容词`
+### 3. make + 宾语 + 动词原形 (让某人做某事)
 
-- `The news made me happy.`
+### 4. make + 宾语 + 名词 (使...成为...)
 
-## 常见用法 3
+### 5. make it + adj. + to do (使做某事变得...)
 
-`make + 宾语 + 动词原形`
+"make" 是英语中最核心的动词之一，意为“制作、使得、让”。它的用法非常多样，特别是在 "make sb do sth" 和 "make it + adj + to do" 的结构中，是表达因果和改变状态的关键。掌握它能极大提升你的造句能力。
 
-- `The teacher made us clean the room.`
+这是使役动词的用法，表示让某人做某事。主动句里常用 `make sb do`，`do` 前不加 `to`。
 
-## 例句
+这是一个高级句型。使用 'it' 作为形式宾语，真正的宾语是后面的不定式短语 (to do)。
 
-1. `My mother made a cake.`
-2. `The joke made everyone laugh.`
-3. `This song makes me relaxed.`
-4. `The rain made us stay home.`
+## Examples
 
-## 一个容易错的地方
+1. `She **made a cake** for my birthday.`
+   - 她为我的生日做了一个蛋糕。
+2. `The news **made him happy**.`
+   - 这个消息让他很高兴。
+3. `My parents **made me clean** my room.`
+   - 我父母让我打扫我的房间。
+4. `They **made him the team captain**.`
+   - 他们让他成为了队长。
+5. `Modern technology **makes it easy to keep** in touch.`
+   - 现代科技让保持联系变得容易。
+6. `The noise **makes it hard to sleep**.`
+   - 噪音让人难以入睡。
 
-在 `make + sb. + do` 里，后面常用动词原形。
+## Sentence Builder Practice
 
-所以：
+1. Words: `My mother` / `made` / `a delicious cake`
+   - Correct: `My mother made a delicious cake`
+   - Chinese: 我妈妈做了一个美味的蛋糕。
+2. Words: `The sad movie` / `made her` / `cry`
+   - Correct: `The sad movie made her cry`
+   - Chinese: 这部悲伤的电影让她哭了。
+3. Words: `Your story` / `made me` / `sad`
+   - Correct: `Your story made me sad`
+   - Chinese: 你的故事让我感到伤心。
+4. Words: `They` / `made him` / `the class monitor`
+   - Correct: `They made him the class monitor`
+   - Chinese: 他们让他当了班长。
+5. Words: `Don't` / `make a noise`
+   - Correct: `Don't make a noise`
+   - Chinese: 不要制造噪音。
+6. Words: `What` / `made you` / `change your mind?`
+   - Correct: `What made you change your mind?`
+   - Chinese: 是什么让你改变了主意？
+7. Words: `Exercise can` / `make you` / `strong`
+   - Correct: `Exercise can make you strong`
+   - Chinese: 锻炼可以让你强壮。
+8. Words: `The internet` / `makes it` / `easy` / `to find info`
+   - Correct: `The internet makes it easy to find info`
+   - Chinese: 互联网让查找信息变得容易。
+9. Words: `Heavy rain` / `made it` / `dangerous` / `to drive`
+   - Correct: `Heavy rain made it dangerous to drive`
+   - Chinese: 大雨使开车变得危险。
+10. Words: `This app` / `makes it` / `fun` / `to learn math`
+   - Correct: `This app makes it fun to learn math`
+   - Chinese: 这个应用使学数学变得有趣。
 
-- `make me cry` 对
-- `make me to cry` 不对
+## Sync Notes
 
-## 快速练习 1
-
-选空：
-
-1. The story made me `____`.  
-   A. cry  
-   B. to cry
-
-2. She made a `____`.  
-   A. decision  
-   B. decide
-
-3. The game made us `____` excited.  
-   A. feel  
-   B. to feel
-
-## 快速练习 2
-
-把中文写成英文：
-
-1. 这部电影让我很开心。
-2. 老师让我们再做一次。
-3. 他做了一个计划。
-
-## 答案
-
-### 快速练习 1
-
-1. A
-2. A
-3. A
-
-### 快速练习 2
-
-1. `The movie made me very happy.`
-2. `The teacher made us do it again.`
-3. `He made a plan.`
-
-## 小结
-
-学 `make` 时，先分成两类就很清楚：
-
-- 做出某物
-- 使某人……
+- This doc mirrors the current web lesson content for the component listed above.
+- If you edit this doc, the corresponding web component should be updated afterward.

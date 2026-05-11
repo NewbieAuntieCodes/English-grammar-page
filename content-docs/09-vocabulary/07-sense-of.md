@@ -1,72 +1,51 @@
-# a sense of 的用法
+# 📖 'a sense of' 的用法
 
-## 一句话先记住
+> Synced from web component: `src/components/content/Vocabulary/SenseOfUsageContent.tsx`
 
-`a sense of` 表示“一种……感”。
+## Web Lesson Text
 
-## 最常见搭配
+### 💡 为什么学这个？
 
-- a sense of duty
-- a sense of humor
-- a sense of safety
-- a sense of responsibility
+### 📝 主要结构: a sense of + [名词]
 
-## 例句
+"a sense of" 是一个非常地道的英语短语，用来表达一个人所拥有或体验到的某种感觉、品质或意识。例如“幽默感”(a sense of humor) 或“责任感”(a sense of responsibility)。掌握它能让你的表达更细腻、更丰富。
 
-1. `He has a strong sense of responsibility.`
-2. `She has a good sense of humor.`
-3. `Children need a sense of safety.`
-4. `This work gave me a sense of achievement.`
+这个结构用来描述一种抽象的感觉或品质。
 
-## 一个容易错的地方
+## Examples
 
-不要把它拆成很奇怪的中文直译后再硬翻。
+1. `He has a good **sense of humor**.`
+   - 他很有幽默感。
+2. `After a long hike, I felt a **sense of accomplishment**.`
+   - 长途徒步后，我感到一种成就感。
+3. `The new employee showed a strong **sense of responsibility**.`
+   - 新员工表现出了强烈的责任感。
 
-这个短语常常要整块记。
+## Sentence Builder Practice
 
-比如：
+1. Words: `He has` / `a good sense of` / `humor`
+   - Correct: `He has a good sense of humor`
+   - Chinese: 他很有幽默感。
+2. Words: `She has` / `a strong sense of` / `duty`
+   - Correct: `She has a strong sense of duty`
+   - Chinese: 她有强烈的责任感。
+3. Words: `The job gives me` / `a sense of` / `accomplishment`
+   - Correct: `The job gives me a sense of accomplishment`
+   - Chinese: 这份工作给了我一种成就感。
+4. Words: `He lost` / `his sense of` / `direction` / `in the forest`
+   - Correct: `He lost his sense of direction in the forest`
+   - Chinese: 他在森林里失去了方向感。
+5. Words: `It's important` / `to develop` / `a sense of` / `responsibility`
+   - Correct: `It's important to develop a sense of responsibility`
+   - Chinese: 培养责任感很重要。
+6. Words: `She has` / `a great` / `sense of style`
+   - Correct: `She has a great sense of style`
+   - Chinese: 她有很好的时尚感。
+7. Words: `The urgent news` / `created` / `a sense of panic`
+   - Correct: `The urgent news created a sense of panic`
+   - Chinese: 这则紧急新闻造成了恐慌。
 
-- `sense of humor`
-- `sense of direction`
+## Sync Notes
 
-## 快速练习 1
-
-选空：
-
-1. She has a strong sense `____` duty.  
-   A. of  
-   B. in
-
-2. He has no sense of `____`.  
-   A. humor  
-   B. humorous
-
-3. A good teacher should have a sense of `____`.  
-   A. responsibility  
-   B. responsible
-
-## 快速练习 2
-
-把中文写成英文：
-
-1. 他很有幽默感。
-2. 孩子需要安全感。
-3. 这次成功给了我成就感。
-
-## 答案
-
-### 快速练习 1
-
-1. A
-2. A
-3. A
-
-### 快速练习 2
-
-1. `He has a good sense of humor.`
-2. `Children need a sense of safety.`
-3. `This success gave me a sense of achievement.`
-
-## 小结
-
-`a sense of` 最好整块记忆，不要临时拼。
+- This doc mirrors the current web lesson content for the component listed above.
+- If you edit this doc, the corresponding web component should be updated afterward.

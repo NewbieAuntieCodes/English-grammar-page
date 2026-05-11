@@ -101,7 +101,7 @@ export const MakeUsageContent: React.FC<MakeUsageContentProps> = ({ onBack, them
                 
                 <UsageType>3. make + 宾语 + 动词原形 (让某人做某事)</UsageType>
                  <p style={{ color: '#4a5568', marginBottom: '15px' }}>
-                    这是使役动词的用法，表示强迫或促使某人做某事。注意动词用原形，不能带 'to'。
+                    这是使役动词的用法，表示让某人做某事。主动句里常用 <code>make sb do</code>，<code>do</code> 前不加 <code>to</code>。
                 </p>
                 <ExampleItem themeColor={themeColor}>
                     <ExampleHeader>

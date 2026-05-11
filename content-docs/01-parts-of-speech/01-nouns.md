@@ -1,85 +1,50 @@
-# 名词 / Nouns
+# 📚 Nouns (名词)
 
-## 一句话先记住
+> Synced from web component: `src/components/content/PartsOfSpeech/NounsContent.tsx`
 
-`名词是人、事物、地点、概念的名字。`
+## Web Lesson Text
 
-## 怎么认名词？
+### 💡 为什么学名词？
 
-看到一个词时，先问：
+### 📝 Examples
 
-- 它是不是一个人？
-- 是不是一个东西？
-- 是不是一个地方？
-- 是不是一个想法或概念？
+名词是句子的主角！它们告诉我们句子在谈论“谁”或“什么”。掌握名词是构建任何句子的第一步。
 
-如果是，它通常就是名词。
+## Examples
 
-## 例子
+1. `The **dog** barks.`
+   - 这只狗在叫。（dog 是一个‘事物’）
+2. `**Maria** is a **student**.`
+   - 玛利亚是一名学生。（Maria 和 student 都是‘人’）
 
-1. Tom is my friend.
-2. The cat is under the table.
-3. Beijing is a big city.
-4. Love is important.
+## Selector / Fill Practice
 
-这些句子里的名词有：
+1. `The dog is cute.`
+   - Target: `dog`
+   - Chinese: 这只狗很可爱。
+2. `She likes the apple.`
+   - Target: `apple`
+   - Chinese: 她喜欢这个苹果。
+3. `My dad is a doctor.`
+   - Target: `dad`, `doctor`
+   - Chinese: 我爸爸是一名医生。
+4. `I have a pen.`
+   - Target: `pen`
+   - Chinese: 我有一支钢笔。
+5. `This is a book.`
+   - Target: `book`
+   - Chinese: 这是一本书。
+6. `The cat is on the table.`
+   - Target: `cat`, `table`
+   - Chinese: 猫在桌子上。
+7. `My friend has a new car.`
+   - Target: `friend`, `car`
+   - Chinese: 我的朋友有一辆新车。
+8. `The teacher opens the window.`
+   - Target: `teacher`, `window`
+   - Chinese: 老师打开了窗户。
 
-- Tom
-- friend
-- cat
-- table
-- Beijing
-- city
-- Love
+## Sync Notes
 
-## 最短提醒
-
-- 名词不一定是看得见的东西
-- `love`、`hope`、`time` 这种也可以是名词
-
-## 快速练习 1
-
-找出下面句子里的名词：
-
-1. My mother is a teacher.
-2. The dog likes milk.
-3. Shanghai is a modern city.
-4. Time is very valuable.
-
-## 快速练习 2
-
-下面哪个词是名词？
-
-1. She is very kind.
-   - A. kind
-   - B. she
-   - C. is
-
-2. We read books at school.
-   - A. read
-   - B. books
-   - C. at
-
-3. Happiness is important.
-   - A. Happiness
-   - B. important
-   - C. is
-
-## 小结
-
-名词就是“叫什么”的词。
-
-## 答案
-
-### 快速练习 1
-
-1. mother, teacher
-2. dog, milk
-3. Shanghai, city
-4. Time
-
-### 快速练习 2
-
-1. B
-2. B
-3. A
+- This doc mirrors the current web lesson content for the component listed above.
+- If you edit this doc, the corresponding web component should be updated afterward.

@@ -1,78 +1,47 @@
-# 宾语 / Object
+# 🎯 Object (宾语)
 
-## 一句话先记住
+> Synced from web component: `src/components/content/SentenceComponents/ObjectContent.tsx`
 
-`宾语是动作的对象，也就是动作落到谁或什么上。`
+## Web Lesson Text
 
-## 怎么找宾语？
+### 💡 什么是宾语？
 
-先找到谓语，再问：
+### 📝 Examples
 
-- 做了什么？
-- 看见了谁？
-- 喜欢什么？
+宾语是动作影响到的人或事。它常跟在实义动词后面，回答“做了什么”或“对谁做”。
 
-如果动词后面有一个“被这个动作影响的对象”，它通常就是宾语。
+## Examples
 
-## 例子
+1. `She reads **a book**.`
+   - 她在读书。（她读了什么？一本书。）
+2. `He loves **her**.`
+   - 他爱她。（他爱谁？她。）
 
-1. I like `[music]`.
-2. She opened `[the door]`.
-3. We saw `[our teacher]`.
-4. Tom is reading `[a book]`.
+## Selector / Fill Practice
 
-## 最短提醒
+1. `She reads a book.`
+   - Target: `a`, `book`
+   - Chinese: 她在读书。宾语是完整的 a book。
+2. `I have a pen.`
+   - Target: `a`, `pen`
+   - Chinese: 我有一支钢笔。宾语是完整的 a pen。
+3. `He loves music.`
+   - Target: `music`
+   - Chinese: 他热爱音乐。
+4. `They bought a car.`
+   - Target: `a`, `car`
+   - Chinese: 他们买了一辆车。宾语是完整的 a car。
+5. `We eat apples.`
+   - Target: `apples`
+   - Chinese: 我们吃苹果。
+6. `She is writing a letter.`
+   - Target: `a`, `letter`
+   - Chinese: 她正在写一封信。宾语是完整的 a letter。
+7. `My father drives a car.`
+   - Target: `a`, `car`
+   - Chinese: 我爸爸开一辆车。宾语是完整的 a car。
 
-- 宾语常常在动词后面
-- 宾语可以是一个词，也可以是一整个短语
+## Sync Notes
 
-## 快速练习 1
-
-找出下面句子的宾语：
-
-1. He drinks milk.
-2. I know that girl.
-3. They cleaned the room.
-4. She is writing a letter.
-
-## 快速练习 2
-
-下面哪一部分是宾语？
-
-1. My mother cooks dinner.
-   - A. My mother
-   - B. cooks
-   - C. dinner
-
-2. We visited the museum yesterday.
-   - A. We
-   - B. the museum
-   - C. yesterday
-
-3. The boy kicked the ball.
-   - A. kicked
-   - B. the ball
-   - C. The boy
-
-## 小结
-
-宾语就是动作“作用到”的人或东西。
-
-## 答案
-
-### 快速练习 1
-
-1. milk
-2. that girl
-3. the room
-4. a letter
-
-### 快速练习 2
-
-1. C
-2. B
-3. B
-
-## 对应网页文件
-
-- `src/components/content/SentenceComponents/ObjectContent.tsx`
+- This doc mirrors the current web lesson content for the component listed above.
+- If you edit this doc, the corresponding web component should be updated afterward.

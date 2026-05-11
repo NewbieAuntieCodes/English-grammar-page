@@ -1,60 +1,62 @@
-# Fast / Fast
+# 🔄 "Fast" 的多种用法
 
-## 一句话先记住
+> Synced from web component: `src/components/content/MultiPos/FastContent.tsx`
 
-`fast` 有时是形容词，有时是副词。拼写一样，用法不同。
+## Web Lesson Text
 
-## 两种用法
+### 💡 为什么学这个？
 
-### 1. 形容词
+### 📝 主要用法
 
-- a fast car
-- The train is fast.
+### 1. 作形容词 (Adjective)
 
-这里 `fast` 在说“什么样”，所以是形容词。
+### 2. 作副词 (Adverb)
 
-### 2. 副词
+"Fast" 是一个常见的例子，它可以作形容词也可以作副词，但形式完全一样。很多初学者会误用 "fastly"（这是一个不存在的词！）。学会区分 "fast" 的用法很重要。
 
-- He runs fast.
-- She speaks fast.
+当 "fast" 用来修饰一个名词（人或事物）时，它是形容词，意思是“快的”。它回答了“什么样的？”这个问题。
 
-这里 `fast` 在说“怎么做”，所以是副词。
+当 "fast" 用来修饰一个动词（动作）时，它是副词，意思是“快地”。它回答了“动作怎么样？”这个问题。
 
-## 最短提醒
+## Examples
 
-不要只看拼写，要看它修饰谁。
+1. `He is a **fast** runner.`
+   - 他是一个跑得很快的人。(什么样的 runner? -> fast runner)
+2. `This is a **fast** car.`
+   - 这是一辆快车。(什么样的 car? -> fast car)
+3. `He runs **fast**.`
+   - 他跑得很快。(跑得怎么样? -> 跑得 fast)
+4. `Don't talk so **fast**.`
+   - 别说那么快。(说得怎么样? -> 说得 fast)
 
-## 快速练习 1
+## Sentence Builder Practice
 
-判断 `fast` 是形容词还是副词：
+1. Words: `He is a` / `fast` / `runner`
+   - Correct: `He is a fast runner`
+   - Chinese: 他是一个跑得很快的人。
+2. Words: `He` / `runs` / `fast`
+   - Correct: `He runs fast`
+   - Chinese: 他跑得很快。
+3. Words: `This is a` / `fast car`
+   - Correct: `This is a fast car`
+   - Chinese: 这是一辆快车。
+4. Words: `Time goes` / `so fast`
+   - Correct: `Time goes so fast`
+   - Chinese: 时间过得真快。
+5. Words: `She` / `is a` / `fast learner`
+   - Correct: `She is a fast learner`
+   - Chinese: 她学东西很快。
+6. Words: `Don't talk` / `so fast`
+   - Correct: `Don't talk so fast`
+   - Chinese: 别说那么快。
+7. Words: `We took a` / `fast train`
+   - Correct: `We took a fast train`
+   - Chinese: 我们坐了一趟快车。
+8. Words: `She recovered` / `very fast`
+   - Correct: `She recovered very fast`
+   - Chinese: 她恢复得非常快。
 
-1. The bike is fast.
-2. He drives fast.
-3. A fast runner won the race.
-4. Time goes fast.
+## Sync Notes
 
-## 快速练习 2
-
-下面句子里的 `fast` 是什么？
-
-1. She is a fast learner.
-   - A. 形容词
-   - B. 副词
-
-2. The boy ran fast.
-   - A. 形容词
-   - B. 副词
-
-## 答案
-
-### 快速练习 1
-
-1. 形容词
-2. 副词
-3. 形容词
-4. 副词
-
-### 快速练习 2
-
-1. A
-2. B
+- This doc mirrors the current web lesson content for the component listed above.
+- If you edit this doc, the corresponding web component should be updated afterward.

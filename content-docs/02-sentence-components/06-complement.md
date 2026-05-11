@@ -1,87 +1,118 @@
-# 补语 / Complement
+# 🧩 Complement (补语)
 
-## 一句话先记住
+> Synced from web component: `src/components/content/SentenceComponents/ComplementContent.tsx`
 
-`补语是在后面补充说明主语或宾语的部分。`
+## Content Draft
 
-## 怎么理解补语？
+### 💡 什么是补语？
 
-有些句子说完主语和动词，意思还不完整。
+补语就是**补充说明的成分**。
 
-后面还需要一个部分来说明：
+它通常说明两件事：
 
-- 主语是什么样
-- 主语是什么
-- 宾语变成了什么
-- 宾语被叫作什么
+- 主语怎么样？
+- 主语是什么？
+- 宾语怎么样？
+- 宾语是谁 / 叫什么？
 
-这个“补充说明”的部分，就是补语。
+### 🟦 第一种：表语
 
-## 例子
+表语跟在系动词后面，说明**主语**。
 
-### 1. 补充说明主语
+结构：
 
-1. She is `[happy]`.
-2. Tom became `[a doctor]`.
+`主语 + 系动词 + 表语`
 
-### 2. 补充说明宾语
+例子：
 
-3. We call him `[Tom]`.
-4. The news made me `[sad]`.
+1. `She is **a doctor**.`
+   - `a doctor` 说明 `She` 是什么。
+2. `The food tastes **delicious**.`
+   - `delicious` 说明 `The food` 怎么样。
+3. `She looks **tired**.`
+   - `tired` 说明 `She` 怎么样。
 
-## 最短提醒
+小规则：
 
-- 补语不是动作对象
-- 补语是在“继续解释”
-- 它常常出现在 `be / become / make / call` 这类结构里
+- `is / am / are / was / were`
+- `look / feel / taste / smell / sound`
+- `become / seem`
 
-## 快速练习 1
+这些后面常接表语。
 
-找出下面句子里的补语：
+### 🟩 第二种：宾补
 
-1. My father is busy.
-2. They named the baby Lucy.
-3. The story made us happy.
-4. She became a teacher.
+宾补跟在宾语后面，说明**宾语**。
 
-## 快速练习 2
+结构：
 
-下面哪一部分是补语？
+`主语 + 谓语 + 宾语 + 宾补`
 
-1. The soup tastes good.
-   - A. tastes
-   - B. good
-   - C. The soup
+例子：
 
-2. We call the dog Max.
-   - A. call
-   - B. the dog
-   - C. Max
+1. `The news made me **happy**.`
+   - `me` 是宾语。
+   - `happy` 说明 `me` 变得怎么样。
+2. `We call him **Jack**.`
+   - `him` 是宾语。
+   - `Jack` 说明 `him` 叫什么。
+3. `They painted the door **green**.`
+   - `the door` 是宾语。
+   - `green` 说明门变成什么颜色。
 
-3. The game made him angry.
-   - A. angry
-   - B. him
-   - C. made
+### ⚡ 快速判断
 
-## 小结
+看它在说明谁：
 
-补语是在后面把意思“补完整”。
+- 说明主语：**表语**
+- 说明宾语：**宾补**
 
-## 答案
+对比：
 
-### 快速练习 1
+1. `She is happy.`
+   - `happy` 说明 `She`。
+   - 所以是表语。
+2. `The news made her happy.`
+   - `her` 是宾语。
+   - `happy` 说明 `her`。
+   - 所以是宾补。
 
-1. busy
-2. Lucy
-3. happy
-4. a teacher
+## Selector / Fill Practice
 
-### 快速练习 2
+1. `The sky is blue.`
+   - Target: `blue`
+   - Type: 表语
+   - Chinese: 天空是蓝色的。blue 说明 The sky。
+2. `He became famous.`
+   - Target: `famous`
+   - Type: 表语
+   - Chinese: 他变得有名了。famous 说明 He。
+3. `We call him Jack.`
+   - Target: `Jack`
+   - Type: 宾补
+   - Chinese: 我们叫他杰克。Jack 说明 him 叫什么。
+4. `The news made me happy.`
+   - Target: `happy`
+   - Type: 宾补
+   - Chinese: 这个消息让我很高兴。happy 说明 me 的状态。
+5. `She looks tired.`
+   - Target: `tired`
+   - Type: 表语
+   - Chinese: 她看起来很累。tired 说明 She。
+6. `They painted the door green.`
+   - Target: `green`
+   - Type: 宾补
+   - Chinese: 他们把门漆成了绿色。green 说明 the door 的结果状态。
+7. `The story made her sad.`
+   - Target: `sad`
+   - Type: 宾补
+   - Chinese: 这个故事让她感到悲伤。sad 说明 her 的状态。
+8. `We consider him honest.`
+   - Target: `honest`
+   - Type: 宾补
+   - Chinese: 我们认为他很诚实。honest 说明 him。
 
-1. B
-2. C
-3. A
+## Sync Notes
 
-## 对应网页文件
-
-- `src/components/content/SentenceComponents/ComplementContent.tsx`
+- This doc is the approved content draft for the component listed above.
+- If you edit this doc, the corresponding web component should be updated afterward.

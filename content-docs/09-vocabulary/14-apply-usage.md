@@ -1,89 +1,50 @@
-# apply 的用法
+# 📖 'apply' 的用法
 
-## 一句话先记住
+> Synced from web component: `src/components/content/Vocabulary/ApplyUsageContent.tsx`
 
-`apply` 最常见有两个方向：申请，或者应用。
+## Web Lesson Text
 
-## 最常见结构
+### 💡 为什么学这个？
 
-### 1. apply for
+### 📝 主要用法
 
-表示“申请”。
+### 1. apply (动词)
 
-- `apply for a job`
-- `apply for a visa`
+### 2. application (名词)
 
-### 2. apply to
+### 3. applicant (名词)
 
-表示“适用于；向……申请”。
+### 4. applied (形容词)
 
-- `This rule applies to everyone.`
-- `apply to a university`
+"apply" 及其相关词形 (application, applicant, applied) 是日常生活和工作中的高频词。它们涉及申请工作/学校、涂抹药膏、应用理论等多种场景。准确使用这些词形是英语水平的体现。
 
-### 3. apply sth. to sth.
+**- apply for sth:** 申请（工作、职位、护照等）
+**- apply to sb/sth:** 适用于；向...申请（学校、机构）
+**- apply sth to sth:** 涂抹；应用
 
-表示“把……应用到……”。
+**- (可数) 申请；申请书:** a written request for something.
+**- (不可数) 应用；运用:** the practical use of something.
 
-- `apply this idea to real life`
+指“申请人”。
 
-## 例句
+指“应用的；实用的”，通常用于学科领域。
 
-1. `She applied for the job yesterday.`
-2. `This rule applies to all students.`
-3. `He wants to apply to that university.`
-4. `We should apply what we learn to real problems.`
+## Examples
 
-## 一个容易错的地方
+1. `She plans to **apply for** a new job.`
+   - 她计划申请一份新工作。
+2. `You should **apply** this cream to the skin.`
+   - 你应该把这个药膏涂在皮肤上。
+3. `Please fill out this **application** form.`
+   - 请填写这张申请表。
+4. `The **application** of this technology is widespread.`
+   - 这项技术的应用非常广泛。
+5. `There were over 200 **applicants** for the job.`
+   - 有超过200人申请这份工作。
+6. `He is studying **applied** physics.`
+   - 他正在学习应用物理学。
 
-不要写：
+## Sync Notes
 
-`apply the job`
-
-如果是“申请工作”，常说：
-
-`apply for the job`
-
-## 快速练习 1
-
-选空：
-
-1. He wants to apply `____` the job.  
-   A. for  
-   B. to
-
-2. This rule applies `____` every student.  
-   A. for  
-   B. to
-
-3. We should apply this method `____` daily study.  
-   A. to  
-   B. for
-
-## 快速练习 2
-
-把中文写成英文：
-
-1. 她想申请这份工作。
-2. 这条规则适用于所有人。
-3. 我们要把知识应用到生活中。
-
-## 答案
-
-### 快速练习 1
-
-1. A
-2. B
-3. A
-
-### 快速练习 2
-
-1. `She wants to apply for this job.`
-2. `This rule applies to everyone.`
-3. `We should apply knowledge to life.`
-
-## 小结
-
-学 `apply` 时，先记住两个最常用搭配：
-
-- `apply for`
-- `apply to`
+- This doc mirrors the current web lesson content for the component listed above.
+- If you edit this doc, the corresponding web component should be updated afterward.

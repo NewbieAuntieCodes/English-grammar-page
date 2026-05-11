@@ -1,87 +1,64 @@
-# 介词 of 的用法 / of
+# 🤝 介词 'of' 的用法
 
-## 一句话先记住
+> Synced from web component: `src/components/content/CommonStructures/OfUsageContent.tsx`
 
-`of` 常常表示“……的”或者“属于……”。
+## Web Lesson Text
 
-## 最常见的几种情况
+### 💡 为什么学这个？
 
-### 1. 名词和名词之间
+### 📝 主要用法
 
-- `the color of the sky`
-- `the door of the room`
+### 1. 表示所属 (Possession)
 
-### 2. 数量关系
+### 2. 表示部分 (Part of a whole)
 
-- `a cup of tea`
-- `a piece of paper`
+### 3. 表示材料或内容 (Material or Content)
 
-### 3. one of 这类固定搭配
+### 4. 表示特征 (Characteristic)
 
-- `one of my friends`
+"of" 是英语中使用最频繁的介词之一。它主要用来表示所属关系（...的），但也有很多其他用法，比如表示部分、材料、内容等。掌握它对构建名词短语至关重要！
 
-## 最短提醒
+## Examples
 
-- 有时可以翻成“的”
-- 有时不能硬翻
-- 先把高频搭配整块记
+1. `The color **of the sky** is blue.`
+   - 天空的颜色是蓝色的。
+2. `One **of my friends** is a doctor.`
+   - 我的朋友中有一位是医生。
+3. `This table is made **of wood**.`
+   - 这张桌子是木头做的。
+4. `I want a cup **of tea**.`
+   - 我想要一杯茶。
+5. `She is a woman **of courage**.`
+   - 她是一位有勇气的女性。
 
-## 例句
+## Sentence Builder Practice
 
-1. `The name of the boy is Tom.`
-2. `I want a glass of water.`
-3. `One of the students is absent.`
-4. `The top of the mountain is white.`
+1. Words: `The roof` / `of the house` / `is red`
+   - Correct: `The roof of the house is red`
+   - Chinese: 房子的屋顶是红色的。
+2. Words: `He is a man` / `of his word`
+   - Correct: `He is a man of his word`
+   - Chinese: 他是一个信守诺言的人。
+3. Words: `I would like` / `a glass` / `of water`
+   - Correct: `I would like a glass of water`
+   - Chinese: 我想要一杯水。
+4. Words: `She is a member` / `of our team`
+   - Correct: `She is a member of our team`
+   - Chinese: 她是我们团队的一员。
+5. Words: `The end` / `of the movie` / `was sad`
+   - Correct: `The end of the movie was sad`
+   - Chinese: 电影的结局是悲伤的。
+6. Words: `This ring is made` / `of gold`
+   - Correct: `This ring is made of gold`
+   - Chinese: 这个戒指是金子做的。
+7. Words: `Most` / `of the students` / `passed the exam`
+   - Correct: `Most of the students passed the exam`
+   - Chinese: 大多数学生通过了考试。
+8. Words: `Some` / `of the books` / `are interesting`
+   - Correct: `Some of the books are interesting`
+   - Chinese: 有些书很有趣。
 
-## 一个容易错的地方
+## Sync Notes
 
-不要什么都强行用 `'s`。
-
-比如：
-
-- `a cup of tea` 很自然
-- `tea's cup` 不对
-
-## 快速练习 1
-
-选空：
-
-1. a bottle `____` milk  
-   A. of  
-   B. with
-
-2. the roof `____` the house  
-   A. of  
-   B. by
-
-3. one `____` my classmates  
-   A. by  
-   B. of
-
-## 快速练习 2
-
-把中文写成英文：
-
-1. 一杯咖啡
-2. 房间的门
-3. 这些书中的一本
-
-## 答案
-
-### 快速练习 1
-
-1. A
-2. A
-3. B
-
-### 快速练习 2
-
-1. `a cup of coffee`
-2. `the door of the room`
-3. `one of these books`
-
-## 小结
-
-`of` 不要死背规则。
-
-先把最常见的名词搭配记住最有用。
+- This doc mirrors the current web lesson content for the component listed above.
+- If you edit this doc, the corresponding web component should be updated afterward.

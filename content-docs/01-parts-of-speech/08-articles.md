@@ -1,80 +1,50 @@
-# 冠词 / Articles
+# 📰 Articles (冠词)
 
-## 一句话先记住
+> Synced from web component: `src/components/content/PartsOfSpeech/ArticlesContent.tsx`
 
-`a / an / the` 叫冠词。
+## Web Lesson Text
 
-## 最短理解
+### 💡 为什么学冠词？
 
-- `a / an`：一个，不特定
-- `the`：这个/那个，特定的
+### 📝 Examples
 
-## 怎么认冠词？
+冠词（a, an, the）是英语中最常见的词。它们帮助我们明确谈论的是一个泛指的东西（a/an），还是一个特指的东西（the）。
 
-如果一个词是：
+## Examples
 
-- a
-- an
-- the
+1. `I saw **a** cat. **The** cat was black.`
+   - 我看到了一只猫。那只猫是黑色的。（第一次提到用a，后面特指用the）
+2. `He ate **an** orange.`
+   - 他吃了一个橙子。（orange以元音开头，用an）
 
-它就是冠词。
+## Selector / Fill Practice
 
-## 例子
+1. `This is a book.`
+   - Target: `a`
+   - Chinese: 这是一本书。
+2. `I see an apple.`
+   - Target: `an`
+   - Chinese: 我看到一个苹果。
+3. `The sun is hot.`
+   - Target: `The`
+   - Chinese: 太阳很热。
+4. `She is a doctor.`
+   - Target: `a`
+   - Chinese: 她是一名医生。
+5. `An hour has passed.`
+   - Target: `An`
+   - Chinese: 一个小时过去了。
+6. `I have a computer.`
+   - Target: `a`
+   - Chinese: 我有一台电脑。
+7. `The earth is round.`
+   - Target: `The`
+   - Chinese: 地球是圆的。
+8. `She bought an umbrella yesterday.`
+   - Target: `an`
+   - Chinese: 她昨天买了一把伞。
 
-1. I saw a dog.
-2. He ate an apple.
-3. The dog was black.
-4. The sun is bright.
+## Sync Notes
 
-## 最短提醒
-
-- `a` 用在辅音音开头前
-- `an` 用在元音音开头前
-- `the` 常表示双方都知道的对象
-
-## 快速练习 1
-
-选 `a / an / the`：
-
-1. I have ___ book.
-2. She ate ___ orange.
-3. ___ book on the desk is mine.
-4. ___ moon looks beautiful tonight.
-
-## 快速练习 2
-
-下面哪个词是冠词？
-
-1. The boy is happy.
-   - A. The
-   - B. boy
-   - C. happy
-
-2. She has an umbrella.
-   - A. has
-   - B. an
-   - C. umbrella
-
-3. We play after school.
-   - A. We
-   - B. play
-   - C. 没有冠词
-
-## 小结
-
-冠词很小，但很常见。
-
-## 答案
-
-### 快速练习 1
-
-1. a
-2. an
-3. The
-4. The
-
-### 快速练习 2
-
-1. A
-2. B
-3. C
+- This doc mirrors the current web lesson content for the component listed above.
+- If you edit this doc, the corresponding web component should be updated afterward.

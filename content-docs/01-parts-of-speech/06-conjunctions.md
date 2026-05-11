@@ -1,83 +1,50 @@
-# 连词 / Conjunctions
+# 🔗 Conjunctions (连词)
 
-## 一句话先记住
+> Synced from web component: `src/components/content/PartsOfSpeech/ConjunctionsContent.tsx`
 
-`连词是把词、短语或句子连起来的词。`
+## Web Lesson Text
 
-## 怎么认连词？
+### 💡 为什么学连词？
 
-如果一个词在连接两个东西，它常常就是连词。
+### 📝 Examples
 
-最常见的有：
+连词是句子的“胶水”，它们把单词、短语和句子连接在一起，让我们的思想能够平滑地连接和流动。
 
-- and
-- but
-- or
-- because
-- so
+## Examples
 
-## 例子
+1. `He reads books **and** newspapers.`
+   - 他读各种书和报纸。（and 连接两个名词）
+2. `I want to go, **but** I am busy.`
+   - 我想去，但是我正忙着。（but 连接两个句子）
 
-1. I like tea and coffee.
-2. He is tired but happy.
-3. Do you want rice or noodles?
-4. I stayed home because it rained.
+## Selector / Fill Practice
 
-这些连词有：
+1. `I like tea and coffee.`
+   - Target: `and`
+   - Chinese: 我喜欢茶和咖啡。
+2. `He is rich but unhappy.`
+   - Target: `but`
+   - Chinese: 他富有但不快乐。
+3. `Do you want water or juice?`
+   - Target: `or`
+   - Chinese: 你想要水还是果汁？
+4. `She was tired, so she went to bed.`
+   - Target: `so`
+   - Chinese: 她累了，所以她去睡觉了。
+5. `I will call you when I arrive.`
+   - Target: `when`
+   - Chinese: 我到的时候会给你打电话。
+6. `He is poor but he is happy.`
+   - Target: `but`
+   - Chinese: 他很穷，但他很快乐。
+7. `I like it because it is beautiful.`
+   - Target: `because`
+   - Chinese: 我喜欢它，因为它很漂亮。
+8. `You can stay here until the rain stops.`
+   - Target: `until`
+   - Chinese: 你可以待在这里直到雨停。
 
-- and
-- but
-- or
-- because
+## Sync Notes
 
-## 最短提醒
-
-- 连词的核心作用是“连接”
-- 先认功能，不急着分类
-
-## 快速练习 1
-
-找出下面句子里的连词：
-
-1. She is kind and helpful.
-2. I was tired, so I slept early.
-3. He didn't come because he was sick.
-4. Would you like milk or juice?
-
-## 快速练习 2
-
-下面哪个词是连词？
-
-1. I like apples and bananas.
-   - A. like
-   - B. and
-   - C. bananas
-
-2. He is short but strong.
-   - A. but
-   - B. strong
-   - C. short
-
-3. She runs quickly.
-   - A. runs
-   - B. quickly
-   - C. 没有连词
-
-## 小结
-
-连词的工作就是“连起来”。
-
-## 答案
-
-### 快速练习 1
-
-1. and
-2. so
-3. because
-4. or
-
-### 快速练习 2
-
-1. B
-2. A
-3. C
+- This doc mirrors the current web lesson content for the component listed above.
+- If you edit this doc, the corresponding web component should be updated afterward.

@@ -1,109 +1,43 @@
-# 现在完成时 / Present Perfect
+# ✅ 现在完成时 (Present Perfect Tense)
 
-## 一句话先记住
+> Synced from web component: `src/components/content/Tenses/PresentPerfectContent.tsx`
 
-`现在完成时表示过去发生的动作，和现在还有关系。`
+## Web Lesson Text
 
-## 最常见结构
+### 💡 为什么学这个？
 
-`主语 + have / has + 过去分词`
+### ✍️ 常用动词变形表
 
-比如：
+### 📝 核心用法例子
 
-- `I have finished my homework.`
-- `She has lost her key.`
+### 📖 练习一：故事填空
 
-## have 和 has 怎么选？
+### 🚀 练习二：疑问句与综合挑战
 
-- I / we / you / they → have
-- he / she / it → has
+### 1. 陈述句结构
 
-## 现在完成时常见在说什么？
+### 2. 疑问句结构
 
-### 1. 已经完成
+现在完成时连接了【过去】和【现在】。它用来表达过去发生的动作对现在产生的影响，或者从过去一直持续到现在的状态。它是英语口语中极具“高级感”且必不可少的时态！
 
-- `I have cleaned the room.`
+将 Have/Has 提到句首即可！
 
-重点不是“什么时候打扫的”，而是：
+**- 回答方式：**
 
-`现在已经干净了。`
+Yes, I have. / No, I haven't.
 
-### 2. 经验
+Yes, she has. / No, she hasn't.
 
-- `She has been to Beijing twice.`
+## Examples
 
-### 3. 持续到现在
+1. `I **have lost** my keys.`
+   - 我丢了钥匙。(结果是现在没钥匙进门)
+2. `**Have** you **seen** my keys?`
+   - 你看到我的钥匙了吗？(疑问句：Have 提前)
+3. `She **has been** to London twice.`
+   - 她去过伦敦两次。(表示经历)
 
-- `We have lived here for three years.`
+## Sync Notes
 
-## 和一般过去时的区别
-
-### 一般过去时
-
-只说过去发生过。
-
-- `I finished my homework last night.`
-
-### 现在完成时
-
-强调对现在有影响，或不强调具体过去时间。
-
-- `I have finished my homework.`
-
-## 一个容易错的地方
-
-现在完成时通常不和明确的过去时间词直接连用：
-
-- `I finished it yesterday.` 对
-- `I have finished it yesterday.` 不自然
-
-## 例句
-
-1. `I have lost my phone.`
-2. `He has already left.`
-3. `They have lived here for ten years.`
-4. `Have you seen this movie?`
-
-## 快速练习 1
-
-选空：
-
-1. She `____` her homework already.  
-   A. finished  
-   B. has finished
-
-2. I `____` this book before.  
-   A. have read  
-   B. read yesterday
-
-3. We `____` here for two years.  
-   A. have lived  
-   B. lived
-
-## 快速练习 2
-
-把中文写成英文：
-
-1. 我已经吃过饭了。
-2. 她丢了她的钥匙。
-3. 你去过上海吗？
-
-## 答案
-
-### 快速练习 1
-
-1. B
-2. A
-3. A
-
-### 快速练习 2
-
-1. `I have already had dinner.`
-2. `She has lost her key.`
-3. `Have you been to Shanghai?`
-
-## 小结
-
-现在完成时最关键的一点不是“完成”两个字，而是：
-
-`过去的事，现在还重要。`
+- This doc mirrors the current web lesson content for the component listed above.
+- If you edit this doc, the corresponding web component should be updated afterward.

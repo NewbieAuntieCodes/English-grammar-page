@@ -1,102 +1,88 @@
-# It is adj./noun for sb. to do sth.
+# ✨ It is adj./noun for sb. to do sth.
 
-## 一句话先记住
+> Synced from web component: `src/components/content/CommonStructures/ItIsAdjForSbContent.tsx`
 
-`It is + 形容词 / 名词 + for sb. + to do sth.` 是一个很常见的固定句型。
+## Web Lesson Text
 
-## 这个句型在说什么？
+### 💡 为什么学这个？
 
-它常常是在评价一件事。
+### 📝 形容词 (Adjective) 的例子
 
-比如：
+### 📝 名词 (Noun) 的例子
 
-- `It is important for students to read more.`
-- `It is hard for me to get up early.`
+### 结构公式
 
-## 最常见结构
+这是一个超级实用的句型，用来评价某个行为或陈述一个事实。它用 "It" 作为形式主语，把真正的主语 (to do sth.) 放在后面，让句子听起来更平衡、更地道。
 
-`It is + adj. + for sb. + to do sth.`
+## Examples
 
-常见形容词：
+1. `It is important for students to study hard.`
+   - 对学生来说，努力学习很重要。
+2. `It is better for you to finish your work now.`
+   - 你最好现在就完成你的工作。(比较级)
+3. `It is a good habit to read every day.`
+   - 每天阅读是一个好习惯。
+4. `It is my pleasure to help you.`
+   - 帮助你是我的荣幸。
 
-- important
-- easy
-- hard
-- difficult
-- useful
+## Sentence Builder Practice
 
-## 也可以用名词
+1. Words: `It is` / `important` / `for us` / `to learn` / `English`
+   - Correct: `It is important for us to learn English`
+   - Chinese: 对我们来说，学英语很重要。
+2. Words: `It is` / `easy` / `for him` / `to do this`
+   - Correct: `It is easy for him to do this`
+   - Chinese: 做这件事对他来说很容易。
+3. Words: `It is` / `difficult` / `to get up` / `early`
+   - Correct: `It is difficult to get up early`
+   - Chinese: 早起是困难的。
+4. Words: `It is` / `dangerous` / `to swim` / `in the river`
+   - Correct: `It is dangerous to swim in the river`
+   - Chinese: 在河里游泳是危险的。
+5. Words: `It is` / `necessary` / `to protect` / `the environment`
+   - Correct: `It is necessary to protect the environment`
+   - Chinese: 保护环境是必要的。
+6. Words: `It is` / `a good habit` / `to read` / `every day`
+   - Correct: `It is a good habit to read every day`
+   - Chinese: 每天读书是一个好习惯。
+7. Words: `It is` / `our duty` / `to help` / `others`
+   - Correct: `It is our duty to help others`
+   - Chinese: 帮助他人是我们的责任。
+8. Words: `It is` / `a pleasure` / `to work` / `with you`
+   - Correct: `It is a pleasure to work with you`
+   - Chinese: 和你一起工作是一件乐事。
+9. Words: `It is` / `a mistake` / `to ignore` / `this problem`
+   - Correct: `It is a mistake to ignore this problem`
+   - Chinese: 忽略这个问题是个错误。
+10. Words: `It is` / `a good idea` / `to start` / `now`
+   - Correct: `It is a good idea to start now`
+   - Chinese: 现在开始是个好主意。
+11. Words: `It is` / `a good idea` / `to exercise` / `regularly`
+   - Correct: `It is a good idea to exercise regularly`
+   - Chinese: 定期锻炼是个好主意。
+12. Words: `It is` / `hard for me` / `to understand` / `this`
+   - Correct: `It is hard for me to understand this`
+   - Chinese: 对我来说理解这个很难。
+13. Words: `It is` / `a common practice` / `to shake hands`
+   - Correct: `It is a common practice to shake hands`
+   - Chinese: 握手是一种普遍的做法。
+14. Words: `It is` / `better` / `to be safe` / `than sorry`
+   - Correct: `It is better to be safe than sorry`
+   - Chinese: 安全总比后悔好。
+15. Words: `It is` / `his dream` / `to travel` / `the world`
+   - Correct: `It is his dream to travel the world`
+   - Chinese: 环游世界是他的梦想。
+16. Words: `It is` / `essential` / `to drink` / `enough water`
+   - Correct: `It is essential to drink enough water`
+   - Chinese: 喝足够的水是必要的。
+17. Words: `It is` / `a waste of time` / `to argue` / `with him`
+   - Correct: `It is a waste of time to argue with him`
+   - Chinese: 和他争论是浪费时间。
+18. Words: `It is not` / `polite` / `to interrupt` / `others`
+   - Correct: `It is not polite to interrupt others`
+   - Chinese: 打断别人是不礼貌的。
 
-- `It is a good idea to leave now.`
-- `It is my dream to travel abroad.`
+## Sync Notes
 
-## 为什么前面要用 It？
-
-因为真正的动作部分太长。
-
-英语常常先用 `It` 占位置，再把 `to do` 放后面。
-
-## 例句
-
-1. `It is easy for him to answer the question.`
-2. `It is important for us to help each other.`
-3. `It is a pity to miss the show.`
-4. `It is my job to check the emails.`
-
-## 一个容易错的地方
-
-不要漏掉 `for sb.`。
-
-比如：
-
-`It is difficult me to understand.` 不对
-
-应该是：
-
-`It is difficult for me to understand.`
-
-## 快速练习 1
-
-选空：
-
-1. It is important `____` us to study hard.  
-   A. for  
-   B. to
-
-2. It is not easy for him `____` up early.  
-   A. gets  
-   B. to get
-
-3. It is a good idea `____` now.  
-   A. leave  
-   B. to leave
-
-## 快速练习 2
-
-把中文写成英文：
-
-1. 对孩子来说，多睡觉很重要。
-2. 对我来说，学数学不容易。
-3. 现在出发是个好主意。
-
-## 答案
-
-### 快速练习 1
-
-1. A
-2. B
-3. B
-
-### 快速练习 2
-
-1. `It is important for children to sleep more.`
-2. `It is not easy for me to learn math.`
-3. `It is a good idea to leave now.`
-
-## 小结
-
-看到这个句型时，先别拆太细。
-
-先整块记：
-
-`It is ... for sb. to do ...`
+- This doc mirrors the current web lesson content for the component listed above.
+- If you edit this doc, the corresponding web component should be updated afterward.

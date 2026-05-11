@@ -1,137 +1,35 @@
-# 什么是从句？ / What is a Clause?
+# 📖 什么是从句？ What is a Clause?
 
-## 一句话先记住
+> Synced from web component: `src/components/content/Clauses/WhatIsAClauseContent.tsx`
 
-`从句是放在大句子里的一个小句子。`
+## Web Lesson Text
 
-## 先分清两个词
+### 从句是什么？
 
-### 主句
+### 先看一个简单例子
 
-主句是句子的主要部分。
+### 从句在句子里做什么？
 
-它通常可以单独成立。
+### 📝 例子
 
-比如：
+### 从句的基本构成
 
-`I know.`
+### 💡 重点规则：问题变成从句时，语序要变
 
-### 从句
+从句是依附在主句里的句子成分。它通常有自己的主语和谓语，用来补充说明主句里的某个部分。
 
-从句是句子里的补充部分。
+比如 **I know that you are right.** 里面，主句是 **I know**，从句是 **that you are right**。这个从句有自己的主语 **you** 和谓语 **are**。
 
-它通常跟着主句一起出现。
+当一个问题不再独立提问，而是变成从句放进主句里时，通常不再使用疑问句语序，而要改成普通句子的语序。
 
-比如：
+## Examples
 
-`that he is right`
+1. `I know that you are right.`
+   - 我知道你是对的。
+2. `I like the cake which she made.`
+   - 我喜欢她做的那个蛋糕。
 
-放进完整句子里就是：
+## Sync Notes
 
-`I know that he is right.`
-
-## 从句为什么叫“小句子”？
-
-因为它自己也常常有：
-
-- 主语
-- 谓语
-
-比如：
-
-`he is right`
-
-这里面已经有：
-
-- `he` 主语
-- `is` 谓语
-
-所以它不是一个普通短语，而是一个小句子。
-
-## 最常见的几类从句
-
-1. 宾语从句：作宾语
-2. 定语从句：修饰名词
-3. 状语从句：表示时间、原因、条件等
-4. 主语从句：整个从句作主语
-
-## 例句
-
-1. `I think that she is kind.`
-2. `The boy who is singing is my brother.`
-3. `When it rains, we stay home.`
-4. `What he said is true.`
-
-## 怎么找从句？
-
-可以先看有没有这些常见引导词：
-
-- `that`
-- `if / whether`
-- `who / which / that`
-- `when / because / if / although`
-- `what / who / why / how`
-
-但只看引导词还不够。
-
-你还要看：
-
-- 这部分是不是一个小句子
-- 它在大句子里起什么作用
-
-## 一个容易错的地方
-
-不要把“从句”和“短语”混在一起。
-
-对比：
-
-`in the room`
-
-- 这只是短语
-- 没有自己的主语和谓语
-
-`who is in the room`
-
-- 这是从句
-- 有自己的主语和谓语
-
-## 快速练习 1
-
-下面哪一部分是从句？
-
-1. I know **that he is busy**.
-2. The girl **in red** is my sister.
-3. We left **when the bell rang**.
-4. The boy **with a bag** is Tom.
-
-## 快速练习 2
-
-判断下面说法对不对：
-
-1. 从句里通常有主语和谓语。
-2. 所有从句都可以单独成立。
-3. 主句通常是句子的核心部分。
-
-## 答案
-
-### 快速练习 1
-
-1. `that he is busy`
-2. 没有从句，`in red` 是短语
-3. `when the bell rang`
-4. 没有从句，`with a bag` 是短语
-
-### 快速练习 2
-
-1. 对
-2. 不对
-3. 对
-
-## 小结
-
-学从句的第一步不是背名字。
-
-第一步是先看出：
-
-- 哪一部分是主句
-- 哪一部分是句子里的“小句子”
+- This doc mirrors the current web lesson content for the component listed above.
+- If you edit this doc, the corresponding web component should be updated afterward.

@@ -57,8 +57,8 @@ const insteadOfGrammarPracticeData = [
 const ratherThanGrammarPracticeData = [
     { sentenceParts: ["I would prefer to stay home rather than ", " out tonight."] as const, choices: [{text: "go", isCorrect: true}, {text: "going", isCorrect: false}], chineseHint: "我今晚宁愿待在家里，也不愿出去。" },
     { sentenceParts: ["He decided to write rather than ", "."] as const, choices: [{text: "call", isCorrect: true}, {text: "calling", isCorrect: false}], chineseHint: "他决定写信而不是打电话。" },
-    { sentenceParts: ["She enjoys reading rather than ", " TV."] as const, choices: [{text: "watching", isCorrect: true}, {text: "watch", isCorrect: false}], chineseHint: "她喜欢阅读而不是看电视。" },
-    { sentenceParts: ["Why complain about the problem rather than ", " to solve it?"] as const, choices: [{text: "try", isCorrect: true}, {text: "trying", isCorrect: false}], chineseHint: "为什么抱怨问题而不是试着去解决它呢？" }
+    { sentenceParts: ["I want to leave early rather than ", " late."] as const, choices: [{text: "stay", isCorrect: true}, {text: "staying", isCorrect: false}], chineseHint: "我想早点离开，而不是待到很晚。" },
+    { sentenceParts: ["They agreed to talk rather than ", "."] as const, choices: [{text: "argue", isCorrect: true}, {text: "arguing", isCorrect: false}], chineseHint: "他们同意谈一谈，而不是争吵。" }
 ];
 
 const mixedPracticeData = [
@@ -66,7 +66,7 @@ const mixedPracticeData = [
     { sentenceParts: ["He chose to go by train ", " fly."] as const, choices: [{text: "rather than", isCorrect: true}, {text: "instead of", isCorrect: false}], chineseHint: "他选择乘火车去，而不是坐飞机。" },
     { sentenceParts: ["", " watching TV, you should read a book."] as const, choices: [{text: "Instead of", isCorrect: true}, {text: "Rather than", isCorrect: false}], chineseHint: "你应该读本书，而不是看电视。" },
     { sentenceParts: ["She prefers to write ", " type her essays."] as const, choices: [{text: "rather than", isCorrect: true}, {text: "instead of", isCorrect: false}], chineseHint: "她更喜欢手写论文，而不是打字。" },
-    { sentenceParts: ["Why not use your savings ", " borrowing money?"] as const, choices: [{text: "rather than", isCorrect: true}, {text: "instead of", isCorrect: false}], chineseHint: "为什么不用你的存款，而非要借钱呢？" },
+    { sentenceParts: ["He decided to email ", " call."] as const, choices: [{text: "rather than", isCorrect: true}, {text: "instead of", isCorrect: false}], chineseHint: "他决定发邮件，而不是打电话。" },
     { sentenceParts: ["We went to the beach ", " the mountains."] as const, choices: [{text: "instead of", isCorrect: true}, {text: "rather than", isCorrect: false}], chineseHint: "我们去了海滩，而不是山区。" },
     { sentenceParts: ["I'd prefer to go in May ", " in August."] as const, choices: [{text: "rather than", isCorrect: true}, {text: "instead of", isCorrect: false}], chineseHint: "我宁愿五月去，也不愿八月去。" },
     { sentenceParts: ["He bought a new one ", " getting the old one repaired."] as const, choices: [{text: "instead of", isCorrect: true}, {text: "rather than", isCorrect: false}], chineseHint: "他买了个新的，而不是修理旧的。" }

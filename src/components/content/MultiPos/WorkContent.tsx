@@ -40,8 +40,8 @@ const practiceData = [
     { words: [{ en: 'She is looking for', cn: '她在找' }, { en: 'work', cn: '工作' }], correct: ['She is looking for', 'work'], chinese: '她在找工作。' },
     { words: [{ en: 'They', cn: '他们' }, { en: 'work', cn: '工作' }, { en: 'very hard', cn: '非常努力' }], correct: ['They', 'work', 'very hard'], chinese: '他们工作非常努力。' },
     { words: [{ en: 'This is a great', cn: '这是一件伟大的' }, { en: 'work of art', cn: '艺术作品' }], correct: ['This is a great', 'work of art'], chinese: '这是一件伟大的艺术品。' },
-    { words: [{ en: 'Does this machine', cn: '这台机器' }, { en: 'work', cn: '运转' }, { en: 'properly', cn: '正常吗' }], correct: ['Does this machine', 'work', 'properly'], chinese: '这台机器运转正常吗？' },
-    { words: [{ en: 'What kind of', cn: '什么种类的' }, { en: 'work', cn: '工作' }, { en: 'do you do', cn: '你做' }], correct: ['What kind of', 'work', 'do you do'], chinese: '你做什么样的工作？' }
+    { words: [{ en: 'Does this machine', cn: '这台机器' }, { en: 'work', cn: '运转' }, { en: 'properly?', cn: '正常吗' }], correct: ['Does this machine', 'work', 'properly?'], chinese: '这台机器运转正常吗？' },
+    { words: [{ en: 'What kind of', cn: '什么种类的' }, { en: 'work', cn: '工作' }, { en: 'do you do?', cn: '你做' }], correct: ['What kind of', 'work', 'do you do?'], chinese: '你做什么样的工作？' }
 ];
 
 export const WorkContent: React.FC<WorkContentProps> = ({ onBack, themeColor, onCompleteAll }) => {

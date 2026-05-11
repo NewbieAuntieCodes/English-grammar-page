@@ -1,141 +1,114 @@
-# 一般疑问句 / Yes/No Questions
+# ❓ 一般疑问句 (Yes/No Questions)
 
-## 一句话先记住
+> Synced from web component: `src/components/content/Questions/YesNoQuestionsContent.tsx`
 
-`一般疑问句是在问“是不是”。`
+## Web Lesson Text
 
-这类句子常常可以回答：
+### 💡 为什么学这个？
 
-- `Yes, ...`
-- `No, ...`
+### 📝 三种核心规则
 
-## 一般疑问句有哪 3 种常见做法？
+### 📝 更多例子 (More Examples)
 
-### 1. 有 `be` 动词
+### 📝 更多例子 (More Examples)
 
-把 `am / is / are / was / were` 提到前面。
+### 📝 更多例子 (More Examples)
 
-例子：
+### 最后冲刺：综合练习
 
-- `She is happy.` → `Is she happy?`
-- `They are in the classroom.` → `Are they in the classroom?`
+### 规则 1: 含有 Be 动词
 
-### 2. 有情态动词
+### 规则 2: 含有实义动词
 
-把情态动词提到前面。
+### 规则 3: 含有情态动词
 
-例子：
+一般疑问句是英语中最基本的提问方式，用来确认信息，得到的回答通常是“是”或“否”。掌握它，你就能向别人提问，开启真正的对话！
 
-- `He can swim.` → `Can he swim?`
-- `You will come.` → `Will you come?`
+## Examples
 
-### 3. 只有实义动词
+1. `**Are** you happy?`
+   - 你是开心的吗？
+2. `**Is** she from Canada?`
+   - 她是加拿大人吗？
+3. `**Were** they at the party last night?`
+   - 他们昨晚在派对上吗？
+4. `**Do** you like coffee?`
+   - 你喜欢咖啡吗？
+5. `**Does** he play the guitar?`
+   - 他弹吉他吗？
+6. `**Did** they finish the project?`
+   - 他们完成项目了吗？
+7. `**Will** you be there tomorrow?`
+   - 你明天会去那里吗？
+8. `**Should** I call her?`
+   - 我应该给她打电话吗？
+9. `**May** I open the window?`
+   - 我可以打开窗户吗？
 
-要借 `do / does / did`。
+## Sentence Builder Practice
 
-例子：
+1. Words: `Are` / `you` / `a student?`
+   - Correct: `Are you a student?`
+   - Chinese: 你是一名学生吗？
+2. Words: `Was` / `he` / `tired yesterday?`
+   - Correct: `Was he tired yesterday?`
+   - Chinese: 他昨天累吗？
+3. Words: `Is` / `the cat` / `sleeping?`
+   - Correct: `Is the cat sleeping?`
+   - Chinese: 猫在睡觉吗？
+4. Words: `Were` / `they` / `happy?`
+   - Correct: `Were they happy?`
+   - Chinese: 他们开心吗？
+5. Words: `Do` / `they` / `play football?`
+   - Correct: `Do they play football?`
+   - Chinese: 他们踢足球吗？
+6. Words: `Does` / `she` / `like music?`
+   - Correct: `Does she like music?`
+   - Chinese: 她喜欢音乐吗？
+7. Words: `Did` / `you` / `see the movie?`
+   - Correct: `Did you see the movie?`
+   - Chinese: 你看了那部电影吗？
+8. Words: `Do` / `you` / `understand?`
+   - Correct: `Do you understand?`
+   - Chinese: 你明白吗？
+9. Words: `Can` / `he` / `speak English?`
+   - Correct: `Can he speak English?`
+   - Chinese: 他会说英语吗？
+10. Words: `Will` / `she` / `come to the party?`
+   - Correct: `Will she come to the party?`
+   - Chinese: 她会来参加派对吗？
+11. Words: `Should` / `we` / `leave now?`
+   - Correct: `Should we leave now?`
+   - Chinese: 我们现在应该离开吗？
+12. Words: `May` / `I` / `use your pen?`
+   - Correct: `May I use your pen?`
+   - Chinese: 我可以用你的笔吗？
+13. Words: `Is` / `it` / `cold outside?`
+   - Correct: `Is it cold outside?`
+   - Chinese: 外面冷吗？
+14. Words: `Did` / `they finish` / `their homework?`
+   - Correct: `Did they finish their homework?`
+   - Chinese: 他们完成作业了吗？
+15. Words: `Can` / `you` / `help me?`
+   - Correct: `Can you help me?`
+   - Chinese: 你能帮我吗？
+16. Words: `Were` / `the children` / `noisy?`
+   - Correct: `Were the children noisy?`
+   - Chinese: 孩子们吵闹吗？
+17. Words: `Does` / `he` / `work here?`
+   - Correct: `Does he work here?`
+   - Chinese: 他在这里工作吗？
+18. Words: `Will` / `you` / `call me later?`
+   - Correct: `Will you call me later?`
+   - Chinese: 你稍后会给我打电话吗？
+19. Words: `Is` / `this` / `your book?`
+   - Correct: `Is this your book?`
+   - Chinese: 这是你的书吗？
+20. Words: `Do` / `you` / `need help?`
+   - Correct: `Do you need help?`
+   - Chinese: 你需要帮助吗？
 
-- `You like coffee.` → `Do you like coffee?`
-- `She likes music.` → `Does she like music?`
-- `They went home.` → `Did they go home?`
+## Sync Notes
 
-## 怎么选 `do / does / did`？
-
-- `do`：现在时，主语不是第三人称单数
-- `does`：现在时，主语是第三人称单数
-- `did`：过去时
-
-## 特别注意
-
-用了 `does` 或 `did` 以后，原句里的动词要变回原形。
-
-所以：
-
-- `Does she likes music?` 不对
-- `Does she like music?` 才对
-
-## 例句
-
-1. `Is your mother busy?`
-2. `Are they at school?`
-3. `Do you play basketball?`
-4. `Does Tom live here?`
-5. `Did she finish her homework?`
-6. `Can we start now?`
-
-## 回答这种问句
-
-### 例子 1
-
-`Are you tired?`
-
-- `Yes, I am.`
-- `No, I am not.`
-
-### 例子 2
-
-`Does he like fish?`
-
-- `Yes, he does.`
-- `No, he doesn't.`
-
-## 快速练习 1
-
-把下面句子改成一般疑问句：
-
-1. He is a teacher.
-2. They are ready.
-3. You like this book.
-4. Mary plays tennis.
-5. We saw the movie.
-6. She can dance.
-
-## 快速练习 2
-
-选空：
-
-1. `___` you from Shanghai?  
-   A. Is  
-   B. Are  
-   C. Do
-
-2. `___` he like math?  
-   A. Does  
-   B. Is  
-   C. Did
-
-3. `___` they finish the work yesterday?  
-   A. Do  
-   B. Did  
-   C. Are
-
-4. `___` she speak English?  
-   A. Does can  
-   B. Can  
-   C. Do
-
-## 答案
-
-### 快速练习 1
-
-1. `Is he a teacher?`
-2. `Are they ready?`
-3. `Do you like this book?`
-4. `Does Mary play tennis?`
-5. `Did we see the movie?`
-6. `Can she dance?`
-
-### 快速练习 2
-
-1. B
-2. A
-3. B
-4. B
-
-## 小结
-
-一般疑问句最关键的一步不是“加问号”，而是先找句子里的第一个帮忙词：
-
-- `be`
-- 情态动词
-- `do / does / did`
+- This doc mirrors the current web lesson content for the component listed above.
+- If you edit this doc, the corresponding web component should be updated afterward.

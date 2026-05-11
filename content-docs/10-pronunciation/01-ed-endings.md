@@ -1,130 +1,26 @@
-# -ed 结尾的发音 / Pronunciation of -ed Endings
+# 🗣️ -ed 结尾的发音
 
-## 一句话先记住
+> Synced from web component: `src/components/content/Pronunciation/EdPronunciationContent.tsx`
 
-`-ed` 常见有 3 种读法：`/t/`、`/d/`、`/ɪd/`。
+## Web Lesson Text
 
-## 为什么 `-ed` 不总是一个读法？
+### 💡 为什么学这个？
 
-因为英语发音更看“音”，不只看“字母”。
+### 📝 三种发音规则
 
-所以判断时，要先听动词原形最后一个音。
+### 朗读练习 (Reading Practice)
 
-## 规则 1：读 /t/
+### 规则 1: /t/
 
-如果动词原形最后是清辅音，`-ed` 常读 `/t/`。
+### 规则 2: /d/
 
-常见例子：
+### 规则 3: /ɪd/
 
-- `helped`
-- `looked`
-- `washed`
-- `laughed`
+正确发出 "-ed" 的音是英语流利度的重要标志。很多学习者会错误地把所有的 "-ed" 都读成一个单独的音节，但实际上它有三种不同的发音。掌握这些规则能让你的口语听起来更自然！
 
-## 规则 2：读 /d/
+听下面的段落，注意-ed单词的发音
 
-如果动词原形最后是浊辅音或元音，`-ed` 常读 `/d/`。
+## Sync Notes
 
-常见例子：
-
-- `played`
-- `cleaned`
-- `lived`
-- `called`
-
-## 规则 3：读 /ɪd/
-
-如果动词原形最后就是 `/t/` 或 `/d/`，`-ed` 常读 `/ɪd/`。
-
-常见例子：
-
-- `wanted`
-- `needed`
-- `started`
-- `decided`
-
-## 最短记法
-
-你可以先这样记：
-
-- `/t/`：`looked`
-- `/d/`：`played`
-- `/ɪd/`：`wanted`
-
-## 例词分类
-
-### /t/
-
-- `worked`
-- `stopped`
-- `missed`
-
-### /d/
-
-- `opened`
-- `answered`
-- `rained`
-
-### /ɪd/
-
-- `waited`
-- `visited`
-- `included`
-
-## 一个容易错的地方
-
-不要把所有 `-ed` 都读成两个音节。
-
-比如：
-
-- `played` 不是 `/pleɪ-ɪd/`
-- `played` 只读 `/d/`
-
-## 快速练习 1
-
-判断下面单词里 `-ed` 的发音：
-
-1. `watched`
-2. `showed`
-3. `painted`
-4. `loved`
-5. `helped`
-
-## 快速练习 2
-
-把下面单词按发音分类：
-
-`needed, washed, cleaned, decided, laughed, opened`
-
-## 答案
-
-### 快速练习 1
-
-1. `/t/`
-2. `/d/`
-3. `/ɪd/`
-4. `/d/`
-5. `/t/`
-
-### 快速练习 2
-
-`/t/`
-
-- `washed`
-- `laughed`
-
-`/d/`
-
-- `cleaned`
-- `opened`
-
-`/ɪd/`
-
-- `needed`
-- `decided`
-
-## 小结
-
-判断 `-ed` 发音时，先别看 `-ed` 本身。
-
-先看前面的最后一个音是什么。
+- This doc mirrors the current web lesson content for the component listed above.
+- If you edit this doc, the corresponding web component should be updated afterward.

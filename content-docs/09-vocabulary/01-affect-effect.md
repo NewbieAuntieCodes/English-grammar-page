@@ -1,96 +1,63 @@
-# affect vs. effect
+# 📖 Affect vs. Effect
 
-## 一句话先记住
+> Synced from web component: `src/components/content/Vocabulary/AffectEffectContent.tsx`
 
-`affect` 常作动词，`effect` 常作名词。
+## Web Lesson Text
 
-## 最短区别
+### 💡 为什么学这个？
 
-- `affect` = 影响
-- `effect` = 结果 / 影响
+### 💡 记忆技巧 (RAVEN)
 
-## 最常见用法
+### 📝 主要用法
 
-### affect
+### 1. Affect (动词 - Verb)
 
-常见结构：
+### 2. Effect (名词 - Noun)
 
-`affect + 名词`
+"Affect" 和 "Effect" 是英语中最容易混淆的词之一。它们的发音相似，意思也相关，但词性不同。学会区分它们能让你的写作和口语更加精确。
 
-例子：
+**R**emember: **A**ffect is a **V**erb, **E**ffect is a **N**oun.
+记住：**A**ffect 是**动**词 (Verb)，**E**ffect 是**名**词 (Noun)。
 
-- `The weather affects my mood.`
-- `Lack of sleep affects students.`
+意思是“影响”或“对...产生作用”。它是一个动作。
 
-### effect
+意思是“效果”、“结果”或“影响”。它是一个事物。
 
-常见结构：
+## Examples
 
-- `have an effect on ...`
-- `the effect of ...`
+1. `The rain will **affect** our plans.`
+   - 这场雨将会影响我们的计划。
+2. `The medicine had an immediate **effect**.`
+   - 这种药有立竿见影的效果。
 
-例子：
+## Selector / Fill Practice
 
-- `This law has a big effect on schools.`
-- `We studied the effect of light on plants.`
+1. `The weather will ____ our plans for the picnic.`
+   - Choices: **affect** / effect
+   - Chinese: 天气会影响我们的野餐计划。
+2. `The new law had a positive ____ on the economy.`
+   - Choices: **effect** / affect
+   - Chinese: 新法律对经济产生了积极的影响。
+3. `Lack of sleep can ____ your ability to think clearly.`
+   - Choices: **affect** / effect
+   - Chinese: 睡眠不足会影响你清晰思考的能力。
+4. `What is the main ____ of this medicine?`
+   - Choices: **effect** / affect
+   - Chinese: 这种药的主要效果是什么？
+5. `His speech did not seem to ____ the audience.`
+   - Choices: **affect** / effect
+   - Chinese: 他的演讲似乎没有影响到观众。
+6. `The cause and ____ of climate change are complex.`
+   - Choices: **effect** / affect
+   - Chinese: 气候变化的前因后果是复杂的。
+7. `Pollution can negatively ____ the environment.`
+   - Choices: **affect** / effect
+   - Chinese: 污染会对环境产生负面影响。
+8. `The special ____s in the movie were amazing.`
+   - Choices: **effect** / affect
+   - Chinese: 电影中的特效非常惊人。
 
-## 例句
+## Sync Notes
 
-1. `Noise affects my work.`
-2. `The medicine had a good effect.`
-3. `Stress affects health.`
-4. `The effect of exercise is clear.`
-
-## 一个容易错的地方
-
-不要写：
-
-`The rain effect my plan.`
-
-这里需要动词，所以要用：
-
-`The rain affected my plan.`
-
-## 快速练习 1
-
-选空：
-
-1. The heat `____` my sleep.  
-   A. affected  
-   B. effect
-
-2. The new rule had a strong `____` on us.  
-   A. affect  
-   B. effect
-
-3. Music can `____` your mood.  
-   A. affect  
-   B. effect
-
-## 快速练习 2
-
-把中文写成英文：
-
-1. 天气影响了比赛。
-2. 这项变化产生了很大影响。
-3. 压力会影响学习。
-
-## 答案
-
-### 快速练习 1
-
-1. A
-2. B
-3. A
-
-### 快速练习 2
-
-1. `The weather affected the game.`
-2. `This change had a big effect.`
-3. `Stress can affect study.`
-
-## 小结
-
-做题时先问自己：
-
-- 这里缺动作，还是缺名词？
+- This doc mirrors the current web lesson content for the component listed above.
+- If you edit this doc, the corresponding web component should be updated afterward.

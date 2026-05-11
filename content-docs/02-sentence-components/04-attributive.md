@@ -1,79 +1,47 @@
-# 定语 / Attributive
+# ✨ Attributive (定语)
 
-## 一句话先记住
+> Synced from web component: `src/components/content/SentenceComponents/AttributiveContent.tsx`
 
-`定语是用来修饰名词或代词的部分。`
+## Web Lesson Text
 
-## 怎么找定语？
+### 💡 什么是定语？
 
-看句子里：
+### 📝 Examples
 
-- 是谁的？
-- 什么样的？
-- 哪一个？
-- 几个？
+定语就像是名词的“化妆师”！它用来修饰、限定名词或代词，让它更具体、更生动。定语回答的是“什么样的？”或“谁的？”这类问题。
 
-如果某个词或短语是在说明名词，它通常就是定语。
+## Examples
 
-## 例子
+1. `A **small** cat is sleeping.`
+   - 一只小猫在睡觉。（什么样的猫？小的。）
+2. `This is **my** book.`
+   - 这是我的书。（谁的书？我的。）
 
-1. a `[red]` apple
-2. `[my]` book
-3. `[three]` students
-4. The `[tall]` boy is my brother.
+## Selector / Fill Practice
 
-## 最短提醒
+1. `This is a beautiful garden.`
+   - Target: `beautiful`
+   - Chinese: 这是一个美丽的花园。
+2. `I bought a new computer.`
+   - Target: `new`
+   - Chinese: 我买了一台新电脑。
+3. `That is his pencil.`
+   - Target: `his`
+   - Chinese: 那是他的铅笔。
+4. `The tall man is a doctor.`
+   - Target: `tall`
+   - Chinese: 那个高个子男人是一名医生。
+5. `She wore a blue dress.`
+   - Target: `blue`
+   - Chinese: 她穿了一条蓝色的连衣裙。
+6. `It is a sunny day.`
+   - Target: `sunny`
+   - Chinese: 这是一个晴天。
+7. `I have two books.`
+   - Target: `two`
+   - Chinese: 我有两本书。
 
-- 初学阶段，定语最常出现在名词前面
-- 先学最明显的定语：形容词、代词、数字
+## Sync Notes
 
-## 快速练习 1
-
-找出下面句子里的定语：
-
-1. I have a new bag.
-2. Her father is a doctor.
-3. We saw two birds.
-4. The small house is clean.
-
-## 快速练习 2
-
-下面哪一个词是定语？
-
-1. The beautiful flower is on the desk.
-   - A. beautiful
-   - B. is
-   - C. on the desk
-
-2. My sister likes music.
-   - A. sister
-   - B. My
-   - C. likes
-
-3. Three students are absent.
-   - A. Three
-   - B. are
-   - C. absent
-
-## 小结
-
-定语是在给名词“加说明”。
-
-## 答案
-
-### 快速练习 1
-
-1. new
-2. Her
-3. two
-4. small
-
-### 快速练习 2
-
-1. A
-2. B
-3. A
-
-## 对应网页文件
-
-- `src/components/content/SentenceComponents/AttributiveContent.tsx`
+- This doc mirrors the current web lesson content for the component listed above.
+- If you edit this doc, the corresponding web component should be updated afterward.

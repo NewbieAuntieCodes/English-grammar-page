@@ -1,86 +1,54 @@
-# There be 句型 / There be
+# ✨ There be 句型
 
-## 一句话先记住
+> Synced from web component: `src/components/content/CommonStructures/ThereBeContent.tsx`
 
-`There be` 用来表示“某地有某物”。
+## Web Lesson Text
 
-## 最常见结构
+### 💡 为什么学这个？
 
-- `There is + 单数名词 ...`
-- `There are + 复数名词 ...`
+### 📝 例子 (Examples)
 
-例子：
+### 结构公式
 
-- `There is a cat under the table.`
-- `There are two books on the desk.`
+"There be" 是英语中最基本的句型之一，用来表达“某地有某物”。它强调事物的“存在”，而不是某人“拥有”某物。例如，说“桌上有一本书”，而不是“桌子有一本书”。
 
-## 它和 have 不一样
+## Examples
 
-`have` 是“某人有”。
+1. `**There is** a book on the desk.`
+   - 桌子上有一本书。(is 用于单数名词)
+2. `**There are** many people in the park.`
+   - 公园里有很多人。(are 用于复数名词)
+3. `**Is there** a hospital near here?`
+   - 这附近有医院吗？(疑问句：把 be 动词提前)
 
-`there be` 是“某地有”。
+## Sentence Builder Practice
 
-对比：
+1. Words: `There is` / `a cat` / `on the roof`
+   - Correct: `There is a cat on the roof`
+   - Chinese: 屋顶上有一只猫。
+2. Words: `There are` / `three books` / `in my bag`
+   - Correct: `There are three books in my bag`
+   - Chinese: 我的包里有三本书。
+3. Words: `Is there` / `a bank` / `near here?`
+   - Correct: `Is there a bank near here?`
+   - Chinese: 这附近有银行吗？
+4. Words: `There is` / `a big tree` / `in front of the house`
+   - Correct: `There is a big tree in front of the house`
+   - Chinese: 房子前面有一棵大树。
+5. Words: `There are` / `some flowers` / `in the vase`
+   - Correct: `There are some flowers in the vase`
+   - Chinese: 花瓶里有一些花。
+6. Words: `There is no` / `milk` / `in the fridge`
+   - Correct: `There is no milk in the fridge`
+   - Chinese: 冰箱里没有牛奶了。
+7. Words: `There were` / `many people` / `at the party`
+   - Correct: `There were many people at the party`
+   - Chinese: 昨晚派对上有很多人。
+8. Words: `Are there` / `any questions?`
+   - Correct: `Are there any questions?`
+   - Chinese: 有什么问题吗？
 
-- `I have a bike.` 我有一辆自行车。
-- `There is a bike in the yard.` 院子里有一辆自行车。
+## Sync Notes
 
-## 疑问句和否定句
-
-- `Is there a bank near here?`
-- `Are there any students in the room?`
-- `There is not any milk.`
-
-## 最短提醒
-
-- 看后面的第一个名词决定用 `is` 还是 `are`
-- 不要写成 `There have ...`
-
-## 例句
-
-1. `There is a photo on the wall.`
-2. `There are many people in the park.`
-3. `Is there a bus stop near here?`
-4. `There was a meeting yesterday.`
-
-## 快速练习 1
-
-选空：
-
-1. There `____` a pen on the chair.  
-   A. is  
-   B. are
-
-2. There `____` three cats in the garden.  
-   A. is  
-   B. are
-
-3. `____` there a hospital near here?  
-   A. Is  
-   B. Are
-
-## 快速练习 2
-
-把中文写成英文：
-
-1. 桌子上有一本书。
-2. 教室里有很多学生。
-3. 这附近有超市吗？
-
-## 答案
-
-### 快速练习 1
-
-1. A
-2. B
-3. A
-
-### 快速练习 2
-
-1. `There is a book on the desk.`
-2. `There are many students in the classroom.`
-3. `Is there a supermarket near here?`
-
-## 小结
-
-想表达“某地有……”，先想到 `there be`，不要急着用 `have`。
+- This doc mirrors the current web lesson content for the component listed above.
+- If you edit this doc, the corresponding web component should be updated afterward.

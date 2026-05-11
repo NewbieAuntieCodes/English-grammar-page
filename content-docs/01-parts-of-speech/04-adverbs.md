@@ -1,82 +1,94 @@
-# 副词 / Adverbs
+# 🚀 Adverbs (副词)
 
-## 一句话先记住
+> Synced from web component: `src/components/content/PartsOfSpeech/AdverbsContent.tsx`
 
-`副词是在补充动作或描述的细节。`
+## Web Lesson Text
 
-## 怎么认副词？
+### 💡 为什么学副词？
 
-先问：
+### 1. 副词修饰动词 (Adverbs Modifying Verbs)
 
-- 怎么做？
-- 什么时候？
-- 多常？
-- 多么？
+### 2. 副词修饰形容词 (Adverbs Modifying Adjectives)
 
-回答这些问题的词，常常就是副词。
+副词为动作和描述增添了更多信息。它们可以修饰动词，告诉我们动作发生的方式（how）、时间（when）；也可以修饰形容词，表示程度。副词能让你的描述更精确、更生动。
 
-## 例子
+这是副词最常见的用法。它们告诉我们动作发生的方式、时间、地点或频率。
 
-1. He runs quickly.
-2. I often read books.
-3. She is very kind.
-4. They came yesterday.
+### slowly 的位置小规则
 
-这些副词有：
+slowly 常放在动作后面。
 
-- quickly
-- often
-- very
-- yesterday
+- `walk slowly`
+- `speak slowly`
+- `drive slowly`
 
-## 最短提醒
+如果句子里还有地点，地点放后面：`drive slowly here`。
 
-- 很多副词以 `-ly` 结尾，但不是全部
-- 副词常修饰动词，也可以修饰形容词
+副词也可以用来加强或减弱形容词的语气，表示程度。这类副词通常被称为程度副词 (Adverbs of Degree)。
 
-## 快速练习 1
+## Examples
 
-找出下面句子里的副词：
+1. `He walks **slowly**.`
+   - 他走得很慢。(slowly 修饰动词 walks，说明走路的方式)
+2. `She sings **well**.`
+   - 她唱得很好。(well 修饰动词 sings，说明唱歌的方式)
+3. `It's a **very** big house.`
+   - 这是一座非常大的房子。(very 修饰形容词 big，说明大的程度)
+4. `The soup is **too** hot.`
+   - 这个汤太烫了。(too 修饰形容词 hot，说明热的程度)
 
-1. She speaks slowly.
-2. We usually eat at home.
-3. The test is quite easy.
-4. He arrived late.
+## Selector / Fill Practice
 
-## 快速练习 2
+1. `He runs fast.`
+   - Target: `fast`
+   - Chinese: 他跑得很快。
+2. `She sings well.`
+   - Target: `well`
+   - Chinese: 她唱得很好。
+3. `The boy works hard.`
+   - Target: `hard`
+   - Chinese: 这个男孩努力工作。
+4. `I often read books.`
+   - Target: `often`
+   - Chinese: 我经常读书。
+5. `Please speak slowly.`
+   - Target: `slowly`
+   - Chinese: 请慢慢说。
+6. `She always helps others.`
+   - Target: `always`
+   - Chinese: 她总是帮助别人。
+7. `They talked quietly in the library.`
+   - Target: `quietly`
+   - Chinese: 他们在图书馆里轻声交谈。
+8. `The train arrived late yesterday.`
+   - Target: `late`
+   - Chinese: 火车昨天晚到了。
+9. `He is very tall.`
+   - Target: `very`
+   - Chinese: 他非常高。
+10. `The movie was really good.`
+   - Target: `really`
+   - Chinese: 这部电影真的很好。
+11. `She is an extremely smart student.`
+   - Target: `extremely`
+   - Chinese: 她是一个极其聪明的学生。
+12. `This is a fairly easy question.`
+   - Target: `fairly`
+   - Chinese: 这是一个相当简单的问题。
+13. `The weather is too hot today.`
+   - Target: `too`
+   - Chinese: 今天天气太热了。
+14. `It was an incredibly beautiful view.`
+   - Target: `incredibly`
+   - Chinese: 那真是美得令人难以置信的景色。
+15. `The test was quite difficult.`
+   - Target: `quite`
+   - Chinese: 考试相当难。
+16. `The box is almost full.`
+   - Target: `almost`
+   - Chinese: 这个箱子几乎满了。
 
-下面哪个词是副词？
+## Sync Notes
 
-1. The girl sings beautifully.
-   - A. girl
-   - B. sings
-   - C. beautifully
-
-2. He is very tall.
-   - A. very
-   - B. tall
-   - C. he
-
-3. The red car is fast.
-   - A. red
-   - B. fast
-   - C. car
-
-## 小结
-
-副词是在补充“怎么、何时、多么”等细节。
-
-## 答案
-
-### 快速练习 1
-
-1. slowly
-2. usually
-3. quite
-4. late
-
-### 快速练习 2
-
-1. C
-2. A
-3. B
+- This doc mirrors the current web lesson content for the component listed above.
+- If you edit this doc, the corresponding web component should be updated afterward.

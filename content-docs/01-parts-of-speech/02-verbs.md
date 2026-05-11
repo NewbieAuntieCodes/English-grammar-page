@@ -1,80 +1,50 @@
-# 动词 / Verbs
+# 🏃 Verbs (动词)
 
-## 一句话先记住
+> Synced from web component: `src/components/content/PartsOfSpeech/VerbsContent.tsx`
 
-`动词表示动作，或者表示状态。`
+## Web Lesson Text
 
-## 怎么认动词？
+### 💡 为什么学动词？
 
-先问：
+### 📝 Examples
 
-- 谁在做什么？
-- 谁是什么状态？
+动词是句子的心脏！它们表示动作或状态，告诉我们名词在“做什么”或“是什么”。没有动词，句子就不完整。
 
-能回答这个问题的核心词，常常就是动词。
+## Examples
 
-## 例子
+1. `The baby **sleeps**.`
+   - 宝宝在睡觉。（sleeps 是一个‘动作’，是实义动词）
+2. `She **is** a doctor.`
+   - 她是一名医生。（is 是一个‘状态’，是系动词）
 
-1. He runs every day.
-2. She sings beautifully.
-3. I like music.
-4. Tom is tired.
+## Selector / Fill Practice
 
-这些句子里的动词有：
+1. `I run fast.`
+   - Target: `run`
+   - Chinese: 我跑得很快。
+2. `They eat bread.`
+   - Target: `eat`
+   - Chinese: 他们吃面包。
+3. `We like cats.`
+   - Target: `like`
+   - Chinese: 我们喜欢猫。
+4. `She writes a letter.`
+   - Target: `writes`
+   - Chinese: 她写一封信。
+5. `You are a student.`
+   - Target: `are`
+   - Chinese: 你是一名学生。
+6. `I feel happy.`
+   - Target: `feel`
+   - Chinese: 我感觉很开心。
+7. `You look great.`
+   - Target: `look`
+   - Chinese: 你看起来很棒。
+8. `The baby sleeps peacefully.`
+   - Target: `sleeps`
+   - Chinese: 宝宝安静地睡着了。
 
-- runs
-- sings
-- like
-- is
+## Sync Notes
 
-## 最短提醒
-
-- 动词不只是动作词
-- `is / am / are / was / were` 也是动词
-
-## 快速练习 1
-
-找出下面句子里的动词：
-
-1. Lucy plays tennis.
-2. My father works in a bank.
-3. They are happy.
-4. We know the answer.
-
-## 快速练习 2
-
-下面哪个词是动词？
-
-1. The boy is tall.
-   - A. boy
-   - B. is
-   - C. tall
-
-2. She reads books every night.
-   - A. reads
-   - B. books
-   - C. night
-
-3. I am busy today.
-   - A. busy
-   - B. today
-   - C. am
-
-## 小结
-
-动词告诉我们：做什么，或是什么状态。
-
-## 答案
-
-### 快速练习 1
-
-1. plays
-2. works
-3. are
-4. know
-
-### 快速练习 2
-
-1. B
-2. A
-3. C
+- This doc mirrors the current web lesson content for the component listed above.
+- If you edit this doc, the corresponding web component should be updated afterward.

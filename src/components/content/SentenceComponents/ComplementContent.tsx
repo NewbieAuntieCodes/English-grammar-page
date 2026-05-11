@@ -16,14 +16,14 @@ interface ComplementContentProps {
 }
 
 const practiceData = [
-    { sentence: 'The sky is blue.', targetWords: ['blue'], prompt: '补语 (Complement)', chinese: '天空是蓝色的。' },
-    { sentence: 'He became famous.', targetWords: ['famous'], prompt: '补语 (Complement)', chinese: '他变得有名了。' },
-    { sentence: 'We call him Jack.', targetWords: ['Jack'], prompt: '补语 (Complement)', chinese: '我们叫他杰克。' },
-    { sentence: 'The news made me happy.', targetWords: ['happy'], prompt: '补语 (Complement)', chinese: '这个消息让我很高兴。' },
-    { sentence: 'She looks tired.', targetWords: ['tired'], prompt: '补语 (Complement)', chinese: '她看起来很累。' },
-    { sentence: 'They painted the door green.', targetWords: ['green'], prompt: '补语 (Complement)', chinese: '他们把门漆成了绿色。' },
-    { sentence: 'The story made her sad.', targetWords: ['sad'], prompt: '补语 (Complement)', chinese: '这个故事让她感到悲伤。' },
-    { sentence: 'We consider him honest.', targetWords: ['honest'], prompt: '补语 (Complement)', chinese: '我们认为他很诚实。' },
+    { sentence: 'The sky is blue.', targetWords: ['blue'], prompt: '表语', chinese: '天空是蓝色的。blue 说明 The sky。' },
+    { sentence: 'He became famous.', targetWords: ['famous'], prompt: '表语', chinese: '他变得有名了。famous 说明 He。' },
+    { sentence: 'We call him Jack.', targetWords: ['Jack'], prompt: '宾补', chinese: '我们叫他杰克。Jack 说明 him 叫什么。' },
+    { sentence: 'The news made me happy.', targetWords: ['happy'], prompt: '宾补', chinese: '这个消息让我很高兴。happy 说明 me 的状态。' },
+    { sentence: 'She looks tired.', targetWords: ['tired'], prompt: '表语', chinese: '她看起来很累。tired 说明 She。' },
+    { sentence: 'They painted the door green.', targetWords: ['green'], prompt: '宾补', chinese: '他们把门漆成了绿色。green 说明 the door 的结果状态。' },
+    { sentence: 'The story made her sad.', targetWords: ['sad'], prompt: '宾补', chinese: '这个故事让她感到悲伤。sad 说明 her 的状态。' },
+    { sentence: 'We consider him honest.', targetWords: ['honest'], prompt: '宾补', chinese: '我们认为他很诚实。honest 说明 him。' },
 ];
 
 export const ComplementContent: React.FC<ComplementContentProps> = ({ onBack, themeColor, onCompleteAll }) => {
@@ -58,44 +58,44 @@ export const ComplementContent: React.FC<ComplementContentProps> = ({ onBack, th
 
             <WhyLearnSection themeColor={themeColor}>
                 <SectionTitle>💡 什么是补语？</SectionTitle>
-                <p>补语是“补充说明”的意思。它跟在动词后面，补充说明<strong>主语</strong>或<strong>宾语</strong>的状态或身份，让句子意思完整。没有它，句子意思就不完整或改变了。</p>
+                <p>补语就是<strong>补充说明的成分</strong>。它通常说明主语怎么样、主语是什么，或者说明宾语怎么样、宾语是谁。</p>
             </WhyLearnSection>
 
             <ExamplesSection>
-                <SectionTitle>📝 Examples: 主语补语 (Subject Complement)</SectionTitle>
-                <p style={{ color: '#4a5568', marginBottom: '15px' }}>跟在<strong>系动词</strong> (is, am, are, look, feel...) 后面，补充说明<strong>主语</strong>。</p>
+                <SectionTitle>🟦 第一种：表语</SectionTitle>
+                <p style={{ color: '#4a5568', marginBottom: '15px' }}>表语跟在<strong>系动词</strong>后面，说明<strong>主语</strong>。结构：主语 + 系动词 + 表语。</p>
                 <ExampleItem themeColor={themeColor} isExpanded={activeExample === 'ex1'} onClick={() => setActiveExample(p => p === 'ex1' ? null : 'ex1')}>
                     <ExampleHeader>
                         <ExampleEnglish>She is <strong>a doctor</strong>.</ExampleEnglish>
                         <SpeakButton onClick={(e) => { e.stopPropagation(); handleSpeak('She is a doctor.'); }}>🔊</SpeakButton>
                     </ExampleHeader>
-                    <ExampleChinese>她是一名医生。（'a doctor' 补充说明 'She' 的身份）</ExampleChinese>
+                    <ExampleChinese>a doctor 说明 She 是什么。</ExampleChinese>
                 </ExampleItem>
                 <ExampleItem themeColor={themeColor} isExpanded={activeExample === 'ex2'} onClick={() => setActiveExample(p => p === 'ex2' ? null : 'ex2')}>
                     <ExampleHeader>
                         <ExampleEnglish>The food tastes <strong>delicious</strong>.</ExampleEnglish>
                         <SpeakButton onClick={(e) => { e.stopPropagation(); handleSpeak('The food tastes delicious.'); }}>🔊</SpeakButton>
                     </ExampleHeader>
-                    <ExampleChinese>食物尝起来很美味。（'delicious' 补充说明 'The food' 的状态）</ExampleChinese>
+                    <ExampleChinese>delicious 说明 The food 怎么样。</ExampleChinese>
                 </ExampleItem>
             </ExamplesSection>
 
             <ExamplesSection>
-                <SectionTitle>📝 Examples: 宾语补语 (Object Complement)</SectionTitle>
-                 <p style={{ color: '#4a5568', marginBottom: '15px' }}>跟在<strong>宾语</strong>后面，补充说明<strong>宾语</strong>。</p>
+                <SectionTitle>🟩 第二种：宾补</SectionTitle>
+                 <p style={{ color: '#4a5568', marginBottom: '15px' }}>宾补跟在<strong>宾语</strong>后面，说明<strong>宾语</strong>。结构：主语 + 谓语 + 宾语 + 宾补。</p>
                 <ExampleItem themeColor={themeColor} isExpanded={activeExample === 'ex3'} onClick={() => setActiveExample(p => p === 'ex3' ? null : 'ex3')}>
                     <ExampleHeader>
-                        <ExampleEnglish>They made him <strong>the captain</strong>.</ExampleEnglish>
-                        <SpeakButton onClick={(e) => { e.stopPropagation(); handleSpeak('They made him the captain.'); }}>🔊</SpeakButton>
+                        <ExampleEnglish>We call him <strong>Jack</strong>.</ExampleEnglish>
+                        <SpeakButton onClick={(e) => { e.stopPropagation(); handleSpeak('We call him Jack.'); }}>🔊</SpeakButton>
                     </ExampleHeader>
-                    <ExampleChinese>他们让他当了队长。（'the captain' 补充说明 'him' 的身份）</ExampleChinese>
+                    <ExampleChinese>him 是宾语，Jack 说明 him 叫什么。</ExampleChinese>
                 </ExampleItem>
                  <ExampleItem themeColor={themeColor} isExpanded={activeExample === 'ex4'} onClick={() => setActiveExample(p => p === 'ex4' ? null : 'ex4')}>
                     <ExampleHeader>
-                        <ExampleEnglish>I found the movie <strong>boring</strong>.</ExampleEnglish>
-                        <SpeakButton onClick={(e) => { e.stopPropagation(); handleSpeak('I found the movie boring.'); }}>🔊</SpeakButton>
+                        <ExampleEnglish>The news made me <strong>happy</strong>.</ExampleEnglish>
+                        <SpeakButton onClick={(e) => { e.stopPropagation(); handleSpeak('The news made me happy.'); }}>🔊</SpeakButton>
                     </ExampleHeader>
-                    <ExampleChinese>我发现这部电影很无聊。（'boring' 补充说明 'the movie' 的状态）</ExampleChinese>
+                    <ExampleChinese>me 是宾语，happy 说明 me 的状态。</ExampleChinese>
                 </ExampleItem>
             </ExamplesSection>
             

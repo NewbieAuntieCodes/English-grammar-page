@@ -37,7 +37,7 @@ const practiceData = [
     { words: [{ en: 'I', cn: '我' }, { en: 'value', cn: '珍视' }, { en: 'your opinion', cn: '你的意见' }], correct: ['I', 'value', 'your opinion'], chinese: '我珍视你的意见。' },
     { words: [{ en: 'The', cn: '这个' }, { en: 'value', cn: '价值' }, { en: 'of this diamond', cn: '钻石的' }, { en: 'is very high', cn: '非常高' }], correct: ['The', 'value', 'of this diamond', 'is very high'], chinese: '这颗钻石的价值非常高。' },
     { words: [{ en: 'We', cn: '我们' }, { en: 'value', cn: '重视' }, { en: 'honesty', cn: '诚实' }, { en: 'above all', cn: '高于一切' }], correct: ['We', 'value', 'honesty', 'above all'], chinese: '我们把诚实看得高于一切。' },
-    { words: [{ en: 'What is the', cn: '是什么' }, { en: 'value', cn: '价值' }, { en: 'of friendship', cn: '友谊的' }], correct: ['What is the', 'value', 'of friendship'], chinese: '友谊的价值是什么？' },
+    { words: [{ en: 'What is the', cn: '是什么' }, { en: 'value', cn: '价值' }, { en: 'of friendship?', cn: '友谊的' }], correct: ['What is the', 'value', 'of friendship?'], chinese: '友谊的价值是什么？' },
     { words: [{ en: 'She', cn: '她' }, { en: 'values', cn: '珍惜' }, { en: 'her time', cn: '她的时间' }, { en: 'with her family', cn: '和家人一起的' }], correct: ['She', 'values', 'her time', 'with her family'], chinese: '她珍惜和家人在一起的时光。' },
     { words: [{ en: 'This old book', cn: '这本旧书' }, { en: 'has great', cn: '有巨大的' }, { en: 'historical value', cn: '历史价值' }], correct: ['This old book', 'has great', 'historical value'], chinese: '这本旧书有很高的历史价值。' },
     { words: [{ en: 'Companies should', cn: '公司应该' }, { en: 'value', cn: '重视' }, { en: 'their employees', cn: '他们的员工' }], correct: ['Companies should', 'value', 'their employees'], chinese: '公司应该重视他们的员工。' },

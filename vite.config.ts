@@ -5,4 +5,8 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   base: '/English-grammar-page/',
+  server: {
+    port: 9431,
+    strictPort: true,
+  },
 })

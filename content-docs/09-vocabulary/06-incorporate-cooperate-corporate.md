@@ -1,88 +1,64 @@
-# incorporate / cooperate / corporate
+# 📖 Incorporate / Cooperate / Corporate
 
-## 一句话先记住
+> Synced from web component: `src/components/content/Vocabulary/IncorporateCooperateCorporateContent.tsx`
 
-这三个词长得像，但意思完全不同。
+## Web Lesson Text
 
-## 最短区别
+### 💡 为什么学这个？
 
-### incorporate
+### 📝 主要用法
 
-表示“包含；纳入”。
+### 1. Incorporate (动词 - Verb)
 
-- `The plan incorporates new ideas.`
+### 2. Cooperate (动词 - Verb)
 
-### cooperate
+### 3. Corporate (形容词 - Adjective)
 
-表示“合作”。
+这三个词长得很像，但意思和用法完全不同。"Incorporate" 表示包含，"Cooperate" 表示合作，而 "Corporate" 是形容词，表示“公司的”。分清它们对于商务和学术英语尤为重要。
 
-- `We should cooperate with each other.`
+意思是“包含；合并；纳入”。表示将某物作为一部分包含到更大的整体中。
 
-### corporate
+意思是“合作；协作”。表示为了共同的目标而一起工作。
 
-表示“公司的；企业的”。
+意思是“公司的；法人的；团体的”。用来修饰与大公司或团体相关的事物。
 
-- `corporate culture`
+## Examples
 
-## 例句
+1. `We will **incorporate** your feedback into the report.`
+   - 我们会将您的反馈纳入报告中。
+2. `The two companies agreed to **cooperate** on the project.`
+   - 这两家公司同意在该项目上进行合作。
+3. `He is climbing the **corporate** ladder.`
+   - 他正在攀登公司的晋升阶梯。
 
-1. `The school incorporated more art classes into the program.`
-2. `The two teams cooperated well.`
-3. `She works in a corporate office.`
-4. `Good results need cooperation.`
+## Selector / Fill Practice
 
-## 一个容易错的地方
+1. `To succeed, all team members must ____ with each other.`
+   - Choices: **cooperate** / incorporate / corporate
+   - Chinese: 为了成功，所有团队成员必须互相合作。
+2. `The company has a strong ____ culture.`
+   - Choices: **corporate** / cooperate / incorporate
+   - Chinese: 这家公司有很强的企业文化。
+3. `We need to ____ new safety features into the product.`
+   - Choices: **incorporate** / cooperate / corporate
+   - Chinese: 我们需要将新的安全功能整合到产品中。
+4. `The two departments will ____ to launch the new campaign.`
+   - Choices: **cooperate** / incorporate / corporate
+   - Chinese: 这两个部门将合作发起新的宣传活动。
+5. `He left his job due to the high-pressure ____ environment.`
+   - Choices: **corporate** / cooperate / incorporate
+   - Chinese: 由于高压的公司环境，他辞职了。
+6. `The architect plans to ____ a garden into the building's design.`
+   - Choices: **incorporate** / cooperate / corporate
+   - Chinese: 建筑师计划在建筑设计中融入一个花园。
+7. `The police asked the public to ____ with their investigation.`
+   - Choices: **cooperate** / incorporate / corporate
+   - Chinese: 警方请求公众配合他们的调查。
+8. `She is a lawyer specializing in ____ law.`
+   - Choices: **corporate** / cooperate / incorporate
+   - Chinese: 她是一位专攻公司法的律师。
 
-不要把 `corporate` 当动词用。
+## Sync Notes
 
-比如：
-
-- `We need to corporate.` 不对
-- `We need to cooperate.` 对
-
-## 快速练习 1
-
-选空：
-
-1. We need to `____` with our partners.  
-   A. cooperate  
-   B. corporate
-
-2. The report `____` several new ideas.  
-   A. incorporates  
-   B. cooperates
-
-3. She is interested in `____` law.  
-   A. cooperate  
-   B. corporate
-
-## 快速练习 2
-
-把中文写成英文：
-
-1. 这个系统纳入了新的功能。
-2. 学生应该互相合作。
-3. 他在一家企业公司工作。
-
-## 答案
-
-### 快速练习 1
-
-1. A
-2. A
-3. B
-
-### 快速练习 2
-
-1. `The system incorporates new features.`
-2. `Students should cooperate with each other.`
-3. `He works for a corporate company.`
-
-## 小结
-
-记这组词时，不要只记拼写差别。
-
-要同时记：
-
-- 词性
-- 常见搭配
+- This doc mirrors the current web lesson content for the component listed above.
+- If you edit this doc, the corresponding web component should be updated afterward.

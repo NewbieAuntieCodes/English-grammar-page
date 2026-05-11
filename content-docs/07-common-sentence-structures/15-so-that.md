@@ -1,82 +1,73 @@
-# so that / so...that... 的用法
+# 🎯 'so that' vs 'so...that...'
 
-## 一句话先记住
+> Synced from web component: `src/components/content/CommonStructures/SoThatContent.tsx`
 
-`so that` 常表示“为了 / 以便”，`so...that...` 常表示“如此……以至于……”。
+## Web Lesson Text
 
-## 1. so that
+### 💡 为什么学这个？
 
-这个结构常表示目的。
+### 📝 主要用法
 
-例子：
+### 1. so that (表示目的)
 
-- `She speaks slowly so that everyone can understand.`
-- `I got up early so that I could catch the train.`
+### 2. so...that... (表示结果)
 
-## 2. so...that...
+"so that" 和 "so...that..." 是两个非常重要且容易混淆的状语从句。**"so that" 用来表示【目的】**（为了...），而 **"so...that..." 用来表示【结果】**（如此...以至于...）。学会区分它们，能让你的因果和目的表达更清晰、更准确。
 
-这个结构常表示结果。
+结构：**句子 + so that + 句子 (通常带 can/could/will/would)**
+这个结构回答了“为了什么目的？” (For what purpose?)。
 
-例子：
+结构：**so + 形容词/副词 + that + 句子**
+这个结构强调“程度如此之深，以至于产生了某种结果”。
 
-- `He was so tired that he fell asleep.`
-- `The box was so heavy that I could not lift it.`
+## Examples
 
-## 最短对比
+1. `He studied hard **so that** he could pass the exam.`
+   - 他努力学习，以便能通过考试。
+2. `Speak clearly **so that** everyone can understand you.`
+   - 请说清楚一点，这样大家都能听懂你。
+3. `He was **so tired that** he fell asleep immediately.`
+   - 他太累了，以至于马上就睡着了。
+4. `She ran **so quickly that** nobody could catch her.`
+   - 她跑得非常快，以至于没人能追上她。
 
-- `so that`：为了……
-- `so + adj./adv. + that`：如此……以至于……
+## Sentence Builder Practice
 
-## 例句
+1. Words: `I got up early` / `so that` / `I could catch the train`
+   - Correct: `I got up early so that I could catch the train`
+   - Chinese: 我起得很早，以便能赶上火车。
+2. Words: `The box was` / `so heavy that` / `I couldn't lift it`
+   - Correct: `The box was so heavy that I couldn't lift it`
+   - Chinese: 这个箱子太重了，以至于我搬不动它。
+3. Words: `She spoke quietly` / `so that` / `she wouldn't wake the baby`
+   - Correct: `She spoke quietly so that she wouldn't wake the baby`
+   - Chinese: 她轻声说话，以免吵醒宝宝。
+4. Words: `The weather was` / `so cold that` / `the river froze`
+   - Correct: `The weather was so cold that the river froze`
+   - Chinese: 天气太冷了，以至于河水都结冰了。
+5. Words: `He is saving money` / `so that` / `he can buy a car`
+   - Correct: `He is saving money so that he can buy a car`
+   - Chinese: 他正在存钱，以便能买一辆车。
 
-1. `He studies hard so that he can pass the exam.`
-2. `Please write it down so that you won't forget.`
-3. `She was so excited that she could not sleep.`
-4. `It was so cold that we stayed home.`
+## Selector / Fill Practice
 
-## 一个容易错的地方
+1. `He works hard ____ he can support his family.`
+   - Choices: **so that** / so / that
+   - Chinese: 他努力工作以便能养家。
+2. `It was ____ dark that we couldn't see anything.`
+   - Choices: **so** / so that / very
+   - Chinese: 天太黑了，以至于我们什么也看不见。
+3. `Please be quiet ____ I can concentrate.`
+   - Choices: **so that** / so / that
+   - Chinese: 请安静，以便我能集中精力。
+4. `She was ____ happy that she started to cry.`
+   - Choices: **so** / so that / very
+   - Chinese: 她太高兴了，以至于哭了起来。
+5. `He left early ____ he wouldn't miss the train.`
+   - Choices: **so that** / so / that
+   - Chinese: 他早早地离开，以免错过火车。
 
-不要把两个结构混在一起乱用。
+## Sync Notes
 
-比如：
-
-- `He studies hard so that he can pass.` 对
-- `He is so tired that he sleeps early.` 也对
-
-但它们意思不一样。
-
-## 快速练习 1
-
-判断下面句子表示“目的”还是“结果”：
-
-1. I speak loudly so that all can hear me.
-2. He was so busy that he forgot lunch.
-3. She left early so that she could catch the bus.
-
-## 快速练习 2
-
-把中文写成英文：
-
-1. 我把门关上，以便宝宝能睡觉。
-2. 他太年轻了，不能独自去。
-3. 她说得很慢，因此我们都听懂了。
-
-## 答案
-
-### 快速练习 1
-
-1. 目的
-2. 结果
-3. 目的
-
-### 快速练习 2
-
-1. `I closed the door so that the baby could sleep.`
-2. `He was so young that he could not go alone.`
-3. `She spoke so slowly that we all understood her.`
-
-## 小结
-
-看到 `so that` 先想“目的”。
-
-看到 `so + 形容词 / 副词 + that` 先想“结果”。
+- This doc mirrors the current web lesson content for the component listed above.
+- If you edit this doc, the corresponding web component should be updated afterward.

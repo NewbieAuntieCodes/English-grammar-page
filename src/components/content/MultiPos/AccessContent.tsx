@@ -38,7 +38,7 @@ const practiceData = [
     { words: [{ en: 'You need a password', cn: '你需要一个密码' }, { en: 'to access', cn: '来访问' }, { en: 'the file', cn: '这个文件' }], correct: ['You need a password', 'to access', 'the file'], chinese: '你需要一个密码来访问这个文件。' },
     { words: [{ en: 'The museum gives', cn: '博物馆提供' }, { en: 'free access', cn: '免费进入' }, { en: 'to students', cn: '给学生' }], correct: ['The museum gives', 'free access', 'to students'], chinese: '博物馆为学生提供免费入场券。' },
     { words: [{ en: 'The building is', cn: '这栋建筑是' }, { en: 'accessible to', cn: '可进入的' }, { en: 'wheelchair users', cn: '轮椅使用者' }], correct: ['The building is', 'accessible to', 'wheelchair users'], chinese: '这栋楼对轮椅使用者是无障碍的。' },
-    { words: [{ en: 'How can I', cn: '我如何' }, { en: 'access', cn: '访问' }, { en: 'my account', cn: '我的账户' }], correct: ['How can I', 'access', 'my account'], chinese: '我如何才能访问我的账户？' },
+    { words: [{ en: 'How can I', cn: '我如何' }, { en: 'access', cn: '访问' }, { en: 'my account?', cn: '我的账户' }], correct: ['How can I', 'access', 'my account?'], chinese: '我如何才能访问我的账户？' },
     { words: [{ en: 'We have', cn: '我们有' }, { en: 'access to', cn: '...的权限' }, { en: 'the library', cn: '图书馆' }], correct: ['We have', 'access to', 'the library'], chinese: '我们有权使用图书馆。' },
     { words: [{ en: 'Make sure your website', cn: '确保你的网站' }, { en: 'is accessible', cn: '是可访问的' }], correct: ['Make sure your website', 'is accessible'], chinese: '确保你的网站是可访问的。' },
     { words: [{ en: 'He tried to', cn: '他试图' }, { en: 'access', cn: '获取' }, { en: 'the restricted data', cn: '受限数据' }], correct: ['He tried to', 'access', 'the restricted data'], chinese: '他试图获取受限制的数据。' }

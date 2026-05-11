@@ -58,7 +58,7 @@ export const PredicateContent: React.FC<PredicateContentProps> = ({ onBack, them
 
             <WhyLearnSection themeColor={themeColor}>
                 <SectionTitle>💡 什么是谓语？</SectionTitle>
-                <p>谓语是句子的“心脏”！它说明主语“做什么”或“是什么”，其核心是一个动词。一个句子绝对不能没有谓语。</p>
+                <p>谓语是句子的“心脏”！它说明主语“做什么”或“是什么”。这页先练最重要的部分：<strong>谓语动词</strong>。</p>
             </WhyLearnSection>
 
             <ExamplesSection>
@@ -72,10 +72,10 @@ export const PredicateContent: React.FC<PredicateContentProps> = ({ onBack, them
                 </ExampleItem>
                 <ExampleItem themeColor={themeColor} isExpanded={activeExample === 'ex2'} onClick={() => setActiveExample(p => p === 'ex2' ? null : 'ex2')}>
                     <ExampleHeader>
-                        <ExampleEnglish>He <strong>is a student</strong>.</ExampleEnglish>
+                        <ExampleEnglish>He <strong>is</strong> a student.</ExampleEnglish>
                         <SpeakButton onClick={(e) => { e.stopPropagation(); handleSpeak('He is a student.'); }}>🔊</SpeakButton>
                     </ExampleHeader>
-                    <ExampleChinese>他是一名学生。（他是什么？是学生。）</ExampleChinese>
+                    <ExampleChinese>他是一名学生。（谓语动词是 is。）</ExampleChinese>
                 </ExampleItem>
             </ExamplesSection>
             

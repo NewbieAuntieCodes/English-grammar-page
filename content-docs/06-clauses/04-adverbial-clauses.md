@@ -1,138 +1,66 @@
-# 状语从句 / Adverbial Clauses
+# 🌶️ 状语从句 Adverbial Clauses
 
-## 一句话先记住
+> Synced from web component: `src/components/content/Clauses/AdverbialClausesContent.tsx`
 
-`状语从句是在给主句补时间、原因、条件这些背景信息。`
+## Web Lesson Text
 
-## 它常常在补什么？
+### 💡 为什么学这个？
 
-最常见的是：
+### 📝 例子分析
 
-- 时间
-- 原因
-- 条件
-- 让步
+### 状语从句结构
 
-## 常见引导词
+状语从句是句子的“高级调味品”！它能告诉我们主句动作发生的【时间】、【地点】、【原因】、【条件】等背景信息，让你的表达逻辑更清晰，内容更丰富。
 
-### 1. 时间
+## Sentence Builder Practice
 
-- `when`
-- `before`
-- `after`
-- `while`
-- `until`
+1. Words: `He` / `was late` / `because` / `he missed` / `the bus`
+   - Correct: `He was late because he missed the bus`
+   - Chinese: 他因为错过了公交车而迟到。
+2. Words: `If it rains tomorrow,` / `we will` / `stay home`
+   - Correct: `If it rains tomorrow, we will stay home`
+   - Chinese: 如果明天下雨，我们就待在家里。
+3. Words: `She will` / `call you` / `when` / `she arrives`
+   - Correct: `She will call you when she arrives`
+   - Chinese: 她到达时会给你打电话。
+4. Words: `Although` / `he was tired,` / `he kept` / `working`
+   - Correct: `Although he was tired, he kept working`
+   - Chinese: 虽然他很累，但他仍继续工作。
+5. Words: `You can sit` / `wherever` / `you like`
+   - Correct: `You can sit wherever you like`
+   - Chinese: 你可以坐在任何你喜欢的地方。
+6. Words: `I will wait` / `until` / `you come back`
+   - Correct: `I will wait until you come back`
+   - Chinese: 我会等到你回来。
+7. Words: `He studies hard` / `so that` / `he can pass` / `the exam`
+   - Correct: `He studies hard so that he can pass the exam`
+   - Chinese: 他努力学习以便能通过考试。
 
-例子：
+## Selector / Fill Practice
 
-- `When I got home, it was dark.`
-- `I waited until he came back.`
+1. `He was late ____ he missed the bus.`
+   - Choices: **because** / if / when
+   - Chinese: 他因为错过了公交车而迟到。
+2. `____ it rains tomorrow, we will stay home.`
+   - Choices: **If** / When / Although
+   - Chinese: 如果明天下雨，我们就待在家里。
+3. `She will call you ____ she arrives.`
+   - Choices: **when** / because / if
+   - Chinese: 她到达时会给你打电话。
+4. `____ he was tired, he kept working.`
+   - Choices: **Although** / If / Because
+   - Chinese: 虽然他很累，但他仍继续工作。
+5. `You can sit ____ you like.`
+   - Choices: **wherever** / whatever / whenever
+   - Chinese: 你可以坐在任何你喜欢的地方。
+6. `I will wait ____ you come back.`
+   - Choices: **until** / if / because
+   - Chinese: 我会等到你回来。
+7. `He studies hard ____ he can pass the exam.`
+   - Choices: **so that** / although / when
+   - Chinese: 他努力学习以便能通过考试。
 
-### 2. 原因
+## Sync Notes
 
-- `because`
-
-例子：
-
-- `He was late because he missed the bus.`
-
-### 3. 条件
-
-- `if`
-
-例子：
-
-- `If it rains, we will stay home.`
-
-### 4. 让步
-
-- `although`
-
-例子：
-
-- `Although she was tired, she kept working.`
-
-## 怎么认状语从句？
-
-先看这部分是不是在回答下面的问题：
-
-- 什么时候？
-- 为什么？
-- 在什么条件下？
-- 虽然怎么样？
-
-如果是，它常常就是状语从句。
-
-## 位置提醒
-
-状语从句可以放在主句前，也可以放在主句后。
-
-比如：
-
-- `When the class ended, we left.`
-- `We left when the class ended.`
-
-## 例句
-
-1. `Because he was sick, he stayed home.`
-2. `We will go out if the weather is fine.`
-3. `When she saw me, she smiled.`
-4. `Although it was cold, they played outside.`
-
-## 一个容易错的地方
-
-不要只看引导词。
-
-还要看它是不是在补充主句动作的背景。
-
-比如：
-
-`I know when the train arrives.`
-
-这里的 `when the train arrives` 不是状语从句。
-
-它放在 `know` 后面，是宾语从句。
-
-## 快速练习 1
-
-判断下面状语从句表示什么关系：
-
-1. When I was young, I lived in Beijing.
-2. He didn't go out because it was raining.
-3. If you need help, call me.
-4. Although she was busy, she answered my message.
-
-## 快速练习 2
-
-判断下面画线部分是不是状语从句：
-
-1. We stayed home **because it was late**.
-2. I know **because he is tired**.
-3. **When the bell rang**, the students stood up.
-4. I remember the day **when we first met**.
-
-## 答案
-
-### 快速练习 1
-
-1. 时间
-2. 原因
-3. 条件
-4. 让步
-
-### 快速练习 2
-
-1. 是
-2. 不是
-3. 是
-4. 不是，这是定语从句
-
-## 小结
-
-状语从句像主句的背景板。
-
-它最常见的任务就是告诉你：
-
-- 何时
-- 为何
-- 在什么条件下
+- This doc mirrors the current web lesson content for the component listed above.
+- If you edit this doc, the corresponding web component should be updated afterward.

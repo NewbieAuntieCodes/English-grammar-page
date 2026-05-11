@@ -1,117 +1,58 @@
-# 情态动词 / Modal Verbs
+# 🤝 情态动词 (Modal Verbs)
 
-## 一句话先记住
+> Synced from web component: `src/components/content/Questions/ModalVerbsContent.tsx`
 
-`情态动词问句 = 把情态动词放到主语前面。`
+## Web Lesson Text
 
-## 这一课主要学什么？
+### 💡 为什么学这个？
 
-这一课只看问句里的常见情态动词：
+### 📝 常见情态动词
 
-- `can`
-- `will`
-- `should`
-- `may`
-- `must`
+### 核心结构
 
-它们后面常常接动词原形。
+情态动词是动词的“小助手”，它们不能单独使用，必须跟在动词原形前，用来表达说话者的语气、情感和态度，如**能力 (can)**、**可能性 (may/might)**、**必要性 (must)**、**建议 (should)** 等。掌握它们能让你的表达更丰富、更委婉、更地道！
 
-## 最常见结构
+## Examples
 
-`情态动词 + 主语 + 动词原形 ... ?`
+1. `I **can** swim.`
+   - 我会游泳。(表示能力)
+2. `You **should** listen to your parents.`
+   - 你应该听父母的话。(表示建议)
+3. `It **may** rain tomorrow.`
+   - 明天可能会下雨。(表示可能性)
+4. `You **must** finish your homework.`
+   - 你必须完成你的作业。(表示必要性/命令)
+5. `**May** I use your pen?`
+   - 我可以用你的笔吗？(表示请求许可)
 
-比如：
+## Sentence Builder Practice
 
-- `Can you swim?`
-- `Will she come?`
-- `Should we leave now?`
+1. Words: `I` / `can` / `swim`
+   - Correct: `I can swim`
+   - Chinese: 我会游泳。
+2. Words: `She` / `will` / `come tomorrow`
+   - Correct: `She will come tomorrow`
+   - Chinese: 她明天会来。
+3. Words: `You` / `should` / `see a doctor`
+   - Correct: `You should see a doctor`
+   - Chinese: 你应该去看医生。
+4. Words: `May I` / `use your phone?`
+   - Correct: `May I use your phone?`
+   - Chinese: 我可以用你的手机吗？
+5. Words: `He` / `must` / `finish his homework`
+   - Correct: `He must finish his homework`
+   - Chinese: 他必须完成他的作业。
+6. Words: `They` / `might` / `be late`
+   - Correct: `They might be late`
+   - Chinese: 他们可能会迟到。
+7. Words: `We` / `could` / `go to the park`
+   - Correct: `We could go to the park`
+   - Chinese: 我们可以去公园。
+8. Words: `You` / `must not` / `smoke here`
+   - Correct: `You must not smoke here`
+   - Chinese: 你不准在这里吸烟。
 
-## 怎么看这种问句？
+## Sync Notes
 
-先找句子里有没有情态动词。
-
-如果有，问句通常直接把它提到前面。
-
-### 对比
-
-`You can swim.`
-
-变成：
-
-`Can you swim?`
-
-`She will come tomorrow.`
-
-变成：
-
-`Will she come tomorrow?`
-
-## 例句
-
-1. `Can he speak English?`
-2. `Will they join us?`
-3. `Should I call her now?`
-4. `May I use your pen?`
-5. `Must we finish it today?`
-
-## 最短提醒
-
-- 情态动词后面用动词原形
-- 一般不用再加 `do / does / did`
-- `May I ... ?` 常用来礼貌请求
-- `Should I ... ?` 常用来征求建议
-
-## 一个容易错的地方
-
-不要写成：
-
-`Does she can swim?`
-
-应该写：
-
-`Can she swim?`
-
-因为句子里已经有情态动词 `can`，不需要再借 `does`。
-
-## 快速练习 1
-
-把下面句子改成问句：
-
-1. You can drive.
-2. She will come tonight.
-3. We should wait.
-4. I may sit here.
-
-## 快速练习 2
-
-选出正确句子：
-
-1. A. Does he can sing?  
-   B. Can he sing?
-
-2. A. Will she comes tomorrow?  
-   B. Will she come tomorrow?
-
-3. A. Should we go now?  
-   B. Do should we go now?
-
-## 答案
-
-### 快速练习 1
-
-1. `Can you drive?`
-2. `Will she come tonight?`
-3. `Should we wait?`
-4. `May I sit here?`
-
-### 快速练习 2
-
-1. B
-2. B
-3. A
-
-## 小结
-
-看到情态动词，先别想 `do / does / did`。
-
-先把情态动词提到前面，再检查后面的动词是不是原形。
+- This doc mirrors the current web lesson content for the component listed above.
+- If you edit this doc, the corresponding web component should be updated afterward.

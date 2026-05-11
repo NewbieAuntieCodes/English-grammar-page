@@ -16,13 +16,13 @@ interface ObjectContentProps {
 }
 
 const practiceData = [
-    { sentence: 'She reads a book.', targetWords: ['book'], prompt: '宾语 (Object)', chinese: '她在读书。' },
-    { sentence: 'I have a pen.', targetWords: ['pen'], prompt: '宾语 (Object)', chinese: '我有一支钢笔。' },
+    { sentence: 'She reads a book.', targetWords: ['a', 'book'], prompt: '完整宾语 (Object)', chinese: '她在读书。宾语是完整的 a book。' },
+    { sentence: 'I have a pen.', targetWords: ['a', 'pen'], prompt: '完整宾语 (Object)', chinese: '我有一支钢笔。宾语是完整的 a pen。' },
     { sentence: 'He loves music.', targetWords: ['music'], prompt: '宾语 (Object)', chinese: '他热爱音乐。' },
-    { sentence: 'They bought a car.', targetWords: ['car'], prompt: '宾语 (Object)', chinese: '他们买了一辆车。' },
+    { sentence: 'They bought a car.', targetWords: ['a', 'car'], prompt: '完整宾语 (Object)', chinese: '他们买了一辆车。宾语是完整的 a car。' },
     { sentence: 'We eat apples.', targetWords: ['apples'], prompt: '宾语 (Object)', chinese: '我们吃苹果。' },
-    { sentence: 'She is writing a letter.', targetWords: ['letter'], prompt: '宾语 (Object)', chinese: '她正在写一封信。' },
-    { sentence: 'My father drives a car.', targetWords: ['car'], prompt: '宾语 (Object)', chinese: '我爸爸开一辆车。' },
+    { sentence: 'She is writing a letter.', targetWords: ['a', 'letter'], prompt: '完整宾语 (Object)', chinese: '她正在写一封信。宾语是完整的 a letter。' },
+    { sentence: 'My father drives a car.', targetWords: ['a', 'car'], prompt: '完整宾语 (Object)', chinese: '我爸爸开一辆车。宾语是完整的 a car。' },
 ];
 
 
@@ -58,7 +58,7 @@ export const ObjectContent: React.FC<ObjectContentProps> = ({ onBack, themeColor
 
             <WhyLearnSection themeColor={themeColor}>
                 <SectionTitle>💡 什么是宾语？</SectionTitle>
-                <p>宾语是动作的“承受者”。它回答了“（主语）做了什么？”或“（主语）对谁做了什么？”的问题。注意：只有实义动词（Action Verbs）才有宾语。</p>
+                <p>宾语是动作影响到的人或事。它常跟在实义动词后面，回答“做了什么”或“对谁做”。</p>
             </WhyLearnSection>
 
             <ExamplesSection>

@@ -1,130 +1,74 @@
-# 简单句扩展练习 / Simple Sentence Expansion
+# ✨ 简单句扩展练习
 
-## 一句话先记住
+> Synced from web component: `src/components/content/Structures/SentenceExpansionContent.tsx`
 
-`先有句子骨架，再一点一点加信息。`
+## Web Lesson Text
 
-## 怎么扩句？
+### 💡 先抓一个点
 
-先写最短完整句。
+### 📈 看两个扩展示范
 
-再按需要往里面加：
+### 💡 常见顺序
 
-- 什么样
-- 怎么做
-- 在哪里
-- 什么时候
+先说核心句，再一点点加信息。这样句子会更长，也更具体。
 
-不要一开始就把所有信息全塞进去。
+例如：
 
-## 先看一个扩句过程
+## Sentence Builder Practice
 
-### 从最短句开始
+1. Words: `The` / `cute` / `dog` / `runs` / `in the park`
+   - Correct: `The cute dog runs in the park`
+   - Chinese: 这只可爱的狗在公园里跑。
+2. Words: `She` / `reads` / `a book` / `quietly` / `in the library`
+   - Correct: `She reads a book quietly in the library`
+   - Chinese: 她在图书馆里安静地读一本书。
+3. Words: `My father` / `drives` / `carefully` / `every day`
+   - Correct: `My father drives carefully every day`
+   - Chinese: 我爸爸每天都小心地开车。
+4. Words: `They` / `played` / `football` / `happily` / `after class`
+   - Correct: `They played football happily after class`
+   - Chinese: 他们下课后开心地踢足球。
+5. Words: `A` / `little` / `girl` / `is singing` / `on the stage` / `now`
+   - Correct: `A little girl is singing on the stage now`
+   - Chinese: 一个小女孩现在正在舞台上唱歌。
+6. Words: `The` / `students` / `study` / `hard` / `in the classroom`
+   - Correct: `The students study hard in the classroom`
+   - Chinese: 这些学生在教室里努力学习。
+7. Words: `Our teacher` / `spoke` / `slowly` / `to us` / `this morning`
+   - Correct: `Our teacher spoke slowly to us this morning`
+   - Chinese: 我们老师今天早上慢慢地对我们说话。
+8. Words: `The` / `black` / `cat` / `slept` / `under the table` / `all afternoon`
+   - Correct: `The black cat slept under the table all afternoon`
+   - Chinese: 那只黑猫整个下午都在桌子下面睡觉。
 
-`A bird sings.`
+## Selector / Fill Practice
 
-### 第一步：加“什么样”
+1. `The boy runs ____.`
+   - Choices: **quickly** / teacher / Monday
+   - Chinese: 这个男孩跑得很快。
+2. `She sings in the room ____.`
+   - Choices: **every night** / happy / doctor
+   - Chinese: 她每天晚上都在房间里唱歌。
+3. `My brother plays basketball ____.`
+   - Choices: **after school** / careful / a student
+   - Chinese: 我哥哥放学后打篮球。
+4. `The baby is sleeping ____.`
+   - Choices: **on the bed** / friendly / artist
+   - Chinese: 宝宝正在床上睡觉。
+5. `They watched TV ____.`
+   - Choices: **together** / library / young
+   - Chinese: 他们一起看电视。
+6. `The birds sing in the tree ____.`
+   - Choices: **every morning** / carefully / driver
+   - Chinese: 这些鸟每天早上都在树上唱歌。
+7. `Our teacher speaks ____ in class.`
+   - Choices: **clearly** / hospital / winter
+   - Chinese: 我们老师上课时讲得很清楚。
+8. `A small cat is playing ____.`
+   - Choices: **in the garden** / kind / farmer
+   - Chinese: 一只小猫正在花园里玩。
 
-`A small bird sings.`
+## Sync Notes
 
-### 第二步：加“在哪里”
-
-`A small bird sings in the tree.`
-
-### 第三步：加“怎么唱”
-
-`A small bird sings happily in the tree.`
-
-### 第四步：加“什么时候”
-
-`A small bird sings happily in the tree every morning.`
-
-## 再看一个例子
-
-### 核心句
-
-`He plays basketball.`
-
-### 扩句后
-
-`He plays basketball well with his friends at the park after school.`
-
-这里可以拆成：
-
-- `well` 怎么打
-- `with his friends` 和谁一起
-- `at the park` 在哪里
-- `after school` 什么时候
-
-## 常见顺序
-
-很多时候可以先这样记：
-
-`方式 + 地点 + 时间`
-
-比如：
-
-`She read a book quietly in her room after dinner.`
-
-- quietly: 方式
-- in her room: 地点
-- after dinner: 时间
-
-## 最短提醒
-
-- 先保证句子骨架是对的
-- 每次只加一种信息，最容易看清楚
-- 地点和时间常常放后面
-
-## 快速练习 1
-
-把下面的句子补完整。
-
-1. The boy runs.  
-   加“很快地”
-
-2. She sings.  
-   加“在房间里”
-
-3. They play football.  
-   加“下课后”
-
-4. A cat sleeps.  
-   加“在桌子下面”
-
-## 快速练习 2
-
-选更自然的一句：
-
-1. He speaks English  
-   - A. well at school every day
-   - B. every day well at school
-
-2. They sang  
-   - A. happily in the room last night
-   - B. last night happily in the room
-
-3. She read a book  
-   - A. quietly in her room after dinner
-   - B. after dinner quietly in her room
-
-## 答案
-
-### 快速练习 1
-
-1. The boy runs quickly.
-2. She sings in the room.
-3. They play football after class.
-4. A cat sleeps under the table.
-
-### 快速练习 2
-
-1. A
-2. A
-3. A
-
-## 小结
-
-扩句不是乱加词。
-
-要先有主干，再按顺序加信息。
+- This doc mirrors the current web lesson content for the component listed above.
+- If you edit this doc, the corresponding web component should be updated afterward.

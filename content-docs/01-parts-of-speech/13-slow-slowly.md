@@ -1,51 +1,58 @@
-# Slow / Slowly
+# 🔄 "Slow" vs "Slowly"
 
-## 一句话先记住
+> Synced from web component: `src/components/content/MultiPos/SlowContent.tsx`
 
-`slow` 常是形容词，`slowly` 常是副词。
+## Web Lesson Text
 
-## 两种用法
+### 💡 为什么学这个？
 
-### 1. slow
+### 📝 主要用法
 
-- The bus is slow.
-- a slow computer
+### 1. 形容词 (Adjective): slow
 
-这里 `slow` 在描述人或东西，所以是形容词。
+### 2. 副词 (Adverb): slowly
 
-### 2. slowly
+和 "Happy/Happily" 类似，"Slow" 和 "Slowly" 也是一对基础的形容词和副词。 "Slow" 用来描述事物本身是“慢的”，而 "Slowly" 则用来描述动作是“慢慢地”进行。
 
-- Please speak slowly.
-- He walked slowly.
+"Slow" 用来修饰名词，说明某人或某物是“慢的”。
 
-这里 `slowly` 在描述动作，所以是副词。
+"Slowly" 用来修饰动词，说明动作是“慢慢地”进行。
 
-## 快速练习 1
+## Examples
 
-选 `slow` 还是 `slowly`：
+1. `This is a **slow** computer.`
+   - 这是一台很慢的电脑。(什么样的 computer? -> slow computer)
+2. `Please speak more **slowly**.`
+   - 请说得更慢一些。(说得怎么样? -> slowly)
 
-1. The car is very ___.
-2. Please read ___.
-3. We had a ___ internet connection.
-4. She answered ___.
+## Sentence Builder Practice
 
-## 快速练习 2
+1. Words: `It is a` / `slow` / `train`
+   - Correct: `It is a slow train`
+   - Chinese: 这是一辆慢车。
+2. Words: `He talks` / `very` / `slowly`
+   - Correct: `He talks very slowly`
+   - Chinese: 他说话非常慢。
+3. Words: `The traffic` / `is` / `slow` / `today`
+   - Correct: `The traffic is slow today`
+   - Chinese: 今天的交通很缓慢。
+4. Words: `Please speak` / `slowly`
+   - Correct: `Please speak slowly`
+   - Chinese: 请慢慢说。
+5. Words: `That was a` / `slow` / `process`
+   - Correct: `That was a slow process`
+   - Chinese: 那是一个缓慢的过程。
+6. Words: `The turtle` / `walks` / `slowly`
+   - Correct: `The turtle walks slowly`
+   - Chinese: 乌龟走得很慢。
+7. Words: `He is a` / `slow` / `worker`
+   - Correct: `He is a slow worker`
+   - Chinese: 他是个慢性子的工人。
+8. Words: `She reads` / `slowly`
+   - Correct: `She reads slowly`
+   - Chinese: 她读得很慢。
 
-判断下面哪个更对：
+## Sync Notes
 
-1. He walks slow / slowly.
-2. It is a slow / slowly train.
-
-## 答案
-
-### 快速练习 1
-
-1. slow
-2. slowly
-3. slow
-4. slowly
-
-### 快速练习 2
-
-1. slowly
-2. slow
+- This doc mirrors the current web lesson content for the component listed above.
+- If you edit this doc, the corresponding web component should be updated afterward.

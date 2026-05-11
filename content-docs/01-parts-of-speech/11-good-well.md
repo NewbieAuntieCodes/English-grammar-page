@@ -1,61 +1,66 @@
-# Good / Well
+# 🔄 "Good" vs "Well"
 
-## 一句话先记住
+> Synced from web component: `src/components/content/MultiPos/GoodWellContent.tsx`
 
-`good` 常是形容词，`well` 常是副词。
+## Web Lesson Text
 
-## 两种常见用法
+### 💡 为什么学这个？
 
-### 1. good
+### 📝 主要用法
 
-- She is a good student.
-- This book is good.
+### 1. 形容词 (Adjective): good
 
-这里 `good` 在描述人或东西，所以是形容词。
+### 2. 副词 (Adverb): well
 
-### 2. well
+### 3. 特殊用法: well 作形容词
 
-- She sings well.
-- He speaks English well.
+"Good" 和 "Well" 是最常被混淆的一对词。"Good" 是形容词，用来描述事物；"Well" 是副词，用来描述动作。记住这个基本区别，你的英语就能更上一层楼。
 
-这里 `well` 在描述动作，所以是副词。
+"Good" 用来修饰名词，说明某人或某物是“好的”。它回答了“什么样的？”这个问题。
 
-## 一个要额外记住的点
+"Well" 用来修饰动词，说明动作做得“好”。它回答了“动作怎么样？”这个问题。
 
-有时候：
+当谈论健康状况时，"well" 可以作为形容词，意思是“健康的”。
 
-- I am well.
+## Examples
 
-这里 `well` 表示“身体好”，也很常见。
+1. `He is a **good** driver.`
+   - 他是一个好司机。(什么样的 driver? -> good driver)
+2. `This cake tastes **good**.`
+   - 这个蛋糕尝起来很好。(蛋糕怎么样? -> good) (注意: taste是感官系动词，后面跟形容词)
+3. `He drives **well**.`
+   - 他车开得很好。(开得怎么样? -> well)
+4. `I don't feel **well** today.`
+   - 我今天感觉不太舒服。(我感觉怎么样? -> well)
 
-## 快速练习 1
+## Sentence Builder Practice
 
-选 `good` 还是 `well`：
+1. Words: `He is a` / `good` / `student`
+   - Correct: `He is a good student`
+   - Chinese: 他是个好学生。
+2. Words: `She plays` / `the piano` / `well`
+   - Correct: `She plays the piano well`
+   - Chinese: 她钢琴弹得很好。
+3. Words: `That is a` / `good` / `idea`
+   - Correct: `That is a good idea`
+   - Chinese: 那是个好主意。
+4. Words: `He speaks` / `English` / `well`
+   - Correct: `He speaks English well`
+   - Chinese: 他英语说得很流利。
+5. Words: `I hope` / `you are` / `well`
+   - Correct: `I hope you are well`
+   - Chinese: 我希望你身体健康。
+6. Words: `It was a` / `good movie`
+   - Correct: `It was a good movie`
+   - Chinese: 那是一部好电影。
+7. Words: `They did not` / `behave` / `well`
+   - Correct: `They did not behave well`
+   - Chinese: 他们表现不好。
+8. Words: `This is a` / `good` / `book`
+   - Correct: `This is a good book`
+   - Chinese: 这是一本好书。
 
-1. She is a ___ teacher.
-2. He plays basketball ___.
-3. I feel ___ today.
-4. This movie is ___.
+## Sync Notes
 
-## 快速练习 2
-
-判断下面哪个更对：
-
-1. She sings good / well.
-2. He is a good / well boy.
-3. I am good / well today.
-
-## 答案
-
-### 快速练习 1
-
-1. good
-2. well
-3. well
-4. good
-
-### 快速练习 2
-
-1. well
-2. good
-3. well
+- This doc mirrors the current web lesson content for the component listed above.
+- If you edit this doc, the corresponding web component should be updated afterward.
