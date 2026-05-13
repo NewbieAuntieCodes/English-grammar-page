@@ -89,6 +89,7 @@ Note: `Structures/ModalVerbsContent.tsx`, `Structures/YesNoQuestionsContent.tsx`
 | `CommonStructures/OfUsageContent.tsx` | `07-common-sentence-structures/06-of-usage.md` | synced from web |
 | `CommonStructures/WithUsageContent.tsx` | `07-common-sentence-structures/07-with-usage.md` | synced from web |
 | `CommonStructures/ByUsageContent.tsx` | `07-common-sentence-structures/08-by-usage.md` | synced from web |
+| `CommonStructures/ForUsageContent.tsx` | `07-common-sentence-structures/17-for-usage.md` | synced from web |
 | `CommonStructures/MakeUsageContent.tsx` | `07-common-sentence-structures/09-make-usage.md` | synced from web |
 | `CommonStructures/KeepUsageContent.tsx` | `07-common-sentence-structures/10-keep-usage.md` | synced from web |
 | `CommonStructures/AsUsageContent.tsx` | `07-common-sentence-structures/11-as-usage.md` | synced from web |

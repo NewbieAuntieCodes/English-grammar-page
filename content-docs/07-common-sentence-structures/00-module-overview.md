@@ -33,24 +33,49 @@
 2. 再记 2 到 3 个常见例句
 3. 最后练最容易错的地方
 
-## 学习顺序
+## 页面分组
+
+### 基础句型骨架
+
+先掌握句子的基础框架，再往里面添加信息。
+
+1. [There be 句型](./04-there-be.md)
+2. [It is ... for sb. to do sth.](./03-it-is-adj-for-sb.md)
+3. [one of 的用法](./16-one-of.md)
+
+### 非谓语结构
+
+解决 doing、to do 和分词形容词这类高频结构。
 
 1. [动词-ing 的用法 / Gerunds](./01-gerunds.md)
 2. [不定式的用法 / Infinitives](./02-infinitives.md)
-3. [It is ... for sb. to do sth.](./03-it-is-adj-for-sb.md)
-4. [There be 句型](./04-there-be.md)
-5. [-ed 和 -ing 形容词](./05-ed-ing-adjectives.md)
-6. [of 的用法](./06-of-usage.md)
-7. [with 的用法](./07-with-usage.md)
-8. [by 的用法](./08-by-usage.md)
-9. [make 的用法](./09-make-usage.md)
-10. [keep 的用法](./10-keep-usage.md)
-11. [as 的用法](./11-as-usage.md)
-12. [as...as 的用法](./12-as-as-usage.md)
-13. [比较级和最高级](./13-comparatives-superlatives.md)
-14. [What / How 感叹句](./14-what-how-exclamations.md)
-15. [so that / so...that...](./15-so-that.md)
-16. [one of 的用法](./16-one-of.md)
+3. [-ed 和 -ing 形容词](./05-ed-ing-adjectives.md)
+
+### 高频介词用法
+
+把 of、with、by、for 这些最常用的小词分清楚。
+
+1. [of 的用法](./06-of-usage.md)
+2. [with 的用法](./07-with-usage.md)
+3. [by 的用法](./08-by-usage.md)
+4. [for 的用法](./17-for-usage.md)
+
+### 高频动词结构
+
+学习 make、keep 这类能带出复杂句意的动词结构。
+
+1. [make 的用法](./09-make-usage.md)
+2. [keep 的用法](./10-keep-usage.md)
+
+### 比较、结果与感叹
+
+练习表达比较、目的、结果和强烈感受的常用结构。
+
+1. [as 的用法](./11-as-usage.md)
+2. [as...as 的用法](./12-as-as-usage.md)
+3. [比较级和最高级](./13-comparatives-superlatives.md)
+4. [What / How 感叹句](./14-what-how-exclamations.md)
+5. [so that / so...that...](./15-so-that.md)
 
 ## 先看一个总例子
 
